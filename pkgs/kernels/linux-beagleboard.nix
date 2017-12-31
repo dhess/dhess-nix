@@ -1,7 +1,7 @@
 { stdenv, hostPlatform, fetchFromGitHub, perl, buildLinux, ... } @ args:
 
 let
-  localLib = import ../../../lib.nix;
+  localLib = import ../../lib.nix;
   modDirVersion = "4.9.68";
   tag = "r83";
 in
