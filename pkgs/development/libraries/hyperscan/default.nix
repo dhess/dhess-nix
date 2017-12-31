@@ -38,7 +38,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = https://01.org/hyperscan;
     description = "A high-performance multiple regex matching library";
-    license = with licenses; [ bsd3 bsd2 boost ];
+    license = [ licenses.bsd3 licenses.bsd2 licenses.boost ];
     platforms = [ "x86_64-linux" "i686-linux" ];
     maintainers = [ maintainers.dhess ];
   };
