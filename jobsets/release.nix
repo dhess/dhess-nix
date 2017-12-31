@@ -4,7 +4,7 @@ let
 
 in
 
-{ supportedSystems ? [ "x86_64-linux" ]
+{ supportedSystems ? [ "x86_64-linux" "armv7l-linux" "aarch64-linux" ]
 , scrubJobs ? true
 , nixpkgsArgs ? {
     config = { allowUnfree = true; allowBroken = true; inHydra = true; };
@@ -18,54 +18,46 @@ with import (fixedNixPkgs + "/pkgs/top-level/release-lib.nix") {
 
 let
 
-  jobs = mapTestOn ((packagePlatforms pkgs) // {
+  jobs = {
 
-    jemalloc = [ "armv7l-linux" ];
-    linux_beagleboard = [ "armv7l-linux" ];
-    linuxPackages_beagleboard = [ "armv7l-linux" ];
+    x86_64-linux = pkgs.releaseTools.aggregate {
+      name = "nixpkgs-quixoftic-x86_64-linux";
+      meta.description = "nixpkgs-quixoftic overlay packages (x86_64-linux)";
+      meta.maintainer = lib.maintainers.dhess;
+      constituents = with jobs; [
+        certbot.x86_64-linux
+        ffmpeg-snapshot.x86_64-linux
+        gitaly.x86_64-linux
+        hyperscan.x86_64-linux
+        libnet_1_1.x86_64-linux
+        libprelude.x86_64-linux
+        netsniff-ng.x86_64-linux
+        simp_le.x86_64-linux
+        suricata.x86_64-linux
+        trimpcap.x86_64-linux
+        tsoff.x86_64-linux
+        unbound-block-hosts.x86_64-linux
+      ];
+    };
 
-  });
+    armv7l-linux = pkgs.releaseTools.aggregate {
+      name = "nixpkgs-quixoftic-armv7l-linux";
+      meta.description = "nixpkgs-quixoftic overlay packages (armv7l-linux)";
+      meta.maintainer = lib.maintainers.dhess;
+      constituents = with jobs; [
+        bb-org-overlays.armv7l-linux
+        certbot.armv7l-linux
+        jemalloc.armv7l-linux
+        linux_beagleboard.armv7l-linux
+        linuxPackages_beagleboard.armv7l-linux
+        simp_le.armv7l-linux
+      ];
+    };
 
-in rec
+  } // (mapTestOn (packagePlatforms pkgs));
+
+in
 {
-  ## Custom packages.
-  #
-
-  inherit (jobs) bb-org-overlays;
-  inherit (jobs) ffmpeg-snapshot;
-  inherit (jobs) hyperscan;
-  inherit (jobs) libnet_1_1;
-  inherit (jobs) libprelude;
-  inherit (jobs) unbound-block-hosts;
-  inherit (jobs) suricata;
-  inherit (jobs) trimpcap;
-  inherit (jobs) tsoff;
-
-
-  ## Disabled tests.
-  #
-
-  inherit (jobs) jemalloc;
-
-
-  ## Kernels
-  #
-
-  inherit (jobs) linux_beagleboard;
-  inherit (jobs) linuxPackages_beagleboard;
-
-
-  ## Patched derivations.
-  #
-
-  inherit (jobs) gitaly;
-
-
-  ## Overridden package versions.
-  #
-
-  inherit (jobs) certbot;
-  inherit (jobs) netsniff-ng;
-  inherit (jobs) simp_le;
-
+  inherit (jobs) x86_64-linux;
+  inherit (jobs) armv7l-linux;
 }
