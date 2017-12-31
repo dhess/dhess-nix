@@ -13,7 +13,7 @@ import "${localLib.fetchNixPkgs}/pkgs/os-specific/linux/kernel/generic.nix" (arg
     owner = "beagleboard";
     repo = "linux";
     rev = "${version}";
-    sha256 = "1sh6kricdrl3670w7l65085jw7kk502z2ha4aii9nfdj2g5qznqg";
+    sha256 = "1vlvdgmigs7vawg2ifd6mmcqdxk12qjpn66q6sdl6n1b8kcj60q2";
   };
 
   kernelPatches = args.kernelPatches;
