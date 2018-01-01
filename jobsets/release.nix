@@ -14,8 +14,8 @@ in
   }
 }:
 
-with import (fixedNixPkgs + "/pkgs/top-level/release-lib.nix") {
-  inherit supportedSystems scrubJobs nixpkgsArgs;
+with import ./release-lib.nix {
+  inherit lib supportedSystems scrubJobs nixpkgsArgs packageSet;
 };
 
 let
