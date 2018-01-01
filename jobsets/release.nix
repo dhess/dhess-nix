@@ -1,6 +1,8 @@
 let
 
-  fixedNixPkgs = (import ../lib.nix).fetchNixPkgs;
+  lib = import ../lib.nix;
+  fixedNixPkgs = lib.fetchNixPkgs;
+  packageSet = (import fixedNixPkgs);
 
 in
 
