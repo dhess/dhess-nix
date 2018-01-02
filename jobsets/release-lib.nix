@@ -41,7 +41,7 @@ rec {
   pkgs_i686_linux = allPackages { system = "i686-linux"; };
   pkgs_aarch64_linux = allPackages { system = "aarch64-linux"; };
   pkgs_armv6l_linux = allPackages { system = "armv6l-linux"; };
-  pkgs_armv7l_linux = allPackages { system = "armv7l-linux"; };
+  pkgs_armv7l_linux = allPackages { system = "armv7l-linux"; platform = systems.platforms.beaglebone; };
   pkgs_x86_64_darwin = allPackages { system = "x86_64-darwin"; };
   pkgs_x86_64_freebsd = allPackages { system = "x86_64-freebsd"; };
   pkgs_i686_freebsd = allPackages { system = "i686-freebsd"; };
