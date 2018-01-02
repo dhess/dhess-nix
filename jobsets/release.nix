@@ -74,5 +74,7 @@ in
 {
   inherit (jobs) x86_64-linux;
   inherit (jobs) armv7l-linux;
-  inherit (jobs) aarch64-linux;
+
+  # Doesn't evaluate yet due to GHC issues.
+  #inherit (jobs) aarch64-linux;
 }
