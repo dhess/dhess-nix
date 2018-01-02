@@ -20,11 +20,6 @@ with import ./release-lib.nix {
 
 let
 
-  enumerateConstituents = aggregate: lib.listToAttrs (
-    map (d: { name = (builtins.parseDrvName d.name).name; value = d; })
-        aggregate.constituents
-  );
-
   jobs = {
 
     x86_64-linux = pkgs.releaseTools.aggregate {
@@ -63,5 +58,3 @@ in
   inherit (jobs) x86_64-linux;
   inherit (jobs) armv7l-linux;
 }
-// enumerateConstituents jobs.x86_64-linux
-// enumerateConstituents jobs.armv7l-linux
