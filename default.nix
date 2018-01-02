@@ -8,6 +8,7 @@ with super.lib;
 
   (import ./overlays/custom-packages.nix)
   (import ./overlays/disable-tests.nix)
+  (import ./overlays/haskell-packages.nix)
   (import ./overlays/kernels.nix)
   (import ./overlays/lib.nix)
   (import ./overlays/patches.nix)

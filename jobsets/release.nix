@@ -33,6 +33,7 @@ let
         libnet_1_1.x86_64-linux
         libprelude.x86_64-linux
         netsniff-ng.x86_64-linux
+        pinpon.x86_64-linux
         suricata.x86_64-linux
         trimpcap.x86_64-linux
         tsoff.x86_64-linux
@@ -48,6 +49,7 @@ let
         bb-org-overlays.armv7l-linux
         jemalloc.armv7l-linux
         linux_beagleboard.armv7l-linux
+        pinpon.armv7l-linux
       ];
     };
 
