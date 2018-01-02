@@ -55,6 +55,16 @@ let
       ];
     };
 
+    aarch64-linux = pkgs.releaseTools.aggregate {
+      name = "nixpkgs-quixoftic-aarch64-linux";
+      meta.description = "nixpkgs-quixoftic overlay packages (aarch64-linux)";
+      meta.maintainer = lib.maintainers.dhess;
+      constituents = with jobs; [
+        haskellPackages.pinpon.aarch64-linux
+        pinpon.aarch64-linux
+      ];
+    };
+
   } // (mapTestOn ((packagePlatforms pkgs) // rec {
     haskell.compiler = packagePlatforms pkgs.haskell.compiler;
     haskellPackages = packagePlatforms pkgs.haskellPackages;
@@ -64,4 +74,5 @@ in
 {
   inherit (jobs) x86_64-linux;
   inherit (jobs) armv7l-linux;
+  inherit (jobs) aarch64-linux;
 }
