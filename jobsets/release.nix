@@ -29,6 +29,7 @@ let
       constituents = with jobs; [
         ffmpeg-snapshot.x86_64-linux
         gitaly.x86_64-linux
+        haskellPackages.pinpon.x86_64-linux
         hyperscan.x86_64-linux
         libnet_1_1.x86_64-linux
         libprelude.x86_64-linux
@@ -47,13 +48,17 @@ let
       meta.maintainer = lib.maintainers.dhess;
       constituents = with jobs; [
         bb-org-overlays.armv7l-linux
+        haskellPackages.pinpon.armv7l-linux
         jemalloc.armv7l-linux
         linux_beagleboard.armv7l-linux
         pinpon.armv7l-linux
       ];
     };
 
-  } // (mapTestOn (packagePlatforms pkgs));
+  } // (mapTestOn ((packagePlatforms pkgs) // rec {
+    haskell.compiler = packagePlatforms pkgs.haskell.compiler;
+    haskellPackages = packagePlatforms pkgs.haskellPackages;
+  }));
 
 in
 {
