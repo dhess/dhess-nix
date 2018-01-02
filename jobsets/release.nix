@@ -21,7 +21,15 @@ with import ./release-lib.nix {
 let
 
   enumerateConstituents = aggregate: lib.listToAttrs (
-    map (d: { name = (builtins.parseDrvName d.name).name; value = d; })
+    map (d:
+           let
+             name = (builtins.parseDrvName d.name).name;
+             system = d.system;
+           in
+             { name = name + "." + system;
+               value = d;
+             }
+         )
         aggregate.constituents
   );
 
@@ -62,6 +70,7 @@ in
 {
   inherit (jobs) x86_64-linux;
   inherit (jobs) armv7l-linux;
+  inherit enumerateConstituents;
 }
 // enumerateConstituents jobs.x86_64-linux
 // enumerateConstituents jobs.armv7l-linux
