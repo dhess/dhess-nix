@@ -20,7 +20,7 @@ let
   pkgs = import nixpkgs {};
 
   defaultSettings = {
-    enabled = 1;
+    enabled = 0;
     hidden = false;
     keepnr = 5;
     schedulingshares = 100;
@@ -43,9 +43,21 @@ let
     };
   };
 
+  # Temporary jobset while I try to get GHC armv7l upstream.
+  mkGhcTest = nixpkgsQuixofticBranch: nixpkgsRev: {
+    enabled = 1;
+    schedulingshares = 800;
+    checkinterval = 60;
+    inputs = {
+      nixpkgs_override = mkFetchGithub "https://github.com/dhess/nixpkgs.git ${nixpkgsRev}";
+      nixpkgsQuixoftic = mkFetchGithub "${nixpkgsQuixofticUri} ${nixpkgsQuixofticBranch}";
+    };
+  };
+
   mainJobsets = with pkgs.lib; mapAttrs (name: settings: defaultSettings // settings) (rec {
     nixpkgs-quixoftic = {};
     nixpkgs-quixoftic-nixos-unstable-small = mkNixpkgsQuixoftic "master" "nixos-unstable-small";
+    nixpkgs-quixoftic-my-master = mkGhcTest "master" "ghc-armv7l-fix-gcc";
   });
 
   jobsetsAttrs = mainJobsets;

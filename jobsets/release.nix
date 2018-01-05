@@ -47,9 +47,8 @@ let
       meta.description = "nixpkgs-quixoftic overlay packages (armv7l-linux)";
       meta.maintainer = lib.maintainers.dhess;
       constituents = with jobs; [
-        bb-org-overlays.armv7l-linux
+        #bb-org-overlays.armv7l-linux
         haskellPackages.pinpon.armv7l-linux
-        jemalloc.armv7l-linux
         #linux_beagleboard.armv7l-linux
         pinpon.armv7l-linux
       ];
@@ -72,7 +71,8 @@ let
 
 in
 {
-  inherit (jobs) x86_64-linux;
+  # Disable while we concentrate on armv7l-linux GHC.
+  #inherit (jobs) x86_64-linux;
   inherit (jobs) armv7l-linux;
 
   # Doesn't evaluate yet due to GHC issues.
