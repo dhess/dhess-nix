@@ -35,7 +35,7 @@ let
     };
   };
 
-  mkNixpkgsQuixoftic = nixpkgsQuixofticBranch: nixpkgsRev: {
+  mkAlternate = nixpkgsQuixofticBranch: nixpkgsRev: {
     checkinterval = 60 * 60 * 12;
     inputs = {
       nixpkgs_override = mkFetchGithub "https://github.com/NixOS/nixpkgs-channels.git ${nixpkgsRev}";
@@ -43,9 +43,20 @@ let
     };
   };
 
+  # Use my fork of nixpkgs-channels. By default, these run as often as
+  # the main jobset but with a higher share.
+  mkFork = nixpkgsQuixofticBranch: nixpkgsRev: {
+    schedulingshares = 400;
+    inputs = {
+      nixpkgs_override = mkFetchGithub "https://github.com/dhess/nixpkgs-channels.git ${nixpkgsRev}";
+      nixpkgsQuixoftic = mkFetchGithub "${nixpkgsQuixofticUri} ${nixpkgsQuixofticBranch}";
+    };
+  };
+
   mainJobsets = with pkgs.lib; mapAttrs (name: settings: defaultSettings // settings) (rec {
     master = {};
-    nixos-unstable-small = mkNixpkgsQuixoftic "master" "nixos-unstable-small";
+    nixos-unstable-small = mkAlternate "master" "nixos-unstable-small";
+    dhess-fork = mkFork "master" "nixos-unstable-small";
   });
 
   jobsetsAttrs = mainJobsets;
