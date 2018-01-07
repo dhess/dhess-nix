@@ -44,8 +44,8 @@ let
   };
 
   mainJobsets = with pkgs.lib; mapAttrs (name: settings: defaultSettings // settings) (rec {
-    nixpkgs-quixoftic = {};
-    nixpkgs-quixoftic-nixos-unstable-small = mkNixpkgsQuixoftic "master" "nixos-unstable-small";
+    master = {};
+    nixos-unstable-small = mkNixpkgsQuixoftic "master" "nixos-unstable-small";
   });
 
   jobsetsAttrs = mainJobsets;
