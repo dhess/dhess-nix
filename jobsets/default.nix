@@ -56,7 +56,7 @@ let
   mainJobsets = with pkgs.lib; mapAttrs (name: settings: defaultSettings // settings) (rec {
     master = {};
     nixos-unstable-small = mkAlternate "master" "nixos-unstable-small";
-    dhess-fork = mkFork "master" "nixos-unstable-small";
+    dhess-fork = mkFork "master" "nixos-unstable-small-arm-fix";
   });
 
   jobsetsAttrs = mainJobsets;
