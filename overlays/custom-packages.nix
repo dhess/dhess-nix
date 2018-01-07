@@ -11,10 +11,10 @@ in rec
 
   ffmpeg-snapshot = callPackage ../pkgs/multimedia/ffmpeg-snapshot.nix rec {
     inherit (self.pkgs.darwin.apple_sdk.frameworks) Cocoa CoreMedia;
-    branch = "20171128.86cead5";
+    branch = "20180107.6c65de3";
     version = branch;
-    rev = "86cead525633cd6114824b33a74d71be677f9546";
-    sha256 = "07a0qwr0rd4shbm41n0dg6ip4vb39kxns7qlh1jd81zmvs3xqi0n";
+    rev = "6c65de3db06c5379f2ca9173175bfb5f1553518b";
+    sha256 = "1n9jcr6rivv0b4szfhr463rljfyzipcc3f7qsdk0apgff9b7xs9j";
   };
 
   hyperscan = callPackage ../pkgs/development/libraries/hyperscan {};
