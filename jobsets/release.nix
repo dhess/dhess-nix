@@ -20,6 +20,25 @@ with import ./release-lib.nix {
 
 let
 
+  ## Aggregates are handy for defining jobs (especially for subsets of
+  ## platforms), but they don't provide very useful information in
+  ## Hydra, especially when they die. We use aggregates here to define
+  ## set of jobs, and then splat them into the output attrset so that
+  ## they're more visible in Hydra.
+
+  enumerateConstituents = aggregate: lib.listToAttrs (
+    map (d:
+           let
+             name = (builtins.parseDrvName d.name).name;
+             system = d.system;
+           in
+             { name = name + "." + system;
+               value = d;
+             }
+         )
+        aggregate.constituents
+  );
+
   jobs = {
 
     x86_64-linux = pkgs.releaseTools.aggregate {
@@ -47,10 +66,10 @@ let
       meta.description = "nixpkgs-quixoftic overlay packages (armv7l-linux)";
       meta.maintainer = lib.maintainers.dhess;
       constituents = with jobs; [
-        #bb-org-overlays.armv7l-linux
-        haskellPackages.pinpon.armv7l-linux
-        #linux_beagleboard.armv7l-linux
-        pinpon.armv7l-linux
+        bb-org-overlays.armv7l-linux
+        #haskellPackages.pinpon.armv7l-linux
+        linux_beagleboard.armv7l-linux
+        #pinpon.armv7l-linux
       ];
     };
 
@@ -59,8 +78,8 @@ let
       meta.description = "nixpkgs-quixoftic overlay packages (aarch64-linux)";
       meta.maintainer = lib.maintainers.dhess;
       constituents = with jobs; [
-        haskellPackages.pinpon.aarch64-linux
-        pinpon.aarch64-linux
+        #haskellPackages.pinpon.aarch64-linux
+        #pinpon.aarch64-linux
       ];
     };
 
@@ -71,10 +90,10 @@ let
 
 in
 {
-  # Disable while we concentrate on armv7l-linux GHC.
-  #inherit (jobs) x86_64-linux;
+  inherit (jobs) x86_64-linux;
   inherit (jobs) armv7l-linux;
-
-  # Doesn't evaluate yet due to GHC issues.
-  #inherit (jobs) aarch64-linux;
+  inherit (jobs) aarch64-linux;
 }
+// enumerateConstituents jobs.x86_64-linux
+// enumerateConstituents jobs.armv7l-linux
+// enumerateConstituents jobs.aarch64-linux
