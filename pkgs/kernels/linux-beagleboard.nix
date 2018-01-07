@@ -2,8 +2,8 @@
 
 let
   localLib = import ../../lib.nix;
-  modDirVersion = "4.9.69";
-  tag = "r85";
+  modDirVersion = "4.14.12";
+  tag = "r23";
 in
 import "${localLib.fetchNixPkgs}/pkgs/os-specific/linux/kernel/generic.nix" (args // rec {
   version = "${modDirVersion}-ti-${tag}";
@@ -13,7 +13,7 @@ import "${localLib.fetchNixPkgs}/pkgs/os-specific/linux/kernel/generic.nix" (arg
     owner = "beagleboard";
     repo = "linux";
     rev = "${version}";
-    sha256 = "1bv2fmj4ldrj8njg167xgwr0swf80hn8h87p2drkrdb7d6c1qvyf";
+    sha256 = "0a8174i7i9dbbm535hwps52ah55rxvn8jyzrxw8w1fw4cny6l8ha";
   };
 
   kernelPatches = args.kernelPatches;
