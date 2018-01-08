@@ -33,4 +33,6 @@ stdenv.lib.overrideDerivation (generic (args // rec {
     patchShebangs scripts/
   '';
 
+  nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ ubootTools ];
+
 })
