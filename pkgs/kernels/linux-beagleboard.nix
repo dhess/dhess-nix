@@ -1,4 +1,4 @@
-{ stdenv, hostPlatform, fetchFromGitHub, perl, buildLinux, ubootTools, ... } @ args:
+{ stdenv, hostPlatform, fetchFromGitHub, perl, buildLinux, ubootTools, dtc, ... } @ args:
 
 let
 
@@ -33,6 +33,6 @@ stdenv.lib.overrideDerivation (generic (args // rec {
     patchShebangs scripts/
   '';
 
-  nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ ubootTools ];
+  nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ dtc ubootTools ];
 
 })
