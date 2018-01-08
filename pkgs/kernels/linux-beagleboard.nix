@@ -18,6 +18,10 @@ import "${localLib.fetchNixPkgs}/pkgs/os-specific/linux/kernel/generic.nix" (arg
 
   kernelPatches = args.kernelPatches;
 
+  postPatch = ''
+    patchShebangs scripts/
+  '';
+
   features = {
     efiBootStub = false;
   } // (args.features or {});
