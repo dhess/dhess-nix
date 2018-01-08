@@ -1,4 +1,4 @@
-{ stdenv, hostPlatform, fetchFromGitHub, perl, buildLinux, ... } @ args:
+{ stdenv, hostPlatform, fetchFromGitHub, perl, buildLinux, ubootTools, ... } @ args:
 
 let
 
