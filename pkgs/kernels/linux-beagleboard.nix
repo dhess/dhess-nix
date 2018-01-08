@@ -1,11 +1,14 @@
 { stdenv, hostPlatform, fetchFromGitHub, perl, buildLinux, ... } @ args:
 
 let
+
   localLib = import ../../lib.nix;
+  generic = import "${localLib.fetchNixPkgs}/pkgs/os-specific/linux/kernel/generic.nix";
   modDirVersion = "4.14.12";
   tag = "r23";
+
 in
-import "${localLib.fetchNixPkgs}/pkgs/os-specific/linux/kernel/generic.nix" (args // rec {
+stdenv.lib.overrideDerivation (generic (args // rec {
   version = "${modDirVersion}-ti-${tag}";
   inherit modDirVersion;
 
@@ -18,13 +21,16 @@ import "${localLib.fetchNixPkgs}/pkgs/os-specific/linux/kernel/generic.nix" (arg
 
   kernelPatches = args.kernelPatches;
 
-  postPatch = ''
-    patchShebangs scripts/
-  '';
-
   features = {
     efiBootStub = false;
   } // (args.features or {});
 
   extraMeta.hydraPlatforms = [ "armv7l-linux" ];
-} // (args.argsOverride or {}))
+} // (args.argsOverride or {}))) (oldAttrs: {
+
+  # This kernel will run mkuboot.sh.
+  postPatch = ''
+    patchShebangs scripts/
+  '';
+
+})
