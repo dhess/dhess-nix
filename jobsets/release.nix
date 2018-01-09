@@ -66,9 +66,9 @@ let
       meta.maintainer = lib.maintainers.dhess;
       constituents = with jobs; [
         bb-org-overlays.armv7l-linux
-        #haskellPackages.pinpon.armv7l-linux
+        haskellPackages.pinpon.armv7l-linux
         linux_beagleboard.armv7l-linux
-        #pinpon.armv7l-linux
+        pinpon.armv7l-linux
       ];
     };
 
