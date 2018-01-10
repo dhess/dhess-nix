@@ -43,6 +43,16 @@ let
     };
   };
 
+  # Build against the nixpkgs repo. Runs less often due to nixpkgs'
+  # velocity.
+  mkNixpkgs = nixpkgsQuixofticBranch: nixpkgsRev: {
+    checkinterval = 60 * 60 * 12;
+    inputs = {
+      nixpkgsQuixoftic = mkFetchGithub "${nixpkgsQuixofticUri} ${nixpkgsQuixofticBranch}";
+      nixpkgs_override = mkFetchGithub "https://github.com/NixOS/nixpkgs.git ${nixpkgsRev}";
+    };
+  };
+
   # Use my fork of nixpkgs. By default, these run as often as the main
   # jobset but with a higher share.
   mkFork = nixpkgsQuixofticBranch: nixpkgsRev: {
@@ -57,6 +67,7 @@ let
     master = {};
     nixos-unstable-small = mkAlternate "master" "nixos-unstable-small";
     ghc-armv7l = mkFork "ghc-armv7l" "gcc-armv7l-fix";
+    ghc-armv7l-nixpkgs = mkNixpkgs "ghc-armv7l" "master";
   });
 
   jobsetsAttrs = mainJobsets;
