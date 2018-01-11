@@ -15,6 +15,9 @@ in rec {
     {
       pinpon = dontCheck
         (self.callPackage ../pkgs/haskell/pinpon {});
+
+      # Haddock issues, at least on armv7l-linux.
+      swagger2 = dontCheck super.swagger2;
     });
 
   pinpon = haskell.lib.justStaticExecutables haskellPackages.pinpon;
