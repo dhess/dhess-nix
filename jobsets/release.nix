@@ -57,6 +57,17 @@ let
         trimpcap.x86_64-linux
         tsoff.x86_64-linux
         unbound-block-hosts.x86_64-linux
+
+        ## These aren't really part of the overlay (except possibly to
+        ## enable Hydra builds on them), but we test them here anyway
+        ## as we're the upstream.
+        
+        haskellPackages.hpio.x86_64-linux
+        haskellPackages.mellon-core.x86_64-linux
+        haskellPackages.mellon-gpio.x86_64-linux
+        haskellPackages.mellon-web.x86_64-linux
+        mellon-gpio.x86_64-linux
+        mellon-web.x86_64-linux
       ];
     };
 
@@ -69,6 +80,17 @@ let
         haskellPackages.pinpon.armv7l-linux
         linux_beagleboard.armv7l-linux
         pinpon.armv7l-linux
+
+        ## These aren't really part of the overlay (except possibly to
+        ## enable Hydra builds on them), but we test them here anyway
+        ## as we're the upstream.
+        
+        haskellPackages.hpio.armv7l-linux
+        haskellPackages.mellon-core.armv7l-linux
+        haskellPackages.mellon-gpio.armv7l-linux
+        haskellPackages.mellon-web.armv7l-linux
+        mellon-gpio.armv7l-linux
+        mellon-web.armv7l-linux
       ];
     };
 
