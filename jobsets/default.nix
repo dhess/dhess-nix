@@ -57,7 +57,7 @@ let
   # Sometimes, during active development, I want to use my fork of
   # nixpkgs. By default, these run as often as the main jobset but
   # with a higher share.
-  mkFork = nixpkgsQuixofticBranch: nixpkgsRev: {
+  mkNixpkgsFork = nixpkgsQuixofticBranch: nixpkgsRev: {
     schedulingshares = 400;
     inputs = {
       nixpkgsQuixoftic = mkFetchGithub "${nixpkgsQuixofticUri} ${nixpkgsQuixofticBranch}";
@@ -68,6 +68,7 @@ let
   mainJobsets = with pkgs.lib; mapAttrs (name: settings: defaultSettings // settings) (rec {
     master = {};
     nixos-unstable-small = mkNixpkgsChannels "master" "nixos-unstable-small";
+    more-ghc-arm-fixes = mkNixpkgsFork "master" "more-ghc-arm-fixes";
   });
 
   jobsetsAttrs = mainJobsets;
