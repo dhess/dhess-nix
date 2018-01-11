@@ -36,9 +36,9 @@ in rec {
       #   meta.hydraPlatforms = lib.platforms.all;
       # });
 
-      mellon-core = self.callPackage ../pkgs/haskell/mellon-core {};
-      mellon-gpio = self.callPackage ../pkgs/haskell/mellon-gpio {};
-      mellon-web = self.callPackage ../pkgs/haskell/mellon-web {};
+      mellon-core = dontCheck (self.callPackage ../pkgs/haskell/mellon-core {});
+      mellon-gpio = dontCheck (self.callPackage ../pkgs/haskell/mellon-gpio {});
+      mellon-web = dontCheck (self.callPackage ../pkgs/haskell/mellon-web {});
 
     });
 
