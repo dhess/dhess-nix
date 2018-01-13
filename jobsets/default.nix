@@ -22,7 +22,7 @@ let
   defaultSettings = {
     enabled = 1;
     hidden = false;
-    keepnr = 5;
+    keepnr = 20;
     schedulingshares = 100;
     checkinterval = 60;
     enableemail = false;
