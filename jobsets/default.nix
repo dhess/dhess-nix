@@ -68,7 +68,6 @@ let
   mainJobsets = with pkgs.lib; mapAttrs (name: settings: defaultSettings // settings) (rec {
     master = {};
     nixos-unstable-small = mkNixpkgsChannels "master" "nixos-unstable-small";
-    more-ghc-arm-fixes = mkNixpkgsFork "master" "more-ghc-arm-fixes";
   });
 
   jobsetsAttrs = mainJobsets;
