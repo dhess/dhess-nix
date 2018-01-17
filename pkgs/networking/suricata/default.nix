@@ -24,15 +24,18 @@
 , nss
 , pcre
 , python
+, pythonPackages
 , zlib
-, redisSupport ? false, redis, hiredis
-, rustSupport ? false, rustc, cargo
+, redisSupport ? false, redis ? null, hiredis ? null
+, rustSupport ? false, rustc ? null, cargo ? null
 }:
+
+assert redisSupport -> (redis != null) && (hiredis != null);
+assert rustSupport -> (rustc != null) && (cargo != null);
 
 let
 
   libmagic = file;
-  localLib = import ../../../../lib.nix;
   hyperscanSupport = stdenv.system == "x86_64-linux" || stdenv.system == "i686-linux";
 
 in
@@ -47,8 +50,8 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
-    makeWrapper
     pkgconfig
+    pythonPackages.wrapPython
   ];
 
   buildInputs = [
@@ -121,8 +124,7 @@ stdenv.mkDerivation rec {
   installTargets = "install install-conf";
 
   postInstall = ''
-    wrapProgram "$out/bin/suricatasc" \
-      --prefix PYTHONPATH : $PYTHONPATH:$(toPythonPath "$out")
+    wrapPythonPrograms
   '';
 
   meta = with lib; {

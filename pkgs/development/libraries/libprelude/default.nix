@@ -12,9 +12,6 @@
 , swig
 }:
 
-let
-
-in
 stdenv.mkDerivation rec {
   name = "libprelude-${version}";
   version = "4.1.0";
@@ -59,7 +56,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = https://www.prelude-siem.org/projects/libprelude;
     description = "IDMEF transport library used by all Prelude agents";
-    license = licenses.gpl2;
+    license = licenses.gpl2Plus;
     platforms = platforms.unix;
     maintainers = [ maintainers.dhess ];
   };

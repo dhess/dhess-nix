@@ -8,9 +8,6 @@
 , ragel
 }:
 
-let
-
-in
 stdenv.mkDerivation rec {
   name = "hyperscan-${version}";
   version = "4.6.0";

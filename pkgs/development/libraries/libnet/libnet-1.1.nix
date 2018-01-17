@@ -1,8 +1,5 @@
 { lib, stdenv, fetchurl }:
 
-let
-
-in
 stdenv.mkDerivation rec {
   name = "libnet-${version}";
   version = "1.1.6";
@@ -24,7 +21,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = https://github.com/sam-github/libnet;
     description = "Portable framework for low-level network packet construction";
-    license = licenses.bsd2;
+    license = with licenses; [ bsd2 bsd3 ];
     platforms = platforms.unix;
     maintainers = [ maintainers.dhess ];
   };
