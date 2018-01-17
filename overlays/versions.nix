@@ -6,7 +6,4 @@ let
 
 in rec
 {
-
-  netsniff-ng = callPackage ../pkgs/networking/netsniff-ng {};
-
 }
