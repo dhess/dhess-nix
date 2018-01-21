@@ -14,6 +14,7 @@ in rec {
   with haskell.lib;
   hp.extend (self: super:
     {
+
       pinpon = dontCheck
         (self.callPackage ../pkgs/haskell/pinpon {});
 
@@ -39,6 +40,9 @@ in rec {
       mellon-core = dontCheck (self.callPackage ../pkgs/haskell/mellon-core {});
       mellon-gpio = dontCheck (self.callPackage ../pkgs/haskell/mellon-gpio {});
       mellon-web = dontCheck (self.callPackage ../pkgs/haskell/mellon-web {});
+
+      # New hlint breaks on this. dontCheck until fixed upstream.
+      hpio = dontCheck super.hpio;
 
     });
 
