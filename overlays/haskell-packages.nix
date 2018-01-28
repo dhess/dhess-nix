@@ -41,8 +41,10 @@ in rec {
       mellon-gpio = dontCheck (self.callPackage ../pkgs/haskell/mellon-gpio {});
       mellon-web = dontCheck (self.callPackage ../pkgs/haskell/mellon-web {});
 
-      # New hlint breaks on this. dontCheck until fixed upstream.
-      hpio = dontCheck super.hpio;
+      # Until upgraded by upstream.
+      hpio = super.hpio_0_9_0_3.overrideAttrs (oldAttrs: {
+        meta.hydraPlatforms = lib.platforms.all;
+      });
 
     });
 
