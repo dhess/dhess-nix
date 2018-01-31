@@ -42,7 +42,7 @@ in rec {
       mellon-web = dontCheck (self.callPackage ../pkgs/haskell/mellon-web {});
 
       # Until upgraded by upstream.
-      hpio = super.hpio_0_9_0_3.overrideAttrs (oldAttrs: {
+      hpio = super.hpio_0_9_0_4.overrideAttrs (oldAttrs: {
         meta.hydraPlatforms = lib.platforms.all;
       });
 
