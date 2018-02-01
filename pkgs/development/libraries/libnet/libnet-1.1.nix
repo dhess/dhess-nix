@@ -23,6 +23,6 @@ stdenv.mkDerivation rec {
     description = "Portable framework for low-level network packet construction";
     license = with licenses; [ bsd2 bsd3 ];
     platforms = platforms.unix;
-    maintainers = [ maintainers.dhess ];
+    maintainers = [ maintainers.dhess-qx ];
   };
 }

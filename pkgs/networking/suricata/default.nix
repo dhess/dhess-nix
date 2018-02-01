@@ -130,7 +130,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     description = "A free and open source, mature, fast and robust network threat detection engine";
     homepage = https://suricata-ids.org;
-    maintainers = maintainers.dhess;
+    maintainers = maintainers.dhess-qx;
     license = licenses.gpl2;
     platforms = platforms.linux;
   };

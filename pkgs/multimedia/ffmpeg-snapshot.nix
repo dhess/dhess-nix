@@ -206,7 +206,7 @@ stdenv.mkDerivation rec {
     '';
     license = licenses.gpl3;
     platforms = platforms.all;
-    maintainers = lib.maintainers.dhess;
+    maintainers = lib.maintainers.dhess-qx;
     inherit branch;
   };
 }

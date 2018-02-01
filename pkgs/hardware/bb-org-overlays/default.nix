@@ -46,7 +46,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = https://github.com/beagleboard/bb.org-overlays/;
     description = "Device Tree Overlays for bb.org boards";
-    maintainers = maintainers.dhess;
+    maintainers = maintainers.dhess-qx;
     license = licenses.gpl2;
     platforms = [ "armv7l-linux" ];
   };

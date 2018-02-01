@@ -4,13 +4,12 @@ let
 
   inherit (super) callPackage;
 
-in rec
+in
 {
-
-  lib = super.lib // rec {
+  lib = (super.lib or {}) // {
 
     maintainers = super.lib.maintainers // {
-      dhess = "Drew Hess <dhess-src@quixoftic.com>";
+      dhess-qx = "Drew Hess <dhess-src@quixoftic.com>";
     };
 
 
@@ -37,5 +36,4 @@ in rec
     mkCacert = (callPackage ../pkgs/security/custom-cacert.nix);
     
   };
-
 }

@@ -58,6 +58,6 @@ stdenv.mkDerivation rec {
     description = "IDMEF transport library used by all Prelude agents";
     license = licenses.gpl2Plus;
     platforms = platforms.unix;
-    maintainers = [ maintainers.dhess ];
+    maintainers = [ maintainers.dhess-qx ];
   };
 }

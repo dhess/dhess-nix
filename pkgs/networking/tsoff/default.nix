@@ -34,7 +34,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Disable offloading features on an Ethernet device";
-    maintainers = maintainers.dhess;
+    maintainers = maintainers.dhess-qx;
     license = licenses.mit;
   };
 }

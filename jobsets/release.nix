@@ -44,7 +44,7 @@ let
     x86_64-linux = pkgs.releaseTools.aggregate {
       name = "nixpkgs-quixoftic-x86_64-linux";
       meta.description = "nixpkgs-quixoftic overlay packages (x86_64-linux)";
-      meta.maintainer = lib.maintainers.dhess;
+      meta.maintainer = lib.maintainers.dhess-qx;
       constituents = with jobs; [
         ffmpeg-snapshot.x86_64-linux
         haskellPackages.pinpon.x86_64-linux
@@ -74,7 +74,7 @@ let
     armv7l-linux = pkgs.releaseTools.aggregate {
       name = "nixpkgs-quixoftic-armv7l-linux";
       meta.description = "nixpkgs-quixoftic overlay packages (armv7l-linux)";
-      meta.maintainer = lib.maintainers.dhess;
+      meta.maintainer = lib.maintainers.dhess-qx;
       constituents = with jobs; [
         bb-org-overlays.armv7l-linux
         haskellPackages.pinpon.armv7l-linux
@@ -97,7 +97,7 @@ let
     aarch64-linux = pkgs.releaseTools.aggregate {
       name = "nixpkgs-quixoftic-aarch64-linux";
       meta.description = "nixpkgs-quixoftic overlay packages (aarch64-linux)";
-      meta.maintainer = lib.maintainers.dhess;
+      meta.maintainer = lib.maintainers.dhess-qx;
       constituents = with jobs; [
         #haskellPackages.pinpon.aarch64-linux
         #pinpon.aarch64-linux

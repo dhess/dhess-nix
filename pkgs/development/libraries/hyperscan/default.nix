@@ -37,6 +37,6 @@ stdenv.mkDerivation rec {
     description = "A high-performance multiple regex matching library";
     license = [ licenses.bsd3 licenses.bsd2 licenses.boost ];
     platforms = [ "x86_64-linux" "i686-linux" ];
-    maintainers = [ maintainers.dhess ];
+    maintainers = [ maintainers.dhess-qx ];
   };
 }
