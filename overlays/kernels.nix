@@ -2,9 +2,10 @@ self: super:
 
 let
 
-  inherit (super) callPackage linuxPackagesFor kernelPatches;
+  inherit (super) callPackage linuxPackagesFor;
+  inherit (self) kernelPatches;
 
-in rec
+in
 {
 
   linux_beagleboard = callPackage ../pkgs/kernels/linux-beagleboard.nix {
@@ -17,6 +18,6 @@ in rec
       ];
   };
 
-  linuxPackages_beagleboard = linuxPackagesFor linux_beagleboard;
+  linuxPackages_beagleboard = linuxPackagesFor self.linux_beagleboard;
 
 }

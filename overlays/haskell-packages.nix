@@ -2,13 +2,13 @@ self: super:
 
 let
 
-  inherit (super) pkgs;
-  inherit (pkgs) haskell;
+  inherit (self.pkgs) haskell;
   inherit (self) lib;
 
-  hp = if pkgs.stdenv.isArm then super.haskell.packages.ghc802 else super.haskellPackages;
+  hp = if super.pkgs.stdenv.isArm then haskell.packages.ghc802 else super.haskellPackages;
 
-in rec {
+in
+{
 
   haskellPackages =
   with haskell.lib;
@@ -50,8 +50,8 @@ in rec {
 
   ## Executables only.
 
-  mellon-gpio = haskell.lib.justStaticExecutables haskellPackages.mellon-gpio;
-  mellon-web = haskell.lib.justStaticExecutables haskellPackages.mellon-web;
-  pinpon = haskell.lib.justStaticExecutables haskellPackages.pinpon;
+  mellon-gpio = haskell.lib.justStaticExecutables self.haskellPackages.mellon-gpio;
+  mellon-web = haskell.lib.justStaticExecutables self.haskellPackages.mellon-web;
+  pinpon = haskell.lib.justStaticExecutables self.haskellPackages.pinpon;
 
 }

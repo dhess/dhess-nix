@@ -4,7 +4,7 @@ let
 
   inherit (super) callPackage;
 
-in rec
+in
 {
 
   bb-org-overlays = callPackage ../pkgs/hardware/bb-org-overlays {};
@@ -26,7 +26,7 @@ in rec
   unbound-block-hosts = callPackage ../pkgs/dns/unbound-block-hosts.nix {};
 
   suricata = callPackage ../pkgs/networking/suricata {
-    libnet = libnet_1_1;
+    libnet = self.libnet_1_1;
     redisSupport = true;
     rustSupport = true;
   };
