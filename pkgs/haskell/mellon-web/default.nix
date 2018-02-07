@@ -1,33 +1,33 @@
 { mkDerivation, aeson, aeson-pretty, base, bytestring, doctest
-, exceptions, hlint, hpio, hspec, hspec-wai, http-client
-, http-client-tls, http-types, lens, lucid, mellon-core
-, mellon-gpio, mtl, network, optparse-applicative, QuickCheck
-, quickcheck-instances, servant, servant-client, servant-docs
-, servant-lucid, servant-server, servant-swagger
-, servant-swagger-ui, stdenv, swagger2, text, time, transformers
-, wai, wai-extra, warp
+, exceptions, hpio, hspec, hspec-wai, http-client, http-client-tls
+, http-types, lens, lucid, mellon-core, mellon-gpio, mtl, network
+, optparse-applicative, protolude, QuickCheck, quickcheck-instances
+, servant, servant-client, servant-docs, servant-lucid
+, servant-server, servant-swagger, servant-swagger-ui, stdenv
+, swagger2, text, time, transformers, wai, wai-extra, warp
 }:
 mkDerivation {
   pname = "mellon-web";
-  version = "0.8.0.3";
-  sha256 = "d35ec4d5656dadf894e038edbfe68960662fdd685724e2b0b16aacc0d3315921";
+  version = "0.8.0.6";
+  sha256 = "e373922d0065988d05fded528c0b29a4213fe561881a5b147a6d26ebe613cb41";
   isLibrary = true;
   isExecutable = true;
+  enableSeparateDataOutput = true;
   libraryHaskellDepends = [
     aeson aeson-pretty base bytestring http-client http-types lens
-    lucid mellon-core servant servant-client servant-docs servant-lucid
-    servant-server servant-swagger servant-swagger-ui swagger2 text
-    time transformers wai warp
+    lucid mellon-core protolude servant servant-client servant-docs
+    servant-lucid servant-server servant-swagger servant-swagger-ui
+    swagger2 text time transformers wai warp
   ];
   executableHaskellDepends = [
     base bytestring exceptions hpio http-client http-client-tls
     http-types mellon-core mellon-gpio mtl network optparse-applicative
-    servant-client time transformers warp
+    protolude servant-client time transformers warp
   ];
   testHaskellDepends = [
-    aeson aeson-pretty base bytestring doctest hlint hspec hspec-wai
-    http-client http-types lens lucid mellon-core network QuickCheck
-    quickcheck-instances servant servant-client servant-docs
+    aeson aeson-pretty base bytestring doctest hspec hspec-wai
+    http-client http-types lens lucid mellon-core network protolude
+    QuickCheck quickcheck-instances servant servant-client servant-docs
     servant-lucid servant-server servant-swagger servant-swagger-ui
     swagger2 text time transformers wai wai-extra warp
   ];

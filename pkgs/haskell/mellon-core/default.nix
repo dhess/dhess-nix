@@ -1,14 +1,16 @@
-{ mkDerivation, async, base, doctest, hlint, hspec, mtl, QuickCheck
-, quickcheck-instances, stdenv, time, transformers
+{ mkDerivation, async, base, doctest, hspec, mtl, protolude
+, QuickCheck, quickcheck-instances, stdenv, time, transformers
 }:
 mkDerivation {
   pname = "mellon-core";
-  version = "0.8.0.3";
-  sha256 = "edaf4d5653a2b4302511edb7a5f1e73d14686b7c69df8d05bf724b0ad874f981";
-  libraryHaskellDepends = [ async base mtl time transformers ];
+  version = "0.8.0.6";
+  sha256 = "d5dd1711ccf27d71b458ad9cad11cf1d2d020702900707e7e76b9f0e385eb01d";
+  libraryHaskellDepends = [
+    async base mtl protolude time transformers
+  ];
   testHaskellDepends = [
-    async base doctest hlint hspec mtl QuickCheck quickcheck-instances
-    time transformers
+    async base doctest hspec mtl protolude QuickCheck
+    quickcheck-instances time transformers
   ];
   homepage = "https://github.com/quixoftic/mellon#readme";
   description = "Control physical access devices";
