@@ -29,6 +29,10 @@ in
 
   mellon-gpio = haskell.lib.justStaticExecutables self.haskellPackages.mellon-gpio;
   mellon-web = haskell.lib.justStaticExecutables self.haskellPackages.mellon-web;
-  pinpon = haskell.lib.justStaticExecutables self.haskellPackages.pinpon;
+
+  # Disable tests on the static executable; something in the doctests
+  # causes a nasty (internal?) GHC bug.
+
+  pinpon = haskell.lib.justStaticExecutables (haskell.lib.dontCheck self.haskellPackages.pinpon);
 
 }
