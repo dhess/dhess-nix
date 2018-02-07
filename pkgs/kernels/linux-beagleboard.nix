@@ -4,8 +4,8 @@ let
 
   localLib = import ../../lib.nix;
   generic = import "${localLib.fetchNixPkgs}/pkgs/os-specific/linux/kernel/generic.nix";
-  modDirVersion = "4.14.12";
-  tag = "r23";
+  modDirVersion = "4.14.17";
+  tag = "r32";
 
 in
 stdenv.lib.overrideDerivation (generic (args // rec {
@@ -16,7 +16,7 @@ stdenv.lib.overrideDerivation (generic (args // rec {
     owner = "beagleboard";
     repo = "linux";
     rev = "${version}";
-    sha256 = "07hdv2h12gsgafxsqqr7b0fir10rv9k66riklpjba2cg6x0p2nr4";
+    sha256 = "06l5f7lv6rlblvhcwnp37yklj961cd23hrrcpzr4043qsnk9zs47";
   };
 
   kernelPatches = args.kernelPatches;
