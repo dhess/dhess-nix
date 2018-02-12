@@ -8,7 +8,7 @@ let
   tag = "r32";
 
 in
-stdenv.lib.overrideDerivation (generic (args // rec {
+stdenv.lib.overrideDerivation (buildLinux (args // rec {
   version = "${modDirVersion}-ti-${tag}";
   inherit modDirVersion;
 
