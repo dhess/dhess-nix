@@ -4,8 +4,9 @@ let
 
   inherit (self.pkgs) haskell;
   inherit (self) lib;
+  inherit (super.pkgs.stdenv) isArm;
 
-  hp = if super.pkgs.stdenv.isArm then haskell.packages.ghc802 else super.haskellPackages;
+  hp = if isArm then haskell.packages.ghc802 else super.haskellPackages;
 
 in
 {
@@ -18,6 +19,12 @@ in
       hpio = self.callPackage ../pkgs/haskell/hpio {};
 
       pinpon = self.callPackage ../pkgs/haskell/pinpon {};
+
+      # Needed by pinpon on ghc-8.0.2 (for armv7l).
+      concurrent-output = if isArm then doJailbreak super.concurrent-output
+                                   else super.concurrent-output;
+      hedgehog = if isArm then dontCheck super.hedgehog
+                          else super.hedgehog;
 
       mellon-core = self.callPackage ../pkgs/haskell/mellon-core {};
       mellon-gpio = self.callPackage ../pkgs/haskell/mellon-gpio {};
