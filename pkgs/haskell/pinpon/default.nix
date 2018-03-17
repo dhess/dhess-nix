@@ -1,16 +1,15 @@
 { mkDerivation, aeson, aeson-pretty, amazonka, amazonka-core
 , amazonka-sns, base, bytestring, containers, doctest, exceptions
-, hpio, hspec, http-client, http-client-tls, http-types, lens
-, lucid, mtl, network, optparse-applicative, optparse-text
-, protolude, QuickCheck, quickcheck-instances, resourcet, servant
-, servant-client, servant-docs, servant-lucid, servant-server
-, servant-swagger, servant-swagger-ui, stdenv, swagger2, text, time
-, transformers, transformers-base, wai, warp
+, hpio, http-client, http-client-tls, http-types, lens, lucid, mtl
+, network, optparse-applicative, optparse-text, protolude
+, resourcet, servant, servant-client, servant-docs, servant-lucid
+, servant-server, servant-swagger, servant-swagger-ui, stdenv
+, swagger2, text, time, transformers, transformers-base, wai, warp
 }:
 mkDerivation {
   pname = "pinpon";
-  version = "0.2.0.1";
-  sha256 = "0af6743bfbf8c8f56ab79dc84e8ebfecfa47c0edf2f62ff02a13f3680ca44150";
+  version = "0.2.0.2";
+  sha256 = "ba574558403ce27566bed01cdbb2f84a4fc0f47511a6c359bf0be8507ffd8dbb";
   isLibrary = true;
   isExecutable = true;
   enableSeparateDataOutput = true;
@@ -27,10 +26,7 @@ mkDerivation {
     optparse-applicative optparse-text protolude servant-client text
     time transformers warp
   ];
-  testHaskellDepends = [
-    aeson base bytestring doctest exceptions hspec protolude QuickCheck
-    quickcheck-instances servant-swagger
-  ];
+  testHaskellDepends = [ base doctest protolude ];
   homepage = "https://github.com/quixoftic/pinpon#readme";
   description = "A gateway for various cloud notification services";
   license = stdenv.lib.licenses.bsd3;
