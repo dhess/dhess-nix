@@ -8,7 +8,7 @@ let
   in
     if try.success
       then builtins.trace "Using <nixpkgs_override>" try.value
-      else import ./fetch-nixpkgs.nix;
+      else (import ./fetch-github.nix) { jsonSpec = builtins.readFile ./nixpkgs-src.json; };
 
   nixpkgs = import fetchNixPkgs;
 
