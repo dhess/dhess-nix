@@ -3,8 +3,8 @@
 }:
 mkDerivation {
   pname = "mellon-core";
-  version = "0.8.0.6";
-  sha256 = "d5dd1711ccf27d71b458ad9cad11cf1d2d020702900707e7e76b9f0e385eb01d";
+  version = "0.8.0.7";
+  sha256 = "380d2e710d9909968e17a541dfae1b3e1ed272c72cd1f78111c30452ebc498da";
   libraryHaskellDepends = [
     async base mtl protolude time transformers
   ];

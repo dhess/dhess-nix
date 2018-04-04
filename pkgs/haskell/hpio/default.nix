@@ -5,8 +5,8 @@
 }:
 mkDerivation {
   pname = "hpio";
-  version = "0.9.0.5";
-  sha256 = "118df7aaf296d59989b24c68a614f12f45a16260504890ed088d16761415364c";
+  version = "0.9.0.6";
+  sha256 = "bd1bd338a962d4d5c8a355ef75a24e9bae5b96734a2289ce637c066ed61c841c";
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [

@@ -1,8 +1,8 @@
 { mkDerivation, base, hpio, mellon-core, protolude, stdenv }:
 mkDerivation {
   pname = "mellon-gpio";
-  version = "0.8.0.6";
-  sha256 = "e19d4900631ad2f0b210cd22b5a2141ecede6e3e9b070dd78bea8657f919b922";
+  version = "0.8.0.7";
+  sha256 = "37c738cc6b0e9cdd781eec751d162b1aaefe4ed379acc9b1a3613440233ae841";
   libraryHaskellDepends = [ base hpio mellon-core protolude ];
   homepage = "https://github.com/quixoftic/mellon#readme";
   description = "GPIO support for mellon";

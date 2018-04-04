@@ -1,30 +1,36 @@
 { mkDerivation, aeson, aeson-pretty, amazonka, amazonka-core
 , amazonka-sns, base, bytestring, containers, doctest, exceptions
-, hpio, http-client, http-client-tls, http-types, lens, lucid, mtl
-, network, optparse-applicative, optparse-text, protolude
-, resourcet, servant, servant-client, servant-docs, servant-lucid
-, servant-server, servant-swagger, servant-swagger-ui, stdenv
-, swagger2, text, time, transformers, transformers-base, wai, warp
+, fetchgit, hpio, http-client, http-client-tls, http-types, lens
+, lucid, mtl, network, optparse-applicative, optparse-text
+, protolude, resourcet, servant, servant-client
+, servant-client-core, servant-docs, servant-lucid, servant-server
+, servant-swagger, servant-swagger-ui, stdenv, swagger2, text, time
+, transformers, transformers-base, wai, warp
 }:
 mkDerivation {
   pname = "pinpon";
   version = "0.2.0.2";
-  sha256 = "ba574558403ce27566bed01cdbb2f84a4fc0f47511a6c359bf0be8507ffd8dbb";
+  src = fetchgit {
+    url = "https://github.com/quixoftic/pinpon.git";
+    sha256 = "0l1wyj1vk5hxs7qg6w1hvs0ysrf6i4gyhhzzxqf4ks19nkzmpmc9";
+    rev = "de17f511ff80e5a3e8c5608b1f06199d277708a7";
+  };
   isLibrary = true;
   isExecutable = true;
   enableSeparateDataOutput = true;
   libraryHaskellDepends = [
     aeson aeson-pretty amazonka amazonka-core amazonka-sns base
     bytestring containers exceptions http-client http-types lens lucid
-    mtl protolude resourcet servant servant-client servant-docs
-    servant-lucid servant-server servant-swagger servant-swagger-ui
-    swagger2 text time transformers transformers-base wai warp
+    mtl protolude resourcet servant servant-client servant-client-core
+    servant-docs servant-lucid servant-server servant-swagger
+    servant-swagger-ui swagger2 text time transformers
+    transformers-base wai warp
   ];
   executableHaskellDepends = [
     amazonka amazonka-sns base bytestring containers exceptions hpio
     http-client http-client-tls http-types lens mtl network
-    optparse-applicative optparse-text protolude servant-client text
-    time transformers warp
+    optparse-applicative optparse-text protolude servant-client
+    servant-client-core text time transformers warp
   ];
   testHaskellDepends = [ base doctest protolude ];
   homepage = "https://github.com/quixoftic/pinpon#readme";
