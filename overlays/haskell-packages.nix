@@ -20,6 +20,13 @@ in
 
       pinpon = self.callPackage ../pkgs/haskell/pinpon {};
 
+      # Needed for pinpon.
+      conduit = super.conduit_1_2_13_1;
+      conduit-extra = super.conduit-extra_1_2_3_2;
+      http-conduit = super.http-conduit_2_2_4;
+      resourcet = super.resourcet_1_1_11;
+      xml-conduit = super.xml-conduit_1_7_1_2;
+
       # Needed by pinpon on ghc-8.0.2 (for armv7l).
       concurrent-output = if isArm then doJailbreak super.concurrent-output
                                    else super.concurrent-output;
