@@ -6,7 +6,7 @@ let
 
 in
 
-{ supportedSystems ? [ "x86_64-linux" "armv7l-linux" "aarch64-linux" ]
+{ supportedSystems ? [ "x86_64-linux" "aarch64-linux" ]
 , scrubJobs ? true
 , nixpkgsArgs ? {
     config = { allowUnfree = false; inHydra = true; };
@@ -14,8 +14,8 @@ in
   }
 }:
 
-with import ./release-lib.nix {
-  inherit lib supportedSystems scrubJobs nixpkgsArgs packageSet;
+with import (fixedNixPkgs + "/pkgs/top-level/release-lib.nix") {
+  inherit supportedSystems scrubJobs nixpkgsArgs packageSet;
 };
 
 let
@@ -71,29 +71,6 @@ let
       ];
     };
 
-    armv7l-linux = pkgs.releaseTools.aggregate {
-      name = "nixpkgs-quixoftic-armv7l-linux";
-      meta.description = "nixpkgs-quixoftic overlay packages (armv7l-linux)";
-      meta.maintainer = lib.maintainers.dhess-qx;
-      constituents = with jobs; [
-        bb-org-overlays.armv7l-linux
-        haskellPackages.pinpon.armv7l-linux
-        linux_beagleboard.armv7l-linux
-        pinpon.armv7l-linux
-
-        ## These aren't really part of the overlay (except possibly to
-        ## enable Hydra builds on them), but we test them here anyway
-        ## as we're the upstream.
-        
-        haskellPackages.hpio.armv7l-linux
-        haskellPackages.mellon-core.armv7l-linux
-        haskellPackages.mellon-gpio.armv7l-linux
-        haskellPackages.mellon-web.armv7l-linux
-        mellon-gpio.armv7l-linux
-        mellon-web.armv7l-linux
-      ];
-    };
-
     aarch64-linux = pkgs.releaseTools.aggregate {
       name = "nixpkgs-quixoftic-aarch64-linux";
       meta.description = "nixpkgs-quixoftic overlay packages (aarch64-linux)";
@@ -112,9 +89,7 @@ let
 in
 {
   inherit (jobs) x86_64-linux;
-  inherit (jobs) armv7l-linux;
   inherit (jobs) aarch64-linux;
 }
 // enumerateConstituents jobs.x86_64-linux
-// enumerateConstituents jobs.armv7l-linux
 // enumerateConstituents jobs.aarch64-linux

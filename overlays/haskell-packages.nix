@@ -27,12 +27,6 @@ in
       resourcet = super.resourcet_1_1_11;
       xml-conduit = super.xml-conduit_1_7_1_2;
 
-      # Needed by pinpon on ghc-8.0.2 (for armv7l).
-      concurrent-output = if isArm then doJailbreak super.concurrent-output
-                                   else super.concurrent-output;
-      hedgehog = if isArm then dontCheck super.hedgehog
-                          else super.hedgehog;
-
       mellon-core = self.callPackage ../pkgs/haskell/mellon-core {};
       mellon-gpio = self.callPackage ../pkgs/haskell/mellon-gpio {};
       mellon-web = self.callPackage ../pkgs/haskell/mellon-web {};
