@@ -10,5 +10,6 @@ with super.lib;
   (import ./overlays/haskell-packages.nix)
   (import ./overlays/kernels.nix)
   (import ./overlays/lib.nix)
+  (import ./overlays/overrides.nix)
 
 ]) self
