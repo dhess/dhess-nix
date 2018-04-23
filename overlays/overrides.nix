@@ -6,7 +6,4 @@ let
 
 in
 {
-
-  hydra = callPackage ../pkgs/ci/hydra {};
-
 }

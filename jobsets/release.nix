@@ -48,7 +48,6 @@ let
       constituents = with jobs; [
         ffmpeg-snapshot.x86_64-linux
         haskellPackages.pinpon.x86_64-linux
-        hydra.x86_64-linux
         hyperscan.x86_64-linux
         libnet_1_1.x86_64-linux
         libprelude.x86_64-linux
