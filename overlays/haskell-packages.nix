@@ -4,9 +4,9 @@ let
 
   inherit (self.pkgs) haskell;
   inherit (self) lib;
-  inherit (super.pkgs.stdenv) isArm;
+  inherit (super.pkgs.stdenv) isAarch32;
 
-  hp = if isArm then haskell.packages.ghc802 else super.haskellPackages;
+  hp = if isAarch32 then haskell.packages.ghc802 else super.haskellPackages;
 
 in
 {
