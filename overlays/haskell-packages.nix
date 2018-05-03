@@ -10,29 +10,6 @@ let
 
 in
 {
-
-  haskellPackages =
-  with haskell.lib;
-  hp.extend (self: super:
-    {
-
-      hpio = self.callPackage ../pkgs/haskell/hpio {};
-
-      pinpon = self.callPackage ../pkgs/haskell/pinpon {};
-
-      # Needed for pinpon.
-      conduit = super.conduit_1_2_13_1;
-      conduit-extra = super.conduit-extra_1_2_3_2;
-      http-conduit = super.http-conduit_2_2_4;
-      resourcet = super.resourcet_1_1_11;
-      xml-conduit = super.xml-conduit_1_7_1_2;
-
-      mellon-core = self.callPackage ../pkgs/haskell/mellon-core {};
-      mellon-gpio = self.callPackage ../pkgs/haskell/mellon-gpio {};
-      mellon-web = self.callPackage ../pkgs/haskell/mellon-web {};
-
-    });
-
   ## Executables only.
 
   mellon-gpio = haskell.lib.justStaticExecutables self.haskellPackages.mellon-gpio;

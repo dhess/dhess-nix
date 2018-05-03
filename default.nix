@@ -2,9 +2,19 @@
 
 self: super:
 
+let
+
+  localLib = import ./lib.nix;
+
+in
+
 with super.lib;
 
 (foldl' (flip extends) (_: super) [
+
+  (import localLib.fetchMellon)
+  (import localLib.fetchPinPon)
+  (import localLib.fetchHpio)
 
   (import ./overlays/custom-packages.nix)
   (import ./overlays/haskell-packages.nix)
