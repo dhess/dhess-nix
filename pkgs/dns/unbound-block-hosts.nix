@@ -28,6 +28,12 @@ stdenv.mkDerivation rec {
     perlPackages.GetoptLong
     perlPackages.HTTPDate
     perlPackages.LWP
+
+    # As of July 2018, Dan Pollock's site redirects to HTTPS. The
+    # unbound-block-hosts script doesn't support this, but it appears
+    # that LWP will automatically redirect if LWP::Protocol::https is
+    # installed.
+    perlPackages.LWPProtocolHttps
   ];
 
   installPhase = let path = stdenv.lib.makeBinPath []; in ''
