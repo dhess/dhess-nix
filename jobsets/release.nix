@@ -46,7 +46,6 @@ let
       meta.description = "nixpkgs-quixoftic overlay packages (x86_64-linux)";
       meta.maintainer = lib.maintainers.dhess-qx;
       constituents = with jobs; [
-        ffmpeg-snapshot.x86_64-linux
         haskellPackages.pinpon.x86_64-linux
         hyperscan.x86_64-linux
         libnet_1_1.x86_64-linux
