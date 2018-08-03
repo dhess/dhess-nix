@@ -69,6 +69,7 @@ let
     master = {};
     nixos-unstable-small = mkNixpkgsChannels "master" "nixos-unstable-small";
     nixpkgs = mkNixpkgs "master" "master";
+    ghc-aarch64 = mkNixpkgsFork "ghc-aarch64" "ghc-aarch64";
   });
 
   jobsetsAttrs = mainJobsets;
