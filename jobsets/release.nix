@@ -78,6 +78,7 @@ let
       constituents = with jobs; [
         #haskellPackages.pinpon.aarch64-linux
         #pinpon.aarch64-linux
+        linux_latest.aarch64-linux
       ];
     };
 
