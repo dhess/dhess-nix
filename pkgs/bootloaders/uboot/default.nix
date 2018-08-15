@@ -141,7 +141,7 @@ in rec {
   };
 
   ubootJetsonTX2 = buildUBoot rec {
-    defconfig = "p2771-0000-000_defconfig";
+    defconfig = "p2771-0000-500_defconfig";
     extraMeta.platforms = ["aarch64-linux"];
     filesToInstall = ["u-boot.bin" "u-boot-dtb.bin" "u-boot.dtb" ];
   };
