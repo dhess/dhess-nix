@@ -4,6 +4,8 @@ let
 
   inherit (super) callPackage;
 
+  uboots = callPackage ../pkgs/bootloaders/uboot {};
+
 in
 {
 
@@ -26,5 +28,7 @@ in
   trimpcap = callPackage ../pkgs/misc/trimpcap {};
 
   tsoff = callPackage ../pkgs/networking/tsoff {};
+
+  ubootJetsonTX2 = uboots.ubootJetsonTX2;  
 
 }

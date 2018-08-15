@@ -79,6 +79,7 @@ let
         #haskellPackages.pinpon.aarch64-linux
         #pinpon.aarch64-linux
         linux_latest.aarch64-linux
+        ubootJetsonTX2.aarch64-linux
       ];
     };
 
