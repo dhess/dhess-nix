@@ -24,7 +24,7 @@ let
     hidden = false;
     keepnr = 20;
     schedulingshares = 100;
-    checkinterval = 60;
+    checkinterval = 300;
     enableemail = false;
     emailoverride = "";
     nixexprpath = "jobsets/release.nix";
