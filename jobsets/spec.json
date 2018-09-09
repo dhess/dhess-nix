@@ -4,7 +4,7 @@
     "description": "nixpkgs-quixoftic jobsets",
     "nixexprinput": "src",
     "nixexprpath": "jobsets/default.nix",
-    "checkinterval": 300,
+    "checkinterval": 60,
     "schedulingshares": 100,
     "enableemail": true,
     "emailoverride": "",
