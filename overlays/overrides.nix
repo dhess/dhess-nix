@@ -14,9 +14,13 @@ in
      CONFIG_TLSV12=y
     '';
 
-    patches = drv.patches ++ [
+    # XXX dhess - lib.unique is needed here to work around this issue:
+    # https://github.com/NixOS/nixpkgs/issues/34086
+    # Otherwise, our patch may be applied twice in some circumstances.
+
+    patches = super.lib.unique (drv.patches ++ [
       ./patches/wpa_supplicant/Makefile.eapol_test.patch
-    ];
+    ]);
 
   });
 }
