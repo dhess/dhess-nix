@@ -1,0 +1,12 @@
+diff -Nur wpa_supplicant-2.6/wpa_supplicant/Makefile wpa_supplicant-2.6-patch/wpa_supplicant/Makefile
+--- wpa_supplicant-2.6/wpa_supplicant/Makefile	2016-10-02 14:51:11.000000000 -0400
++++ wpa_supplicant-2.6-patch/wpa_supplicant/Makefile	2018-10-09 23:20:54.000000000 -0400
+@@ -44,7 +44,7 @@
+ CONFIG_TDLS_TESTING=y
+ endif
+ 
+-BINALL=wpa_supplicant wpa_cli
++BINALL=wpa_supplicant wpa_cli eapol_test
+ 
+ ifndef CONFIG_NO_WPA_PASSPHRASE
+ BINALL += wpa_passphrase

@@ -57,6 +57,7 @@ let
         trimpcap.x86_64-linux
         tsoff.x86_64-linux
         unbound-block-hosts.x86_64-linux
+        wpa_supplicant.x86_64-linux
 
         ## These aren't really part of the overlay (except possibly to
         ## enable Hydra builds on them), but we test them here anyway
