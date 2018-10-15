@@ -77,22 +77,20 @@ let
       meta.description = "nixpkgs-quixoftic overlay packages (aarch64-linux)";
       meta.maintainer = lib.maintainers.dhess-qx;
       constituents = with jobs; [
-        #haskellPackages.pinpon.aarch64-linux
-        #pinpon.aarch64-linux
         linux_latest.aarch64-linux
         ubootJetsonTX2.aarch64-linux
-        pinpon.aarch64-linux
+        # pinpon.aarch64-linux
 
-        ## These aren't really part of the overlay (except possibly to
-        ## enable Hydra builds on them), but we test them here anyway
-        ## as we're the upstream.
+        # ## These aren't really part of the overlay (except possibly to
+        # ## enable Hydra builds on them), but we test them here anyway
+        # ## as we're the upstream.
 
-        haskellPackages.hpio.aarch64-linux
-        haskellPackages.mellon-core.aarch64-linux
-        haskellPackages.mellon-gpio.aarch64-linux
-        haskellPackages.mellon-web.aarch64-linux
-        mellon-gpio.aarch64-linux
-        mellon-web.aarch64-linux
+        # haskellPackages.hpio.aarch64-linux
+        # haskellPackages.mellon-core.aarch64-linux
+        # haskellPackages.mellon-gpio.aarch64-linux
+        # haskellPackages.mellon-web.aarch64-linux
+        # mellon-gpio.aarch64-linux
+        # mellon-web.aarch64-linux
       ];
     };
 
