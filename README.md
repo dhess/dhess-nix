@@ -1,4 +1,3 @@
 # nixpkgs-quixoftic
 
-A Quixoftic Nixpkgs overlay.
-
+Useful Nixpkgs overlays.

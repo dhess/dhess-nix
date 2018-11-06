@@ -7,7 +7,7 @@
 
 let
 
-  nixpkgsQuixofticUri = "https://github.com/quixoftic/nixpkgs-quixoftic.git";
+  nixpkgsQuixofticUri = "https://github.com/dhess/nixpkgs-quixoftic.git";
 
   mkFetchGithub = value: {
     inherit value;
@@ -29,7 +29,7 @@ let
     emailoverride = "";
     nixexprpath = "jobsets/release.nix";
     nixexprinput = "nixpkgsQuixoftic";
-    description = "Quixoftic Nixpkgs overlay";
+    description = "A useful Nixpkgs overlay";
     inputs = {
       nixpkgsQuixoftic = mkFetchGithub "${nixpkgsQuixofticUri} master";
     };
