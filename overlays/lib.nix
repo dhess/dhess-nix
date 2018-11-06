@@ -9,7 +9,7 @@ in
   lib = (super.lib or {}) // {
 
     maintainers = super.lib.maintainers // {
-      dhess-qx = "Drew Hess <dhess-src@quixoftic.com>";
+      dhess-qx = "Drew Hess <src@drewhess.com>";
     };
 
 
