@@ -54,6 +54,7 @@ let
         netsniff-ng.x86_64-linux
         ntp.x86_64-linux
         pinpon.x86_64-linux
+        rspamd.x86_64-linux
         suricata.x86_64-linux
         trimpcap.x86_64-linux
         tsoff.x86_64-linux

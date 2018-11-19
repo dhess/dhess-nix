@@ -22,5 +22,6 @@ with super.lib;
   (import ./overlays/lib.nix)
   (import ./overlays/overrides.nix)
   (import ./overlays/patches.nix)
+  (import ./overlays/versions.nix)
 
 ]) self
