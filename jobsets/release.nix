@@ -46,6 +46,7 @@ let
       meta.description = "nixpkgs-quixoftic overlay packages (x86_64-linux)";
       meta.maintainer = lib.maintainers.dhess-qx;
       constituents = with jobs; [
+        debian-ppp.x86_64-linux
         hyperscan.x86_64-linux
         libnet_1_1.x86_64-linux
         libprelude.x86_64-linux
@@ -104,7 +105,7 @@ let
 in
 {
   inherit (jobs) x86_64-linux;
-  inherit (jobs) aarch64-linux;
+  #inherit (jobs) aarch64-linux;
 }
 // enumerateConstituents jobs.x86_64-linux
-// enumerateConstituents jobs.aarch64-linux
+#// enumerateConstituents jobs.aarch64-linux

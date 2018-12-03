@@ -11,6 +11,8 @@ in
 
   bb-org-overlays = callPackage ../pkgs/hardware/bb-org-overlays {};
 
+  debian-ppp = callPackage ../pkgs/networking/debian-ppp {};
+
   hyperscan = callPackage ../pkgs/development/libraries/hyperscan {};
 
   libnet_1_1 = callPackage ../pkgs/development/libraries/libnet/libnet-1.1.nix {};
