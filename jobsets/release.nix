@@ -105,7 +105,7 @@ let
 in
 {
   inherit (jobs) x86_64-linux;
-  inherit (jobs) aarch64-linux;
+  #inherit (jobs) aarch64-linux;
 }
 // enumerateConstituents jobs.x86_64-linux
-// enumerateConstituents jobs.aarch64-linux
+#// enumerateConstituents jobs.aarch64-linux
