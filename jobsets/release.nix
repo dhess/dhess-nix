@@ -59,6 +59,7 @@ let
         suricata.x86_64-linux
         trimpcap.x86_64-linux
         tsoff.x86_64-linux
+        unbound.x86_64-linux
         unbound-block-hosts.x86_64-linux
         wpa_supplicant.x86_64-linux
 
