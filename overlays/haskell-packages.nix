@@ -24,4 +24,5 @@ in
   pinpon = self.haskell.lib.justStaticExecutables (self.haskell.lib.dontCheck self.haskellPackages.pinpon);
 
   dhall-to-cabal = self.haskell.lib.justStaticExecutables hpDhallPackages.dhall-to-cabal;
+  dhall-nix = self.haskell.lib.justStaticExecutables super.haskell.packages.ghc844.dhall-nix;
 }

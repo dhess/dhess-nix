@@ -47,6 +47,7 @@ let
       meta.maintainer = lib.maintainers.dhess-qx;
       constituents = with jobs; [
         debian-ppp.x86_64-linux
+        dhall-nix.x86_64-linux
         dhall-to-cabal.x86_64-linux
         hyperscan.x86_64-linux
         libnet_1_1.x86_64-linux
