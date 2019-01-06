@@ -11,11 +11,10 @@ in
 with super.lib;
 
 (foldl' (flip extends) (_: super) [
-
+  (import localLib.fetchNixPkgsLibQuixoftic)
   (import localLib.fetchMellon)
   (import localLib.fetchPinPon)
   (import localLib.fetchHpio)
-
   (import ./overlays/custom-packages.nix)
   (import ./overlays/haskell-packages.nix)
   (import ./overlays/kernels.nix)
@@ -23,5 +22,4 @@ with super.lib;
   (import ./overlays/overrides.nix)
   (import ./overlays/patches.nix)
   (import ./overlays/versions.nix)
-
 ]) self
