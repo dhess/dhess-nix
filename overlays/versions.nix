@@ -6,5 +6,4 @@ let
 
 in
 {
-  rspamd = callPackage ../pkgs/email/rspamd {};
 }
