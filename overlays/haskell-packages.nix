@@ -14,6 +14,9 @@ let
 
   dhall-nix-packages = self.haskell.lib.properExtend super.haskell.packages.ghc844 (self: super:
     {
+      # Must be evaluated with ghc844, as it has different dependencies than ghc >= 8.6
+      aeson = doJailbreak (super.callPackage ../pkgs/haskell/aeson {});
+
       cereal = dontCheck super.cereal;
       Diff = dontCheck super.Diff;
     }
