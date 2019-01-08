@@ -46,6 +46,7 @@ let
       meta.description = "nixpkgs-quixoftic overlay packages (x86_64-linux)";
       meta.maintainer = lib.maintainers.dhess-qx;
       constituents = with jobs; [
+        darcs.x86_64-linux
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
         dhall-to-cabal.x86_64-linux

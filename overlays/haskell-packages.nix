@@ -5,6 +5,14 @@ let
   inherit (super) stdenv;
   inherit (self.haskell.lib) doJailbreak dontCheck;
 
+  darcs-packages = self.haskell.lib.properExtend super.haskell.packages.ghc844 (self: super:
+    {
+      darcs = doJailbreak (super.darcs.overrideAttrs (drv: {
+        meta.hydraPlatforms = stdenv.lib.platforms.all;
+      }));
+    }
+  );
+
   dhall-to-cabal-packages = self.haskell.lib.properExtend super.haskellPackages (self: super:
     {
       # dhall runs network tests.
@@ -45,4 +53,6 @@ in
 
   dhall-to-cabal = self.haskell.lib.justStaticExecutables dhall-to-cabal-packages.dhall-to-cabal;
   dhall-nix = self.haskell.lib.justStaticExecutables dhall-nix-packages.dhall-nix;
+
+  darcs = self.haskell.lib.justStaticExecutables darcs-packages.darcs;
 }
