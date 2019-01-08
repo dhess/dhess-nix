@@ -2,6 +2,7 @@ self: super:
 
 let
 
+  inherit (super) stdenv;
   inherit (self.haskell.lib) doJailbreak dontCheck;
 
   dhall-to-cabal-packages = self.haskell.lib.properExtend super.haskellPackages (self: super:
@@ -19,6 +20,9 @@ let
 
       cereal = dontCheck super.cereal;
       dhall = dontCheck (doJailbreak (super.callPackage ../pkgs/haskell/dhall/1.17.0.nix {}));
+      dhall-nix = super.dhall-nix.overrideAttrs (drv: {
+        meta.hydraPlatforms = stdenv.lib.platforms.all;
+      });
       Diff = dontCheck super.Diff;
       insert-ordered-containers = doJailbreak super.insert-ordered-containers;
       megaparsec = dontCheck (super.callPackage ../pkgs/haskell/megaparsec/6.5.0.nix {});
