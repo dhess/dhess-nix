@@ -50,8 +50,6 @@ let
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
         dhall-to-cabal.x86_64-linux
-        hyperscan.x86_64-linux
-        libnet_1_1.x86_64-linux
         libprelude.x86_64-linux
         mellon-gpio.x86_64-linux
         mellon-web.x86_64-linux
