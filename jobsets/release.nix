@@ -65,6 +65,9 @@ let
         wpa_supplicant.x86_64-linux
         xtensa-esp32-toolchain.x86_64-linux
 
+        haskell-env.x86_64-linux
+        extensive-haskell-env.x86_64-linux
+
         ## These aren't really part of the overlay (except possibly to
         ## enable Hydra builds on them), but we test them here anyway
         ## as we're the upstream.
