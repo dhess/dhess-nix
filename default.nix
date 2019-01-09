@@ -17,9 +17,7 @@ with super.lib;
   (import localLib.fetchHpio)
   (import ./overlays/custom-packages.nix)
   (import ./overlays/haskell-packages.nix)
-  (import ./overlays/kernels.nix)
   (import ./overlays/lib.nix)
   (import ./overlays/overrides.nix)
   (import ./overlays/patches.nix)
-  (import ./overlays/versions.nix)
 ]) self
