@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# TrimPCAP
+# TrimPCAP 1.1
 #
 # Trims capture files (PCAP and PCAP-NG) by truncating flows to a
 # desired max size
@@ -19,6 +19,13 @@
 #
 # On Debian/Ubuntu you can also do:
 # apt-get install python-dpkt python-repoze.lru
+#
+#
+# ==CHANGE LOG==
+# TrimPCAP 1.1
+# * Added a strategy to handle fragmented IP packets.
+#   Thanks to Mark Eldridge for notifying us about this bug!
+#
 
 import argparse
 import dpkt
@@ -27,7 +34,7 @@ import sys
 import os
 from repoze.lru import LRUCache
 
-__version__ = '1.0.1'
+__version__ = '1.1.1'
 
 
 def inet_to_str(ip_addr):
@@ -44,10 +51,12 @@ def get_fivetuple_from_ip(ip):
         proto = 0
         if ip is not None:
             proto = ip.p
-            if ip.p == dpkt.ip.IP_PROTO_TCP or ip.p == dpkt.ip.IP_PROTO_UDP:
+            if ip.offset == 0 and (ip.p == dpkt.ip.IP_PROTO_TCP or ip.p == dpkt.ip.IP_PROTO_UDP):
                 src += str(ip.data.sport)
                 dst += str(ip.data.dport)
     except dpkt.dpkt.NeedData:
+        pass
+    except AttributeError:
         pass
     if src < dst:
         return str(proto) + "_" + src + "-" + dst
