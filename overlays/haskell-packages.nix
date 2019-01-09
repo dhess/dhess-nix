@@ -73,7 +73,6 @@ let
     haxl-amazonka
     hnix
     hspec-webdriver
-    llvm-general
     parsec-free
     pipes-shell
     pipes-zlib
@@ -265,7 +264,6 @@ let
     linear
     linear-accelerate
     list-t
-    llvm-general
     llvm-hs-pure
     lucid
     Lykah
