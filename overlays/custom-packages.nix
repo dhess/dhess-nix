@@ -4,8 +4,6 @@ let
 
   inherit (super) callPackage;
 
-in
-{
   debian-ppp = callPackage ../pkgs/networking/debian-ppp {};
 
   libprelude = callPackage ../pkgs/development/libraries/libprelude {};
@@ -20,4 +18,13 @@ in
   trimpcap = callPackage ../pkgs/misc/trimpcap {};
 
   tsoff = callPackage ../pkgs/networking/tsoff {};
+
+in
+{
+  inherit debian-ppp;
+  inherit libprelude;
+  inherit unbound-block-hosts;
+  inherit suricata;
+  inherit trimpcap;
+  inherit tsoff;
 }
