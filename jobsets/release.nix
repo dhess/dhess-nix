@@ -88,8 +88,12 @@ let
         linux_latest.aarch64-linux
         mellon-gpio.aarch64-linux
         mellon-web.aarch64-linux
+        ntp.aarch64-linux
         pinpon.aarch64-linux
-        ubootJetsonTX2.aarch64-linux
+        unbound.aarch64-linux
+
+        haskell-env.aarch64-linux
+        extensive-haskell-env.aarch64-linux
 
         ## These aren't really part of the overlay (except possibly to
         ## enable Hydra builds on them), but we test them here anyway
@@ -111,7 +115,7 @@ let
 in
 {
   inherit (jobs) x86_64-linux;
-  #inherit (jobs) aarch64-linux;
+  inherit (jobs) aarch64-linux;
 }
 // enumerateConstituents jobs.x86_64-linux
-#// enumerateConstituents jobs.aarch64-linux
+// enumerateConstituents jobs.aarch64-linux
