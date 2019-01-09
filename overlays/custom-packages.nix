@@ -9,8 +9,6 @@ let
 in
 {
 
-  bb-org-overlays = callPackage ../pkgs/hardware/bb-org-overlays {};
-
   debian-ppp = callPackage ../pkgs/networking/debian-ppp {};
 
   hyperscan = callPackage ../pkgs/development/libraries/hyperscan {};
