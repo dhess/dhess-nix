@@ -93,7 +93,7 @@ let
         unbound.aarch64-linux
 
         haskell-env.aarch64-linux
-        extensive-haskell-env.aarch64-linux
+        #extensive-haskell-env.aarch64-linux
 
         ## These aren't really part of the overlay (except possibly to
         ## enable Hydra builds on them), but we test them here anyway
