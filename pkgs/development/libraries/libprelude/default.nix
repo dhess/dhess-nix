@@ -14,11 +14,11 @@
 
 stdenv.mkDerivation rec {
   name = "libprelude-${version}";
-  version = "4.1.0";
+  version = "5.0.0";
 
   src = fetchurl {
-    url = "https://www.prelude-siem.org/attachments/download/831/libprelude-4.1.0.tar.gz";
-    sha256 = "0bana4wq4n64i90pxjljksi34yvvja8pib86qq1nj4y45zp5pvi1";
+    url = "https://www.prelude-siem.org/attachments/download/1025/libprelude-5.0.0.tar.gz";
+    sha256 = "12n4ai46l88qgm9xrz8k23nkygk9nyrczy8jk8bmkq9jksjvr58g";
   };
 
   nativeBuildInputs = [
