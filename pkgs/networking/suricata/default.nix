@@ -20,6 +20,8 @@
 , libprelude
 , libyaml
 , luajit
+, lz4
+, lzma
 , nspr
 , nss
 , pcre
@@ -28,25 +30,26 @@
 , zlib
 , redisSupport ? false, redis ? null, hiredis ? null
 , rustSupport ? false, rustc ? null, cargo ? null
+, withHyperscan ? stdenv.hostPlatform.isx86_64
 }:
 
 assert redisSupport -> (redis != null) && (hiredis != null);
 assert rustSupport -> (rustc != null) && (cargo != null);
+assert withHyperscan -> stdenv.hostPlatform.isx86_64;
 
 let
 
   libmagic = file;
-  hyperscanSupport = stdenv.system == "x86_64-linux" || stdenv.system == "i686-linux";
 
 in
 stdenv.mkDerivation rec {
-  version = "4.0.3";
+  version = "4.1.2";
   name = "suricata-${version}";
 
   src = fetchurl {
     name = "${name}.tar.gz";
     url = "https://www.openinfosecfoundation.org/download/${name}.tar.gz";
-    sha256 = "0dz4w3dz65bzhq6k1iha0rmy7w0bywzaqjpvxbph02sw1fqvr841";
+    sha256 = "15paif7q8pq40k6rfjdxmkbncl9m9nmh6r9zlni4ik2h3825nmvk";
   };
 
   nativeBuildInputs = [
@@ -67,6 +70,8 @@ stdenv.mkDerivation rec {
     libpcap
     libprelude
     libyaml
+    lz4
+    lzma
     luajit
     nspr
     nss
@@ -74,7 +79,7 @@ stdenv.mkDerivation rec {
     python
     zlib
   ]
-  ++ lib.optional hyperscanSupport [ hyperscan ]
+  ++ lib.optional withHyperscan hyperscan
   ++ lib.optional redisSupport [ redis hiredis ]
   ++ lib.optional rustSupport [ rustc cargo ]
   ;
@@ -96,14 +101,12 @@ stdenv.mkDerivation rec {
     "--enable-rust"
     "--enable-rust-experimental"
     "--enable-unix-socket"
+    "--enable-lz4"
+    "--enable-lzma"
     "--localstatedir=/var"
     "--sysconfdir=/etc"
     "--with-libnet-includes=${libnet}/include"
     "--with-libnet-libraries=${libnet}/lib"
-  ]
-  ++ lib.optional hyperscanSupport [
-    "--with-libhs-includes=${hyperscan}/include"
-    "--with-libhs-libraries=${hyperscan}/lib"
   ]
   ++ lib.optional redisSupport [ "--enable-hiredis" ]
   ;
