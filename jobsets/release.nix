@@ -46,6 +46,7 @@ let
       meta.description = "nixpkgs-quixoftic overlay packages (x86_64-linux)";
       meta.maintainer = lib.maintainers.dhess-qx;
       constituents = with jobs; [
+        crosstool-ng-xtensa.x86_64-linux
         darcs.x86_64-linux
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
@@ -62,6 +63,7 @@ let
         unbound.x86_64-linux
         unbound-block-hosts.x86_64-linux
         wpa_supplicant.x86_64-linux
+        xtensa-esp32-toolchain.x86_64-linux
 
         ## These aren't really part of the overlay (except possibly to
         ## enable Hydra builds on them), but we test them here anyway

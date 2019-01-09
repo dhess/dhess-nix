@@ -19,12 +19,21 @@ let
 
   tsoff = callPackage ../pkgs/networking/tsoff {};
 
+  # ESP32 stuff. Note that these packages are outdated. I haven't had
+  # a chance to update them yet, but I want to keep them around in the
+  # meantime.
+  
+  crosstool-ng-xtensa = callPackage ../pkgs/esp32/crosstool-ng-xtensa {};
+  xtensa-esp32-toolchain = callPackage ../pkgs/esp32/xtensa-esp32-toolchain {};
+
 in
 {
+  inherit crosstool-ng-xtensa;
   inherit debian-ppp;
   inherit libprelude;
   inherit unbound-block-hosts;
   inherit suricata;
   inherit trimpcap;
   inherit tsoff;
+  inherit xtensa-esp32-toolchain;
 }
