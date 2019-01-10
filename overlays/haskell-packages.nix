@@ -34,6 +34,7 @@ let
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
     ivory = doJailbreak super.ivory;
+    katip-elasticsearch = dontCheck super.katip-elasticsearch;
     machines-process = doJailbreak super.machines-process;
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
@@ -43,6 +44,7 @@ let
     pipes-transduce = dontCheck super.pipes-transduce;
     servant-docs = doJailbreak super.servant-docs;
     streaming-utils = doJailbreak super.streaming-utils;
+    tdigest = doJailbreak super.tdigest;
     these = doJailbreak super.these;
     time-recurrence = doJailbreak super.time-recurrence;
     wires = doJailbreak super.wires;
