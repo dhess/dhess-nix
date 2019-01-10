@@ -19,10 +19,18 @@ let
     algebra = doJailbreak super.algebra;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
+
+    # Undo a patch applied by nixpkgs, now applied upstream.
     generic-lens = dontCheck (super.generic-lens.overrideAttrs (drv: {
       patches = [];
     }));
-    hakyll = doJailbreak super.hakyll;
+
+    # Use the latest from GitHub.
+    hakyll =
+    let
+      pkg = doJailbreak (super.callPackage ../pkgs/haskell/hakyll {});
+    in if stdenv.buildPlatform.isDarwin then dontCheck pkg else pkg;
+
     hoopl = doJailbreak super.hoopl;
     hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
