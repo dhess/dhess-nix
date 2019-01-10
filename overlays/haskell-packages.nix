@@ -24,9 +24,15 @@ let
     }));
     hakyll = doJailbreak super.hakyll;
     hoopl = doJailbreak super.hoopl;
+    hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
+    hw-excess = doJailbreak super.hw-excess;
+    hw-json = doJailbreak super.hw-json;
+    hw-json-lens = doJailbreak super.hw-json-lens;
     hw-prim = doJailbreak super.hw-prim;
+    hw-rankselect = doJailbreak super.hw-rankselect;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
+    insert-ordered-containers = doJailbreak super.insert-ordered-containers;
     ivory = doJailbreak super.ivory;
     machines-process = doJailbreak super.machines-process;
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
@@ -35,6 +41,7 @@ let
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
+    servant-docs = doJailbreak super.servant-docs;
     streaming-utils = doJailbreak super.streaming-utils;
     these = doJailbreak super.these;
     time-recurrence = doJailbreak super.time-recurrence;
@@ -247,7 +254,6 @@ let
     hakyll
     haxl
     haxl-amazonka
-    hpio
     hex
     hnix
     hoopl
