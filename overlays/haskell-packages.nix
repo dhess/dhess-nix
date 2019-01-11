@@ -25,7 +25,8 @@ let
       patches = [];
     }));
 
-    # Use the latest from GitHub.
+    # hakyll: use the latest from GitHub. Also fix a frustrating issue
+    # where jailbreaking doesn't work for some of its dependencies.
     hakyll =
     let
       pkg = doJailbreak (super.callPackage ../pkgs/haskell/hakyll {});
@@ -44,6 +45,7 @@ let
     ivory = doJailbreak super.ivory;
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
     machines-process = doJailbreak super.machines-process;
+    pandoc = doJailbreak (super.callPackage ../pkgs/haskell/pandoc/2.4.nix {});
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
