@@ -51,10 +51,12 @@ let
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
         dhall-to-cabal.x86_64-linux
+        hydra.x86_64-linux
         libprelude.x86_64-linux
         mellon-gpio.x86_64-linux
         mellon-web.x86_64-linux
         netsniff-ng.x86_64-linux
+        nix_2_1_3.x86_64-linux
         ntp.x86_64-linux
         pinpon.x86_64-linux
         suricata.x86_64-linux
