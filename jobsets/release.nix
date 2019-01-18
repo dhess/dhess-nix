@@ -6,7 +6,7 @@ let
 
 in
 
-{ supportedSystems ? [ "x86_64-linux" "aarch64-linux" ]
+{ supportedSystems ? [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" ]
 , scrubJobs ? true
 , nixpkgsArgs ? {
     config = { allowUnfree = false; inHydra = true; };
@@ -82,6 +82,33 @@ let
       ];
     };
 
+    x86_64-darwin = pkgs.releaseTools.aggregate {
+      name = "nixpkgs-quixoftic-x86_64-darwin";
+      meta.description = "nixpkgs-quixoftic overlay packages (x86_64-darwin)";
+      meta.maintainer = lib.maintainers.dhess-qx;
+      constituents = with jobs; [
+        crosstool-ng-xtensa.x86_64-darwin
+        darcs.x86_64-darwin
+        dhall-nix.x86_64-darwin
+        dhall-to-cabal.x86_64-darwin
+        unbound-block-hosts.x86_64-darwin
+        xtensa-esp32-toolchain.x86_64-darwin
+
+        haskell-env.x86_64-darwin
+        extensive-haskell-env.x86_64-darwin
+
+        ## These aren't really part of the overlay (except possibly to
+        ## enable Hydra builds on them), but we test them here anyway
+        ## as we're the upstream.
+        
+        haskellPackages.pinpon.x86_64-darwin
+        haskellPackages.hpio.x86_64-darwin
+        haskellPackages.mellon-core.x86_64-darwin
+        haskellPackages.mellon-gpio.x86_64-darwin
+        haskellPackages.mellon-web.x86_64-darwin
+      ];
+    };
+
     aarch64-linux = pkgs.releaseTools.aggregate {
       name = "nixpkgs-quixoftic-aarch64-linux";
       meta.description = "nixpkgs-quixoftic overlay packages (aarch64-linux)";
@@ -117,7 +144,9 @@ let
 in
 {
   inherit (jobs) x86_64-linux;
+  inherit (jobs) x86_64-darwin;
   inherit (jobs) aarch64-linux;
 }
 // enumerateConstituents jobs.x86_64-linux
+// enumerateConstituents jobs.x86_64-darwin
 // enumerateConstituents jobs.aarch64-linux

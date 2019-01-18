@@ -41,5 +41,6 @@ stdenv.mkDerivation rec {
     homepage = https://github.com/espressif/crosstool-NG;
     license = licenses.gpl2;
     maintainers = [ maintainers.dhess-qx ];
+    platforms = [ "x86_64-linux" "i686-linux" "x86_64-darwin" ];
   };
 }
