@@ -1,6 +1,7 @@
 { stdenv
 , lib
 , cacert
+, blacklist ? []
 , pkgs
 , extraCerts ? {}
 }:
