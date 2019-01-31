@@ -1,6 +1,6 @@
 {
-    "owner":  "quixoftic"
+    "owner":  "dhess"
 ,   "repo":   "nixpkgs-lib-quixoftic"
-,   "rev":    "6f84b84015aece8c407b265ce66580c3fbcdc6e7"
-,   "sha256": "0jrjjs5j3jw59025q46x3lfnbmdnhf4bl8f4l5sfg65sz7rnpj41"
+,   "rev":    "5c0260dd1f52987a5f48dcb7d64d0b46a99f26a5"
+,   "sha256": "1cxaii3vc324r270l9ha79snkfa9ynpbp9zfda7zbm7axf4zjyvg"
 }
