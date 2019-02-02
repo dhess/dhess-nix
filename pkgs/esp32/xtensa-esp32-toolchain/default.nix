@@ -46,7 +46,7 @@ stdenv.mkDerivation rec {
     description = "A versatile (cross) toolchain generator, with Xtensa support";
     homepage = https://github.com/espressif/crosstool-NG;
     license = licenses.gpl2;
-    maintainers = [ maintainers.dhess-qx ];
+    maintainers = [ maintainers.dhess-pers ];
     platforms = [ "x86_64-linux" "i686-linux" "x86_64-darwin" ];
   };
 }

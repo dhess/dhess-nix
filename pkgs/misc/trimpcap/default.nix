@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
     homepage = https://www.netresec.com/?page=TrimPCAP;
     description = "Trim pcap files";
     license = licenses.gpl2;
-    maintainers = maintainers.dhess-qx;
+    maintainers = maintainers.dhess-pers;
     platforms = platforms.all;
   };
 }

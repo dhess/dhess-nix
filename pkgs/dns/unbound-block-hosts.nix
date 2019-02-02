@@ -44,7 +44,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Convert Dan Pollock's ad blocking host file into Unbound local-data";
-    maintainers = maintainers.dhess-qx;
+    maintainers = maintainers.dhess-pers;
     license = licenses.gpl3;
     platforms = stdenv.lib.platforms.all;
   };

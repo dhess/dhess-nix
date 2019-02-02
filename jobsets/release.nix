@@ -44,7 +44,7 @@ let
     x86_64-linux = pkgs.releaseTools.aggregate {
       name = "nixpkgs-quixoftic-x86_64-linux";
       meta.description = "nixpkgs-quixoftic overlay packages (x86_64-linux)";
-      meta.maintainer = lib.maintainers.dhess-qx;
+      meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
         crosstool-ng-xtensa.x86_64-linux
         darcs.x86_64-linux
@@ -85,7 +85,7 @@ let
     x86_64-darwin = pkgs.releaseTools.aggregate {
       name = "nixpkgs-quixoftic-x86_64-darwin";
       meta.description = "nixpkgs-quixoftic overlay packages (x86_64-darwin)";
-      meta.maintainer = lib.maintainers.dhess-qx;
+      meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
         crosstool-ng-xtensa.x86_64-darwin
         darcs.x86_64-darwin
@@ -112,7 +112,7 @@ let
     aarch64-linux = pkgs.releaseTools.aggregate {
       name = "nixpkgs-quixoftic-aarch64-linux";
       meta.description = "nixpkgs-quixoftic overlay packages (aarch64-linux)";
-      meta.maintainer = lib.maintainers.dhess-qx;
+      meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
         linux_latest.aarch64-linux
         mellon-gpio.aarch64-linux

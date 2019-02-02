@@ -8,11 +8,6 @@ in
 {
   lib = (super.lib or {}) // {
 
-    maintainers = super.lib.maintainers // {
-      dhess-qx = "Drew Hess <src@drewhess.com>";
-    };
-
-
     # When called with an argument `extraCerts` whose value is a set
     # mapping strings containing human-friendly certificate authority
     # names to PEM-formatted public CA certificates, this function
@@ -32,8 +27,6 @@ in
     #
     # creates a `fetchgit` derivation that will accept certificates
     # created by the "Example CA Root Cert" given above.
-
     mkCacert = (callPackage ../pkgs/security/custom-cacert.nix);
-    
   };
 }
