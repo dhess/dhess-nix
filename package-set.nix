@@ -13,6 +13,8 @@ let
 in
 self //
 {
+  modules = self.lib.pathDirectory ./modules;
+
   # It doesn't make sense to separate the overlay into different
   # attributes, as they're all very much intertwined.
   overlays.all = import ./.;
