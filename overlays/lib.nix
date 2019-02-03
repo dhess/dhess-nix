@@ -28,5 +28,10 @@ in
     # creates a `fetchgit` derivation that will accept certificates
     # created by the "Example CA Root Cert" given above.
     mkCacert = (callPackage ../pkgs/security/custom-cacert.nix);
+
+    nixpkgs-quixoftic = (super.lib.nixpkgs-quixoftic or {}) // {
+      # Provide access to the whole package, if needed.
+      path = ../.;
+    };
   };
 }
