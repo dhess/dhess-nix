@@ -46,7 +46,7 @@ let
     emacs-nox-env = linux;
     emacs-macport-env = darwin;
     haskell-env = all;
-    extensive-haskell-env = all;
+    extensive-haskell-env = x86_64;
     pinpon = all;
     mellon-gpio = all;
     mellon-web = all;
