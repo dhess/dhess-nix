@@ -67,6 +67,7 @@ let
         wpa_supplicant.x86_64-linux
         xtensa-esp32-toolchain.x86_64-linux
 
+        emacs-nox-env.x86_64-linux
         haskell-env.x86_64-linux
         extensive-haskell-env.x86_64-linux
 
@@ -94,6 +95,7 @@ let
         unbound-block-hosts.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
 
+        emacs-macport-env.x86_64-darwin
         haskell-env.x86_64-darwin
         extensive-haskell-env.x86_64-darwin
 
@@ -121,6 +123,7 @@ let
         pinpon.aarch64-linux
         unbound.aarch64-linux
 
+        emacs-nox-env.x86_64-linux
         haskell-env.aarch64-linux
         #extensive-haskell-env.aarch64-linux
 

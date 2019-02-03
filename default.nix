@@ -16,6 +16,7 @@ with super.lib;
   (import localLib.fetchPinPon)
   (import localLib.fetchHpio)
   (import ./overlays/custom-packages.nix)
+  (import ./overlays/emacs.nix)
   (import ./overlays/haskell-packages.nix)
   (import ./overlays/lib.nix)
   (import ./overlays/overrides.nix)
