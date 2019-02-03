@@ -135,7 +135,7 @@ let
         ntp.aarch64-linux
         unbound.aarch64-linux
 
-        emacs-nox-env.x86_64-linux
+        emacs-nox-env.aarch64-linux
         haskell-env.aarch64-linux
         #extensive-haskell-env.aarch64-linux
 
