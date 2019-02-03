@@ -20,8 +20,46 @@ with import (fixedNixPkgs + "/pkgs/top-level/release-lib.nix") {
 
 let
 
-  jobs = {
+  x86_64 = [ "x86_64-linux" "x86_64-darwin" ];
+  x86_64_linux = [ "x86_64-linux" ];
+  linux = [ "x86_64-linux" "aarch64-linux" ];
 
+  jobs = (mapTestOn (rec {
+    crosstool-ng-xtensa = x86_64;
+    darcs = all;
+    debian-ppp = linux;
+    dhall-nix = all;
+    dhall-to-cabal = all;
+    hydra = x86_64_linux;
+    libprelude = x86_64_linux;
+    netsniff-ng = x86_64_linux;
+    nix_2_1_3 = all;
+    ntp = linux;
+    suricata = x86_64_linux;
+    trimpcap = linux;
+    tsoff = linux;
+    unbound = linux;
+    unbound-block-hosts = all;
+    wpa_supplicant = linux;
+    xtensa-esp32-toolchain = x86_64;
+    emacs-nox = linux;
+    emacs-nox-env = linux;
+    emacs-macport-env = darwin;
+    haskell-env = all;
+    extensive-haskell-env = all;
+    pinpon = all;
+    mellon-gpio = all;
+    mellon-web = all;
+
+    ## These aren't really part of the overlay, but we test them
+    ## here anyway as we're the upstream.
+
+    haskellPackages.pinpon = all;
+    haskellPackages.hpio = all;
+    haskellPackages.mellon-core = all;
+    haskellPackages.mellon-gpio = all;
+    haskellPackages.mellon-web = all;
+  })) // (rec {
     x86_64-linux = pkgs.releaseTools.aggregate {
       name = "nixpkgs-quixoftic-x86_64-linux";
       meta.description = "nixpkgs-quixoftic overlay packages (x86_64-linux)";
@@ -34,12 +72,9 @@ let
         dhall-to-cabal.x86_64-linux
         hydra.x86_64-linux
         libprelude.x86_64-linux
-        mellon-gpio.x86_64-linux
-        mellon-web.x86_64-linux
         netsniff-ng.x86_64-linux
         nix_2_1_3.x86_64-linux
         ntp.x86_64-linux
-        pinpon.x86_64-linux
         suricata.x86_64-linux
         trimpcap.x86_64-linux
         tsoff.x86_64-linux
@@ -97,11 +132,7 @@ let
       meta.description = "nixpkgs-quixoftic overlay packages (aarch64-linux)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
-        linux_latest.aarch64-linux
-        mellon-gpio.aarch64-linux
-        mellon-web.aarch64-linux
         ntp.aarch64-linux
-        pinpon.aarch64-linux
         unbound.aarch64-linux
 
         emacs-nox-env.x86_64-linux
@@ -119,15 +150,7 @@ let
         haskellPackages.mellon-web.aarch64-linux
       ];
     };
-
-  } // (mapTestOn ((packagePlatforms pkgs) // rec {
-    haskell.compiler = packagePlatforms pkgs.haskell.compiler;
-    haskellPackages = packagePlatforms pkgs.haskellPackages;
-  }));
+  });
 
 in
-{
-  inherit (jobs) x86_64-linux;
-  inherit (jobs) x86_64-darwin;
-  inherit (jobs) aarch64-linux;
-}
+jobs
