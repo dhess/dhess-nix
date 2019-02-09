@@ -30,10 +30,8 @@ let
     debian-ppp = linux;
     dhall-nix = all;
     dhall-to-cabal = all;
-    hydra = x86_64_linux;
     libprelude = x86_64_linux;
     netsniff-ng = x86_64_linux;
-    nix_2_1_3 = all;
     ntp = linux;
     suricata = x86_64_linux;
     trimpcap = linux;
@@ -70,10 +68,8 @@ let
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
         dhall-to-cabal.x86_64-linux
-        hydra.x86_64-linux
         libprelude.x86_64-linux
         netsniff-ng.x86_64-linux
-        nix_2_1_3.x86_64-linux
         ntp.x86_64-linux
         suricata.x86_64-linux
         trimpcap.x86_64-linux
