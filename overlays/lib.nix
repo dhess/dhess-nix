@@ -29,7 +29,7 @@ in
     # created by the "Example CA Root Cert" given above.
     mkCacert = (callPackage ../pkgs/security/custom-cacert.nix);
 
-    nixpkgs-quixoftic = (super.lib.nixpkgs-quixoftic or {}) // {
+    dhess-nix = (super.lib.dhess-nix or {}) // {
       # Provide access to the whole package, if needed.
       path = ../.;
     };

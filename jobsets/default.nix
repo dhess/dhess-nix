@@ -7,7 +7,7 @@
 
 let
 
-  nixpkgsQuixofticUri = "https://github.com/dhess/nixpkgs-quixoftic.git";
+  dhessNixUri = "https://github.com/dhess/dhess-nix.git";
 
   mkFetchGithub = value: {
     inherit value;
@@ -28,28 +28,28 @@ let
     enableemail = false;
     emailoverride = "";
     nixexprpath = "jobsets/release.nix";
-    nixexprinput = "nixpkgsQuixoftic";
+    nixexprinput = "dhessNix";
     description = "A useful Nixpkgs overlay";
     inputs = {
-      nixpkgsQuixoftic = mkFetchGithub "${nixpkgsQuixofticUri} master";
+      dhessNix = mkFetchGithub "${dhessNixUri} master";
     };
   };
 
   # Build against a nixpkgs-channels repo. This can run fairly often
   # as the channels don't update so much.
-  mkNixpkgsChannels = nixpkgsQuixofticBranch: nixpkgsRev: {
+  mkNixpkgsChannels = dhessNixBranch: nixpkgsRev: {
     inputs = {
-      nixpkgsQuixoftic = mkFetchGithub "${nixpkgsQuixofticUri} ${nixpkgsQuixofticBranch}";
+      dhessNix = mkFetchGithub "${dhessNixUri} ${dhessNixBranch}";
       nixpkgs_override = mkFetchGithub "https://github.com/NixOS/nixpkgs-channels.git ${nixpkgsRev}";
     };
   };
 
   # Build against the nixpkgs repo. Runs less often due to nixpkgs'
   # velocity.
-  mkNixpkgs = nixpkgsQuixofticBranch: nixpkgsRev: {
+  mkNixpkgs = dhessNixBranch: nixpkgsRev: {
     checkinterval = 60 * 60 * 12;
     inputs = {
-      nixpkgsQuixoftic = mkFetchGithub "${nixpkgsQuixofticUri} ${nixpkgsQuixofticBranch}";
+      dhessNix = mkFetchGithub "${dhessNixUri} ${dhessNixBranch}";
       nixpkgs_override = mkFetchGithub "https://github.com/NixOS/nixpkgs.git ${nixpkgsRev}";
     };
   };
@@ -57,10 +57,10 @@ let
   # Sometimes, during active development, I want to use my fork of
   # nixpkgs. By default, these run as often as the main jobset but
   # with a higher share.
-  mkNixpkgsFork = nixpkgsQuixofticBranch: nixpkgsRev: {
+  mkNixpkgsFork = dhessNixBranch: nixpkgsRev: {
     schedulingshares = 400;
     inputs = {
-      nixpkgsQuixoftic = mkFetchGithub "${nixpkgsQuixofticUri} ${nixpkgsQuixofticBranch}";
+      dhessNix = mkFetchGithub "${dhessNixUri} ${dhessNixBranch}";
       nixpkgs_override = mkFetchGithub "https://github.com/dhess/nixpkgs.git ${nixpkgsRev}";
     };
   };

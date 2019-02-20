@@ -1,7 +1,7 @@
 {
     "enabled": 1,
     "hidden": false,
-    "description": "nixpkgs-quixoftic jobsets",
+    "description": "dhess-nix jobsets",
     "nixexprinput": "src",
     "nixexprpath": "jobsets/default.nix",
     "checkinterval": 60,
@@ -10,7 +10,7 @@
     "emailoverride": "",
     "keepnr": 5,
     "inputs": {
-         "src": { "type": "git", "value": "https://github.com/dhess/nixpkgs-quixoftic.git master", "emailresponsible": false }
+         "src": { "type": "git", "value": "https://github.com/dhess/dhess-nix.git master", "emailresponsible": false }
          ,"nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs-channels.git nixos-unstable", "emailresponsible": false }
      }
 }

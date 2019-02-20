@@ -59,8 +59,8 @@ let
     haskellPackages.mellon-web = all;
   })) // (rec {
     x86_64-linux = pkgs.releaseTools.aggregate {
-      name = "nixpkgs-quixoftic-x86_64-linux";
-      meta.description = "nixpkgs-quixoftic overlay packages (x86_64-linux)";
+      name = "dhess-nix-x86_64-linux";
+      meta.description = "dhess-nix overlay packages (x86_64-linux)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
         crosstool-ng-xtensa.x86_64-linux
@@ -96,8 +96,8 @@ let
     };
 
     x86_64-darwin = pkgs.releaseTools.aggregate {
-      name = "nixpkgs-quixoftic-x86_64-darwin";
-      meta.description = "nixpkgs-quixoftic overlay packages (x86_64-darwin)";
+      name = "dhess-nix-x86_64-darwin";
+      meta.description = "dhess-nix overlay packages (x86_64-darwin)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
         crosstool-ng-xtensa.x86_64-darwin
@@ -124,8 +124,8 @@ let
     };
 
     aarch64-linux = pkgs.releaseTools.aggregate {
-      name = "nixpkgs-quixoftic-aarch64-linux";
-      meta.description = "nixpkgs-quixoftic overlay packages (aarch64-linux)";
+      name = "dhess-nix-aarch64-linux";
+      meta.description = "dhess-nix overlay packages (aarch64-linux)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
         ntp.aarch64-linux
