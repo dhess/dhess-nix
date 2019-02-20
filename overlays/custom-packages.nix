@@ -11,6 +11,10 @@ let
   unbound-block-hosts = callPackage ../pkgs/dns/unbound-block-hosts.nix {};
 
   suricata = callPackage ../pkgs/networking/suricata {
+    # not strictly necessary for the overlay, but needed for building
+    # this for the NUR package set.
+    inherit libprelude;
+
     redisSupport = true;
     rustSupport = true;
   };

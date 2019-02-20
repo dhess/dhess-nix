@@ -15,7 +15,33 @@ let
 
 in
 {
+  inherit (self) crosstool-ng-xtensa;
+  inherit (self) debian-ppp;
+  inherit (self) darcs;
+  inherit (self) dhall-nix dhall-to-cabal;
+  inherit (self) libprelude;
+  inherit (self) mellon-gpio mellon-web;
+  inherit (self) ntp;
+  inherit (self) pinpon;
+  inherit (self) unbound;
   inherit (self) unbound-block-hosts;
+  inherit (self) suricata;
+  inherit (self) trimpcap;
+  inherit (self) tsoff;
+  inherit (self) wpa_supplicant;
+  inherit (self) xtensa-esp32-toolchain;
+
+  inherit (self) emacs-nox emacsNoXPackagesNg;
+  inherit (self) emacs-nox-env emacs-macport-env;
+  inherit (self) emacsMacportPackagesNg;
+
+  inherit (self) haskellPackages;
+  inherit (self) coreHaskellPackages;
+  inherit (self) extensiveHaskellPackages;
+  inherit (self) mkHaskellBuildEnv;
+  inherit (self) haskell-env;
+  inherit (self) extensive-haskell-env;
+
   inherit (self) lib;
 
   overlays.all = overlays;
