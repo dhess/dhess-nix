@@ -29,13 +29,14 @@ let
     pinpon.overlays.pinpon
     mellon.overlays.mellon
     hpio.overlays.hpio
-    (import ../overlays/custom-packages.nix)
-    (import ../overlays/emacs.nix)
-    (import ../overlays/haskell-packages.nix)
-    (import ../overlays/lib.nix)
-    (import ../overlays/overrides.nix)
-    (import ../overlays/patches.nix)
-  ];
+  ] ++ (map import [
+    ../overlays/custom-packages.nix
+    ../overlays/emacs.nix
+    ../overlays/haskell-packages.nix
+    ../overlays/lib.nix
+    ../overlays/overrides.nix
+    ../overlays/patches.nix
+  ]);
 
 in lib //
 {
