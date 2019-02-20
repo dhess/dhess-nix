@@ -2,7 +2,6 @@ let
 
   lib = import ./lib;
   defaultPkgs = lib.nixpkgs {};
-  localOverlays = lib.overlays;
 
 in
 
@@ -10,13 +9,15 @@ in
 
 let
 
-  self = lib.customisation.composeOverlays localOverlays pkgs;
+  overlays = self: super:
+    lib.customisation.composeOverlays lib.overlays super;
+  self = lib.customisation.composeOverlays (lib.singleton overlays) pkgs;
 
 in
 {
   inherit (self) unbound-block-hosts;
   inherit (self) lib;
 
-  overlays.all = localOverlays;
+  overlays.all = overlays;
   modules = self.lib.sources.pathDirectory ./modules;
 }

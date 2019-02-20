@@ -10,7 +10,7 @@ in
 , scrubJobs ? true
 , nixpkgsArgs ? {
     config = { allowUnfree = false; inHydra = true; };
-    overlays = localPkgs.overlays.all;
+    overlays = lib.singleton localPkgs.overlays.all;
   }
 }:
 

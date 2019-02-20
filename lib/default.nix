@@ -29,7 +29,12 @@ let
     pinpon.overlays.pinpon
     mellon.overlays.mellon
     hpio.overlays.hpio
-    (import ../overlays)
+    (import ../overlays/custom-packages.nix)
+    (import ../overlays/emacs.nix)
+    (import ../overlays/haskell-packages.nix)
+    (import ../overlays/lib.nix)
+    (import ../overlays/overrides.nix)
+    (import ../overlays/patches.nix)
   ];
 
 in lib //
