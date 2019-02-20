@@ -5,8 +5,8 @@ let
   emacs-nox = pkgs.emacs26-nox;
 
   # Note: these use Melpa packages.
-  emacsMacportPackagesNg = pkgs.lib.emacs.melpaPackagesNgFor pkgs.emacsMacport;
-  emacsNoXPackagesNg = pkgs.lib.emacs.melpaPackagesNgFor emacs-nox;
+  emacsMacportPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacsMacport;
+  emacsNoXPackagesNg = pkgs.melpaPackagesNgFor emacs-nox;
 
 
   ## Collections of Emacs packages that I find useful.

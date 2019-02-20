@@ -3,13 +3,11 @@ self: super:
 let
 
   inherit (super) callPackage;
-  lib = import ../lib.nix;
-  fixedNixPkgs = lib.fetchNixPkgs;
 
 in
 {
   # Use OpenSSL 1.1 in unbound so that it can resolve DNS over TLS names.
-  unbound = callPackage (fixedNixPkgs + "/pkgs/tools/networking/unbound") {
+  unbound = callPackage (super.path + "/pkgs/tools/networking/unbound") {
     openssl = super.openssl_1_1;
   };
 

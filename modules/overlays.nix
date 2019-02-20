@@ -2,7 +2,9 @@
 
 let
 
+  localLib = import ../lib;
+
 in
 {
-  nixpkgs.overlays = import ../.;
+  nixpkgs.overlays = localLib.overlays;
 }

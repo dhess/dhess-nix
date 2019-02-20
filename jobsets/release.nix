@@ -1,8 +1,8 @@
 let
 
-  lib = import ../lib.nix;
-  fixedNixPkgs = lib.fetchNixPkgs;
-  packageSet = (import fixedNixPkgs);
+  lib = import ../lib;
+  inherit (lib) fixedNixpkgs;
+  localPkgs = (import ../.) {};
 
 in
 
@@ -10,12 +10,12 @@ in
 , scrubJobs ? true
 , nixpkgsArgs ? {
     config = { allowUnfree = false; inHydra = true; };
-    overlays = [ (import ../.) ];
+    overlays = localPkgs.overlays.all;
   }
 }:
 
-with import (fixedNixPkgs + "/pkgs/top-level/release-lib.nix") {
-  inherit supportedSystems scrubJobs nixpkgsArgs packageSet;
+with import (fixedNixpkgs + "/pkgs/top-level/release-lib.nix") {
+  inherit supportedSystems scrubJobs nixpkgsArgs;
 };
 
 let
