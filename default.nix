@@ -19,6 +19,8 @@ in
   inherit (self) debian-ppp;
   inherit (self) darcs;
   inherit (self) dhall-nix dhall-to-cabal;
+  inherit (self) dhess-ssh-keygen;
+  inherit (self) fm-assistant;
   inherit (self) libprelude;
   inherit (self) mellon-gpio mellon-web;
   inherit (self) ntp;

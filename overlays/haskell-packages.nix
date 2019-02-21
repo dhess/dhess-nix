@@ -19,6 +19,8 @@ let
     algebra = doJailbreak super.algebra;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
+    dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
+    fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
     hoopl = doJailbreak super.hoopl;
     hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
@@ -394,6 +396,10 @@ in
   dhall-nix = exeOnly dhall-nix-packages.dhall-nix;
 
   dhall-to-cabal = exeOnly dhall-to-cabal-packages.dhall-to-cabal;
+
+  dhess-ssh-keygen = exeOnly self.haskellPackages.dhess-ssh-keygen;
+
+  fm-assistant = exeOnly self.haskellPackages.fm-assistant;
 
   mellon-gpio = exeOnly self.haskellPackages.mellon-gpio;
 

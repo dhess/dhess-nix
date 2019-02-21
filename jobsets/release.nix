@@ -9,7 +9,7 @@ in
 { supportedSystems ? [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" ]
 , scrubJobs ? true
 , nixpkgsArgs ? {
-    config = { allowUnfree = false; inHydra = true; };
+    config = { allowUnfree = true; inHydra = true; };
     overlays = lib.singleton localPkgs.overlays.all;
   }
 }:
@@ -30,6 +30,8 @@ let
     debian-ppp = linux;
     dhall-nix = all;
     dhall-to-cabal = all;
+    dhess-ssh-keygen = all;
+    fm-assistant = darwin;
     libprelude = x86_64_linux;
     netsniff-ng = x86_64_linux;
     ntp = linux;
@@ -40,11 +42,14 @@ let
     unbound-block-hosts = all;
     wpa_supplicant = linux;
     xtensa-esp32-toolchain = x86_64;
+
     emacs-nox = linux;
     emacs-nox-env = linux;
     emacs-macport-env = darwin;
+
     haskell-env = all;
     extensive-haskell-env = x86_64;
+
     pinpon = all;
     mellon-gpio = all;
     mellon-web = all;
@@ -68,6 +73,7 @@ let
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
         dhall-to-cabal.x86_64-linux
+        dhess-ssh-keygen.x86_64-linux
         libprelude.x86_64-linux
         netsniff-ng.x86_64-linux
         ntp.x86_64-linux
@@ -104,6 +110,8 @@ let
         darcs.x86_64-darwin
         dhall-nix.x86_64-darwin
         dhall-to-cabal.x86_64-darwin
+        dhess-ssh-keygen.x86_64-darwin
+        fm-assistant.x86_64-darwin
         unbound-block-hosts.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
 
