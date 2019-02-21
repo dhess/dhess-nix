@@ -337,7 +337,7 @@ let
         meta.hydraPlatforms = stdenv.lib.platforms.all;
       });
 
-      megaparsec = dontCheck (super.callPackage ../pkgs/haskell/megaparsec/6.5.0.nix {});
+      megaparsec = dontCheck super.megaparsec_6_5_0;
 
       neat-interpolation = super.callPackage ../pkgs/haskell/neat-interpolation/0.3.2.2.nix {};
 
