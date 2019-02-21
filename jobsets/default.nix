@@ -54,14 +54,13 @@ let
     };
   };
 
-  # Sometimes, during active development, I want to use my fork of
-  # nixpkgs. By default, these run as often as the main jobset but
-  # with a higher share.
-  mkNixpkgsFork = dhessNixBranch: nixpkgsRev: {
+  # Sometimes, during active development, I want to use a "staging"
+  # branch to test ugprades. By default, these run as often as the
+  # main jobset but with a higher share.
+  mkStaging = dhessNixBranch: {
     schedulingshares = 400;
     inputs = {
       dhessNix = mkFetchGithub "${dhessNixUri} ${dhessNixBranch}";
-      nixpkgs_override = mkFetchGithub "https://github.com/dhess/nixpkgs.git ${nixpkgsRev}";
     };
   };
 
@@ -70,6 +69,7 @@ let
     nixos-unstable = mkNixpkgsChannels "master" "nixos-unstable";
     nixpkgs-unstable = mkNixpkgsChannels "master" "nixpkgs-unstable";
     nixpkgs = mkNixpkgs "master" "master";
+    staging = mkStaging "20190221";
   });
 
   jobsetsAttrs = mainJobsets;
