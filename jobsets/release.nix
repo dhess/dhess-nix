@@ -50,6 +50,11 @@ let
     haskell-env = all;
     extensive-haskell-env = x86_64;
 
+    mactools-env = darwin;
+    nixtools-env = all;
+    opsec-env = all;
+    shell-env = darwin;
+
     pinpon = all;
     mellon-gpio = all;
     mellon-web = all;
@@ -89,6 +94,9 @@ let
         haskell-env.x86_64-linux
         extensive-haskell-env.x86_64-linux
 
+        nixtools-env.x86_64-linux
+        opsec-env.x86_64-linux
+
         ## These aren't really part of the overlay (except possibly to
         ## enable Hydra builds on them), but we test them here anyway
         ## as we're the upstream.
@@ -118,6 +126,11 @@ let
         emacs-macport-env.x86_64-darwin
         haskell-env.x86_64-darwin
         extensive-haskell-env.x86_64-darwin
+
+        mactools-env.x86_64-darwin
+        nixtools-env.x86_64-darwin
+        opsec-env.x86_64-darwin
+        shell-env.x86_64-darwin
 
         ## These aren't really part of the overlay (except possibly to
         ## enable Hydra builds on them), but we test them here anyway

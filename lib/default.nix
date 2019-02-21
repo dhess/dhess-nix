@@ -36,6 +36,7 @@ let
     ../overlays/lib.nix
     ../overlays/overrides.nix
     ../overlays/patches.nix
+    ../overlays/build-envs.nix
   ]);
 
 in lib //

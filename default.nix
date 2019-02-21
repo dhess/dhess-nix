@@ -1,7 +1,7 @@
 let
 
   lib = import ./lib;
-  defaultPkgs = lib.nixpkgs {};
+  defaultPkgs = lib.nixpkgs { config = { allowUnfree = true; }; };
 
 in
 
@@ -43,6 +43,13 @@ in
   inherit (self) mkHaskellBuildEnv;
   inherit (self) haskell-env;
   inherit (self) extensive-haskell-env;
+
+  # Various buildEnv's that I use, usually only on macOS (though many
+  # of them should work on any pltform).
+  inherit (self) mactools-env;
+  inherit (self) nixtools-env;
+  inherit (self) opsec-env;
+  inherit (self) shell-env;
 
   inherit (self) lib;
 
