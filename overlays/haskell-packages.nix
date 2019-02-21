@@ -19,19 +19,6 @@ let
     algebra = doJailbreak super.algebra;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
-
-    # Undo a patch applied by nixpkgs, now applied upstream.
-    generic-lens = dontCheck (super.generic-lens.overrideAttrs (drv: {
-      patches = [];
-    }));
-
-    # hakyll: use the latest from GitHub. Also fix a frustrating issue
-    # where jailbreaking doesn't work for some of its dependencies.
-    hakyll =
-    let
-      pkg = doJailbreak (super.callPackage ../pkgs/haskell/hakyll {});
-    in if stdenv.buildPlatform.isDarwin then dontCheck pkg else pkg;
-
     hoopl = doJailbreak super.hoopl;
     hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
@@ -48,7 +35,6 @@ let
     });
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
     machines-process = doJailbreak super.machines-process;
-    pandoc = doJailbreak (super.callPackage ../pkgs/haskell/pandoc/2.4.nix {});
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
