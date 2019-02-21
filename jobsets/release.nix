@@ -35,6 +35,7 @@ let
     libprelude = x86_64_linux;
     netsniff-ng = x86_64_linux;
     ntp = linux;
+    ppp-devel = linux;
     suricata = x86_64_linux;
     trimpcap = linux;
     tsoff = linux;
@@ -82,6 +83,7 @@ let
         libprelude.x86_64-linux
         netsniff-ng.x86_64-linux
         ntp.x86_64-linux
+        ppp-devel.x86_64-linux
         suricata.x86_64-linux
         trimpcap.x86_64-linux
         tsoff.x86_64-linux

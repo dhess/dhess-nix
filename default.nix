@@ -25,6 +25,7 @@ in
   inherit (self) mellon-gpio mellon-web;
   inherit (self) ntp;
   inherit (self) pinpon;
+  inherit (self) ppp-devel;
   inherit (self) unbound;
   inherit (self) unbound-block-hosts;
   inherit (self) suricata;

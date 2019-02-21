@@ -8,6 +8,8 @@ let
 
   libprelude = callPackage ../pkgs/development/libraries/libprelude {};
 
+  ppp-devel = callPackage ../pkgs/networking/ppp-devel {};
+
   unbound-block-hosts = callPackage ../pkgs/dns/unbound-block-hosts.nix {};
 
   suricata = callPackage ../pkgs/networking/suricata {
@@ -35,6 +37,7 @@ in
   inherit crosstool-ng-xtensa;
   inherit debian-ppp;
   inherit libprelude;
+  inherit ppp-devel;
   inherit unbound-block-hosts;
   inherit suricata;
   inherit trimpcap;
