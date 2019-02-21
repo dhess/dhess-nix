@@ -70,9 +70,6 @@ let
     nixos-unstable = mkNixpkgsChannels "master" "nixos-unstable";
     nixpkgs-unstable = mkNixpkgsChannels "master" "nixpkgs-unstable";
     nixpkgs = mkNixpkgs "master" "master";
-    staging-nixpkgs = mkNixpkgs "staging-20190221.1" "master";
-    staging-nixos-unstable = mkNixpkgsChannels "staging-20190221.1" "nixos-unstable";
-    staging-nixpkgs-unstable = mkNixpkgsChannels "staging-20190221.1" "nixpkgs-unstable";
   });
 
   jobsetsAttrs = mainJobsets;
