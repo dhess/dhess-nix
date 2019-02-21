@@ -43,6 +43,9 @@ let
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
     ivory = doJailbreak super.ivory;
+    katip = super.katip_0_8_0_0.overrideAttrs (drv: {
+      meta.hydraPlatforms = stdenv.lib.platforms.all;
+    });
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
     machines-process = doJailbreak super.machines-process;
     pandoc = doJailbreak (super.callPackage ../pkgs/haskell/pandoc/2.4.nix {});
