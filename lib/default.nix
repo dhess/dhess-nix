@@ -34,6 +34,7 @@ let
     ../overlays/emacs.nix
     ../overlays/haskell-packages.nix
     ../overlays/lib/dhess-lib.nix
+    ../overlays/lib/types.nix
     ../overlays/overrides.nix
     ../overlays/patches.nix
     ../overlays/build-envs.nix
