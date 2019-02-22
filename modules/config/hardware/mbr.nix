@@ -6,20 +6,20 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.mbr;
-  uefi_enabled = config.quixops.hardware.uefi.enable;
+  cfg = config.dhess-nix.hardware.mbr;
+  uefi_enabled = config.dhess-nix.hardware.uefi.enable;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.mbr = {
+  options.dhess-nix.hardware.mbr = {
     enable = mkEnableOption "Enable GRUB for MBR-based boot.";
   };
 
   config = mkIf enabled {
     assertions = [
       { assertion = ! uefi_enabled;
-        message = "Both 'quixops.hardware.mbr' and 'quixops.hardware.uefi' cannot be enabled";
+        message = "Both 'dhess-nix.hardware.mbr' and 'dhess-nix.hardware.uefi' cannot be enabled";
       }
     ];
 

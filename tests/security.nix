@@ -39,7 +39,7 @@ let
 in
 {
 
-  test1 = makeSecurityTest "global-enable" { quixops.defaults.enable = true; };
-  test2 = makeSecurityTest "security-enable" { quixops.defaults.security.enable = true; };
+  test1 = makeSecurityTest "global-enable" { dhess-nix.defaults.enable = true; };
+  test2 = makeSecurityTest "security-enable" { dhess-nix.defaults.security.enable = true; };
 
 }

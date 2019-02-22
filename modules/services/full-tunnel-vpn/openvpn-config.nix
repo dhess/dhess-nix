@@ -5,7 +5,7 @@ with lib;
 let
 
   stateDirFun = name: "/var/lib/openvpn/${name}";
-  keys = config.quixops.keychain.keys;
+  keys = config.dhess-nix.keychain.keys;
 
   certKeyName = name: "openvpn-${name}-cert-key";
   tlsAuthKeyName = name: "openvpn-${name}-tls-auth-key";
@@ -67,10 +67,10 @@ let
 in
 mkIf (instances != {}) {
 
-  quixops.assertions.moduleHashes."services/networking/openvpn.nix" =
+  dhess-nix.assertions.moduleHashes."services/networking/openvpn.nix" =
     "ddc549a7f879306b31d88f2af1aba79da33d2d8f6f8e4a4c37af0d138e005403";
 
-  quixops.keychain.keys = listToAttrs (filter (x: x.value != null) (
+  dhess-nix.keychain.keys = listToAttrs (filter (x: x.value != null) (
     (mapAttrsToList
       (_: serverCfg: nameValuePair (certKeyName serverCfg.name) ({
         user = "openvpn";

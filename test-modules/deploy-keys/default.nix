@@ -20,7 +20,7 @@ with lib;
 let
 
   cfg = config.deployment;
-  keychain = config.quixops.keychain;
+  keychain = config.dhess-nix.keychain;
   enabled = cfg.reallyReallyEnable;
 
   deployKeys =
@@ -62,7 +62,7 @@ in
         Equivalent to NixOps's <option>deployment.keys</option>,
         except that enabling this test deployment mechanism will
         automatically copy the keys from
-        <option>quixops.keychain.keys</option>, whereas with actual
+        <option>dhess-nix.keychain.keys</option>, whereas with actual
         NixOps, you must do this bit yourself.
 
         Note: this option is invisible and read-only. It should not be
@@ -76,7 +76,7 @@ in
   config = mkIf enabled {
 
     warnings = [(
-      "NOTE: The Quixops faux NixOps secret deployment system has been " +
+      "NOTE: The dhess-nix faux NixOps secret deployment system has been " +
       "enabled. This system is inteded for use ONLY IN TESTING. This " +
       "system WILL copy secrets to the Nix store. Do NOT use this system " +
       "in production!"

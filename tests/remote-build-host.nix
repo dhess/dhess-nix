@@ -29,7 +29,7 @@ let
           nixpkgs.localSystem.system = system;
           imports = [
           ] ++ pkgs.lib.dhess-nix.modules;
-          quixops.remote-build-host = {
+          dhess-nix.remote-build-host = {
             enable = true;
             user.sshPublicKeyFiles = pkgs.lib.singleton remoteBuilderPublicKey;
           };

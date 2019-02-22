@@ -6,12 +6,12 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.jetson-tk1;
+  cfg = config.dhess-nix.hardware.jetson-tk1;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.jetson-tk1 = {
+  options.dhess-nix.hardware.jetson-tk1 = {
     enable = mkEnableOption "Enable NVIDIA Jetson TK1-specific hardware configuration.";
   };
 

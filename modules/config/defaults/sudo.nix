@@ -6,13 +6,13 @@ with lib;
 
 let
 
-  cfg = config.quixops.defaults.sudo;
+  cfg = config.dhess-nix.defaults.sudo;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.defaults.sudo = {
-    enable = mkEnableOption "Enable the Quixops sudo configuration defaults.";
+  options.dhess-nix.defaults.sudo = {
+    enable = mkEnableOption "Enable the dhess-nix sudo configuration defaults.";
   };
 
   config = mkIf enabled {

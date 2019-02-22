@@ -199,7 +199,7 @@ in {
     # Track changes in upstream service, in case we need to reproduce
     # them here.
 
-    quixops.assertions.moduleHashes."services/networking/unbound.nix" =
+    dhess-nix.assertions.moduleHashes."services/networking/unbound.nix" =
       "28324ab792c2eea96bce39599b49c3de29f678029342dc57ffcac186eee22f7b";
 
     environment.systemPackages = [ pkgs.unbound ];

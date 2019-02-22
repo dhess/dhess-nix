@@ -8,12 +8,12 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.supermicro.sys-5018d-mtln4f;
+  cfg = config.dhess-nix.hardware.supermicro.sys-5018d-mtln4f;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.supermicro.sys-5018d-mtln4f = {
+  options.dhess-nix.hardware.supermicro.sys-5018d-mtln4f = {
     enable = mkEnableOption ''
       Enable Supermicro 5018D-MTLN4F hardware configuration.
 

@@ -52,7 +52,7 @@ let
 in
 {
 
-  test1 = makeEnvTest "global-enable" { quixops.defaults.enable = true; };
-  test2 = makeEnvTest "env-enable" { quixops.defaults.environment.enable = true; };
+  test1 = makeEnvTest "global-enable" { dhess-nix.defaults.enable = true; };
+  test2 = makeEnvTest "env-enable" { dhess-nix.defaults.environment.enable = true; };
 
 }

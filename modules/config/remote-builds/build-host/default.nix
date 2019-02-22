@@ -2,7 +2,7 @@
 
 let
 
-  cfg = config.quixops.build-host;
+  cfg = config.dhess-nix.build-host;
   enabled = cfg.enable;
 
   extraMachinesPath = "nix/extra-machines";
@@ -17,7 +17,7 @@ let
       let
         keyname = sshKeyName host sshUserName;
       in
-        config.quixops.keychain.keys.${keyname}.path;
+        config.dhess-nix.keychain.keys.${keyname}.path;
     }
   ) remoteBuildHosts;
 
@@ -43,7 +43,7 @@ let
 in
 {
 
-  options.quixops.build-host = {
+  options.dhess-nix.build-host = {
     enable = lib.mkEnableOption ''
       This host is a build host, i.e., a machine from which Nixpkgs
       builds can be performed using remote builders.
@@ -144,7 +144,7 @@ in
 
     assertions = [
       {  assertion = cfg.buildMachines != {};
-         message = "`quixops.build-host` is enabled, but `quixops.build-host.buildMachines` is empty";
+         message = "`dhess-nix.build-host` is enabled, but `dhess-nix.build-host.buildMachines` is empty";
       }
     ];
 
@@ -153,7 +153,7 @@ in
 
     programs.ssh.knownHosts = (knownHosts cfg.buildMachines) ++ (knownHosts cfg.extraBuildMachines);
 
-    quixops.keychain.keys =
+    dhess-nix.keychain.keys =
       (genKeys cfg.buildMachines) // (genKeys cfg.extraBuildMachines);
 
 

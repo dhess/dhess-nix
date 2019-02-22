@@ -11,7 +11,7 @@ let
   enabled = cfg.enable;
   stateDir = "/var/lib/pinpon";
 
-  key = config.quixops.keychain.keys.aws-pinpon;
+  key = config.dhess-nix.keychain.keys.aws-pinpon;
 
   pinponScript = cfg:
   ''
@@ -97,7 +97,7 @@ in {
 
   config = mkIf enabled {
 
-    quixops.keychain.keys.aws-pinpon = {
+    dhess-nix.keychain.keys.aws-pinpon = {
       user = "pinpon";
       group = "pinpon";
       destDir = stateDir;

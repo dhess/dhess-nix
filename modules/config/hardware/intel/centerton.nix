@@ -7,17 +7,17 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.intel.centerton;
+  cfg = config.dhess-nix.hardware.intel.centerton;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.intel.centerton = {
+  options.dhess-nix.hardware.intel.centerton = {
     enable = mkEnableOption "Enable Intel Centerton hardware configuration.";
   };
 
   config = mkIf enabled {
-    quixops.hardware.intel.common.enable = true;
+    dhess-nix.hardware.intel.common.enable = true;
     boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
   };
 }

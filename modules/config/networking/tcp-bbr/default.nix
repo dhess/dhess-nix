@@ -6,12 +6,12 @@ with lib;
 
 let
 
-  cfg = config.quixops.networking.tcp-bbr;
+  cfg = config.dhess-nix.networking.tcp-bbr;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.networking.tcp-bbr = {
+  options.dhess-nix.networking.tcp-bbr = {
     enable = mkEnableOption "Enable TCP BBR congestion control.";
   };
 

@@ -53,7 +53,7 @@ let
 in
 {
 
-  globalEnableTest = makeUsersTest "global-enable" { quixops.defaults.enable = true; };
-  usersEnableTest = makeUsersTest "users-enable" { quixops.defaults.users.enable = true; };
+  globalEnableTest = makeUsersTest "global-enable" { dhess-nix.defaults.enable = true; };
+  usersEnableTest = makeUsersTest "users-enable" { dhess-nix.defaults.users.enable = true; };
 
 }

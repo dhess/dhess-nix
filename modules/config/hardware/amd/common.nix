@@ -6,20 +6,20 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.amd.common;
+  cfg = config.dhess-nix.hardware.amd.common;
   enabled = cfg.enable;
-  intelEnabled = config.quixops.hardware.intel.common.enable;
+  intelEnabled = config.dhess-nix.hardware.intel.common.enable;
 
 in
 {
-  options.quixops.hardware.amd.common = {
+  options.dhess-nix.hardware.amd.common = {
     enable = mkEnableOption "Enable AMD hardware configuration common to modern AMD platforms.";
   };
 
   config = mkIf enabled {
     assertions = [
       { assertion = ! intelEnabled;
-        message = "Both `quixops.hardware.amd.common` and `quixops.hardware.intel.common` cannot be enabled";
+        message = "Both `dhess-nix.hardware.amd.common` and `dhess-nix.hardware.intel.common` cannot be enabled";
       }
     ];
 

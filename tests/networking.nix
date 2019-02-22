@@ -44,7 +44,7 @@ let
 in
 {
 
-  test1 = makeNetworkingTest "global-enable" { quixops.defaults.enable = true; };
-  test2 = makeNetworkingTest "networking-enable" { quixops.defaults.networking.enable = true; };
+  test1 = makeNetworkingTest "global-enable" { dhess-nix.defaults.enable = true; };
+  test2 = makeNetworkingTest "networking-enable" { dhess-nix.defaults.networking.enable = true; };
 
 }

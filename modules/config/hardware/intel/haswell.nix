@@ -6,17 +6,17 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.intel.haswell;
+  cfg = config.dhess-nix.hardware.intel.haswell;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.intel.haswell = {
+  options.dhess-nix.hardware.intel.haswell = {
     enable = mkEnableOption "Enable Intel Haswell hardware configuration.";
   };
 
   config = mkIf enabled {
-    quixops.hardware.intel.common.enable = true;
+    dhess-nix.hardware.intel.common.enable = true;
     boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   };
 }

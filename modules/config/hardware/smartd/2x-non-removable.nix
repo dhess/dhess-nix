@@ -4,13 +4,13 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.smartd-2x-non-removable;
+  cfg = config.dhess-nix.hardware.smartd-2x-non-removable;
   enabled = cfg.enable;
   commonConfig = import ./common.nix { inherit config lib pkgs; };
 
 in
 {
-  options.quixops.hardware.smartd-2x-non-removable = {
+  options.dhess-nix.hardware.smartd-2x-non-removable = {
     enable = mkEnableOption ''
       Enable <literal>smartd</literal> for 2 non-removable drives.
 

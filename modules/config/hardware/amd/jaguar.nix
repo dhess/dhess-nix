@@ -6,17 +6,17 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.amd.jaguar;
+  cfg = config.dhess-nix.hardware.amd.jaguar;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.amd.jaguar = {
+  options.dhess-nix.hardware.amd.jaguar = {
     enable = mkEnableOption "Enable AMD Jaguar (G-series) hardware configuration.";
   };
 
   config = mkIf enabled {
-    quixops.hardware.amd.common.enable = true;
+    dhess-nix.hardware.amd.common.enable = true;
     boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "ehci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
   };
 }

@@ -4,9 +4,9 @@ with lib;
 
 let
   gcfg = config.services.tarsnapper;
-  keychain = config.quixops.keychain.keys;
+  keychain = config.dhess-nix.keychain.keys;
 
-  key = config.quixops.keychain.keys.tarsnap-key;
+  key = config.dhess-nix.keychain.keys.tarsnap-key;
 
   cacheDir = "/var/cache/tarsnap/tarsnapper";
 
@@ -118,7 +118,7 @@ in
 
   config = mkIf gcfg.enable {
 
-    quixops.keychain.keys.tarsnap-key = {
+    dhess-nix.keychain.keys.tarsnap-key = {
       destDir = cacheDir;
       text = gcfg.keyLiteral;
     };

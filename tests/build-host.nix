@@ -108,7 +108,7 @@ let
         # Use the test key deployment system.
         deployment.reallyReallyEnable = true;
 
-        quixops.build-host = {
+        dhess-nix.build-host = {
           enable = true;
           buildMachines = remoteBuildHosts;
         };
@@ -161,7 +161,7 @@ let
         # Use the test key deployment system.
         deployment.reallyReallyEnable = true;
 
-        quixops.build-host = {
+        dhess-nix.build-host = {
           enable = true;
           buildMachines = remoteBuildHosts;
           extraBuildMachines = extraRemoteBuildHosts;

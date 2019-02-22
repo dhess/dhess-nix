@@ -2,13 +2,13 @@
 
 let
 
-  cfg = config.quixops.auto-gc;
+  cfg = config.dhess-nix.auto-gc;
   enabled = cfg.enable;
 
 in
 {
 
-  options.quixops.auto-gc = {
+  options.dhess-nix.auto-gc = {
     enable = lib.mkEnableOption ''
       Enable automatic Nix store garbage colleciton. This is useful on
       remote build hosts.

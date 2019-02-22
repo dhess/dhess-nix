@@ -100,7 +100,7 @@ let
         "${row.keyName}    ${row.domain}:${row.selector}:${row.keyFile}")
       (mapAttrsToList (name: row:
         let
-          keyFile = config.quixops.keychain.keys."${keyFileName name}".path;
+          keyFile = config.dhess-nix.keychain.keys."${keyFileName name}".path;
         in
           row // { inherit keyFile; })
         cfg.keyTable)
@@ -258,7 +258,7 @@ in
 
   config = mkIf cfg.enable {
 
-    # quixops.assertions.moduleHashes."services/mail/opendkim.nix" =
+    # dhess-nix.assertions.moduleHashes."services/mail/opendkim.nix" =
     #   "0f20f660b11caa365813f287a0dc1ddfc6410a2d9c5184d6787c1764d0ed20aa";
 
     assertions = [
@@ -281,7 +281,7 @@ in
 
     environment.systemPackages = [ pkgs.opendkim ];
 
-    quixops.keychain.keys = mapAttrs' (name: row: nameValuePair (keyFileName name) {
+    dhess-nix.keychain.keys = mapAttrs' (name: row: nameValuePair (keyFileName name) {
       destDir = keyDir;
       text = row.privateKeyLiteral;
       user = cfg.user;

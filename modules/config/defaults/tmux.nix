@@ -4,13 +4,13 @@ with lib;
 
 let
 
-  cfg = config.quixops.defaults.tmux;
+  cfg = config.dhess-nix.defaults.tmux;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.defaults.tmux = {
-    enable = mkEnableOption "Enable the Quixops tmux configuration defaults.";
+  options.dhess-nix.defaults.tmux = {
+    enable = mkEnableOption "Enable the dhess-nix tmux configuration defaults.";
   };
 
   config = mkIf enabled {

@@ -7,12 +7,12 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.hwutils;
+  cfg = config.dhess-nix.hardware.hwutils;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.hwutils = {
+  options.dhess-nix.hardware.hwutils = {
     enable = mkEnableOption ''
       If enabled, install on the host some packages that are useful
       for managing physical hardware.

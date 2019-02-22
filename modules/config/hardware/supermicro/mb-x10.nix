@@ -6,12 +6,12 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.supermicro.mb-x10;
+  cfg = config.dhess-nix.hardware.supermicro.mb-x10;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.supermicro.mb-x10 = {
+  options.dhess-nix.hardware.supermicro.mb-x10 = {
     enable = mkEnableOption ''
       Enable Supermicro X10 motherboard configuration.
 

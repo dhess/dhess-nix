@@ -18,7 +18,7 @@ let
   cfg = config.services.postfix-null-client;
   enabled = cfg.enable;
 
-  key = config.quixops.keychain.keys.postfix-null-client-cert;
+  key = config.dhess-nix.keychain.keys.postfix-null-client-cert;
 
   user = config.services.postfix.user;
   group = config.services.postfix.group;
@@ -108,10 +108,10 @@ in
 
   config = mkIf enabled {
 
-    quixops.assertions.moduleHashes."services/mail/postfix.nix" =
+    dhess-nix.assertions.moduleHashes."services/mail/postfix.nix" =
       "f5fed80f255562040e51210d116f31b2b77241464ed7f09fe5c46c4e81b05681";
 
-    quixops.keychain.keys.postfix-null-client-cert = {
+    dhess-nix.keychain.keys.postfix-null-client-cert = {
       inherit user group;
       destDir = "${cfg.stateDir}/keys";
       text = cfg.smtpTlsKeyLiteral;

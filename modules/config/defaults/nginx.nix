@@ -4,16 +4,16 @@ with lib;
 
 let
 
-  cfg = config.quixops.defaults.nginx;
+  cfg = config.dhess-nix.defaults.nginx;
   enabled = cfg.enable;
   nginx_enabled = config.services.nginx.enable;
 
 in
 {
-  options.quixops.defaults.nginx = {
+  options.dhess-nix.defaults.nginx = {
 
     enable = mkEnableOption ''
-      Enable the Quixops nginx configuration defaults. These include
+      Enable the dhess-nix nginx configuration defaults. These include
       NixOS-recommended compression, proxy, and optimization settings.
       It also enables the Mozilla-recommended "modern" SSL
       configuration for Nginx. In addition, nginx's server tokens are

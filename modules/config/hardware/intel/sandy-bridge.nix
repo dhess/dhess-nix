@@ -6,17 +6,17 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.intel.sandy-bridge;
+  cfg = config.dhess-nix.hardware.intel.sandy-bridge;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.intel.sandy-bridge = {
+  options.dhess-nix.hardware.intel.sandy-bridge = {
     enable = mkEnableOption "Enable Intel Sandy Bridge hardware configuration.";
   };
 
   config = mkIf enabled {
-    quixops.hardware.intel.common.enable = true;
+    dhess-nix.hardware.intel.common.enable = true;
     boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   };
 }

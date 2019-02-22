@@ -4,13 +4,13 @@ with lib;
 
 let
 
-  cfg = config.quixops.defaults.ssh;
+  cfg = config.dhess-nix.defaults.ssh;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.defaults.ssh = {
-    enable = mkEnableOption "Enable the Quixops SSH configuration defaults.";
+  options.dhess-nix.defaults.ssh = {
+    enable = mkEnableOption "Enable the dhess-nix SSH configuration defaults.";
   };
 
   config = mkIf enabled {

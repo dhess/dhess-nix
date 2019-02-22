@@ -4,13 +4,13 @@ with lib;
 
 let
 
-  cfg = config.quixops.defaults.networking;
+  cfg = config.dhess-nix.defaults.networking;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.defaults.networking = {
-    enable = mkEnableOption "Enable the Quixops networking configuration defaults.";
+  options.dhess-nix.defaults.networking = {
+    enable = mkEnableOption "Enable the dhess-nix networking configuration defaults.";
   };
 
   config = mkIf enabled {

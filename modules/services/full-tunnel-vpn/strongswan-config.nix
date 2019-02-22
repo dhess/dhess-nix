@@ -17,10 +17,10 @@ let
 in
 mkIf cfg.enable {
 
-  quixops.assertions.moduleHashes."services/networking/strongswan.nix" =
+  dhess-nix.assertions.moduleHashes."services/networking/strongswan.nix" =
         "4dbdea221ac2f5ab469e9d8c7f7cf0c6ce5dcf837504c05e69de5e3b727fef6c";
 
-  quixops.keychain.keys.strongswan-cert-key = {
+  dhess-nix.keychain.keys.strongswan-cert-key = {
     destDir = "/var/lib/strongswan";
     text = cfg.certKeyLiteral;
   };

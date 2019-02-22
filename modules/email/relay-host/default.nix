@@ -22,7 +22,7 @@ let
   cfg = config.services.postfix-relay-host;
   enabled = cfg.enable;
 
-  key = config.quixops.keychain.keys.postfix-relay-host-cert;
+  key = config.dhess-nix.keychain.keys.postfix-relay-host-cert;
 
   # NOTE - must be the same as upstream.
   stateDir = "/var/lib/postfix/data";
@@ -199,10 +199,10 @@ in
 
   config = mkIf enabled {
 
-    quixops.assertions.moduleHashes."services/mail/postfix.nix" =
+    dhess-nix.assertions.moduleHashes."services/mail/postfix.nix" =
       "f5fed80f255562040e51210d116f31b2b77241464ed7f09fe5c46c4e81b05681";
 
-    quixops.keychain.keys.postfix-relay-host-cert = {
+    dhess-nix.keychain.keys.postfix-relay-host-cert = {
       inherit user group;
       destDir = "${stateDir}/keys";
       text = cfg.smtpTlsKeyLiteral;

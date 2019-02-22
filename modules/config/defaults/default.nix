@@ -4,16 +4,16 @@ with lib;
 
 let
 
-  cfg = config.quixops.defaults;
+  cfg = config.dhess-nix.defaults;
   enabled = cfg.enable;
 
 in
 {
 
-  options.quixops.defaults = {
+  options.dhess-nix.defaults = {
     enable = mkEnableOption
     ''
-      Enable all of the QuixOps configuration defaults.
+      Enable all of the dhess-nix configuration defaults.
 
       These defaults will configure a NixOS server according to the
       good security practice. Note that some of the defaults may not
@@ -23,7 +23,7 @@ in
 
   config = mkIf enabled {
 
-    quixops.defaults = {
+    dhess-nix.defaults = {
 
       environment.enable = true;
       networking.enable = true;

@@ -6,12 +6,12 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.intel.common;
+  cfg = config.dhess-nix.hardware.intel.common;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.intel.common = {
+  options.dhess-nix.hardware.intel.common = {
     enable = mkEnableOption "Enable Intel hardware configuration common to modern Intel platforms.";
   };
 

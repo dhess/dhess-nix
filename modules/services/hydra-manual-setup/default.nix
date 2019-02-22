@@ -4,8 +4,8 @@ with lib;
 
 let
 
-  deployed-pw = config.quixops.keychain.keys.hydra-manual-setup-initial-pw.path;
-  deployed-bckey = config.quixops.keychain.keys.hydra-manual-setup-bckey.path;
+  deployed-pw = config.dhess-nix.keychain.keys.hydra-manual-setup-initial-pw.path;
+  deployed-bckey = config.dhess-nix.keychain.keys.hydra-manual-setup-bckey.path;
   cfg = config.services.hydra-manual-setup;
 
 in
@@ -144,7 +144,7 @@ in
 
   config = mkIf (cfg.enable && config.services.hydra.enable) {
 
-    quixops.keychain.keys = {
+    dhess-nix.keychain.keys = {
       hydra-manual-setup-initial-pw = {
         text = cfg.adminUser.initialPasswordLiteral;
       };

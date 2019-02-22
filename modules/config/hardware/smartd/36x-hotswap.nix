@@ -4,13 +4,13 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.smartd-36x-hotswap;
+  cfg = config.dhess-nix.hardware.smartd-36x-hotswap;
   enabled = cfg.enable;
   commonConfig = import ./common.nix { inherit config lib pkgs; };
 
 in
 {
-  options.quixops.hardware.smartd-36x-hotswap = {
+  options.dhess-nix.hardware.smartd-36x-hotswap = {
     enable = mkEnableOption ''
       Enable <literal>smartd</literal> for a system with up to 36
       hot-swap bays, e.g., for a Supermicro 847A-series 4U rackmount

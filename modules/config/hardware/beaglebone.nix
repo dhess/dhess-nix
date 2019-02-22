@@ -7,12 +7,12 @@ with lib;
 let
 
   localLib = import ../../../lib.nix;
-  cfg = config.quixops.hardware.beaglebone;
+  cfg = config.dhess-nix.hardware.beaglebone;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.hardware.beaglebone = {
+  options.dhess-nix.hardware.beaglebone = {
     enable = mkEnableOption "Enable BeagleBone-specific hardware configuration.";
   };
 

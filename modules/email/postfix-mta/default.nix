@@ -45,7 +45,7 @@ let
   acmeCertPublic = "${acmeCertDir}/fullchain.pem";
   acmeCertPrivate = "${acmeCertDir}/key.pem";
 
-  submissionKeyFile = config.quixops.keychain.keys."sasl-tls-key".path;
+  submissionKeyFile = config.dhess-nix.keychain.keys."sasl-tls-key".path;
 
 in
 {
@@ -555,12 +555,12 @@ in
 
   config = mkIf enabled {
 
-    quixops.assertions.moduleHashes."services/mail/postfix.nix" =
+    dhess-nix.assertions.moduleHashes."services/mail/postfix.nix" =
       "f5fed80f255562040e51210d116f31b2b77241464ed7f09fe5c46c4e81b05681";
-    quixops.assertions.moduleHashes."security/acme.nix" =
+    dhess-nix.assertions.moduleHashes."security/acme.nix" =
       "d87bf3fddbdcd3c42f5ba8d543c6b1680d3797fad8403d4c073af6cdb5278997";
 
-    quixops.keychain.keys."sasl-tls-key" = {
+    dhess-nix.keychain.keys."sasl-tls-key" = {
       destDir = "/var/lib/postfix/keys";
       text = cfg.submission.smtpd.tlsKeyLiteral;
       user = config.services.postfix.user;

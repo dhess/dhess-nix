@@ -37,7 +37,7 @@
 
 let
   inherit (lib) types mkOption;
-  cfg = config.quixops.assertions;
+  cfg = config.dhess-nix.assertions;
 
   mkAssertion = path: expectedHash: let
     contents = builtins.readFile "${toString modulesPath}/${toString path}";
@@ -57,7 +57,7 @@ let
   };
 
 in {
-  options.quixops.assertions.moduleHashes = mkOption {
+  options.dhess-nix.assertions.moduleHashes = mkOption {
     type = types.attrsOf hashType;
     default = {};
     example."services/mail/opendkim.nix" =

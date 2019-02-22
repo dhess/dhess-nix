@@ -124,7 +124,7 @@ let
 in
 {
 
-  test1 = makeSudoTest "global-enable" { quixops.defaults.enable = true; };
-  test2 = makeSudoTest "sudo-enable" { quixops.defaults.sudo.enable = true; };
+  test1 = makeSudoTest "global-enable" { dhess-nix.defaults.enable = true; };
+  test2 = makeSudoTest "sudo-enable" { dhess-nix.defaults.sudo.enable = true; };
 
 }

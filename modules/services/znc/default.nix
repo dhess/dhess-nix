@@ -12,7 +12,7 @@ with lib;
 let
   cfg = config.services.qx-znc;
 
-  deployed-config = config.quixops.keychain.keys.znc-config.path;
+  deployed-config = config.dhess-nix.keychain.keys.znc-config.path;
 
   defaultUser = "znc"; # Default user to own process.
 
@@ -406,10 +406,10 @@ in
 
   config = mkIf cfg.enable {
 
-    quixops.assertions.moduleHashes."services/networking/znc/default.nix" =
+    dhess-nix.assertions.moduleHashes."services/networking/znc/default.nix" =
       "dda5dd0b30393aba8be2b21fe48dcb0bf2733dbf28e93deb376e67258d6c42c7";
 
-    quixops.keychain.keys.znc-config = {
+    dhess-nix.keychain.keys.znc-config = {
       text = cfg.configLiteral;
     };
 

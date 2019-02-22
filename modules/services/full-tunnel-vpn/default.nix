@@ -19,12 +19,12 @@ let
   strongswanCfg = import ./strongswan-config.nix {
     inherit pkgs lib;
     cfg = globalCfg.strongswan;
-    keys = config.quixops.keychain.keys;
+    keys = config.dhess-nix.keychain.keys;
   };
   wireguardCfg = import ./wireguard-config.nix {
     inherit pkgs lib;
     cfg = globalCfg.wireguard;
-    keys = config.quixops.keychain.keys;
+    keys = config.dhess-nix.keychain.keys;
   };
 
 in

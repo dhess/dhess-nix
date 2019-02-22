@@ -21,7 +21,7 @@ makeTest {
       nixpkgs.localSystem.system = system;
       imports = pkgs.lib.dhess-nix.modules;
 
-      quixops.services.fail2ban = {
+      dhess-nix.services.fail2ban = {
         whitelist = [ "192.168.0.0/24" "10.0.0.1" "2001:db8::/64" "2001:db8:1::1" ];
         bantime = 933;
         findtime = 377;

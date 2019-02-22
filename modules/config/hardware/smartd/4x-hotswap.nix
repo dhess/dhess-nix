@@ -4,13 +4,13 @@ with lib;
 
 let
 
-  cfg = config.quixops.hardware.smartd-4x-hotswap;
+  cfg = config.dhess-nix.hardware.smartd-4x-hotswap;
   enabled = cfg.enable;
   commonConfig = import ./common.nix { inherit config lib pkgs; };
 
 in
 {
-  options.quixops.hardware.smartd-4x-hotswap = {
+  options.dhess-nix.hardware.smartd-4x-hotswap = {
     enable = mkEnableOption ''
       Enable <literal>smartd</literal> for a system with 4 hot-swap
       bays, e.g., for a typical Supermicro 1U rackmount server.

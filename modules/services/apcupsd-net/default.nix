@@ -5,7 +5,7 @@
 ## apcupsd module, but that module has the drawback that the
 ## PowerChute Network Shutdown credentials (basically just a plaintext
 ## password) will be written to the Nix store. This module prevents
-## that from happening by using the QuixOps keychain to deploy the
+## that from happening by using the dhess-nix keychain to deploy the
 ## configuration containing the secret to the host.
 ##
 ## Another drawback of the NixOS apcupsd module is that it configures
@@ -27,7 +27,7 @@ let
   keyName = "apcupsd-net";
   stateDir = "/var/lib/apcupsd-net";
 
-  configFile = config.quixops.keychain.keys."${keyName}";
+  configFile = config.dhess-nix.keychain.keys."${keyName}";
 
   configText = ''
     ## apcupsd.conf v1.1 ##
@@ -226,10 +226,10 @@ in
     ];
 
     # Keep track of changes in the upstream module.
-    quixops.assertions.moduleHashes."services/monitoring/apcupsd.nix" =
+    dhess-nix.assertions.moduleHashes."services/monitoring/apcupsd.nix" =
       "e4897f6051c92066b2cb7db54ed7f74fc4cd232b22abc780488f63acd49f1b01";
 
-    quixops.keychain.keys."${keyName}" = {
+    dhess-nix.keychain.keys."${keyName}" = {
       destDir = stateDir;
       text = configText;
     };

@@ -148,7 +148,7 @@ let
 in rec
 {
 
-  globalEnableTest = makeSshTest "global-enable" { quixops.defaults.enable = true; };
-  sshEnableTest = makeSshTest "ssh-enable" { quixops.defaults.ssh.enable = true; };
+  globalEnableTest = makeSshTest "global-enable" { dhess-nix.defaults.enable = true; };
+  sshEnableTest = makeSshTest "ssh-enable" { dhess-nix.defaults.ssh.enable = true; };
 
 }

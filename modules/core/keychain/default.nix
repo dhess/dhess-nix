@@ -4,11 +4,11 @@ with lib;
 
 let
 
-  cfg = config.quixops.keychain;
+  cfg = config.dhess-nix.keychain;
 
 in
 {
-  options.quixops.keychain = {
+  options.dhess-nix.keychain = {
     keys = mkOption {
       default = {};
       example = { secret-key.text = "passw0rd"; };

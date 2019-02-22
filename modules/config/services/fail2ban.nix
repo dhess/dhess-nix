@@ -4,7 +4,7 @@ with lib;
 
 let
 
-  cfg = config.quixops.services.fail2ban;
+  cfg = config.dhess-nix.services.fail2ban;
   fail2ban-enabled = config.services.fail2ban.enable;
 
   ignoreip = concatStringsSep " " ([ "127.0.0.0/8" "::1/128" ] ++ cfg.whitelist);
@@ -18,7 +18,7 @@ let
 
 in
 {
-  options.quixops.services.fail2ban = {
+  options.dhess-nix.services.fail2ban = {
 
     whitelist = mkOption {
       type = types.listOf (types.either pkgs.lib.types.ipv4 pkgs.lib.types.ipv6);
@@ -71,7 +71,7 @@ in
 
   config = mkIf fail2ban-enabled {
 
-    quixops.assertions.moduleHashes."services/security/fail2ban.nix" =
+    dhess-nix.assertions.moduleHashes."services/security/fail2ban.nix" =
       "7f20f660b11caa365813f287a0dc1ddfc6410a2d9c5184d6787c1764d0ed20aa";
 
     services.fail2ban.jails.DEFAULT = mkForce ''

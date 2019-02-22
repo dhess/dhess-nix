@@ -16,7 +16,7 @@ in makeTest rec {
   machine = { config, ... }: {
     nixpkgs.localSystem.system = system;
     imports = pkgs.lib.dhess-nix.modules;
-    quixops.hardware.hwutils.enable = true;
+    dhess-nix.hardware.hwutils.enable = true;
   };
 
   testScript = { nodes, ... }:

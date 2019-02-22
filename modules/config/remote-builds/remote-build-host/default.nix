@@ -2,13 +2,13 @@
 
 let
 
-  cfg = config.quixops.remote-build-host;
+  cfg = config.dhess-nix.remote-build-host;
   enabled = cfg.enable;
 
 in
 {
 
-  options.quixops.remote-build-host = {
+  options.dhess-nix.remote-build-host = {
     enable = lib.mkEnableOption ''
       This host is a remote builder, i.e., a machine that performs
       Nix builds for other hosts.
@@ -62,11 +62,11 @@ in
 
     assertions = [
       { assertion = cfg.user.sshPublicKeyFiles != [ ] || cfg.user.sshPublicKeys != [ ];
-        message = "Either `quixops.remote-build-host.sshPublicKeyFiles` or `quixops.remote-build-host.sshPublicKeys` must be non-empty";
+        message = "Either `dhess-nix.remote-build-host.sshPublicKeyFiles` or `dhess-nix.remote-build-host.sshPublicKeys` must be non-empty";
       }
     ];
 
-    quixops.defaults.ssh.enable = true;
+    dhess-nix.defaults.ssh.enable = true;
 
     nix.trustedUsers = [ cfg.user.name ];
 

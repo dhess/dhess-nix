@@ -4,13 +4,13 @@ with lib;
 
 let
 
-  cfg = config.quixops.defaults.security;
+  cfg = config.dhess-nix.defaults.security;
   enabled = cfg.enable;
 
 in
 {
-  options.quixops.defaults.security = {
-    enable = mkEnableOption "Enable the Quixops security configuration defaults.";
+  options.dhess-nix.defaults.security = {
+    enable = mkEnableOption "Enable the dhess-nix security configuration defaults.";
   };
 
   config = mkIf enabled {

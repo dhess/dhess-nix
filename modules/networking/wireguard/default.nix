@@ -12,7 +12,7 @@ with lib;
 let
 
   cfg = config.networking.wireguard;
-  keys = config.quixops.keychain.keys;
+  keys = config.dhess-nix.keychain.keys;
 
   kernel = config.boot.kernelPackages;
 
@@ -196,7 +196,7 @@ in
 
   config = mkIf (cfg.interfaces != {}) {
 
-    quixops.assertions.moduleHashes."services/networking/wireguard.nix" =
+    dhess-nix.assertions.moduleHashes."services/networking/wireguard.nix" =
       "7ee71ebb08976efceb1d4452fb3babdc3a007e9fa6f21057ee79ab1b1ff70e43";
 
     boot.extraModulePackages = [ kernel.wireguard ];
@@ -204,7 +204,7 @@ in
 
     systemd.services = (mapAttrs' generateUnit cfg.interfaces);
 
-    quixops.keychain.keys = listToAttrs (filter (x: x.value != null) (
+    dhess-nix.keychain.keys = listToAttrs (filter (x: x.value != null) (
       (mapAttrsToList
         (ifname: values: nameValuePair (keyName ifname) ({
           destDir = stateDir;

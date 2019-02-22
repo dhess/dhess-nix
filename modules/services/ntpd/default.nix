@@ -109,7 +109,7 @@ in
 
   config = mkIf config.services.ntp.enable {
 
-    quixops.assertions.moduleHashes."services/networking/ntpd.nix" =
+    dhess-nix.assertions.moduleHashes."services/networking/ntpd.nix" =
       "800a4a18c31007f9d99fd07176f4b2b46f790a1bec74471bb1500a685c2125c6";
 
     # Make tools such as ntpq available in the system path.

@@ -40,7 +40,7 @@ let
 in
 {
 
-  globalEnableTest = makeSystemTest "global-enable" { quixops.defaults.enable = true; };
-  systemEnableTest = makeSystemTest "system-enable" { quixops.defaults.system.enable = true; };
+  globalEnableTest = makeSystemTest "global-enable" { dhess-nix.defaults.enable = true; };
+  systemEnableTest = makeSystemTest "system-enable" { dhess-nix.defaults.system.enable = true; };
 
 }
