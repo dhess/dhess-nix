@@ -65,11 +65,18 @@ let
     };
   };
 
+  # Run the NixOS modules tests, rather than the package set tests.
+  nixosTests = settings: settings // {
+    nixexprpath = "jobsets/release-nixos.nix";
+    description = "dhess-nix NixOS modules";
+  };
+
   mainJobsets = with pkgs.lib; mapAttrs (name: settings: defaultSettings // settings) (rec {
     master = {};
     nixos-unstable = mkNixpkgsChannels "master" "nixos-unstable";
     nixpkgs-unstable = mkNixpkgsChannels "master" "nixpkgs-unstable";
     nixpkgs = mkNixpkgs "master" "master";
+    quixops-modules = nixosTests (mkStaging "quixops-modules" "3382d93982eecfdec05452d8e169781852f88aae");
   });
 
   jobsetsAttrs = mainJobsets;
