@@ -23,7 +23,7 @@ let
 
         subtest "timezone-is-utc", sub {
           my $timedatectl = $machine->succeed("timedatectl");
-          $timedatectl =~ /Time zone: Etc\/UTC/ or die "System has wrong timezone";
+          $timedatectl =~ /Time zone:.* \(UTC,/ or die "System has wrong timezone";
         };
 
         subtest "locale-is-utf8", sub {
