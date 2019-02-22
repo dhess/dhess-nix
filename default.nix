@@ -23,6 +23,7 @@ in
   inherit (self) fm-assistant;
   inherit (self) libprelude;
   inherit (self) mellon-gpio mellon-web;
+  inherit (self) mkCacert;
   inherit (self) ntp;
   inherit (self) pinpon;
   inherit (self) ppp-devel;

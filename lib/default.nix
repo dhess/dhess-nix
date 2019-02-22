@@ -33,7 +33,7 @@ let
     ../overlays/custom-packages.nix
     ../overlays/emacs.nix
     ../overlays/haskell-packages.nix
-    ../overlays/lib.nix
+    ../overlays/lib/dhess-lib.nix
     ../overlays/overrides.nix
     ../overlays/patches.nix
     ../overlays/build-envs.nix
