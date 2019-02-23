@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.networking.tcp-bbr = {
-    enable = mkEnableOption "Enable TCP BBR congestion control.";
+    enable = mkEnableOption "TCP BBR congestion control.";
   };
 
   config = mkIf enabled {

@@ -10,7 +10,7 @@ in
 
   options.dhess-nix.remote-build-host = {
     enable = lib.mkEnableOption ''
-      This host is a remote builder, i.e., a machine that performs
+      remote builds, i.e., configure the host to performs
       Nix builds for other hosts.
 
       Enabling this option will create a user dedicated to remote

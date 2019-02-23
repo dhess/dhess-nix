@@ -10,7 +10,7 @@ let
 in
 {
   options.dhess-nix.defaults.networking = {
-    enable = mkEnableOption "Enable the dhess-nix networking configuration defaults.";
+    enable = mkEnableOption "the dhess-nix networking configuration defaults.";
   };
 
   config = mkIf enabled {

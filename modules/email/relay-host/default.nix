@@ -37,7 +37,7 @@ in
   options.services.postfix-relay-host = {
 
     enable = mkEnableOption ''
-      A Postfix relay host, i.e., a host that can send email to a
+      a Postfix relay host, i.e., a host that can send email to a
       <em>prescribed set of domains</em> on behalf of other hosts.
 
       <strong>Do not</strong> run this service on an untrusted

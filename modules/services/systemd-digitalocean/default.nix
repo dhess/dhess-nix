@@ -19,7 +19,7 @@ in
 
 {
   options.services.systemd-digitalocean = {
-    enable = mkEnableOption "Enable the systemd DigitalOcean networking module.";
+    enable = mkEnableOption "the systemd DigitalOcean networking module.";
   };
 
   config = mkIf cfg.enable (import systemd-digitalocean-module { inherit pkgs config; });

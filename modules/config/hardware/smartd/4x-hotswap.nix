@@ -12,7 +12,7 @@ in
 {
   options.dhess-nix.hardware.smartd-4x-hotswap = {
     enable = mkEnableOption ''
-      Enable <literal>smartd</literal> for a system with 4 hot-swap
+      <literal>smartd</literal> for a system with 4 hot-swap
       bays, e.g., for a typical Supermicro 1U rackmount server.
 
       <literal>smartd</literal> will be configured as follows:

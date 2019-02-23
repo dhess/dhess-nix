@@ -14,8 +14,7 @@ in
 {
   options.dhess-nix.hardware.hwutils = {
     enable = mkEnableOption ''
-      If enabled, install on the host some packages that are useful
-      for managing physical hardware.
+      packages that are useful for managing physical hardware.
     '';
   };
 

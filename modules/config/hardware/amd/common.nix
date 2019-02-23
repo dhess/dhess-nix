@@ -13,7 +13,7 @@ let
 in
 {
   options.dhess-nix.hardware.amd.common = {
-    enable = mkEnableOption "Enable AMD hardware configuration common to modern AMD platforms.";
+    enable = mkEnableOption "AMD hardware configuration common to modern AMD platforms.";
   };
 
   config = mkIf enabled {

@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.hardware.amd.jaguar = {
-    enable = mkEnableOption "Enable AMD Jaguar (G-series) hardware configuration.";
+    enable = mkEnableOption "AMD Jaguar (G-series) hardware configuration.";
   };
 
   config = mkIf enabled {

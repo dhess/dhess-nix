@@ -45,7 +45,7 @@ in
 
   options.dhess-nix.build-host = {
     enable = lib.mkEnableOption ''
-      This host is a build host, i.e., a machine from which Nixpkgs
+      this host as a build host, i.e., a machine from which Nixpkgs
       builds can be performed using remote builders.
 
       This module will configure this host to use the given remote

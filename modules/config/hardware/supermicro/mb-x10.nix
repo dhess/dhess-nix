@@ -13,7 +13,7 @@ in
 {
   options.dhess-nix.hardware.supermicro.mb-x10 = {
     enable = mkEnableOption ''
-      Enable Supermicro X10 motherboard configuration.
+      a Supermicro X10 motherboard configuration.
 
       Note that this motherboard family supports multiple processor
       microarchitectures, so you must separately enable the processor

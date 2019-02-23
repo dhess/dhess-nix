@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.hardware.intel.kaby-lake = {
-    enable = mkEnableOption "Enable Intel Kaby Lake hardware configuration.";
+    enable = mkEnableOption "a Intel Kaby Lake hardware configuration.";
   };
 
   config = mkIf enabled {

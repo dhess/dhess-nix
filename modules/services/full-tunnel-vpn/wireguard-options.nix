@@ -3,7 +3,7 @@
 with lib;
 
 {
-  #enable = mkEnableOption "Enable a full-tunnel WireGuard VPN server.";
+  #enable = mkEnableOption "a full-tunnel WireGuard VPN server.";
 
   description = ''
     A declarative WireGuard "full-tunnel" VPN server.

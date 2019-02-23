@@ -460,8 +460,8 @@ let
 
       route = {
         enable = mkEnableOption ''
-          If enabled, a static route will be created on this WireGuard
-          device for the given IP address.
+          a static route for the given IP address via this WireGuard
+          device.
         '';
 
         table = mkOption {

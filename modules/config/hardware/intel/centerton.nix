@@ -13,7 +13,7 @@ let
 in
 {
   options.dhess-nix.hardware.intel.centerton = {
-    enable = mkEnableOption "Enable Intel Centerton hardware configuration.";
+    enable = mkEnableOption "a Intel Centerton hardware configuration.";
   };
 
   config = mkIf enabled {

@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.hardware.intel.coffee-lake = {
-    enable = mkEnableOption "Enable Intel Coffee Lake hardware configuration.";
+    enable = mkEnableOption "a Intel Coffee Lake hardware configuration.";
   };
 
   config = mkIf enabled {

@@ -157,7 +157,7 @@ in {
           };
 
           dnsOverTLS = mkEnableOption ''
-            If true, enable DNS over TLS. Note that this requires the
+            DNS over TLS. Note that this requires the
             use of forwarding addresses that support DNS over TLS.
           '';
 

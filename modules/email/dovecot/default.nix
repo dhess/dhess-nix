@@ -198,7 +198,7 @@ in
   disabledModules = [ "services/mail/dovecot.nix" ];
 
   options.services.dovecot2 = {
-    enable = mkEnableOption "Dovecot 2.x IMAP server";
+    enable = mkEnableOption "a Dovecot 2.x IMAP server";
 
     protocols = mkOption {
       type = types.listOf types.str;
@@ -207,7 +207,7 @@ in
     };
 
     imap = {
-      enable = mkEnableOption "Enable IMAP services";
+      enable = mkEnableOption "IMAP services";
 
       maxUserIPConnections = mkOption {
         type = types.ints.positive;
@@ -300,7 +300,7 @@ in
       inet = {
 
         enable = mkEnableOption ''
-          Enable the LMTP service on one or more IP addresses.
+          the LMTP service on one or more IP addresses.
 
           Note that the LMTP inet service will also be configured for
           TLS/SSL support, using the same certificates that are
@@ -346,7 +346,7 @@ in
 
     antispam = {
       enable = mkEnableOption ''
-        Enable anti-spam training with sieve, per
+        anti-spam training with sieve, per
         https://wiki2.dovecot.org/HowTo/AntispamWithSieve.
       '';
 

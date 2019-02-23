@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.defaults.sudo = {
-    enable = mkEnableOption "Enable the dhess-nix sudo configuration defaults.";
+    enable = mkEnableOption "the dhess-nix sudo configuration defaults.";
   };
 
   config = mkIf enabled {

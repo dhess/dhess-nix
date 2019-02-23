@@ -13,7 +13,7 @@ in
   options.dhess-nix.defaults = {
     enable = mkEnableOption
     ''
-      Enable all of the dhess-nix configuration defaults.
+      all of the dhess-nix configuration defaults.
 
       These defaults will configure a NixOS server according to the
       good security practice. Note that some of the defaults may not

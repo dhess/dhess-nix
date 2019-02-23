@@ -39,7 +39,7 @@ in
 {
   options = {
     services.tarsnapper = {
-      enable = mkEnableOption "Enable periodic tarsnapper backups.";
+      enable = mkEnableOption "periodic tarsnapper backups.";
 
       keyLiteral = mkOption {
         type = pkgs.lib.types.nonEmptyStr;

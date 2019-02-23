@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.hardware.jetson-tx1 = {
-    enable = mkEnableOption "Enable NVIDIA Jetson TX1-specific hardware configuration.";
+    enable = mkEnableOption "NVIDIA Jetson TX1-specific hardware configuration.";
   };
 
   config = mkIf enabled {

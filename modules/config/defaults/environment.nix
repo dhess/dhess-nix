@@ -10,7 +10,7 @@ let
 in
 {
   options.dhess-nix.defaults.environment = {
-    enable = mkEnableOption "Enable the dhess-nix shell environment configuration defaults.";
+    enable = mkEnableOption "the dhess-nix shell environment configuration defaults.";
   };
 
   config = mkIf enabled {

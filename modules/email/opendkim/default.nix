@@ -160,7 +160,7 @@ in
   # disabledModules = [ "services/mail/opendkim.nix" ];
 
   options.services.qx-opendkim = {
-    enable = mkEnableOption "Enable an OpenDKIM milter";
+    enable = mkEnableOption "an OpenDKIM milter";
 
     user = mkOption {
       type = pkgs.lib.types.nonEmptyStr;

@@ -54,7 +54,7 @@ in
   options.services.postfix-mta = {
 
     enable = mkEnableOption ''
-      A Postfix mail transfer agent (MTA), i.e., a host that can send
+      a Postfix mail transfer agent (MTA), i.e., a host that can send
       and receive mail for one or more domains.
 
       Note that this particular configuration does not use Postfix to
@@ -125,7 +125,7 @@ in
     };
 
     postscreen = {
-      enable = mkEnableOption "Enable postscreen.";
+      enable = mkEnableOption "postscreen.";
 
       accessList = mkOption {
         type = types.path;

@@ -12,7 +12,7 @@ in
 {
   options.dhess-nix.hardware.smartd-2x-non-removable = {
     enable = mkEnableOption ''
-      Enable <literal>smartd</literal> for 2 non-removable drives.
+      <literal>smartd</literal> for 2 non-removable drives.
 
       <literal>smartd</literal> will be configured as follows:
 

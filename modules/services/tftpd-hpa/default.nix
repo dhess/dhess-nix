@@ -27,7 +27,7 @@ in
     services.tftpd-hpa = {
 
       enable = mkEnableOption ''
-        Enable hpa's original TFTP server.
+        hpa's original TFTP server.
 
         The server will be run in standalone (listen) mode and will
         accept connections on the listen address (see the

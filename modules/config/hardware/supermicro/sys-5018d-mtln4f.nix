@@ -15,7 +15,7 @@ in
 {
   options.dhess-nix.hardware.supermicro.sys-5018d-mtln4f = {
     enable = mkEnableOption ''
-      Enable Supermicro 5018D-MTLN4F hardware configuration.
+      a Supermicro 5018D-MTLN4F hardware configuration.
 
       Note that, unlike some other Supermicro configurations, this
       system supports multiple processor microarchitectures, so you

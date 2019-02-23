@@ -145,7 +145,7 @@ in
 
   options = {
     services.qx-znc = {
-      enable = mkEnableOption "Enable a ZNC service for a user.";
+      enable = mkEnableOption "a ZNC service for a user.";
 
       configLiteral = mkOption {
         type = pkgs.lib.types.nonEmptyStr;

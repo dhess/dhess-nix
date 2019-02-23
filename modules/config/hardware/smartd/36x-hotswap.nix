@@ -12,7 +12,7 @@ in
 {
   options.dhess-nix.hardware.smartd-36x-hotswap = {
     enable = mkEnableOption ''
-      Enable <literal>smartd</literal> for a system with up to 36
+      <literal>smartd</literal> for a system with up to 36
       hot-swap bays, e.g., for a Supermicro 847A-series 4U rackmount
       chassis.
 

@@ -13,7 +13,7 @@ let
 in
 {
   options.dhess-nix.hardware.mbr = {
-    enable = mkEnableOption "Enable GRUB for MBR-based boot.";
+    enable = mkEnableOption "GRUB for MBR-based boot.";
   };
 
   config = mkIf enabled {

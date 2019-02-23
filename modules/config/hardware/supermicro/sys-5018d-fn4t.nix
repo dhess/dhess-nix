@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.hardware.supermicro.sys-5018d-fn4t = {
-    enable = mkEnableOption "Enable Supermicro 5018D-FN4T hardware configuration.";
+    enable = mkEnableOption "a Supermicro 5018D-FN4T hardware configuration.";
   };
 
   config = mkIf enabled {

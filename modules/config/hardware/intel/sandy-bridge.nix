@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.hardware.intel.sandy-bridge = {
-    enable = mkEnableOption "Enable Intel Sandy Bridge hardware configuration.";
+    enable = mkEnableOption "Intel Sandy Bridge hardware configuration.";
   };
 
   config = mkIf enabled {

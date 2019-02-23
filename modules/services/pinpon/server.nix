@@ -27,7 +27,7 @@ let
 in {
   options.services.pinpon = {
 
-    enable = mkEnableOption "A PinPon server.";
+    enable = mkEnableOption "a PinPon server.";
 
     port = mkOption {
       type = pkgs.lib.types.port;

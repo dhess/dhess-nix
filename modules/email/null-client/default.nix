@@ -28,7 +28,7 @@ in
   options.services.postfix-null-client = {
 
     enable = mkEnableOption ''
-      A Postfix null client, i.e., a client that can only send mail.
+      a Postfix null client, i.e., a client that can only send mail.
     '';
 
     myDomain = mkOption {

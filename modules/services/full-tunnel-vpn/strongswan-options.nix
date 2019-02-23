@@ -3,7 +3,7 @@
 with lib;
 
 {
-  enable = mkEnableOption "Enable a full-tunnel StrongSwan VPN server.";
+  enable = mkEnableOption "a full-tunnel StrongSwan VPN server.";
 
   remoteId = mkOption {
     type = pkgs.lib.types.nonEmptyStr;

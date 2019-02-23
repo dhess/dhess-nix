@@ -13,7 +13,7 @@ in
   options.dhess-nix.defaults.nginx = {
 
     enable = mkEnableOption ''
-      Enable the dhess-nix nginx configuration defaults. These include
+      the dhess-nix nginx configuration defaults. These include
       NixOS-recommended compression, proxy, and optimization settings.
       It also enables the Mozilla-recommended "modern" SSL
       configuration for Nginx. In addition, nginx's server tokens are

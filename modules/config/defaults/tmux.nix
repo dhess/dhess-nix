@@ -10,7 +10,7 @@ let
 in
 {
   options.dhess-nix.defaults.tmux = {
-    enable = mkEnableOption "Enable the dhess-nix tmux configuration defaults.";
+    enable = mkEnableOption "the dhess-nix tmux configuration defaults.";
   };
 
   config = mkIf enabled {

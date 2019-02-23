@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.hardware.intel.haswell = {
-    enable = mkEnableOption "Enable Intel Haswell hardware configuration.";
+    enable = mkEnableOption "a Intel Haswell hardware configuration.";
   };
 
   config = mkIf enabled {

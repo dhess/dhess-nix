@@ -28,7 +28,7 @@ in
     services.service-status-email = {
 
       enable = mkEnableOption ''
-        Enable one-shot systemd units which, when started, will send
+        one-shot systemd units which, when started, will send
         email to a given address, where the body of the email is the
         status of a given job.
 

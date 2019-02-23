@@ -10,7 +10,7 @@ in
 
   options.dhess-nix.auto-gc = {
     enable = lib.mkEnableOption ''
-      Enable automatic Nix store garbage colleciton. This is useful on
+      automatic Nix store garbage colleciton. This is useful on
       remote build hosts.
     '';
   };

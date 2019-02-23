@@ -13,7 +13,7 @@ let
 in
 {
   options.dhess-nix.hardware.intel.broadwell-de = {
-    enable = mkEnableOption "Enable Intel Broadwell DE hardware configuration.";
+    enable = mkEnableOption "a Intel Broadwell DE hardware configuration.";
   };
 
   config = mkIf enabled {

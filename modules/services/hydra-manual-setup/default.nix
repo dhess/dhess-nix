@@ -32,12 +32,10 @@ in
 
       enable = mkEnableOption
       ''
-        To use the <literal>hydra-manual-setup</literal> service,
-        set this option to <literal>true</literal>. Note that the
-        service will only actually run if both this option and
-        <literal>services.hydra</literal> are
-        <literal>true</literal>.
-      '';
+        the <literal>hydra-manual-setup</literal> service. Note that
+        the service will only actually run if both this option and
+        <literal>services.hydra</literal> are <literal>true</literal>.
+        '';
 
       adminUser = {
 

@@ -13,7 +13,7 @@ let
 in
 {
   options.dhess-nix.hardware.uefi = {
-    enable = mkEnableOption "Enable the systemd-boot EFI boot loader.";
+    enable = mkEnableOption "the systemd-boot EFI boot loader.";
   };
 
   config = mkIf enabled {

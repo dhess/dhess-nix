@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.hardware.apu2.apu3c4 = {
-    enable = mkEnableOption "Enable PC Engines apu3c4 hardware configuration.";
+    enable = mkEnableOption "PC Engines apu3c4 hardware configuration.";
   };
 
   config = mkIf enabled {

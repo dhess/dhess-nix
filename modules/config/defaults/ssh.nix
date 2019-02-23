@@ -10,7 +10,7 @@ let
 in
 {
   options.dhess-nix.defaults.ssh = {
-    enable = mkEnableOption "Enable the dhess-nix SSH configuration defaults.";
+    enable = mkEnableOption "the dhess-nix SSH configuration defaults.";
   };
 
   config = mkIf enabled {

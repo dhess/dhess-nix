@@ -113,7 +113,7 @@ in
     services.apcupsd-net = {
 
       enable = mkEnableOption ''
-        Enable the APC UPS daemon and configure it for use with a
+        the APC UPS daemon and configure it for use with a
         network-enabled APC SmartUPS unit.
 
         Note that this configuration only works with network-enabled

@@ -12,7 +12,7 @@ let
 in
 {
   options.dhess-nix.hardware.supermicro.sys-5017a-ef = {
-    enable = mkEnableOption "Enable Supermicro 5017A-EF hardware configuration.";
+    enable = mkEnableOption "a Supermicro 5017A-EF hardware configuration.";
   };
 
   config = mkIf enabled {
