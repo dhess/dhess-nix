@@ -76,7 +76,6 @@ let
     nixos-unstable = mkNixpkgsChannels "master" "nixos-unstable";
     nixpkgs-unstable = mkNixpkgsChannels "master" "nixpkgs-unstable";
     nixpkgs = mkNixpkgs "master" "master";
-    quixops-modules = nixosTests (mkStaging "quixops-modules" "969cff2691a02b3d7e5468beda26c482d8986644");
   });
 
   jobsetsAttrs = mainJobsets;
