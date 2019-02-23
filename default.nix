@@ -21,6 +21,7 @@ in
   inherit (self) dhall-nix dhall-to-cabal;
   inherit (self) dhess-ssh-keygen;
   inherit (self) fm-assistant;
+  inherit (self) ipxe;
   inherit (self) libprelude;
   inherit (self) mellon-gpio mellon-web;
   inherit (self) mkCacert;

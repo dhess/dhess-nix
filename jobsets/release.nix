@@ -32,6 +32,7 @@ let
     dhall-to-cabal = all;
     dhess-ssh-keygen = all;
     fm-assistant = darwin;
+    ipxe = x86_64_linux;
     libprelude = x86_64_linux;
     netsniff-ng = x86_64_linux;
     ntp = linux;
@@ -80,6 +81,7 @@ let
         dhall-nix.x86_64-linux
         dhall-to-cabal.x86_64-linux
         dhess-ssh-keygen.x86_64-linux
+        ipxe.x86_64-linux
         libprelude.x86_64-linux
         netsniff-ng.x86_64-linux
         ntp.x86_64-linux
