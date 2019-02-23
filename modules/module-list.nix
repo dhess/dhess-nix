@@ -29,7 +29,6 @@
   ./config/hardware/supermicro/sys-5018d-fn4t.nix
   ./config/hardware/supermicro/sys-5018d-mtln4f.nix
   ./config/hardware/supermicro/mb-x10.nix
-  ./config/hardware/beaglebone.nix
   ./config/hardware/hwutils.nix
   ./config/hardware/jetson-tk1.nix
   ./config/hardware/jetson-tx1.nix
