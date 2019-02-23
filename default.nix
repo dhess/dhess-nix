@@ -56,5 +56,4 @@ in
   inherit (self) lib;
 
   overlays.all = overlays;
-  modules = self.lib.sources.pathDirectory ./modules;
 }
