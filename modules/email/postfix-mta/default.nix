@@ -182,11 +182,10 @@ in
         type = types.listOf pkgs.lib.types.nonEmptyStr;
         default = [
           "zen.spamhaus.org"
-          "dnsrbl.org"
         ];
         example = [
-          "example1.org"
-          "example2.org"
+          "zen.spamhaus.org"
+          "dnsrbl.org"
         ];
         description = ''
           Postfix's <literal>postscreen_dnsbl_sites</literal> setting.
