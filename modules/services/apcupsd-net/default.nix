@@ -227,7 +227,7 @@ in
 
     # Keep track of changes in the upstream module.
     dhess-nix.assertions.moduleHashes."services/monitoring/apcupsd.nix" =
-      "e4897f6051c92066b2cb7db54ed7f74fc4cd232b22abc780488f63acd49f1b01";
+      "88f76b999071dd9ee5ce85c6c44752ac54375c44e849f1ff6b8132a1526dd11b";
 
     dhess-nix.keychain.keys."${keyName}" = {
       destDir = stateDir;
