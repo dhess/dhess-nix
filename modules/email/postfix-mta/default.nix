@@ -647,6 +647,7 @@ in
 
         smtpd_tls_fingerprint_digest = "sha1";
         smtpd_tls_security_level = "may";
+        smtpd_tls_loglevel = 0;
         smtpd_tls_dh1024_param_file = "${pkgs.ffdhe2048Pem}";
 
         # Allow SASL-authenticated senders to send as different users
@@ -655,6 +656,7 @@ in
         smtpd_sender_login_maps = [ "hash:/etc/postfix/virtual" ];
 
         smtp_tls_security_level = "may";
+        smtp_tls_loglevel = 0;
 
         unverified_recipient_reject_reason = "Address lookup failed";
       }

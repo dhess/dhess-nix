@@ -148,6 +148,7 @@ in
         local_transport = error:local delivery is disabled
 
         smtp_tls_security_level = encrypt
+        smtp_tls_loglevel = 1
       '';
     };
 

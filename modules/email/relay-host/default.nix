@@ -304,7 +304,7 @@ in
 
         smtpd_tls_security_level = may
         smtpd_tls_session_cache_database = btree:${stateDir}/smtpd_scache
-        smtpd_tls_loglevel=1
+        smtpd_tls_loglevel = 1
         smtpd_tls_auth_only = yes
         smtpd_tls_ask_ccert = yes
         smtpd_tls_fingerprint_digest = sha1
@@ -316,6 +316,7 @@ in
 
         smtp_tls_session_cache_database = btree:${stateDir}/smtp_scache
         smtp_tls_security_level = encrypt
+        smtp_tls_loglevel = 1
         smtp_tls_mandatory_protocols = !SSLv2, !SSLv3
         smtp_tls_mandatory_ciphers = high
 
