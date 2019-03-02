@@ -50,6 +50,7 @@ in
   # Various buildEnv's that I use, usually only on macOS (though many
   # of them should work on any pltform).
   inherit (self) mactools-env;
+  inherit (self) nixops-env;
   inherit (self) nixtools-env;
   inherit (self) opsec-env;
   inherit (self) shell-env;

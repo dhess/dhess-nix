@@ -53,6 +53,7 @@ let
     extensive-haskell-env = x86_64;
 
     mactools-env = darwin;
+    nixops-env = x86_64;
     nixtools-env = all;
     opsec-env = all;
     shell-env = darwin;
@@ -98,6 +99,7 @@ let
         haskell-env.x86_64-linux
         extensive-haskell-env.x86_64-linux
 
+        nixops-env.x86_64-linux
         nixtools-env.x86_64-linux
         opsec-env.x86_64-linux
 
@@ -132,6 +134,7 @@ let
         extensive-haskell-env.x86_64-darwin
 
         mactools-env.x86_64-darwin
+        nixops-env.x86_64-darwin
         nixtools-env.x86_64-darwin
         opsec-env.x86_64-darwin
         shell-env.x86_64-darwin

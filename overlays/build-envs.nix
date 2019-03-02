@@ -16,6 +16,15 @@ let
     meta.platforms = super.lib.platforms.darwin;
   };
 
+  nixops-env = super.buildEnv {
+    name = "nixops-env";
+    paths = with super; [
+      dhall-nix
+      nixops
+    ];
+    meta.platforms = super.lib.platforms.all;
+  };
+
   nixtools-env = super.buildEnv {
     name = "nixtools-env";
     paths = with super; [
@@ -62,6 +71,7 @@ let
 in
 {
   inherit mactools-env;
+  inherit nixops-env;
   inherit nixtools-env;
   inherit opsec-env;
   inherit shell-env;
