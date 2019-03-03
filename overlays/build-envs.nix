@@ -21,6 +21,7 @@ let
     paths = with super; [
       dhall-nix
       nixops
+      terraform
     ];
     meta.platforms = super.lib.platforms.all;
   };
