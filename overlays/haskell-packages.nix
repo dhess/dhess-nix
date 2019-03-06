@@ -19,7 +19,7 @@ let
     algebra = doJailbreak super.algebra;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
-    dhall = super.dhall_1_20_1;
+    dhall = dontCheck super.dhall_1_20_1;
     dhall-to-cabal = doJailbreak super.dhall-to-cabal;
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
