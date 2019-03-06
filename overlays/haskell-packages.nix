@@ -19,6 +19,8 @@ let
     algebra = doJailbreak super.algebra;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
+    dhall = super.dhall_1_20_1;
+    dhall-to-cabal = doJailbreak super.dhall-to-cabal;
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
     hoopl = doJailbreak super.hoopl;
@@ -321,15 +323,6 @@ let
 
   ## Custom package sets for things that need particular package versions.
 
-  dhall-to-cabal-packages = properExtend super.haskellPackages (self: super:
-    {
-      # dhall runs network tests.
-      dhall = dontCheck (doJailbreak (super.callPackage ../pkgs/haskell/dhall/1.18.0.nix {}));
-
-      dhall-to-cabal = doJailbreak (super.callPackage ../pkgs/haskell/dhall-to-cabal {});
-    }
-  );
-
   dhall-nix-packages = properExtend ghc844Packages (self: super:
     {
       # dhall runs network tests.
@@ -357,6 +350,7 @@ let
     paths =  [
         (hp.ghcWithHoogle packageList)
         (exeOnly hp.cabal-install)
+        (exeOnly hp.dhall-to-cabal)
         (exeOnly hp.hindent)
         (exeOnly hp.hpack)
         (exeOnly hp.structured-haskell-mode)
@@ -394,8 +388,6 @@ in
   darcs = exeOnly ghc844Packages.darcs;
 
   dhall-nix = exeOnly dhall-nix-packages.dhall-nix;
-
-  dhall-to-cabal = exeOnly dhall-to-cabal-packages.dhall-to-cabal;
 
   dhess-ssh-keygen = exeOnly self.haskellPackages.dhess-ssh-keygen;
 

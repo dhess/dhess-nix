@@ -29,7 +29,6 @@ let
     darcs = all;
     debian-ppp = linux;
     dhall-nix = all;
-    dhall-to-cabal = all;
     dhess-ssh-keygen = all;
     fm-assistant = darwin;
     ipxe = x86_64_linux;
@@ -80,7 +79,6 @@ let
         darcs.x86_64-linux
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
-        dhall-to-cabal.x86_64-linux
         dhess-ssh-keygen.x86_64-linux
         ipxe.x86_64-linux
         libprelude.x86_64-linux
@@ -123,7 +121,6 @@ let
         crosstool-ng-xtensa.x86_64-darwin
         darcs.x86_64-darwin
         dhall-nix.x86_64-darwin
-        dhall-to-cabal.x86_64-darwin
         dhess-ssh-keygen.x86_64-darwin
         fm-assistant.x86_64-darwin
         unbound-block-hosts.x86_64-darwin
