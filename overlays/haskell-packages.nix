@@ -39,6 +39,11 @@ let
     });
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
     machines-process = doJailbreak super.machines-process;
+
+    # Nixpkgs is currently forcing pandoc to 2.7, but that breaks some
+    # things.
+    pandoc = super.callPackage ../pkgs/haskell/pandoc/2.6.nix {};
+
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
