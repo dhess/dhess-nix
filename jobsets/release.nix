@@ -206,21 +206,21 @@ let
       constituents = with jobs; [
         badhosts-unified.aarch64-linux
         badhosts-fakenews.aarch64-linux
-        badhosts-gambling.aarch64-darwin
-        badhosts-porn.aarch64-darwin
-        badhosts-social.aarch64-darwin
-        badhosts-fakenews-gambling.aarch64-darwin
-        badhosts-fakenews-porn.aarch64-darwin
-        badhosts-fakenews-social.aarch64-darwin
-        badhosts-gambling-porn.aarch64-darwin
-        badhosts-gambling-social.aarch64-darwin
-        badhosts-porn-social.aarch64-darwin
-        badhosts-fakenews-gambling-porn.aarch64-darwin
-        badhosts-fakenews-gambling-social.aarch64-darwin
-        badhosts-fakenews-porn-social.aarch64-darwin
-        badhosts-gambling-porn-social.aarch64-darwin
-        badhosts-fakenews-gambling-porn-social.aarch64-darwin
-        badhosts-all.aarch64-darwin
+        badhosts-gambling.aarch64-linux
+        badhosts-porn.aarch64-linux
+        badhosts-social.aarch64-linux
+        badhosts-fakenews-gambling.aarch64-linux
+        badhosts-fakenews-porn.aarch64-linux
+        badhosts-fakenews-social.aarch64-linux
+        badhosts-gambling-porn.aarch64-linux
+        badhosts-gambling-social.aarch64-linux
+        badhosts-porn-social.aarch64-linux
+        badhosts-fakenews-gambling-porn.aarch64-linux
+        badhosts-fakenews-gambling-social.aarch64-linux
+        badhosts-fakenews-porn-social.aarch64-linux
+        badhosts-gambling-porn-social.aarch64-linux
+        badhosts-fakenews-gambling-porn-social.aarch64-linux
+        badhosts-all.aarch64-linux
 
         ntp.aarch64-linux
         unbound.aarch64-linux
