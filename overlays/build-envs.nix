@@ -16,12 +16,16 @@ let
     meta.platforms = super.lib.platforms.darwin;
   };
 
+  myTerraform = super.terraform.withPlugins (p: [
+    super.terraform-provider-vultr
+  ]);
+
   nixops-env = super.buildEnv {
     name = "nixops-env";
     paths = with super; [
       dhall-nix
       nixops
-      terraform
+      myTerraform
     ];
     meta.platforms = super.lib.platforms.all;
   };

@@ -41,6 +41,7 @@ in
   inherit (self) ppp-devel;
   inherit (self) unbound;
   inherit (self) suricata;
+  inherit (self) terraform-provider-vultr;
   inherit (self) trimpcap;
   inherit (self) tsoff;
   inherit (self) wpa_supplicant;

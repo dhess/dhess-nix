@@ -60,6 +60,8 @@ let
   crosstool-ng-xtensa = callPackage ../pkgs/esp32/crosstool-ng-xtensa {};
   xtensa-esp32-toolchain = callPackage ../pkgs/esp32/xtensa-esp32-toolchain {};
 
+  terraform-provider-vultr = callPackage ../pkgs/terraform/providers/vultr {};
+
 in
 {
   inherit (badhosts) badhosts-unified;
@@ -79,6 +81,7 @@ in
   inherit mkCacert;
   inherit ppp-devel;
   inherit suricata;
+  inherit terraform-provider-vultr;
   inherit trimpcap;
   inherit tsoff;
   inherit xtensa-esp32-toolchain;

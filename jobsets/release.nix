@@ -55,6 +55,7 @@ let
     ntp = linux;
     ppp-devel = linux;
     suricata = x86_64_linux;
+    terraform-provider-vultr = all;
     trimpcap = linux;
     tsoff = linux;
     unbound = linux;
@@ -121,6 +122,7 @@ let
         ntp.x86_64-linux
         ppp-devel.x86_64-linux
         suricata.x86_64-linux
+        terraform-provider-vultr.x86_64-linux
         trimpcap.x86_64-linux
         tsoff.x86_64-linux
         unbound.x86_64-linux
@@ -175,6 +177,7 @@ let
         dhall-nix.x86_64-darwin
         dhess-ssh-keygen.x86_64-darwin
         fm-assistant.x86_64-darwin
+        terraform-provider-vultr.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
 
         emacs-macport-env.x86_64-darwin
