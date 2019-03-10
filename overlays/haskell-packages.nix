@@ -171,7 +171,6 @@ let
     network
     network-attoparsec
     optparse-applicative
-    optparse-generic
     optparse-text
     pandoc
     parsec
