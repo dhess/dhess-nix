@@ -16,6 +16,16 @@ let
 in
 {
   inherit (self) badhosts-unified;
+  inherit (self) badhosts-fakenews badhosts-gambling badhosts-porn badhosts-social;
+  inherit (self) badhosts-fakenews-gambling badhosts-fakenews-porn badhosts-fakenews-social;
+  inherit (self) badhosts-gambling-porn badhosts-gambling-social;
+  inherit (self) badhosts-porn-social;
+  inherit (self) badhosts-fakenews-gambling-porn badhosts-fakenews-gambling-social;
+  inherit (self) badhosts-fakenews-porn-social;
+  inherit (self) badhosts-gambling-porn-social;
+  inherit (self) badhosts-fakenews-gambling-porn-social;
+  inherit (self) badhosts-all;
+
   inherit (self) crosstool-ng-xtensa;
   inherit (self) debian-ppp;
   inherit (self) darcs;

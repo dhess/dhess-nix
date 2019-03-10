@@ -39,7 +39,6 @@ let
   ppp-devel = callPackage ../pkgs/networking/ppp-devel {};
 
   badhosts = callPackage ../pkgs/dns/badhosts {};
-  inherit (badhosts) badhosts-unified;
 
   suricata = callPackage ../pkgs/networking/suricata {
     # not strictly necessary for the overlay, but needed for building
@@ -63,7 +62,17 @@ let
 
 in
 {
-  inherit badhosts-unified;
+  inherit (badhosts) badhosts-unified;
+  inherit (badhosts) badhosts-fakenews badhosts-gambling badhosts-porn badhosts-social;
+  inherit (badhosts) badhosts-fakenews-gambling badhosts-fakenews-porn badhosts-fakenews-social;
+  inherit (badhosts) badhosts-gambling-porn badhosts-gambling-social;
+  inherit (badhosts) badhosts-porn-social;
+  inherit (badhosts) badhosts-fakenews-gambling-porn badhosts-fakenews-gambling-social;
+  inherit (badhosts) badhosts-fakenews-porn-social;
+  inherit (badhosts) badhosts-gambling-porn-social;
+  inherit (badhosts) badhosts-fakenews-gambling-porn-social;
+  inherit (badhosts) badhosts-all;
+
   inherit crosstool-ng-xtensa;
   inherit debian-ppp;
   inherit libprelude;

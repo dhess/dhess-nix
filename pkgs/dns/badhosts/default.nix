@@ -5,7 +5,10 @@
 
 let
 
-  generic = { version, sha256, subname, hostsFile, ... }: stdenv.mkDerivation {
+  version = "2.3.6";
+  sha256 = "0q3x780899334mngfjvg8iwdlp4jl1ynzaf8xm8b1dczr6z5xz2b";
+
+  generic = { subname, hostsFile, ... }: stdenv.mkDerivation {
     name = "badhosts-${subname}-${version}";
     inherit version;
     src = fetchurl {
@@ -33,14 +36,41 @@ let
     };
   };
 
+  alternate = subname: generic { inherit subname; hostsFile = "alternates/${subname}/hosts"; };
+
   badhosts-unified = generic {
-    version = "2.3.6";
-    sha256 = "0q3x780899334mngfjvg8iwdlp4jl1ynzaf8xm8b1dczr6z5xz2b";
     subname = "unified";
     hostsFile = "hosts";
   };
 
+  badhosts-fakenews = alternate "fakenews";
+  badhosts-gambling = alternate "gambling";
+  badhosts-porn = alternate "porn";
+  badhosts-social = alternate "social";
+  badhosts-fakenews-gambling = alternate "fakenews-gambling";
+  badhosts-fakenews-porn = alternate "fakenews-porn";
+  badhosts-fakenews-social = alternate "fakenews-social";
+  badhosts-gambling-porn = alternate "gambling-porn";
+  badhosts-gambling-social = alternate "gambling-social";
+  badhosts-porn-social = alternate "porn-social";
+  badhosts-fakenews-gambling-porn = alternate "fakenews-gambling-porn";
+  badhosts-fakenews-gambling-social = alternate "fakenews-gambling-social";
+  badhosts-fakenews-porn-social = alternate "fakenews-porn-social";
+  badhosts-gambling-porn-social = alternate "gambling-porn-social";
+  badhosts-fakenews-gambling-porn-social = alternate "fakenews-gambling-porn-social";
+
+  badhosts-all = badhosts-fakenews-gambling-porn-social;
+
 in
 {
   inherit badhosts-unified;
+  inherit badhosts-fakenews badhosts-gambling badhosts-porn badhosts-social;
+  inherit badhosts-fakenews-gambling badhosts-fakenews-porn badhosts-fakenews-social;
+  inherit badhosts-gambling-porn badhosts-gambling-social;
+  inherit badhosts-porn-social;
+  inherit badhosts-fakenews-gambling-porn badhosts-fakenews-gambling-social;
+  inherit badhosts-fakenews-porn-social;
+  inherit badhosts-gambling-porn-social;
+  inherit badhosts-fakenews-gambling-porn-social;
+  inherit badhosts-all;
 }

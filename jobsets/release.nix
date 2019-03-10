@@ -26,6 +26,23 @@ let
 
   jobs = (mapTestOn (rec {
     badhosts-unified = all;
+    badhosts-fakenews = all;
+    badhosts-gambling = all;
+    badhosts-porn = all;
+    badhosts-social = all;
+    badhosts-fakenews-gambling = all;
+    badhosts-fakenews-porn = all;
+    badhosts-fakenews-social = all;
+    badhosts-gambling-porn = all;
+    badhosts-gambling-social = all;
+    badhosts-porn-social = all;
+    badhosts-fakenews-gambling-porn = all;
+    badhosts-fakenews-gambling-social = all;
+    badhosts-fakenews-porn-social = all;
+    badhosts-gambling-porn-social = all;
+    badhosts-fakenews-gambling-porn-social = all;
+    badhosts-all = all;
+
     crosstool-ng-xtensa = x86_64;
     darcs = all;
     debian-ppp = linux;
@@ -76,6 +93,23 @@ let
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
         badhosts-unified.x86_64-linux
+        badhosts-fakenews.x86_64-linux
+        badhosts-gambling.x86_64-linux
+        badhosts-porn.x86_64-linux
+        badhosts-social.x86_64-linux
+        badhosts-fakenews-gambling.x86_64-linux
+        badhosts-fakenews-porn.x86_64-linux
+        badhosts-fakenews-social.x86_64-linux
+        badhosts-gambling-porn.x86_64-linux
+        badhosts-gambling-social.x86_64-linux
+        badhosts-porn-social.x86_64-linux
+        badhosts-fakenews-gambling-porn.x86_64-linux
+        badhosts-fakenews-gambling-social.x86_64-linux
+        badhosts-fakenews-porn-social.x86_64-linux
+        badhosts-gambling-porn-social.x86_64-linux
+        badhosts-fakenews-gambling-porn-social.x86_64-linux
+        badhosts-all.x86_64-linux
+
         crosstool-ng-xtensa.x86_64-linux
         darcs.x86_64-linux
         debian-ppp.x86_64-linux
@@ -119,6 +153,23 @@ let
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
         badhosts-unified.x86_64-darwin
+        badhosts-fakenews.x86_64-darwin
+        badhosts-gambling.x86_64-darwin
+        badhosts-porn.x86_64-darwin
+        badhosts-social.x86_64-darwin
+        badhosts-fakenews-gambling.x86_64-darwin
+        badhosts-fakenews-porn.x86_64-darwin
+        badhosts-fakenews-social.x86_64-darwin
+        badhosts-gambling-porn.x86_64-darwin
+        badhosts-gambling-social.x86_64-darwin
+        badhosts-porn-social.x86_64-darwin
+        badhosts-fakenews-gambling-porn.x86_64-darwin
+        badhosts-fakenews-gambling-social.x86_64-darwin
+        badhosts-fakenews-porn-social.x86_64-darwin
+        badhosts-gambling-porn-social.x86_64-darwin
+        badhosts-fakenews-gambling-porn-social.x86_64-darwin
+        badhosts-all.x86_64-darwin
+
         crosstool-ng-xtensa.x86_64-darwin
         darcs.x86_64-darwin
         dhall-nix.x86_64-darwin
@@ -154,6 +205,23 @@ let
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
         badhosts-unified.aarch64-linux
+        badhosts-fakenews.aarch64-linux
+        badhosts-gambling.aarch64-darwin
+        badhosts-porn.aarch64-darwin
+        badhosts-social.aarch64-darwin
+        badhosts-fakenews-gambling.aarch64-darwin
+        badhosts-fakenews-porn.aarch64-darwin
+        badhosts-fakenews-social.aarch64-darwin
+        badhosts-gambling-porn.aarch64-darwin
+        badhosts-gambling-social.aarch64-darwin
+        badhosts-porn-social.aarch64-darwin
+        badhosts-fakenews-gambling-porn.aarch64-darwin
+        badhosts-fakenews-gambling-social.aarch64-darwin
+        badhosts-fakenews-porn-social.aarch64-darwin
+        badhosts-gambling-porn-social.aarch64-darwin
+        badhosts-fakenews-gambling-porn-social.aarch64-darwin
+        badhosts-all.aarch64-darwin
+
         ntp.aarch64-linux
         unbound.aarch64-linux
 
