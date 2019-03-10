@@ -38,7 +38,8 @@ let
 
   ppp-devel = callPackage ../pkgs/networking/ppp-devel {};
 
-  unbound-block-hosts = callPackage ../pkgs/dns/unbound-block-hosts.nix {};
+  badhosts = callPackage ../pkgs/dns/badhosts {};
+  inherit (badhosts) badhosts-unified;
 
   suricata = callPackage ../pkgs/networking/suricata {
     # not strictly necessary for the overlay, but needed for building
@@ -62,12 +63,12 @@ let
 
 in
 {
+  inherit badhosts-unified;
   inherit crosstool-ng-xtensa;
   inherit debian-ppp;
   inherit libprelude;
   inherit mkCacert;
   inherit ppp-devel;
-  inherit unbound-block-hosts;
   inherit suricata;
   inherit trimpcap;
   inherit tsoff;

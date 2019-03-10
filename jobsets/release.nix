@@ -25,6 +25,7 @@ let
   linux = [ "x86_64-linux" "aarch64-linux" ];
 
   jobs = (mapTestOn (rec {
+    badhosts-unified = all;
     crosstool-ng-xtensa = x86_64;
     darcs = all;
     debian-ppp = linux;
@@ -40,7 +41,6 @@ let
     trimpcap = linux;
     tsoff = linux;
     unbound = linux;
-    unbound-block-hosts = all;
     wpa_supplicant = linux;
     xtensa-esp32-toolchain = x86_64;
 
@@ -75,6 +75,7 @@ let
       meta.description = "dhess-nix overlay packages (x86_64-linux)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
+        badhosts-unified.x86_64-linux
         crosstool-ng-xtensa.x86_64-linux
         darcs.x86_64-linux
         debian-ppp.x86_64-linux
@@ -89,7 +90,6 @@ let
         trimpcap.x86_64-linux
         tsoff.x86_64-linux
         unbound.x86_64-linux
-        unbound-block-hosts.x86_64-linux
         wpa_supplicant.x86_64-linux
         xtensa-esp32-toolchain.x86_64-linux
 
@@ -118,12 +118,12 @@ let
       meta.description = "dhess-nix overlay packages (x86_64-darwin)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
+        badhosts-unified.x86_64-darwin
         crosstool-ng-xtensa.x86_64-darwin
         darcs.x86_64-darwin
         dhall-nix.x86_64-darwin
         dhess-ssh-keygen.x86_64-darwin
         fm-assistant.x86_64-darwin
-        unbound-block-hosts.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
 
         emacs-macport-env.x86_64-darwin
@@ -153,6 +153,7 @@ let
       meta.description = "dhess-nix overlay packages (aarch64-linux)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
+        badhosts-unified.aarch64-linux
         ntp.aarch64-linux
         unbound.aarch64-linux
 

@@ -47,7 +47,6 @@ let
   tests = {
     ## Overlays.
     custom-cacert = callSubTests ../tests/custom-cacert.nix {};
-    unbound-block-hosts = callSubTests ../tests/unbound-block-hosts.nix {};
     suricata = callTest ../tests/suricata.nix { system = "x86_64-linux"; };
     trimpcap = callTest ../tests/trimpcap.nix {};
     tsoff = callSubTests ../tests/tsoff.nix {};

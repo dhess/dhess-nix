@@ -60,11 +60,11 @@ in makeTest rec {
            allowedAccess = [ "192.168.1.2/32" ipv6_prefix];
            listenAddresses = [ adblock_ipv4 adblock_ipv6 ];
            forwardAddresses = [ "192.168.1.250" ];
+           extraConfig = builtins.readFile "${pkgs.badhosts-unified}/unbound.conf";
          };
 
          noblock = {
            enableRootTrustAnchor = false; # required for testing.
-           blockList.enable = false;
            allowedAccess = [ "192.168.1.2/32" ipv6_prefix ];
            listenAddresses = [ noblock_ipv4 noblock_ipv6 ];
            forwardAddresses = [ "192.168.1.250" ];
@@ -145,10 +145,10 @@ in makeTest rec {
 
      sub testDoubleclickBlocked {
        my ($machine, $dnsip, $extraArg) = @_;
-       my $ipv4 = $machine->succeed("${pkgs.dnsutils}/bin/dig \@$dnsip $extraArg A ad.doubleclick.net +short");
-       $ipv4 =~ /^127\.0\.0\.1$/ or die "ad.doubleclick.net does not resolve to 127.0.0.1";
-       my $ipv6 = $machine->succeed("${pkgs.dnsutils}/bin/dig \@$dnsip $extraArg AAAA ad.doubleclick.net +short");
-       $ipv6 =~ /^::1$/ or die "ad.doubleclick.net does not resolve to ::1";
+       my $ipv4 = $machine->succeed("${pkgs.dnsutils}/bin/dig \@$dnsip $extraArg A ad.doubleclick.net");
+       $ipv4 =~ /status: NXDOMAIN/ or die "ad.doubleclick.net does not return NXDOMAIN";
+       my $ipv6 = $machine->succeed("${pkgs.dnsutils}/bin/dig \@$dnsip $extraArg AAAA ad.doubleclick.net");
+       $ipv6 =~ /status: NXDOMAIN/ or die "ad.doubleclick.net does not return NXDOMAIN";
      }
 
      sub testDoubleclick {

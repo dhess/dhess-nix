@@ -15,6 +15,7 @@ let
 
 in
 {
+  inherit (self) badhosts-unified;
   inherit (self) crosstool-ng-xtensa;
   inherit (self) debian-ppp;
   inherit (self) darcs;
@@ -29,7 +30,6 @@ in
   inherit (self) pinpon;
   inherit (self) ppp-devel;
   inherit (self) unbound;
-  inherit (self) unbound-block-hosts;
   inherit (self) suricata;
   inherit (self) trimpcap;
   inherit (self) tsoff;

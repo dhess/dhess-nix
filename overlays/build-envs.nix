@@ -61,7 +61,6 @@ let
       pwgen
       ripgrep
       speedtest-cli
-      unbound-block-hosts
       unrar
       wget
       xz

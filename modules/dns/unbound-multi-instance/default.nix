@@ -10,7 +10,14 @@ let
   instances = globalCfg.services.unbound-multi-instance.instances;
 
   stateDir = "/var/lib/unbound-multi-instance";
-  blockList = ./blocklist-someonewhocares.conf;
+
+
+  wrapped = runCommand "ipfs" { buildInputs = [ makeWrapper ]; preferLocalBuild = true; } ''
+    mkdir -p "$out/bin"
+    makeWrapper "${ipfs}/bin/ipfs" "$out/bin/ipfs" \
+      --set IPFS_PATH ${cfg.dataDir} \
+      --prefix PATH : /run/wrappers/bin
+  '';
 
   mkServiceName = name: "unbound-${name}";
 
@@ -46,7 +53,6 @@ let
       private-address: fd00::/8
       private-address: fe80::/10
 
-      ${optionalString cfg.blockList.enable "include: ${blockList}"}
       ${cfg.extraConfig}
       ${optionalString (any isLocalAddress cfg.forwardAddresses) ''
           do-not-query-localhost: no
@@ -98,28 +104,15 @@ in {
         Zero or more Unbound service instances.
       '';
       default = {};
-      example = {
+      example = literalExample {
         adblock = {
-          blockList.enable = true;
           allowedAccess = [ "10.0.0.0/8" ];
           listenAddresses = [ "10.8.8.8" "2001:db8::1" ];
+          extraConfig = builtins.readFile "${pkgs.badhosts-unified}/unbound.conf";
         };
       };
       type = types.attrsOf (types.submodule {
         options = {
-
-          blockList = {
-            enable = mkOption {
-              type = types.bool;
-              default = true;
-              description = ''
-                If true, this Unbound instance will use a blocklist to block
-                unwanted domains; these domains will return an address of
-                <literal>127.0.0.1</literal> or <literal>::1</literal>.
-              '';
-            };
-          };
-
           allowedAccess = mkOption {
             default = [ "127.0.0.0/8" "::1" ];
             example = [ "192.168.1.0/24" "2001:db8::/64"];
@@ -181,7 +174,6 @@ in {
             type = types.lines;
             description = "Extra Unbound config for this instance.";
           };
-
         };
       });
     };
