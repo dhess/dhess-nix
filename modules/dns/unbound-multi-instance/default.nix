@@ -32,6 +32,7 @@ let
         username: unbound
         chroot: "${stateDir}"
         pidfile: ""
+        num-threads: ${toString cfg.numThreads}
         tls-cert-bundle: ${cfg.tlsCertBundle}
         ${concatMapStringsSep "\n  " (ip: "interface: ${ip}") cfg.listenAddresses}
         ${concatMapStringsSep "\n  " (cidr: "access-control: ${cidr} allow") cfg.allowedAccess}
@@ -113,6 +114,15 @@ in {
       };
       type = types.attrsOf (types.submodule {
         options = {
+          numThreads = mkOption {
+            type = types.ints.positive;
+            default = 1;
+            example = 2;
+            description = ''
+              How many threads the service should run.
+            '';
+          };
+
           allowedAccess = mkOption {
             default = [ "127.0.0.0/8" "::1" ];
             example = [ "192.168.1.0/24" "2001:db8::/64"];
