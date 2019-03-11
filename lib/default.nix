@@ -37,6 +37,7 @@ let
     ../overlays/lib/types.nix
     ../overlays/overrides.nix
     ../overlays/patches.nix
+    ../overlays/python.nix
     ../overlays/build-envs.nix
   ]);
 
