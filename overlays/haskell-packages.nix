@@ -126,6 +126,7 @@ let
     contravariant
     criterion
     cryptonite
+    data-fix
     data-has
     deepseq
     dhall
