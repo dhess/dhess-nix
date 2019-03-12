@@ -289,6 +289,7 @@ let
     machines-io
     machines-process
     memory
+    neat-interpolation
     numeric-extras
     parsec-free
     pipes-attoparsec
