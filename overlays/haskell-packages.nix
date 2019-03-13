@@ -49,6 +49,7 @@ let
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
+    recursion-schemes = super.recursion-schemes_5_1_2;
     servant-docs = doJailbreak super.servant-docs;
     streaming-utils = doJailbreak super.streaming-utils;
     tdigest = doJailbreak super.tdigest;
