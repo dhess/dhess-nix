@@ -19,7 +19,6 @@ let
     algebra = doJailbreak super.algebra;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
-    dhall = dontCheck super.dhall_1_20_1;
     dhall-to-cabal = doJailbreak super.dhall-to-cabal;
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
@@ -34,7 +33,7 @@ let
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
     ivory = doJailbreak super.ivory;
-    katip = super.katip_0_8_0_0.overrideAttrs (drv: {
+    katip = super.katip_0_8_1_0.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     });
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
