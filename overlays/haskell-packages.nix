@@ -258,6 +258,7 @@ let
     configuration-tools
     constraints
     fgl
+    fmt
     formatting
     GraphSCC
     hakyll
