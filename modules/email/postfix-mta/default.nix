@@ -543,6 +543,14 @@ in
       };
     };
 
+    transport = mkOption {
+      type = types.lines;
+      default = "";
+      description = "
+        Entries for Postfix's <literal>transport_map</literal> file.
+      ";
+    };
+
     extraConfig = mkOption {
       type = types.lines;
       default = "";
@@ -614,6 +622,7 @@ in
       destination = [ "" ];
 
       virtual = cfg.virtual.aliasMaps;
+      transport = cfg.transport;
 
       sslCACert = "/etc/ssl/certs/ca-certificates.crt";
       sslCert = acmeCertPublic;
