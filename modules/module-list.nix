@@ -62,5 +62,4 @@
   ./services/tarsnapper
   ./services/tftpd-hpa
   ./services/znc
-  ./web-servers/nginx
 ]
