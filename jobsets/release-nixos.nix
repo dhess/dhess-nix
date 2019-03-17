@@ -10,7 +10,7 @@ in
 , supportedSystems ? [ "x86_64-linux" ]
 , scrubJobs ? true
 , nixpkgsArgs ? {
-    config = { allowUnfree = true; inHydra = true; };
+    config = { allowUnfree = true; allowBroken = true; inHydra = true; };
     overlays = lib.singleton localPkgs.overlays.all;
   }
 }:

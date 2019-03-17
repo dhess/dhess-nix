@@ -37,6 +37,9 @@ let
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     });
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
+    hfsevents = super.hfsevents.overrideAttrs (drv: {
+      meta.hydraPlatforms = stdenv.lib.platforms.darwin;
+    });
     machines-process = doJailbreak super.machines-process;
 
     # Nixpkgs is currently forcing pandoc to 2.7, but that breaks some
