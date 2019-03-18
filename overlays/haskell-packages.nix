@@ -19,6 +19,7 @@ let
     algebra = doJailbreak super.algebra;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
+    concurrent-machines = doJailbreak super.concurrent-machines;
     dhall-to-cabal = doJailbreak super.dhall-to-cabal;
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
@@ -87,18 +88,8 @@ let
   # A list of currently-problematic packages, things that can't easily
   # be fixed by overrides.
   problems = hp: with hp; [
-    Lykah
-    blazeT
-    concurrent-machines
     dhall-nix
-    haxl-amazonka
     hnix
-    hspec-webdriver
-    parsec-free
-    pipes-shell
-    pipes-zlib
-    stm-containers
-    uniqueid
   ];
 
   mkInstalledPackages = desired: problems: hp:
@@ -254,7 +245,6 @@ let
     auto-update
     blaze-html
     blaze-markup
-    blazeT
     bloodhound
     clay
     concurrent-machines
@@ -268,11 +258,9 @@ let
     GraphSCC
     hakyll
     haxl
-    haxl-amazonka
     hex
     hnix
     hoopl
-    hspec-webdriver
     hw-json
     hw-json-lens
     intervals
@@ -287,7 +275,6 @@ let
     list-t
     llvm-hs-pure
     lucid
-    Lykah
     lzma
     machines
     machines-binary
@@ -297,12 +284,9 @@ let
     memory
     neat-interpolation
     numeric-extras
-    parsec-free
     pipes-attoparsec
     pipes-errors
     pipes-group
-    pipes-shell
-    pipes-zlib
     process
     process-streaming
     reducers
@@ -320,7 +304,6 @@ let
     time-recurrence
     turtle
     uniplate
-    uniqueid
     webdriver
     wires
     zlib-lens
