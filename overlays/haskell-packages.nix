@@ -22,6 +22,8 @@ let
     dhall-to-cabal = doJailbreak super.dhall-to-cabal;
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
+    hnix = super.callPackage ../pkgs/haskell/hnix {};
+    hnix-store-core = super.callPackage ../pkgs/haskell/hnix-store-core {};
     hoopl = doJailbreak super.hoopl;
     hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
