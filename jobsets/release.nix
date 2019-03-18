@@ -77,6 +77,8 @@ let
     opsec-env = all;
     shell-env = darwin;
 
+    dhess-nix-source = all;
+
     pinpon = all;
     mellon-gpio = all;
     mellon-web = all;
@@ -141,6 +143,8 @@ let
         nixtools-env.x86_64-linux
         opsec-env.x86_64-linux
 
+        dhess-nix-source.x86_64-linux
+
         ## These aren't really part of the overlay (except possibly to
         ## enable Hydra builds on them), but we test them here anyway
         ## as we're the upstream.
@@ -196,6 +200,8 @@ let
         opsec-env.x86_64-darwin
         shell-env.x86_64-darwin
 
+        dhess-nix-source.x86_64-darwin
+
         ## These aren't really part of the overlay (except possibly to
         ## enable Hydra builds on them), but we test them here anyway
         ## as we're the upstream.
@@ -233,6 +239,8 @@ let
 
         ntp.aarch64-linux
         unbound.aarch64-linux
+
+        dhess-nix-source.aarch64-linux
 
         emacs-nox-env.aarch64-linux
         haskell-env.aarch64-linux

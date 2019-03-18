@@ -62,6 +62,8 @@ let
 
   terraform-provider-vultr = callPackage ../pkgs/terraform/providers/vultr {};
 
+  dhess-nix-source = callPackage ../pkgs/dhess-nix-source { inherit (super) packageSource; };
+
 in
 {
   inherit (badhosts) badhosts-unified;
@@ -76,6 +78,7 @@ in
   inherit (badhosts) badhosts-all;
 
   inherit crosstool-ng-xtensa;
+  inherit dhess-nix-source;
   inherit debian-ppp;
   inherit libprelude;
   inherit mkCacert;

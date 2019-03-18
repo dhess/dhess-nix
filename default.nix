@@ -68,6 +68,8 @@ in
   inherit (self) opsec-env;
   inherit (self) shell-env;
 
+  inherit (self) dhess-nix-source;
+
   inherit (self) lib;
 
   overlays.all = overlays;
