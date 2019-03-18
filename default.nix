@@ -1,7 +1,7 @@
 let
 
   lib = import ./lib;
-  defaultPkgs = lib.nixpkgs { config = { allowUnfree = true; }; };
+  defaultPkgs = lib.nixpkgs { config = { allowBroken = true; allowUnfree = true; }; };
 
 in
 
@@ -46,6 +46,9 @@ in
   inherit (self) tsoff;
   inherit (self) wpa_supplicant;
   inherit (self) xtensa-esp32-toolchain;
+
+  inherit (self) dhallToNix dhallToNixFromFile;
+  inherit (self) hello-dhall-file;
 
   inherit (self) emacs-nox emacsNoXPackagesNg;
   inherit (self) emacs-nox-env emacs-macport-env;

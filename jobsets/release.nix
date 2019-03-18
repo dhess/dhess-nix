@@ -77,6 +77,9 @@ let
     opsec-env = all;
     shell-env = darwin;
 
+    # Won't evaluate in Hydra because it's not a proper derivation.
+    #hello-dhall-file = all;
+
     dhess-nix-source = all;
 
     pinpon = all;
@@ -143,6 +146,8 @@ let
         nixtools-env.x86_64-linux
         opsec-env.x86_64-linux
 
+        #hello-dhall-file.x86_64-linux
+
         dhess-nix-source.x86_64-linux
 
         ## These aren't really part of the overlay (except possibly to
@@ -199,6 +204,8 @@ let
         nixtools-env.x86_64-darwin
         opsec-env.x86_64-darwin
         shell-env.x86_64-darwin
+
+        #hello-dhall-file.x86_64-darwin
 
         dhess-nix-source.x86_64-darwin
 
