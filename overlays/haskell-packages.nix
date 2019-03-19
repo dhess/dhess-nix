@@ -24,6 +24,8 @@ let
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
 
+    hedgehog-checkers = doJailbreak super.hedgehog-checkers;
+    hedgehog-checkers-lens = doJailbreak super.hedgehog-checkers-lens;
 
     # Some hnix store-releated tests fail.
     hnix = dontCheck (appendPatch (super.callPackage ../pkgs/haskell/hnix {}) (fetchpatch {
@@ -63,6 +65,7 @@ let
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
     servant-docs = doJailbreak super.servant-docs;
+    stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
     tdigest = doJailbreak super.tdigest;
     these = doJailbreak super.these;
@@ -144,6 +147,8 @@ let
     groupoids
     happy
     haskeline
+    hedgehog
+    hedgehog-quickcheck
     hlint
     hscolour
     hspec
@@ -206,6 +211,7 @@ let
     strict
     swagger2
     tasty
+    tasty-hedgehog
     text
     time
     transformers
@@ -260,9 +266,16 @@ let
     GraphSCC
     hakyll
     haxl
+    hedgehog-checkers
+    hedgehog-checkers-lens
+    hedgehog-classes
+    hedgehog-corpus
+    hedgehog-fn
     hex
     hnix
     hoopl
+    hw-hedgehog
+    hw-hspec-hedgehog
     hw-json
     hw-json-lens
     intervals
