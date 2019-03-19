@@ -2,10 +2,10 @@
 , bytestring, comonad, containers, criterion, cryptohash-md5
 , cryptohash-sha1, cryptohash-sha256, cryptohash-sha512, data-fix
 , deepseq, dependent-sum, deriving-compat, Diff, directory
-, exceptions, filepath, free, generic-random, Glob, hashable
-, hashing, haskeline, hedgehog, hnix-store-core, http-client
-, http-client-tls, http-types, interpolate, lens-family
-, lens-family-core, lens-family-th, logict, megaparsec
+, exceptions, fetchgit, filepath, free, generic-random, Glob
+, hashable, hashing, haskeline, hedgehog, hnix-store-core
+, http-client, http-client-tls, http-types, interpolate
+, lens-family, lens-family-core, lens-family-th, logict, megaparsec
 , monad-control, monadlist, mtl, optparse-applicative
 , parser-combinators, pretty-show, prettyprinter, process, ref-tf
 , regex-tdfa, regex-tdfa-text, repline, scientific, semigroups
@@ -17,7 +17,12 @@
 mkDerivation {
   pname = "hnix";
   version = "0.6.0";
-  sha256 = "671a8e1b7c6046486c84851c2298592a169d44c0a30006d547f0542870d239fa";
+  src = fetchgit {
+    url = "https://github.com/haskell-nix/hnix.git";
+    sha256 = "0rjm33g8cj7nsgdj09j5q0y3qgwj9b4lcmap6q40q3icy41wkngf";
+    rev = "c997ba2874a7519986fec33b2636a74ba5be2240";
+    fetchSubmodules = true;
+  };
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [
@@ -36,7 +41,7 @@ mkDerivation {
   executableHaskellDepends = [
     aeson base base16-bytestring bytestring comonad containers
     cryptohash-md5 cryptohash-sha1 cryptohash-sha256 cryptohash-sha512
-    data-fix deepseq exceptions filepath hashing haskeline mtl
+    data-fix deepseq exceptions filepath free hashing haskeline mtl
     optparse-applicative pretty-show prettyprinter ref-tf repline
     serialise template-haskell text time transformers
     unordered-containers
