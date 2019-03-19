@@ -3,7 +3,7 @@ self: super:
 let
 
   inherit (super) stdenv fetchpatch;
-  inherit (super.haskell.lib) appendPatch doJailbreak dontCheck properExtend;
+  inherit (super.haskell.lib) appendPatch doJailbreak dontCheck dontHaddock properExtend;
 
 
   ## Useful functions.
@@ -23,6 +23,11 @@ let
     dhall-to-cabal = doJailbreak super.dhall-to-cabal;
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
+
+    # Ironically, haddock-api doesn't haddock.
+    haddock-api =  dontHaddock (doJailbreak super.haddock-api);
+
+    haddocset = super.callPackage ../pkgs/haskell/haddocset {};
 
     hedgehog-checkers = doJailbreak super.hedgehog-checkers;
     hedgehog-checkers-lens = doJailbreak super.hedgehog-checkers-lens;
@@ -145,6 +150,7 @@ let
     free
     generic-lens
     groupoids
+    haddocset
     happy
     haskeline
     hedgehog
