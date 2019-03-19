@@ -28,7 +28,6 @@ in
 
   inherit (self) crosstool-ng-xtensa;
   inherit (self) debian-ppp;
-  inherit (self) darcs;
   inherit (self) dhall-nix;
   inherit (self) dhess-ssh-keygen;
   inherit (self) fm-assistant;

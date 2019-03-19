@@ -44,7 +44,6 @@ let
     badhosts-all = all;
 
     crosstool-ng-xtensa = x86_64;
-    darcs = all;
     debian-ppp = linux;
     dhall-nix = all;
     dhess-ssh-keygen = all;
@@ -119,7 +118,6 @@ let
         badhosts-all.x86_64-linux
 
         crosstool-ng-xtensa.x86_64-linux
-        darcs.x86_64-linux
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
         dhess-ssh-keygen.x86_64-linux
@@ -186,7 +184,6 @@ let
         badhosts-all.x86_64-darwin
 
         crosstool-ng-xtensa.x86_64-darwin
-        darcs.x86_64-darwin
         dhall-nix.x86_64-darwin
         dhess-ssh-keygen.x86_64-darwin
         fm-assistant.x86_64-darwin

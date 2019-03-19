@@ -73,10 +73,6 @@ let
 
       cereal = dontCheck super.cereal;
 
-      darcs = doJailbreak (super.darcs.overrideAttrs (drv: {
-        meta.hydraPlatforms = stdenv.lib.platforms.all;
-      }));
-
       insert-ordered-containers = doJailbreak super.insert-ordered-containers;
       these = doJailbreak super.these;
     }
@@ -378,8 +374,6 @@ in
   inherit extensive-haskell-env;
 
   ## Executables only.
-
-  darcs = exeOnly ghc844Packages.darcs;
 
   dhall-nix = exeOnly dhall-nix-packages.dhall-nix;
 
