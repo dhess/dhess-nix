@@ -248,6 +248,7 @@ let
     amazonka-s3
     amazonka-sns
     amazonka-sqs
+    approximate
     auto
     autoexporter
     auto-update
@@ -264,6 +265,7 @@ let
     fmt
     formatting
     GraphSCC
+    graphs
     hakyll
     haxl
     hedgehog-checkers
@@ -312,6 +314,8 @@ let
     shelly
     smtLib
     stm-containers
+    streams
+    tagged
     tar
     tasty-hunit
     temporary
