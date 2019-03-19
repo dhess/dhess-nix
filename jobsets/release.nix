@@ -78,6 +78,7 @@ let
 
     # Won't evaluate in Hydra because it's not a proper derivation.
     #hello-dhall-file = all;
+    #hello-dhall-src = all;
 
     dhess-nix-source = all;
 
@@ -145,6 +146,7 @@ let
         opsec-env.x86_64-linux
 
         #hello-dhall-file.x86_64-linux
+        #hello-dhall-src.x86_64-linux
 
         dhess-nix-source.x86_64-linux
 
@@ -203,6 +205,7 @@ let
         shell-env.x86_64-darwin
 
         #hello-dhall-file.x86_64-darwin
+        #hello-dhall-src.x86_64-darwin
 
         dhess-nix-source.x86_64-darwin
 

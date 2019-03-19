@@ -46,8 +46,8 @@ in
   inherit (self) wpa_supplicant;
   inherit (self) xtensa-esp32-toolchain;
 
-  inherit (self) dhallToNix dhallToNixFromFile;
-  inherit (self) hello-dhall-file;
+  inherit (self) dhallToNix dhallToNixFromFile dhallToNixFromSrc;
+  inherit (self) hello-dhall-file hello-dhall-src;
 
   inherit (self) emacs-nox emacsNoXPackagesNg;
   inherit (self) emacs-nox-env emacs-macport-env;
