@@ -22,6 +22,12 @@ let
     concurrent-machines = doJailbreak super.concurrent-machines;
     dhall-to-cabal = doJailbreak super.dhall-to-cabal;
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
+
+    doctest-driver-gen = dontCheck (super.doctest-driver-gen.overrideAttrs (drv: {
+      broken = false;
+      meta.hydraPlatforms = stdenv.lib.platforms.all;
+    }));
+
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
 
     # Ironically, haddock-api doesn't haddock.
@@ -263,6 +269,7 @@ let
     configurator
     configuration-tools
     constraints
+    doctest-driver-gen
     fgl
     fmt
     formatting
