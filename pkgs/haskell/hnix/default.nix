@@ -19,8 +19,8 @@ mkDerivation {
   version = "0.6.0";
   src = fetchgit {
     url = "https://github.com/haskell-nix/hnix.git";
-    sha256 = "0rjm33g8cj7nsgdj09j5q0y3qgwj9b4lcmap6q40q3icy41wkngf";
-    rev = "c997ba2874a7519986fec33b2636a74ba5be2240";
+    sha256 = "0ajj9s8v81zngsc9kx5v1zkrrbk73lnjx9rgr0g9a9mch4v9blrx";
+    rev = "47143fda7384460c1ae01e178892b06179a0850a";
     fetchSubmodules = true;
   };
   isLibrary = true;

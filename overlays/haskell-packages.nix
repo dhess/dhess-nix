@@ -33,15 +33,11 @@ let
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
-
     hedgehog-checkers = doJailbreak super.hedgehog-checkers;
     hedgehog-checkers-lens = doJailbreak super.hedgehog-checkers-lens;
 
     # Some hnix store-releated tests fail.
-    hnix = dontCheck (appendPatch (super.callPackage ../pkgs/haskell/hnix {}) (fetchpatch {
-      url = "https://patch-diff.githubusercontent.com/raw/haskell-nix/hnix/pull/486.patch";
-      sha256 = "1z3p04l6jw1b7ipdacfj52dv7a1wvpnm3d4pscp65r8m3mqwfkdj";
-    }));
+    hnix = dontCheck (super.callPackage ../pkgs/haskell/hnix {});
 
     hnix-store-core = super.callPackage ../pkgs/haskell/hnix-store-core {};
     hoopl = doJailbreak super.hoopl;
