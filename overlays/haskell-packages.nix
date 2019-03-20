@@ -22,11 +22,6 @@ let
     concurrent-machines = doJailbreak super.concurrent-machines;
     dhall-to-cabal = doJailbreak super.dhall-to-cabal;
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
-
-    # Contains a fix for -XNoImplicitPrelude, which I use all the time.
-    # Ironically, the tests fail.
-    doctest-discover = dontCheck (super.callPackage ../pkgs/haskell/doctest-discover {});
-
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
 
     # Ironically, haddock-api doesn't haddock.
@@ -141,7 +136,6 @@ let
     directory
     distributive
     doctest
-    doctest-discover
     either
     errors
     exceptions
