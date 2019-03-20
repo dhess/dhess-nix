@@ -21,6 +21,8 @@ let
   user = config.services.postfix.user;
   group = config.services.postfix.group;
 
+  recipient_access = pkgs.writeText "postfix-recipient-access" cfg.smtpd.recipientAccess;
+
   relay_clientcerts = pkgs.writeText "postfix-relay-clientcerts" cfg.relayClientCerts;
 
   bogus_mx = pkgs.writeText "postfix-bogus-mx" ''
@@ -337,6 +339,18 @@ in
         '';
       };
 
+      recipientAccess = mkOption {
+        type = types.lines;
+        default = "";
+        example = ''
+          nospam@example.org REJECT go away
+        '';
+        description = ''
+          Entries in Postfix's smtpd recipient access table. See the
+          Postfix <literal>access(5)</literal> man page for details.
+        '';
+      };
+
       recipientRestrictions = mkOption {
         type = types.nullOr (types.listOf pkgs.lib.types.nonEmptyStr);
 
@@ -347,6 +361,7 @@ in
           "permit_tls_clientcerts"
           "reject_unknown_recipient_domain"
           "reject_unverified_recipient"
+          "check_recipient_access hash:/etc/postfix/recipient_access"
         ];
         example = literalExample [
           "permit_mynetworks"
@@ -629,6 +644,7 @@ in
       sslKey = acmeCertPrivate;
 
       mapFiles = {
+        "recipient_access" = recipient_access;
         "relay_clientcerts" = relay_clientcerts;
         "bogus_mx" = bogus_mx;
       };
