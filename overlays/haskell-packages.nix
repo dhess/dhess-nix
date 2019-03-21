@@ -51,6 +51,7 @@ let
     hw-rankselect = doJailbreak super.hw-rankselect;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
+    ip = dontCheck (doJailbreak (super.callPackage ../pkgs/haskell/ip {}));
     ivory = doJailbreak super.ivory;
     katip = super.katip_0_8_1_0.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
@@ -71,6 +72,7 @@ let
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
+    semirings = super.semirings_0_3_1_1;
     servant-docs = doJailbreak super.servant-docs;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
@@ -290,6 +292,7 @@ let
     hw-json
     hw-json-lens
     intervals
+    ip
     ivory
     katip
     katip-elasticsearch
@@ -320,6 +323,7 @@ let
     repline
     safecopy
     sbv
+    semirings
     shelly
     smtLib
     stm-containers
