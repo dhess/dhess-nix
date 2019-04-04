@@ -30,6 +30,8 @@ let
     name = "nixtools-env";
     paths = with super; [
       cabal2nix
+      nix-delegate
+      nix-deploy
       nix-index
       nix-info
       nox
