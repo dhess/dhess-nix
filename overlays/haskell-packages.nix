@@ -86,6 +86,9 @@ let
     time-recurrence = doJailbreak super.time-recurrence;
     wide-word = doJailbreak super.wide-word;
     wires = doJailbreak super.wires;
+
+    # Disable tests on aarch64-linux; the doctests cause an internal error.
+    zippers = if stdenv.hostPlatform.isAarch64 then dontCheck super.zippers else super.zippers;
   });
 
 
