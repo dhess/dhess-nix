@@ -70,6 +70,10 @@ let
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
+
+    # Disable tests on aarch64-linux; the doctests cause an internal error.
+    pinpon = if stdenv.hostPlatform.isAarch64 then dontCheck super.pinpon else super.pinpon;
+
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
@@ -388,7 +392,5 @@ in
 
   mellon-web = exeOnly self.haskellPackages.mellon-web;
 
-  # Disable tests on the static executable; something in the doctests
-  # causes a nasty (internal?) GHC bug.
-  pinpon = exeOnly (self.haskellPackages.pinpon);
+  pinpon = exeOnly self.haskellPackages.pinpon;
 }
