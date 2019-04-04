@@ -39,11 +39,6 @@ let
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
-
-    # This is needed to get around a hack in Nixpkgs's Haskell
-    # configuration-common.nix.
-    hakyll = doJailbreak (super.callPackage ../pkgs/haskell/hakyll {});
-
     hedgehog-checkers = doJailbreak super.hedgehog-checkers;
     hedgehog-checkers-lens = doJailbreak super.hedgehog-checkers-lens;
 
