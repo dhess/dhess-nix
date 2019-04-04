@@ -1,20 +1,26 @@
 { mkDerivation, aeson, attoparsec, base, bytestring, criterion
-, deepseq, doctest, hashable, hspec, hspec-discover, HUnit
-, primitive, QuickCheck, quickcheck-classes, stdenv, test-framework
-, test-framework-hunit, test-framework-quickcheck2, text, vector
+, deepseq, doctest, fetchgit, hashable, hspec, hspec-discover
+, HUnit, primitive, QuickCheck, quickcheck-classes, stdenv
+, test-framework, test-framework-hunit, test-framework-quickcheck2
+, text, vector, wide-word
 }:
 mkDerivation {
   pname = "ip";
-  version = "1.4.2.1";
-  sha256 = "41c92e12ba99adc31d1d2113909ae85784d9f0bb42ff054f4252b4b79e5fc118";
+  version = "1.5.0";
+  src = fetchgit {
+    url = "https://github.com/andrewthad/haskell-ip.git";
+    sha256 = "0d4pjb8si8rlj3b7vqcjjj15a7anw5glqr9pc32khxd9igvkv3gs";
+    rev = "0742cd48f5a49a0e8718f6eb559c70d5192ac799";
+    fetchSubmodules = true;
+  };
   libraryHaskellDepends = [
     aeson attoparsec base bytestring deepseq hashable primitive text
-    vector
+    vector wide-word
   ];
   testHaskellDepends = [
     attoparsec base bytestring doctest hspec HUnit QuickCheck
     quickcheck-classes test-framework test-framework-hunit
-    test-framework-quickcheck2 text
+    test-framework-quickcheck2 text wide-word
   ];
   testToolDepends = [ hspec-discover ];
   benchmarkHaskellDepends = [

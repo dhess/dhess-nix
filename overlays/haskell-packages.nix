@@ -20,6 +20,11 @@ let
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
     concurrent-machines = doJailbreak super.concurrent-machines;
+
+    # Use Profpatsch's dhall-nix fork until support for new dhalls is
+    # upstreamed.
+    dhall-nix = doJailbreak (super.callPackage ../pkgs/haskell/dhall-nix {});
+
     dhall-to-cabal = doJailbreak super.dhall-to-cabal;
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
 
@@ -34,11 +39,16 @@ let
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
+
+    # This is needed to get around a hack in Nixpkgs's Haskell
+    # configuration-common.nix.
+    hakyll = doJailbreak (super.callPackage ../pkgs/haskell/hakyll {});
+
     hedgehog-checkers = doJailbreak super.hedgehog-checkers;
     hedgehog-checkers-lens = doJailbreak super.hedgehog-checkers-lens;
 
     # Some hnix store-releated tests fail.
-    hnix = dontCheck (super.callPackage ../pkgs/haskell/hnix {});
+    hnix = doJailbreak (dontCheck (super.callPackage ../pkgs/haskell/hnix {}));
 
     hnix-store-core = super.callPackage ../pkgs/haskell/hnix-store-core {};
     hoopl = doJailbreak super.hoopl;
@@ -51,7 +61,7 @@ let
     hw-rankselect = doJailbreak super.hw-rankselect;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
-    ip = dontCheck (doJailbreak (super.callPackage ../pkgs/haskell/ip {}));
+    ip = super.callPackage ../pkgs/haskell/ip {};
     ivory = doJailbreak super.ivory;
     katip = super.katip_0_8_1_0.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
@@ -61,10 +71,6 @@ let
       meta.hydraPlatforms = stdenv.lib.platforms.darwin;
     });
     machines-process = doJailbreak super.machines-process;
-
-    # Nixpkgs is currently forcing pandoc to 2.7, but that breaks some
-    # things.
-    pandoc = dontCheck (super.callPackage ../pkgs/haskell/pandoc/2.5.nix {});
 
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
@@ -79,23 +85,9 @@ let
     tdigest = doJailbreak super.tdigest;
     these = doJailbreak super.these;
     time-recurrence = doJailbreak super.time-recurrence;
+    wide-word = doJailbreak super.wide-word;
     wires = doJailbreak super.wires;
   });
-
-  # GHC 8.4.4.
-  ghc844Packages = properExtend super.haskell.packages.ghc844 (self: super:
-    {
-      Diff = dontCheck super.Diff;
-
-      # Needs to be called with flags for GHC 8.4.4.
-      aeson = doJailbreak (super.callPackage ../pkgs/haskell/aeson {});
-
-      cereal = dontCheck super.cereal;
-
-      insert-ordered-containers = doJailbreak super.insert-ordered-containers;
-      these = doJailbreak super.these;
-    }
-  );
 
 
   ## Package sets that I want to be built.
@@ -103,7 +95,6 @@ let
   # A list of currently-problematic packages, things that can't easily
   # be fixed by overrides.
   problems = hp: with hp; [
-    dhall-nix
   ];
 
   mkInstalledPackages = desired: problems: hp:
@@ -347,26 +338,6 @@ let
   extensiveHaskellPackages = mkInstalledPackages extraList problems;
 
 
-  ## Custom package sets for things that need particular package versions.
-
-  dhall-nix-packages = properExtend ghc844Packages (self: super:
-    {
-      # dhall runs network tests.
-      dhall = dontCheck (doJailbreak (super.callPackage ../pkgs/haskell/dhall/1.17.0.nix {}));
-
-      dhall-nix = super.dhall-nix.overrideAttrs (drv: {
-        meta.hydraPlatforms = stdenv.lib.platforms.all;
-      });
-
-      megaparsec = dontCheck super.megaparsec_6_5_0;
-
-      neat-interpolation = super.callPackage ../pkgs/haskell/neat-interpolation/0.3.2.2.nix {};
-
-      repline = super.callPackage ../pkgs/haskell/repline/0.1.7.0.nix {};
-    }
-  );
-
-
   ## Create a buildEnv with useful Haskell tools and the given set of
   ## haskellPackages and a list of packages to install in the
   ## buildEnv.
@@ -411,7 +382,7 @@ in
 
   ## Executables only.
 
-  dhall-nix = exeOnly dhall-nix-packages.dhall-nix;
+  dhall-nix = exeOnly self.haskellPackages.dhall-nix;
 
   dhess-ssh-keygen = exeOnly self.haskellPackages.dhess-ssh-keygen;
 
