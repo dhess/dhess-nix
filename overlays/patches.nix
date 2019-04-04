@@ -17,4 +17,14 @@ in
         url = "https://github.com/ntp-project/ntp/commit/881e427f3236046466bdb8235edf86e6dfa34391.patch";
         sha256 = "0iqn12m7vzsblqbds5jb57m8cjs30rw8nh2xv8k2g8lbqbyk1k7s"; }) ];
     });
+
+
+  # Fix Hydra. See: https://github.com/NixOS/nixpkgs/pull/57677
+  hydra = super.hydra.overrideAttrs (drv: {
+    patches = [
+      (super.fetchpatch {
+        url = "https://github.com/NixOS/hydra/commit/4171ab4c4fd576c516dc03ba64d1c7945f769af0.patch";
+        sha256 = "1v6x0n7mwavl0cz9041q5mpmnb96dgwmpg4xb3kvdb04vsnz74wa";
+      })];
+  });
 }
