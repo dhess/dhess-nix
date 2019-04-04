@@ -24,7 +24,7 @@ in
     patches = [
       (super.fetchpatch {
         url = "https://github.com/NixOS/hydra/commit/4171ab4c4fd576c516dc03ba64d1c7945f769af0.patch";
-        sha256 = "1v6x0n7mwavl0cz9041q5mpmnb96dgwmpg4xb3kvdb04vsnz74wa";
+        sha256 = "1fxa2459kdws6qc419dv4084c1ssmys7kqg4ic7n643kybamsgrx";
       })];
   });
 }
