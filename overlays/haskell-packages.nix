@@ -84,6 +84,10 @@ let
     tdigest = doJailbreak super.tdigest;
     these = doJailbreak super.these;
     time-recurrence = doJailbreak super.time-recurrence;
+
+    # Disable tests on aarch64-linux; the doctests cause an internal error.
+    trifecta = if stdenv.hostPlatform.isAarch64 then dontCheck super.trifecta else super.trifecta;
+
     wide-word = doJailbreak super.wide-word;
     wires = doJailbreak super.wires;
 
