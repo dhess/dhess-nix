@@ -95,6 +95,7 @@ let
   # A list of currently-problematic packages, things that can't easily
   # be fixed by overrides.
   problems = hp: with hp; [
+    hakyll
   ];
 
   mkInstalledPackages = desired: problems: hp:
