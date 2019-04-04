@@ -35,6 +35,7 @@ mkDerivation {
     tasty-quickcheck text unordered-containers yaml
   ];
   testToolDepends = [ utillinux ];
+  jailbreak = true;
   homepage = "http://jaspervdj.be/hakyll";
   description = "A static website compiler library";
   license = stdenv.lib.licenses.bsd3;
