@@ -4,6 +4,8 @@ let
 
   inherit (super) callPackage;
 
+  ccextractor = callPackage ../pkgs/multimedia/ccextractor {};
+
   debian-ppp = callPackage ../pkgs/networking/debian-ppp {};
 
   libprelude = callPackage ../pkgs/development/libraries/libprelude {};
@@ -77,6 +79,7 @@ in
   inherit (badhosts) badhosts-fakenews-gambling-porn-social;
   inherit (badhosts) badhosts-all;
 
+  inherit ccextractor;
   inherit crosstool-ng-xtensa;
   inherit dhess-nix-source;
   inherit debian-ppp;

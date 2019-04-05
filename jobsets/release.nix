@@ -43,6 +43,7 @@ let
     badhosts-fakenews-gambling-porn-social = all;
     badhosts-all = all;
 
+    ccextractor = x86_64;
     crosstool-ng-xtensa = x86_64;
     debian-ppp = linux;
     dhall-nix = all;
@@ -118,6 +119,7 @@ let
         badhosts-fakenews-gambling-porn-social.x86_64-linux
         badhosts-all.x86_64-linux
 
+        ccextractor.x86_64-linux
         crosstool-ng-xtensa.x86_64-linux
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
@@ -185,6 +187,7 @@ let
         badhosts-fakenews-gambling-porn-social.x86_64-darwin
         badhosts-all.x86_64-darwin
 
+        ccextractor.x86_64-darwin
         crosstool-ng-xtensa.x86_64-darwin
         dhall-nix.x86_64-darwin
         dhess-ssh-keygen.x86_64-darwin

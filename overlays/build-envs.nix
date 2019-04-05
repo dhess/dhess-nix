@@ -5,6 +5,7 @@ let
   mactools-env = super.buildEnv {
     name = "mactools-env";
     paths = with super; [
+      ccextractor
       ffmpeg
       fm-assistant
       mediainfo

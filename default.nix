@@ -26,6 +26,7 @@ in
   inherit (self) badhosts-fakenews-gambling-porn-social;
   inherit (self) badhosts-all;
 
+  inherit (self) ccextractor;
   inherit (self) crosstool-ng-xtensa;
   inherit (self) debian-ppp;
   inherit (self) dhall-nix;
