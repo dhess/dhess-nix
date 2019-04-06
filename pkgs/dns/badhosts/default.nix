@@ -5,14 +5,14 @@
 
 let
 
-  version = "2.3.6";
-  sha256 = "0q3x780899334mngfjvg8iwdlp4jl1ynzaf8xm8b1dczr6z5xz2b";
+  version = "2.3.10";
+  sha256 = "1bpwd3idjnlcj2wbiwxmzpmhhnx42nx569pqwiggfqkzgrbm4rgy";
 
   generic = { subname, hostsFile, ... }: stdenv.mkDerivation {
     name = "badhosts-${subname}-${version}";
     inherit version;
     src = fetchurl {
-      url = "https://github.com/StevenBlack/hosts/archive/v${version}.tar.gz";
+      url = "https://github.com/StevenBlack/hosts/archive/${version}.tar.gz";
       inherit sha256;
     };
 
