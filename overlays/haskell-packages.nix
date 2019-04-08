@@ -58,7 +58,7 @@ let
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
     ip = super.callPackage ../pkgs/haskell/ip {};
     ivory = doJailbreak super.ivory;
-    katip = super.katip_0_8_1_0.overrideAttrs (drv: {
+    katip = super.katip_0_8_2_0.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     });
     katip-elasticsearch = dontCheck super.katip-elasticsearch;

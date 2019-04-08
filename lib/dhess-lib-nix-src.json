@@ -1,6 +1,6 @@
 {
     "owner":  "dhess"
 ,   "repo":   "dhess-lib-nix"
-,   "rev":    "42fc05d0df4d34b30b4626ea1efae1d3a91a2484"
-,   "sha256": "1cgsv9kjqdfndw84y56ql5d5dz3h5lbdgj65kgabm5yqm8p9z4nz"
+,   "rev":    "905e2befea9fa3e3874bd6da3d1d15b8d0bf1932"
+,   "sha256": "0cgsv9kjqdfndw84y56ql5d5dz3h5lbdgj65kgabm5yqm8p9z4nz"
 }
