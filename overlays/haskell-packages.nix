@@ -79,7 +79,7 @@ let
     pipes-transduce = dontCheck super.pipes-transduce;
     semirings = super.semirings_0_3_1_1;
     servant-docs = doJailbreak super.servant-docs;
-    strastratosphere = super.stratosphere_0_36_0;
+    stratosphere = super.stratosphere_0_36_0;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
     tdigest = doJailbreak super.tdigest;
