@@ -44,6 +44,7 @@ let
     nix-mode
     nix-sandbox
     nixos-options
+    org-journal
     org-plus-contrib
     org-ref
     paredit
