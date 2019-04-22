@@ -18,7 +18,7 @@ in
 mkIf cfg.enable {
 
   dhess-nix.assertions.moduleHashes."services/networking/strongswan.nix" =
-        "4dbdea221ac2f5ab469e9d8c7f7cf0c6ce5dcf837504c05e69de5e3b727fef6c";
+        "e8f868b5138a4856d9dffcadd210763dbca3150e7b5947870084b072ba351ea2";
 
   dhess-nix.keychain.keys.strongswan-cert-key = {
     destDir = "/var/lib/strongswan";
