@@ -300,7 +300,6 @@ in
         User = cfg.user;
         Group = cfg.group;
         RuntimeDirectory = "opendkim";
-        PermissionsStartOnly = true;
         Restart = "always";
         RestartSec = 5;
       };

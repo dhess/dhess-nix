@@ -115,7 +115,6 @@ in {
       restartTriggers = [ pkgs.pinpon ];
 
       serviceConfig = {
-        PermissionsStartOnly = "true";
         User = "pinpon";
         Group = "pinpon";
         Type = "simple";

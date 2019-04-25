@@ -158,7 +158,6 @@ in
         # https://github.com/NixOS/nixpkgs/issues/26611
         #NoNewPrivileges = "true";
         CapabilityBoundingSet = [ "CAP_DAC_READ_SEARCH" ];
-        PermissionsStartOnly = "true";
       };
     };
 
