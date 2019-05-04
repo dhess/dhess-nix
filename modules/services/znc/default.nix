@@ -407,7 +407,7 @@ in
   config = mkIf cfg.enable {
 
     dhess-nix.assertions.moduleHashes."services/networking/znc/default.nix" =
-      "eee578c0c8c23e896d9370fd753a0c26e1c7041236b4b43a09655f917724ec0b";g
+      "eee578c0c8c23e896d9370fd753a0c26e1c7041236b4b43a09655f917724ec0b";
 
     dhess-nix.keychain.keys.znc-config = {
       text = cfg.configLiteral;
