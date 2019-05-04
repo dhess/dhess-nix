@@ -672,8 +672,17 @@ in
 
         smtpd_tls_fingerprint_digest = "sha1";
         smtpd_tls_security_level = "may";
+        smtpd_tls_auth_only = "yes";
         smtpd_tls_loglevel = "1";
+        smtpd_tls_received_header = "yes";
         smtpd_tls_dh1024_param_file = "${pkgs.ffdhe2048Pem}";
+
+        # We're pretty draconian about what we accept and what we ask
+        # for. If this causes problems with old versions of qmail and
+        # Microsoft Exchange Server 2003, well, so be it. It's 2019;
+        # get a better mail server.
+        smtpd_tls_ask_ccert = "yes";
+        tls_preempt_cipherlist = "yes";
 
         # Allow SASL-authenticated senders to send as different users
         # according to their virtual mailbox mappings.
@@ -682,6 +691,7 @@ in
 
         smtp_tls_security_level = "may";
         smtp_tls_loglevel = "1";
+        smtp_tls_note_starttls_offer = "yes";
 
         unverified_recipient_reject_reason = "Address lookup failed";
       }
@@ -762,6 +772,8 @@ in
               "-o" "tls_preempt_cipherlist=yes"
               "-o" "syslog_name=postfix/submission"
               "-o" "smtpd_tls_security_level=encrypt"
+              "-o" "smtpd_tls_mandatory_ciphers=high"
+              "-o" "smtpd_tls_mandatory_protocols=!SSLv2,!SSLv3,!TLSv1,!TLSv1.1"
               "-o" "smtpd_tls_cert_file=${cfg.submission.smtpd.tlsCertFile}"
               "-o" "smtpd_tls_key_file=${submissionKeyFile}"
               "-o" "smtpd_tls_ask_ccert=yes"
