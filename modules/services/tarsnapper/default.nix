@@ -132,14 +132,6 @@ in
 
       path = with pkgs; [ coreutils iputils nettools tarsnap tarsnapper utillinux ];
 
-      # In order for the persistent tarsnap timer to work reliably, we have to
-      # make sure that the tarsnap server is reachable after systemd starts up
-      # the service - therefore we sleep in a loop until we can ping the
-      # endpoint.
-      preStart = ''
-        while ! ping -q -c 1 v1-0-0-server.tarsnap.com &> /dev/null; do sleep 3; done
-      '';
-
       script = ''
         set -e
 
