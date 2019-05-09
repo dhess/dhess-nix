@@ -56,6 +56,7 @@ let
       direnv
       gitAndTools.git-crypt
       gitAndTools.git-extras
+      gitAndTools.pre-commit
       gnumake
       gnupg
       gnused
