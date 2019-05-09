@@ -52,6 +52,7 @@ let
     name = "shell-env";
     paths = with super; [
       coreutils
+      detect-secrets
       direnv
       gitAndTools.git-crypt
       gitAndTools.git-extras
