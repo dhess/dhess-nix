@@ -13,6 +13,9 @@ let
       qrencode
       wireguard-tools
       youtube-dl
+      yubico-piv-tool
+      yubikey-manager
+      yubikey-personalization
     ];
     meta.platforms = super.lib.platforms.darwin;
   };
