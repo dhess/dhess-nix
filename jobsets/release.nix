@@ -49,11 +49,6 @@ let
     dhall-nix = all;
     dhess-ssh-keygen = all;
     fm-assistant = darwin;
-    grub2 = x86_64_linux;
-    grub2_full = x86_64_linux;
-    grub2_efi = x86_64_linux;
-    grub2_light = x86_64_linux;
-    grub2_xen = x86_64_linux;
     ipxe = x86_64_linux;
     libprelude = x86_64_linux;
     netsniff-ng = x86_64_linux;
