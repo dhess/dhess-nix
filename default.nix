@@ -32,6 +32,7 @@ in
   inherit (self) dhall-nix;
   inherit (self) dhess-ssh-keygen;
   inherit (self) fm-assistant;
+  inherit (self) grub2 grub2_full grub2_efi grub2_light grub2_xen;
   inherit (self) ipxe;
   inherit (self) libprelude;
   inherit (self) mellon-gpio mellon-web;
