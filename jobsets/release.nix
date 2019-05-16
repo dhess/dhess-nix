@@ -51,6 +51,7 @@ let
     fm-assistant = darwin;
     ipxe = x86_64_linux;
     libprelude = x86_64_linux;
+    lz4 = all;
     netsniff-ng = x86_64_linux;
     ntp = linux;
     ppp-devel = linux;
@@ -126,6 +127,7 @@ let
         dhess-ssh-keygen.x86_64-linux
         ipxe.x86_64-linux
         libprelude.x86_64-linux
+        lz4.x86_64-linux
         netsniff-ng.x86_64-linux
         ntp.x86_64-linux
         ppp-devel.x86_64-linux
@@ -192,6 +194,7 @@ let
         dhall-nix.x86_64-darwin
         dhess-ssh-keygen.x86_64-darwin
         fm-assistant.x86_64-darwin
+        lz4.x86_64-darwin
         terraform-provider-vultr.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
 
@@ -247,6 +250,7 @@ let
         badhosts-fakenews-gambling-porn-social.aarch64-linux
         badhosts-all.aarch64-linux
 
+        lz4.aarch64-linux
         ntp.aarch64-linux
         unbound.aarch64-linux
 

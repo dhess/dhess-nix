@@ -4,6 +4,9 @@ let
 
   inherit (super) callPackage;
 
+  # lz4 in upstream is broken on macOS until a patch from staging is merged.
+  lz4 = callPackage ../pkgs/misc/lz4 {};
+
 in
 {
   # A more recent ipxe than nixpkgs has.
@@ -22,4 +25,6 @@ in
      CONFIG_TLSV12=y
     '';
   });
+
+  inherit lz4;
 }
