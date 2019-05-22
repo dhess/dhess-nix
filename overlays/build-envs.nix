@@ -2,6 +2,12 @@ self: super:
 
 let
 
+  myPass = super.pass.withExtensions (ext: [
+    ext.pass-audit
+    ext.pass-genphrase
+    ext.pass-update
+  ]);
+
   mactools-env = super.buildEnv {
     name = "mactools-env";
     paths = with super; [
@@ -9,6 +15,7 @@ let
       ffmpeg
       fm-assistant
       mediainfo
+      myPass
       pinentry_mac
       qrencode
       wireguard-tools
