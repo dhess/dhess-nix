@@ -21,7 +21,9 @@ let
     clay = doJailbreak super.clay;
     concurrent-machines = doJailbreak super.concurrent-machines;
 
-    dhall = super.dhall_1_23_0;
+    # dhall tests try to hit the network.
+    dhall = dontCheck super.dhall_1_23_0;
+
     dhall-json = super.dhall-json_1_2_8;
 
     # The new dhall-nix hasn't been pushed to Hackage yet.
@@ -40,6 +42,7 @@ let
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
+    hedgehog = super.hedgehog_1_0;
     hedgehog-checkers = doJailbreak super.hedgehog-checkers;
     hedgehog-checkers-lens = doJailbreak super.hedgehog-checkers-lens;
 
