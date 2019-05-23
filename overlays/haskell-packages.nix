@@ -22,7 +22,7 @@ let
     concurrent-machines = doJailbreak super.concurrent-machines;
 
     dhall = super.dhall_1_23_0;
-    dhall-json = super.dhall_json_1_2_8;
+    dhall-json = super.dhall-json_1_2_8;
 
     # The new dhall-nix hasn't been pushed to Hackage yet.
     dhall-nix = super.callPackage ../pkgs/haskell/dhall-nix {};
