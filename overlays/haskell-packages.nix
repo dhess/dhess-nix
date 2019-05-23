@@ -45,11 +45,6 @@ let
     hedgehog = super.hedgehog_1_0;
     hedgehog-checkers = doJailbreak super.hedgehog-checkers;
     hedgehog-checkers-lens = doJailbreak super.hedgehog-checkers-lens;
-
-    # Some hnix store-releated tests fail.
-    hnix = doJailbreak (dontCheck (super.callPackage ../pkgs/haskell/hnix {}));
-
-    hnix-store-core = super.callPackage ../pkgs/haskell/hnix-store-core {};
     hoopl = doJailbreak super.hoopl;
     hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
