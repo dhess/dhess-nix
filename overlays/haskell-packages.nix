@@ -42,7 +42,7 @@ let
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
-    hedgehog-fn = super.callPackage ../pkgs/haskell/hedgehog/0.6.nix {};
+    hedgehog-fn = super.callPackage ../pkgs/haskell/hedgehog-fn/0.6.nix {};
     hedgehog-checkers = doJailbreak super.hedgehog-checkers;
     hedgehog-checkers-lens = doJailbreak super.hedgehog-checkers-lens;
     hoopl = doJailbreak super.hoopl;
