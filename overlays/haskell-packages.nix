@@ -21,11 +21,12 @@ let
     clay = doJailbreak super.clay;
     concurrent-machines = doJailbreak super.concurrent-machines;
 
-    # Use Profpatsch's dhall-nix fork until support for new dhalls is
-    # upstreamed.
-    dhall-nix = doJailbreak (super.callPackage ../pkgs/haskell/dhall-nix {});
+    dhall = super.dhall_1_23_0;
+    dhall-json = super.dhall_json_1_2_8;
 
-    dhall-to-cabal = doJailbreak super.dhall-to-cabal;
+    # The new dhall-nix hasn't been pushed to Hackage yet.
+    dhall-nix = super.callPackage ../pkgs/haskell/dhall-nix {};
+
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
 
     doctest-driver-gen = dontCheck (super.doctest-driver-gen.overrideAttrs (drv: {
@@ -79,7 +80,7 @@ let
     pipes-transduce = dontCheck super.pipes-transduce;
     semirings = super.callPackage ../pkgs/haskell/semirings/0.3.1.2.nix {};
     servant-docs = doJailbreak super.servant-docs;
-    stratosphere = super.stratosphere_0_36_0;
+    stratosphere = super.stratosphere_0_37_0;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
     tdigest = doJailbreak super.tdigest;
