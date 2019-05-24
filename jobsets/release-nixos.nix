@@ -57,7 +57,6 @@ let
     build-host = callSubTests ../tests/build-host.nix {};
     dovecot = callTest ../tests/dovecot.nix {};
     hydra-manual-setup = callTest ../tests/hydra-manual-setup.nix { system = "x86_64-linux"; };
-    full-tunnel-vpn = callSubTests ../tests/full-tunnel-vpn.nix {};
     mellon-auto-unlock = callTest ../tests/mellon-auto-unlock.nix {};
     netsniff-ng = callSubTests ../tests/netsniff-ng.nix {};
     opendkim = callTest ../tests/opendkim.nix {};
@@ -69,6 +68,7 @@ let
     tarsnapper = callTest ../tests/tarsnapper.nix {};
     tftpd-hpa = callTest ../tests/tftpd-hpa.nix {};
     unbound-multi-instance = callTest ../tests/unbound-multi-instance.nix {};
+    wireguard = callTest ../tests/wireguard.nix {};
     znc = callSubTests ../tests/znc.nix {};
 
     ## Configuration.

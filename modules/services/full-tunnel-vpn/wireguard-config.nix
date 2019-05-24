@@ -6,7 +6,6 @@ mkIf (cfg.peers != {}) {
 
   networking.wireguard.interfaces.${cfg.interface} = {
     ips = [ cfg.ipv4ClientCidr cfg.ipv6ClientPrefix ];
-    privateKeyLiteral = cfg.privateKeyLiteral;
     listenPort = cfg.listenPort;
     peers =
       (mapAttrs
