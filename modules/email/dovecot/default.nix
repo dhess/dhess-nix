@@ -574,7 +574,7 @@ in
   config = mkIf cfg.enable {
 
     dhess-nix.assertions.moduleHashes."services/mail/dovecot.nix" =
-      "4f6f876a8d7c6fb787bdd4bd692d4d66fb71746e0eba865917bf5e15dd1a0d6b";
+      "f4357811473e824909af6f4e8273300cca0aa82f0e0f3c397d411c871cbea3dc";
 
     security.pam.services.dovecot2 = mkIf cfg.enablePAM {};
 
@@ -672,14 +672,14 @@ in
     environment.systemPackages = [ dovecotPkg ];
 
     assertions = [
-      { assertion = isNull cfg.sslServerCert == isNull cfg.sslServerKey
-          && (!(isNull cfg.sslCACert) -> !(isNull cfg.sslServerCert || isNull cfg.sslServerKey));
+      { assertion = (cfg.sslServerCert == null) == (cfg.sslServerKey == null)
+          && (cfg.sslCACert != null -> !(cfg.sslServerCert == null || cfg.sslServerKey == null));
         message = "dovecot needs both sslServerCert and sslServerKey defined for working crypto";
       }
       { assertion = cfg.showPAMFailure -> cfg.enablePAM;
         message = "dovecot is configured with showPAMFailure while enablePAM is disabled";
       }
-      { assertion = (cfg.sieveScripts != {}) -> ((cfg.mailUser != null) && (cfg.mailGroup != null));
+      { assertion = cfg.sieveScripts != {} -> (cfg.mailUser != null && cfg.mailGroup != null);
         message = "dovecot requires mailUser and mailGroup to be set when sieveScripts is set";
       }
     ];
