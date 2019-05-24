@@ -8,6 +8,7 @@
 let
 
   dhessNixUri = "https://github.com/dhess/dhess-nix.git";
+  myNixpkgsUri = "https://github.com/dhess/nixpkgs.git";
 
   mkFetchGithub = value: {
     inherit value;
@@ -65,6 +66,15 @@ let
     };
   };
 
+  # Same as mkStaging above, except use my own nixpkgs fork.
+  mkStagingMyNixpkgs = dhessNixBranch: myNixpkgsRev: {
+    schedulingshares = 400;
+    inputs = {
+      dhessNix = mkFetchGithub "${dhessNixUri} ${dhessNixBranch}";
+      nixpkgs_override = mkFetchGithub "${myNixpkgsUri} ${myNixpkgsRev}";
+    };
+  };
+
   # Run the NixOS modules tests, rather than the package set tests.
   nixosTests = settings: settings // {
     nixexprpath = "jobsets/release-nixos.nix";
@@ -76,6 +86,7 @@ let
     nixos-unstable = mkNixpkgsChannels "master" "nixos-unstable";
     nixpkgs-unstable = mkNixpkgsChannels "master" "nixpkgs-unstable";
     nixpkgs = mkNixpkgs "master" "master";
+    libdispatch-fix = mkStagingMyNixpkgs "libdispatch-fix" "libdispatch-fix";
 
     modules-master = nixosTests master;
     modules-nixos-unstable = nixosTests nixos-unstable;
