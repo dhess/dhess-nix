@@ -2,6 +2,8 @@ self: super:
 
 let
 
+  localLib = import ../lib;
+
   inherit (super) stdenv fetchpatch;
   inherit (super.haskell.lib) appendPatch doJailbreak dontCheck dontHaddock properExtend;
 
@@ -342,6 +344,8 @@ let
   # set, minus any problematic packages.
   extensiveHaskellPackages = mkInstalledPackages extraList problems;
 
+  # haskell-ide-engine via all-hies.
+  inherit (localLib) all-hies;
 
   ## Create a buildEnv with useful Haskell tools and the given set of
   ## haskellPackages and a list of packages to install in the
@@ -351,6 +355,7 @@ let
   let
     paths =  [
         (hp.ghcWithHoogle packageList)
+        (all-hies.unstableFallback.selection { selector = p: { inherit (p) ghc865; }; })
         (exeOnly hp.cabal-install)
         (exeOnly hp.dhall-to-cabal)
         (exeOnly hp.hindent)
@@ -384,6 +389,10 @@ in
   inherit mkHaskellBuildEnv;
   inherit haskell-env;
   inherit extensive-haskell-env;
+
+  ## haskell-ide-engine.
+
+  inherit all-hies;
 
   ## Executables only.
 

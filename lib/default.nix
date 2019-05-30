@@ -24,6 +24,9 @@ let
   fixedMellon = lib.fetchers.fixedNixSrc "mellon_override" ./mellon-src.json;
   mellon = (import fixedMellon) {};
 
+  fixedAllHies = lib.fetchers.fixedNixSrc "all_hies_override" ./all-hies-src.json;
+  all-hies = (import fixedAllHies) {};
+
   overlays = [
     dhess-lib-nix.overlays.all
     pinpon.overlays.pinpon
@@ -48,4 +51,5 @@ in lib //
   inherit nixpkgs;
   inherit haskell;
   inherit overlays;
+  inherit fixedAllHies all-hies;
 }
