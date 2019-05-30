@@ -137,7 +137,9 @@ let
         path = with pkgs; [ kmod iproute wireguard-tools ];
 
         serviceConfig = {
-          Type = "oneshot";
+          Type = "simple";
+          Restart = "on-failure";
+          RestartSec = "5s";
           RemainAfterExit = true;
         };
 
@@ -230,7 +232,7 @@ in
   config = mkIf (cfg.interfaces != {}) {
 
     dhess-nix.assertions.moduleHashes."services/networking/wireguard.nix" =
-      "9e89a5988026336df07b4375989e79d511282b5eab094e584d257f4e18205781";
+      "32ea8d35dee627d41c347736406e03c403392f64fa10345adc554ade96d91743";
 
     boot.extraModulePackages = [ kernel.wireguard ];
     environment.systemPackages = [ pkgs.wireguard-tools ];
