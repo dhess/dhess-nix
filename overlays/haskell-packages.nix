@@ -45,6 +45,7 @@ let
     hedgehog-fn = super.callPackage ../pkgs/haskell/hedgehog-fn/0.6.nix {};
     hedgehog-checkers = doJailbreak super.hedgehog-checkers;
     hedgehog-checkers-lens = doJailbreak super.hedgehog-checkers-lens;
+    hedgehog-quickcheck = super.callPackage ../pkgs/haskell/hedgehog-quickcheck/0.1.nix {};
     hoopl = doJailbreak super.hoopl;
     hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
