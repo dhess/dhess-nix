@@ -38,6 +38,9 @@ let
     hlint-refactor
     ido-describe-bindings
     ido-vertical-mode
+    lsp-haskell
+    lsp-mode
+    lsp-ui
     magit
     magit-popup
     markdown-mode
