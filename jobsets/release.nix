@@ -63,6 +63,9 @@ let
     wpa_supplicant = linux;
     xtensa-esp32-toolchain = x86_64;
 
+    # Build emacs for macOS while emacsMacport is broken.
+    emacs = darwin;
+    emacs-env = darwin;
     emacs-nox = linux;
     emacs-nox-env = linux;
     emacs-macport-env = darwin;
@@ -198,6 +201,7 @@ let
         terraform-provider-vultr.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
 
+        emacs-env.x86_64-darwin
         emacs-macport-env.x86_64-darwin
         haskell-env.x86_64-darwin
         extensive-haskell-env.x86_64-darwin

@@ -4,9 +4,9 @@ let
 
   emacs-nox = pkgs.emacs26-nox;
 
-  # Note: these use Melpa packages.
-  emacsMacportPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacsMacport;
-  emacsNoXPackagesNg = pkgs.melpaPackagesNgFor emacs-nox;
+  emacsMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacs;
+  emacsMacportMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacsMacport;
+  emacsNoXMelpaPackagesNg = pkgs.melpaPackagesNgFor emacs-nox;
 
 
   ## Collections of Emacs packages that I find useful.
@@ -77,19 +77,36 @@ let
     name = "emacs-nox-env";
     meta.platforms = emacs-nox.meta.platforms;
     paths = [
-      (emacsNoXPackagesNg.emacsWithPackages coreEmacsPackages)
+      (emacsNoXMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
       pkgs.aspell
       pkgs.aspellDicts.en
       pkgs.ripgrep
     ];
   };
 
-  # A macOS variant.
+  # An emacsMacport variant.
   emacs-macport-env = pkgs.buildEnv {
     name = "emacs-macport-env";
     meta.platforms = pkgs.emacsMacport.meta.platforms;
     paths = [
-      (emacsMacportPackagesNg.emacsWithPackages macOSEmacsPackages)
+      (emacsMacportMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
+      pkgs.aspell
+      pkgs.aspellDicts.en
+      pkgs.ripgrep
+    ];
+  };
+
+  # An emacs variant, for use on macOS while emacsMacport is broken. See:
+  # https://github.com/NixOS/nixpkgs/issues/61596
+  emacs-env = pkgs.buildEnv {
+    name = "emacs-env";
+
+    # Yes, pkgs.emacsMacport here is intentional. Only build this for
+    # macOS platforms.
+    meta.platforms = pkgs.emacsMacport.meta.platforms;
+
+    paths = [
+      (emacsMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
       pkgs.aspell
       pkgs.aspellDicts.en
       pkgs.ripgrep
@@ -98,7 +115,8 @@ let
 
 in
 {
-  inherit emacs-nox emacsNoXPackagesNg;
-  inherit emacsMacportPackagesNg;
-  inherit emacs-nox-env emacs-macport-env;
+  inherit emacsMelpaPackagesNg;
+  inherit emacs-nox emacsNoXMelpaPackagesNg;
+  inherit emacsMacportMelpaPackagesNg;
+  inherit emacs-env emacs-nox-env emacs-macport-env;
 }

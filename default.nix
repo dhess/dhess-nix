@@ -51,9 +51,10 @@ in
   inherit (self) dhallToNix dhallToNixFromFile dhallToNixFromSrc;
   inherit (self) hello-dhall-file hello-dhall-src;
 
-  inherit (self) emacs-nox emacsNoXPackagesNg;
-  inherit (self) emacs-nox-env emacs-macport-env;
-  inherit (self) emacsMacportPackagesNg;
+  inherit (self) emacsMelpaPackagesNg;
+  inherit (self) emacs-nox emacsNoXMelpaPackagesNg;
+  inherit (self) emacsMacportMelpaPackagesNg;
+  inherit (self) emacs-env emacs-nox-env emacs-macport-env;
 
   inherit (self) haskellPackages;
   inherit (self) coreHaskellPackages;
