@@ -18,11 +18,13 @@ let
     auto-complete
     company
     company-cabal
+    company-lsp
     company-nixos-options
     company-terraform
     counsel
     counsel-projectile
     dante
+    dap-mode
     dash
     deadgrep
     dhall-mode
