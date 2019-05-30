@@ -60,6 +60,7 @@ let
     name = "shell-env";
     paths = with super; [
       coreutils
+      dhess-ssh-keygen
       direnv
       gitAndTools.git-crypt
       gitAndTools.git-extras
@@ -67,8 +68,8 @@ let
       gnumake
       gnupg
       gnused
-      dhess-ssh-keygen
       htop
+      keybase
       mosh
       pwgen
       ripgrep
