@@ -17,6 +17,7 @@ let
     auto-compile
     auto-complete
     company
+    company-box
     company-cabal
     company-lsp
     company-nixos-options
@@ -29,6 +30,7 @@ let
     deadgrep
     dhall-mode
     direnv
+    doom-themes
     elpy
     find-file-in-project
     flx-ido
@@ -60,6 +62,7 @@ let
     ripgrep
     shm
     smex
+    solaire-mode
     terraform-mode
     use-package
     web-mode
