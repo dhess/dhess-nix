@@ -79,7 +79,7 @@ let
     pipes-transduce = dontCheck super.pipes-transduce;
     semirings = super.callPackage ../pkgs/haskell/semirings/0.3.1.2.nix {};
     servant-docs = doJailbreak super.servant-docs;
-    stratosphere = super.stratosphere_0_37_0;
+    stratosphere = super.stratosphere_0_38_0;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
     tdigest = doJailbreak super.tdigest;
