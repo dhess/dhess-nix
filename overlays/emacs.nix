@@ -80,6 +80,22 @@ let
   ## Package up various Emacs with coreEmacsPackages and the binaries
   ## needed to support them.
 
+  # Vanilla emacs.
+  emacs-env = pkgs.buildEnv {
+    name = "emacs-env";
+
+    # Yes, pkgs.emacsMacport here is intentional. Only build this for
+    # macOS platforms.
+    meta.platforms = pkgs.emacsMacport.meta.platforms;
+
+    paths = [
+      (emacsMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
+      pkgs.aspell
+      pkgs.aspellDicts.en
+      pkgs.ripgrep
+    ];
+  };
+
   # "No X" variant.
   emacs-nox-env = pkgs.buildEnv {
     name = "emacs-nox-env";
@@ -98,23 +114,6 @@ let
     meta.platforms = pkgs.emacsMacport.meta.platforms;
     paths = [
       (emacsMacportMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
-      pkgs.aspell
-      pkgs.aspellDicts.en
-      pkgs.ripgrep
-    ];
-  };
-
-  # An emacs variant, for use on macOS while emacsMacport is broken. See:
-  # https://github.com/NixOS/nixpkgs/issues/61596
-  emacs-env = pkgs.buildEnv {
-    name = "emacs-env";
-
-    # Yes, pkgs.emacsMacport here is intentional. Only build this for
-    # macOS platforms.
-    meta.platforms = pkgs.emacsMacport.meta.platforms;
-
-    paths = [
-      (emacsMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
       pkgs.aspell
       pkgs.aspellDicts.en
       pkgs.ripgrep

@@ -63,7 +63,6 @@ let
     wpa_supplicant = linux;
     xtensa-esp32-toolchain = x86_64;
 
-    # Build emacs for macOS while emacsMacport is broken.
     emacs = darwin;
     emacs-env = darwin;
     emacs-nox = linux;
