@@ -53,6 +53,7 @@ let
     libprelude = x86_64_linux;
     lz4 = all;
     netsniff-ng = x86_64_linux;
+    nixops = x86_64;
     ntp = linux;
     ppp-devel = linux;
     suricata = x86_64_linux;
@@ -131,6 +132,7 @@ let
         libprelude.x86_64-linux
         lz4.x86_64-linux
         netsniff-ng.x86_64-linux
+        nixops.x86_64-linux
         ntp.x86_64-linux
         ppp-devel.x86_64-linux
         suricata.x86_64-linux
@@ -197,6 +199,7 @@ let
         dhess-ssh-keygen.x86_64-darwin
         fm-assistant.x86_64-darwin
         lz4.x86_64-darwin
+        nixops.x86_64-darwin
         terraform-provider-vultr.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
 

@@ -37,6 +37,7 @@ in
   inherit (self) lz4;
   inherit (self) mellon-gpio mellon-web;
   inherit (self) mkCacert;
+  inherit (self) nixops;
   inherit (self) ntp;
   inherit (self) pinpon;
   inherit (self) ppp-devel;

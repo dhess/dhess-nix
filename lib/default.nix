@@ -15,6 +15,8 @@ let
   inherit (lib.fetchers) fixedNixpkgs;
   inherit (lib.dhess-lib-nix) nixpkgs;
 
+  fixedNixOps = lib.fetchers.fixedNixSrc "nixops_override" ./nixops-src.json;
+
   fixedHpio = lib.fetchers.fixedNixSrc "hpio_override" ./hpio-src.json;
   hpio = (import fixedHpio) {};
 
@@ -52,4 +54,5 @@ in lib //
   inherit haskell;
   inherit overlays;
   inherit fixedAllHies all-hies;
+  inherit fixedNixOps;
 }

@@ -2,7 +2,17 @@ self: super:
 
 let
 
+  lib = import ../lib;
+
   inherit (super) callPackage;
+
+  # This is needed to get nixops to evaluate correctly. See:
+  #
+  # https://discourse.nixos.org/t/what-am-i-doing-wrong-here/2517/9
+  # https://github.com/NixOS/nixops/pull/1123
+  nixpkgsPath = (import lib.fixedNixpkgs {}).path;
+  nixopsBuild = (import (lib.fixedNixOps + "/release.nix") {  nixpkgs = nixpkgsPath; }).build;
+  nixops      = nixopsBuild.${builtins.currentSystem};
 
   ccextractor = callPackage ../pkgs/multimedia/ccextractor {};
 
@@ -85,6 +95,7 @@ in
   inherit debian-ppp;
   inherit libprelude;
   inherit mkCacert;
+  inherit nixops;
   inherit ppp-devel;
   inherit suricata;
   inherit terraform-provider-vultr;
