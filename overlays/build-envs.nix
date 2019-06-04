@@ -18,7 +18,8 @@ let
       myPass
       pinentry_mac
       qrencode
-      wireguard-tools
+      # Disabled until fixed upstream.
+      # wireguard-tools
       youtube-dl
       yubico-piv-tool
       yubikey-manager
