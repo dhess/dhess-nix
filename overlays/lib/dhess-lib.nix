@@ -2,6 +2,8 @@ self: super:
 
 let
 
+  localLib = import ../../lib;
+
   # Provide access to the whole package, if needed.
   path = ../..;
 
@@ -48,6 +50,10 @@ in
       testing = (super.lib.dhess-nix.testing or {}) // {      
         inherit testModules testModulesList;
       };
+    };
+
+    fetchers = (super.lib.fetchers or {}) // {
+      inherit (localLib) fixedNixOps;
     };
   };
 }
