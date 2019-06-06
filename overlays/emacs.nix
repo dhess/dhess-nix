@@ -38,6 +38,7 @@ let
     flycheck-haskell
     go-mode
     haskell-mode
+    hasklig-mode
     hindent
     hlint-refactor
     ido-describe-bindings
