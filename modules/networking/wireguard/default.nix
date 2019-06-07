@@ -134,6 +134,7 @@ let
         after = [ "network.target" "network-online.target" "keys.target" ];
         wantedBy = [ "multi-user.target" ];
         environment.DEVICE = name;
+        environment.WG_ENDPOINT_RESOLUTION_RETRIES = "infinity";
         path = with pkgs; [ kmod iproute wireguard-tools ];
 
         serviceConfig = {
@@ -149,7 +150,7 @@ let
           peers = mapAttrsToList (_: peer: peer) values.peers;
         in
         ''
-	        ${optionalString (!config.boot.isContainer) "modprobe wireguard"}
+	        ${optionalString (!config.boot.isContainer) "modprobe wireguard || true"}
 
           ${values.preSetup}
 
@@ -232,7 +233,7 @@ in
   config = mkIf (cfg.interfaces != {}) {
 
     dhess-nix.assertions.moduleHashes."services/networking/wireguard.nix" =
-      "09a3f7cfcb834320c2f01388049ab12670df1659a6e4bfc44bc8fd241ca723ec";
+      "beec5b3c092ea0013bd8bf0b9fa8682cb517cf912ed9c148f0df55c891868ca1";
 
     boot.extraModulePackages = [ kernel.wireguard ];
     environment.systemPackages = [ pkgs.wireguard-tools ];
