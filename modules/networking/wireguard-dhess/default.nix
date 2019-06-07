@@ -15,7 +15,7 @@ with lib;
 
 let
 
-  cfg = config.networking.wireguard;
+  cfg = config.networking.wireguard-dhess;
   keys = config.dhess-nix.keychain.keys;
 
   kernel = config.boot.kernelPackages;
@@ -199,13 +199,11 @@ in
 
 {
 
-  disabledModules = [ "services/networking/wireguard.nix" ];
-
   ###### interface
 
   options = {
 
-    networking.wireguard = {
+    networking.wireguard-dhess = {
 
       interfaces = mkOption {
         description = "Wireguard interfaces.";

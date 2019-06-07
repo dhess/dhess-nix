@@ -4,7 +4,7 @@ with lib;
 
 mkIf (cfg.peers != {}) {
 
-  networking.wireguard.interfaces.${cfg.interface} = {
+  networking.wireguard-dhess.interfaces.${cfg.interface} = {
     ips = [ cfg.ipv4ClientCidr cfg.ipv6ClientPrefix ];
     listenPort = cfg.listenPort;
     peers =

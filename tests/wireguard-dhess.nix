@@ -7,7 +7,7 @@
 let
 
 in makeTest rec {
-  name = "wireguard";
+  name = "wireguard-dhess";
   meta = with pkgs.lib.maintainers; {
     maintainers = [ dhess-pers ];
   };
@@ -23,7 +23,7 @@ in makeTest rec {
       deployment.reallyReallyEnable = true;
 
       networking.firewall.allowedUDPPorts = [ 12345 ];
-      networking.wireguard.interfaces.wg0 = {
+      networking.wireguard-dhess.interfaces.wg0 = {
         ips = [ "10.10.10.1/24" ];
         listenPort = 12345;
       };
@@ -39,7 +39,7 @@ in makeTest rec {
       deployment.reallyReallyEnable = true;
 
       networking.firewall.allowedUDPPorts = [ 12345 ];
-      networking.wireguard.interfaces.wg0 = {
+      networking.wireguard-dhess.interfaces.wg0 = {
         ips = [ "10.10.10.2/24" ];
         listenPort = 12345;
       };

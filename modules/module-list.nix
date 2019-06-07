@@ -50,7 +50,7 @@
   ./email/service-status-email
   ./networking/accept
   ./networking/pcap-prep
-  ./networking/wireguard
+  ./networking/wireguard-dhess
   ./services/apcupsd-net
   ./services/full-tunnel-vpn
   ./services/hydra-manual-setup

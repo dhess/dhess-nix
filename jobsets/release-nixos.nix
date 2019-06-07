@@ -68,7 +68,7 @@ let
     tarsnapper = callTest ../tests/tarsnapper.nix {};
     tftpd-hpa = callTest ../tests/tftpd-hpa.nix {};
     unbound-multi-instance = callTest ../tests/unbound-multi-instance.nix {};
-    wireguard = callTest ../tests/wireguard.nix {};
+    wireguard-dhess = callTest ../tests/wireguard-dhess.nix {};
     znc = callSubTests ../tests/znc.nix {};
 
     ## Configuration.
