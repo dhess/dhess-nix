@@ -8,6 +8,7 @@ let
   emacsMacportMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacsMacport;
   emacsNoXMelpaPackagesNg = pkgs.melpaPackagesNgFor emacs-nox;
 
+  myAspell = pkgs.aspellWithDicts (dicts: with dicts; [ en ]);
 
   ## Collections of Emacs packages that I find useful.
 
@@ -91,7 +92,7 @@ let
 
     paths = [
       (emacsMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
-      pkgs.aspellWithDicts
+      myAspell
       pkgs.ripgrep
     ];
   };
@@ -102,7 +103,7 @@ let
     meta.platforms = emacs-nox.meta.platforms;
     paths = [
       (emacsNoXMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
-      pkgs.aspellWithDicts
+      myAspell
       pkgs.ripgrep
     ];
   };
@@ -113,7 +114,7 @@ let
     meta.platforms = pkgs.emacsMacport.meta.platforms;
     paths = [
       (emacsMacportMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
-      pkgs.aspellWithDicts
+      myAspell
       pkgs.ripgrep
     ];
   };
