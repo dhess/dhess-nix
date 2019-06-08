@@ -18,7 +18,6 @@ let
     auto-compile
     auto-complete
     company
-    company-box
     company-cabal
     company-lsp
     company-nixos-options
