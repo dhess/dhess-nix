@@ -91,8 +91,7 @@ let
 
     paths = [
       (emacsMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
-      pkgs.aspell
-      pkgs.aspellDicts.en
+      pkgs.aspellWithDicts
       pkgs.ripgrep
     ];
   };
@@ -103,8 +102,7 @@ let
     meta.platforms = emacs-nox.meta.platforms;
     paths = [
       (emacsNoXMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
-      pkgs.aspell
-      pkgs.aspellDicts.en
+      pkgs.aspellWithDicts
       pkgs.ripgrep
     ];
   };
@@ -115,8 +113,7 @@ let
     meta.platforms = pkgs.emacsMacport.meta.platforms;
     paths = [
       (emacsMacportMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
-      pkgs.aspell
-      pkgs.aspellDicts.en
+      pkgs.aspellWithDicts
       pkgs.ripgrep
     ];
   };
