@@ -87,7 +87,6 @@ let
     nixos-unstable = mkNixpkgsChannels "master" "nixos-unstable";
     nixpkgs-unstable = mkNixpkgsChannels "master" "nixpkgs-unstable";
     nixpkgs = mkNixpkgs "master" "master";
-    libdispatch-fix = mkStagingMyNixpkgs "libdispatch-fix" "libdispatch-fix";
 
     modules-master = nixosTests master;
     modules-nixos-unstable = nixosTests nixos-unstable;
