@@ -156,6 +156,8 @@ in
     dhess-nix.keychain.keys =
       (genKeys cfg.buildMachines) // (genKeys cfg.extraBuildMachines);
 
+    users.users."${cfg.sshKeyFileOwner}".extraGroups =
+      if cfg.sshKeyFileOwner == "root" then [] else ["keys"];
 
     # We need to generate our own machines file for the extra
     # machines. Unfortunately, this functionality is not exported from
