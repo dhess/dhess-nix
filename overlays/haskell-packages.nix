@@ -26,7 +26,8 @@ let
     # dhall tests try to hit the network.
     dhall = dontCheck super.dhall_1_24_0;
 
-    dhall-json = super.dhall-json_1_3_0;
+    # Tests are broken upstream, but package is fine.
+    dhall-json = dontCheck super.dhall-json_1_3_0;
 
     # The new dhall-nix hasn't been pushed to Hackage yet.
     dhall-nix = super.callPackage ../pkgs/haskell/dhall-nix {};
@@ -46,8 +47,7 @@ let
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
-    hedgehog-fn = super.callPackage ../pkgs/haskell/hedgehog-fn/0.6.nix {};
-    hedgehog-quickcheck = super.callPackage ../pkgs/haskell/hedgehog-quickcheck/0.1.nix {};
+    hedgehog = super.hedgehog_1_0;
     hoopl = doJailbreak super.hoopl;
     hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
@@ -79,6 +79,7 @@ let
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
+    primitive = super.primitive_0_7_0_0;
     semirings = super.callPackage ../pkgs/haskell/semirings/0.3.1.2.nix {};
     servant-docs = doJailbreak super.servant-docs;
     stratosphere = super.stratosphere_0_38_0;
