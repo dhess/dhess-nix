@@ -79,8 +79,11 @@ let
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
+    primitive-extras = super.callPackage ../pkgs/haskell/primitive-extras/0.7.1.1.nix {};
+    primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
     semirings = super.callPackage ../pkgs/haskell/semirings/0.3.1.2.nix {};
     servant-docs = doJailbreak super.servant-docs;
+    stm-hamt = doJailbreak super.stm-hamt;
     stratosphere = super.stratosphere_0_38_0;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
@@ -105,7 +108,6 @@ let
   # be fixed by overrides.
   problems = hp: with hp; [
     hakyll
-    primitive-unlifted
   ];
 
   mkInstalledPackages = desired: problems: hp:
