@@ -79,7 +79,6 @@ let
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
-    primitive = super.primitive_0_7_0_0;
     semirings = super.callPackage ../pkgs/haskell/semirings/0.3.1.2.nix {};
     servant-docs = doJailbreak super.servant-docs;
     stratosphere = super.stratosphere_0_38_0;
@@ -106,6 +105,7 @@ let
   # be fixed by overrides.
   problems = hp: with hp; [
     hakyll
+    primitive-unlifted
   ];
 
   mkInstalledPackages = desired: problems: hp:
