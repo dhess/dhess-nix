@@ -255,6 +255,7 @@ let
   extraList = hp: with hp; (coreList hp) ++ [
     accelerate
     ad
+    agda
     amazonka
     amazonka-ec2
     amazonka-route53
