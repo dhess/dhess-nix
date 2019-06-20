@@ -253,9 +253,9 @@ let
   # A list of extra packages that would be nice to build for any given
   # release of this overlay, but aren't showstoppers.
   extraList = hp: with hp; (coreList hp) ++ [
+    Agda
     accelerate
     ad
-    agda
     amazonka
     amazonka-ec2
     amazonka-route53
