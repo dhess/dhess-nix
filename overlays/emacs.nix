@@ -19,9 +19,12 @@ let
     auto-complete
     company
     company-cabal
+    company-coq
+    company-lean
     company-lsp
     company-nixos-options
     company-terraform
+    coq-commenter
     counsel
     counsel-projectile
     dante
@@ -43,6 +46,7 @@ let
     hlint-refactor
     ido-describe-bindings
     ido-vertical-mode
+    lean-mode
     lsp-haskell
     lsp-mode
     lsp-ui

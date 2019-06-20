@@ -28,6 +28,16 @@ let
     meta.platforms = super.lib.platforms.darwin;
   };
 
+  maths-env = super.buildEnv {
+    name = "maths-env";
+    paths = with super; [
+      coq
+      lean
+      lean2
+    ];
+    meta.platforms = super.lib.platforms.all;
+  };
+
   nixops-env = super.buildEnv {
     name = "nixops-env";
     paths = with super; [
@@ -85,6 +95,7 @@ let
 in
 {
   inherit mactools-env;
+  inherit maths-env;
   inherit nixops-env;
   inherit nixtools-env;
   inherit opsec-env;

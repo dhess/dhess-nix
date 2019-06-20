@@ -76,6 +76,7 @@ let
     python-env = all;
 
     mactools-env = darwin;
+    maths-env = x86_64;
     nixops-env = x86_64;
     nixtools-env = all;
     opsec-env = all;
@@ -149,6 +150,7 @@ let
 
         python-env.x86_64-linux
 
+        maths-env.x86_64-linux
         nixops-env.x86_64-linux
         nixtools-env.x86_64-linux
         opsec-env.x86_64-linux
@@ -211,6 +213,7 @@ let
         python-env.x86_64-darwin
 
         mactools-env.x86_64-darwin
+        maths-env.x86_64-darwin
         nixops-env.x86_64-darwin
         nixtools-env.x86_64-darwin
         opsec-env.x86_64-darwin
