@@ -33,7 +33,6 @@ let
     paths = with super; [
       coq
       lean
-      lean2
     ];
     meta.platforms = super.lib.platforms.all;
   };
