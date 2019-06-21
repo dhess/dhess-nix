@@ -128,6 +128,7 @@ let
     bifunctors
     binary
     bits
+    boring
     bytes
     bytestring
     cereal
