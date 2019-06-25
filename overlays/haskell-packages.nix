@@ -18,9 +18,11 @@ let
 
   # The current GHC.
   haskellPackages = properExtend super.haskellPackages (self: super: {
+    acid-state = doJailbreak super.acid-state;
     algebra = doJailbreak super.algebra;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
+    connection = super.connection_0_3_0;
     concurrent-machines = doJailbreak super.concurrent-machines;
 
     # dhall tests try to hit the network.
@@ -86,6 +88,7 @@ let
     semirings = super.callPackage ../pkgs/haskell/semirings/0.3.1.2.nix {};
     servant-docs = doJailbreak super.servant-docs;
     socks = super.socks_0_6_0;
+    swagger2 = super.swagger2_2_4;
     stm-hamt = doJailbreak super.stm-hamt;
     stratosphere = super.stratosphere_0_39_0;
     stream-monad = doJailbreak super.stream-monad;
