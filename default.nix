@@ -32,6 +32,7 @@ in
   inherit (self) dhall-nix;
   inherit (self) dhess-ssh-keygen;
   inherit (self) fm-assistant;
+  inherit (self) hydra;
   inherit (self) ipxe;
   inherit (self) libprelude;
   inherit (self) lz4;

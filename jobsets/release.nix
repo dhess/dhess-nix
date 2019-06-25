@@ -49,6 +49,7 @@ let
     dhall-nix = all;
     dhess-ssh-keygen = all;
     fm-assistant = darwin;
+    hydra = x86_64_linux;
     ipxe = x86_64_linux;
     libprelude = x86_64_linux;
     lz4 = all;
@@ -129,6 +130,7 @@ let
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
         dhess-ssh-keygen.x86_64-linux
+        hydra.x86_64-linux
         ipxe.x86_64-linux
         libprelude.x86_64-linux
         lz4.x86_64-linux
