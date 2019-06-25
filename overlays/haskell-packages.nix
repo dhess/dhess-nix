@@ -68,7 +68,7 @@ let
       meta.hydraPlatforms = stdenv.lib.platforms.darwin;
     });
     machines-process = doJailbreak super.machines-process;
-    network = dontCheck (super.callPackage ../pkgs/haskell/network/2.8.0.1.nix {});
+    network = super.callPackage ../pkgs/haskell/network/2.8.0.1.nix {};
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
