@@ -68,6 +68,8 @@ let
       meta.hydraPlatforms = stdenv.lib.platforms.darwin;
     });
     machines-process = doJailbreak super.machines-process;
+    network = super.network_3_1_0_0;
+    network-bsd = super.network-bsd_2_8_1_0;
 
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
