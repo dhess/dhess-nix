@@ -18,6 +18,7 @@ let
 
   # The current GHC.
   haskellPackages = properExtend super.haskellPackages (self: super: {
+    acid-state = doJailbreak super.acid-state;
     algebra = doJailbreak super.algebra;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
@@ -121,6 +122,7 @@ let
   # A list of "core" Haskell packages that I want to build for any
   # given release of this overlay.
   coreList = hp: with hp; [
+    acid-state
     aeson
     aeson-iproute
     aeson-pretty
