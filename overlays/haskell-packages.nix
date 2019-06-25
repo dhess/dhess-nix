@@ -85,7 +85,6 @@ let
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
     semirings = super.callPackage ../pkgs/haskell/semirings/0.3.1.2.nix {};
     servant-docs = doJailbreak super.servant-docs;
-    socks = super.socks_0_6_0;
     stm-hamt = doJailbreak super.stm-hamt;
     stratosphere = super.stratosphere_0_39_0;
     stream-monad = doJailbreak super.stream-monad;
