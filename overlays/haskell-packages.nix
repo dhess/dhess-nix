@@ -85,11 +85,7 @@ let
     primitive-extras = super.callPackage ../pkgs/haskell/primitive-extras/0.7.1.1.nix {};
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
     semirings = super.callPackage ../pkgs/haskell/semirings/0.3.1.2.nix {};
-    servant = super.servant_0_16_1;
-    servant-client = super.servant-client_0_16;
-    servant-client-core = super.servant-client-core_0_16;
     servant-docs = doJailbreak super.servant-docs;
-    servant-server = super.servant-server_0_16_1;
     socks = super.socks_0_6_0;
     swagger2 = super.swagger2_2_4;
     stm-hamt = doJailbreak super.stm-hamt;
