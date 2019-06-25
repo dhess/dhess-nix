@@ -23,7 +23,6 @@ let
     clay = doJailbreak super.clay;
     connection = super.connection_0_3_0;
     concurrent-machines = doJailbreak super.concurrent-machines;
-    darcs = doJailbreak super.darcs;
 
     # dhall tests try to hit the network.
     dhall = dontCheck super.dhall_1_24_0;
