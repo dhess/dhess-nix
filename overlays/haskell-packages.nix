@@ -50,7 +50,6 @@ let
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
     hedgehog = super.hedgehog_1_0;
     hoopl = doJailbreak super.hoopl;
-    http-api-data = super.http-api-data_0_4_1;
     hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
     hw-excess = doJailbreak super.hw-excess;
