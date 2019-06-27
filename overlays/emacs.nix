@@ -63,6 +63,7 @@ let
     popup
     projectile
     projectile-ripgrep
+    proof-general
     rg
     ripgrep
     shm
