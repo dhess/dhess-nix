@@ -81,7 +81,6 @@ let
     pipes-transduce = dontCheck super.pipes-transduce;
     primitive-extras = super.callPackage ../pkgs/haskell/primitive-extras/0.7.1.1.nix {};
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
-    semirings = super.callPackage ../pkgs/haskell/semirings/0.3.1.2.nix {};
     servant-docs = doJailbreak super.servant-docs;
     stm-hamt = doJailbreak super.stm-hamt;
     stream-monad = doJailbreak super.stream-monad;
