@@ -69,6 +69,9 @@ let
     });
     machines-process = doJailbreak super.machines-process;
 
+    # Undo upstream breakage.
+    network-bsd = super.network-bsd.override { network = super.network; };
+
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
@@ -186,6 +189,7 @@ let
     mtl
     network
     network-attoparsec
+    network-bsd
     optparse-applicative
     optparse-text
     pandoc
