@@ -50,6 +50,7 @@
   ./email/service-status-email
   ./networking/accept
   ./networking/pcap-prep
+  ./networking/virtual-ips
   ./networking/wireguard-dhess
   ./services/apcupsd-net
   ./services/full-tunnel-vpn
