@@ -124,14 +124,11 @@ let
         };
 
         ip = mkOption {
-          type = types.nullOr super.lib.types.ipv4CIDR;
+          type = types.nullOr super.lib.types.ipv4;
           default = null;
           example = "10.0.0.0/24";
           description = ''
-            An optional source IP address to filter on. Note that
-            the address must be specified in CIDR notation, i.e., with a
-            corresponding subnet prefix. Use "/32" for singleton IP
-            addresses.
+            An optional source IP address to filter on.
           '';
         };
       };
@@ -147,14 +144,11 @@ let
         };
 
         ip = mkOption {
-          type = types.nullOr super.lib.types.ipv4CIDR;
+          type = types.nullOr super.lib.types.ipv4;
           default = null;
           example = "10.0.0.0/24";
           description = ''
-            An optional destination IP address to filter on. Note that
-            the address must be specified in CIDR notation, i.e., with a
-            corresponding subnet prefix. Use "/32" for singleton IP
-            addresses.
+            An optional destination IP address to filter on.
           '';
         };
       };
@@ -200,14 +194,11 @@ let
         };
 
         ip = mkOption {
-          type = types.nullOr super.lib.types.ipv6CIDR;
+          type = types.nullOr super.lib.types.ipv6;
           default = null;
           example = "2001:db8::3:0/64";
           description = ''
-            An optional source IPv6 address to filter on. Note that
-            the address must be specified in CIDR notation, i.e., with a
-            corresponding network prefix. Use "/128" for singleton IPv6
-            addresses.
+            An optional source IPv6 address to filter on.
           '';
         };
       };
@@ -223,14 +214,11 @@ let
         };
 
         ip = mkOption {
-          type = types.nullOr super.lib.types.ipv6CIDR;
+          type = types.nullOr super.lib.types.ipv6;
           default = null;
           example = "2001:db8::3:0/64";
           description = ''
-            An optional destination IPv6 address to filter on. Note that
-            the address must be specified in CIDR notation, i.e., with a
-            corresponding network prefix. Use "/128" for singleton IPv6
-            addresses.
+            An optional destination IPv6 address to filter on.
           '';
         };
       };
