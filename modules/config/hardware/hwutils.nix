@@ -20,6 +20,7 @@ in
 
   config = mkIf enabled {
     environment.systemPackages = with pkgs; [
+      flashrom
       lm_sensors
       pciutils
       usbutils
