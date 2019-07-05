@@ -33,6 +33,7 @@ let
     paths = with super; [
       coq
       lean
+      prooftree
     ];
     meta.platforms = super.lib.platforms.all;
   };
