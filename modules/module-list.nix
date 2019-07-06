@@ -1,4 +1,6 @@
 [
+  ./config/providers/linode/default.nix
+
   ./config/defaults/default.nix
   ./config/defaults/environment.nix
   ./config/defaults/networking.nix
