@@ -74,9 +74,9 @@ let
     haskell-env = all;
     extensive-haskell-env = x86_64;
 
-    ihaskell = x86_64;
-    ihaskell-env = x86_64;
-    extensive-ihaskell-env = x86_64;
+    ihaskell = darwin;
+    ihaskell-env = darwin;
+    extensive-ihaskell-env = darwin;
 
     python-env = all;
 
