@@ -14,6 +14,7 @@ let
 
   # A core set of packages that are useful everywhere.
   coreEmacsPackages = epkgs: with epkgs; [
+    agda2-mode
     async
     auto-compile
     auto-complete
