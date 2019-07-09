@@ -66,6 +66,10 @@ in
   inherit (self) extensive-haskell-env;
   inherit (self) all-hies;
 
+  inherit (self) ihaskell;
+  inherit (self) ihaskell-env;
+  inherit (self) extensive-ihaskell-env;
+
   inherit (self) python-env;
 
   # Various buildEnv's that I use, usually only on macOS (though many

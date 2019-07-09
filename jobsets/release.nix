@@ -74,6 +74,10 @@ let
     haskell-env = all;
     extensive-haskell-env = x86_64;
 
+    ihaskell = x86_64;
+    ihaskell-env = x86_64;
+    extensive-ihaskell-env = x86_64;
+
     python-env = all;
 
     mactools-env = darwin;
@@ -211,6 +215,10 @@ let
         emacs-macport-env.x86_64-darwin
         haskell-env.x86_64-darwin
         extensive-haskell-env.x86_64-darwin
+
+        ihaskell.x86_64-darwin
+        ihaskell-env.x86_64-darwin
+        extensive-ihaskell-env.x86_64-darwin
 
         python-env.x86_64-darwin
 

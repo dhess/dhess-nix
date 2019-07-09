@@ -381,6 +381,37 @@ let
   haskell-env = mkHaskellBuildEnv "haskell-env" haskellPackages coreHaskellPackages;  
   extensive-haskell-env = mkHaskellBuildEnv "extensive-haskell-env" haskellPackages extensiveHaskellPackages;  
 
+
+  ## iHaskell support.
+  mkIHaskell = import (localLib.fixedIHaskell + "/release-8.6.nix");
+  ihaskell = mkIHaskell {
+    nixpkgs = super;
+  };
+  core-ihaskell = mkIHaskell {
+    nixpkgs = super;
+    packages = self.coreHaskellPackages;
+  };
+  extensive-ihaskell = mkIHaskell {
+    nixpkgs = super;
+    packages = self.extensiveHaskellPackages;
+  };
+
+	ihaskell-env = super.buildEnv {
+    name = "ihaskell-env";
+    paths = [
+      core-ihaskell
+    ];
+    meta.platforms = self.lib.platforms.darwin;
+  };
+
+  extensive-ihaskell-env = super.buildEnv {
+    name = "extensive-ihaskell-env";
+    paths = [
+      extensive-ihaskell
+    ];
+    meta.platforms = self.lib.platforms.darwin;
+  };
+
 in
 {
   inherit haskellPackages;
@@ -401,6 +432,13 @@ in
   ## haskell-ide-engine.
 
   inherit all-hies;
+
+
+  ## iHaskell.
+  inherit ihaskell;
+  inherit ihaskell-env;
+  inherit extensive-ihaskell-env;
+
 
   ## Executables only.
 
