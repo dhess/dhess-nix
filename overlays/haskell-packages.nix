@@ -385,18 +385,18 @@ let
   ## iHaskell support.
   mkIHaskell = import (localLib.fixedIHaskell + "/release-8.6.nix");
   ihaskell = mkIHaskell {
-    nixpkgs = super;
+    nixpkgs = self;
   };
   core-ihaskell = mkIHaskell {
-    nixpkgs = super;
+    nixpkgs = self;
     packages = self.coreHaskellPackages;
   };
   extensive-ihaskell = mkIHaskell {
-    nixpkgs = super;
+    nixpkgs = self;
     packages = self.extensiveHaskellPackages;
   };
 
-	ihaskell-env = super.buildEnv {
+  ihaskell-env = super.buildEnv {
     name = "ihaskell-env";
     paths = [
       core-ihaskell
