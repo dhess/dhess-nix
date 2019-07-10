@@ -403,7 +403,6 @@ let
     ];
     meta.platforms = self.lib.platforms.darwin;
   };
-
   ihaskell-envfun = super.myEnvFun {
     name = "ihaskell-envfun";
     buildInputs = [
@@ -417,6 +416,12 @@ let
       extensive-ihaskell
     ];
     meta.platforms = self.lib.platforms.darwin;
+  };
+  extensive-ihaskell-envfun = super.myEnvFun {
+    name = "extensive-ihaskell-envfun";
+    buildInputs = [
+      extensive-ihaskell
+    ];
   };
 
 in
@@ -446,6 +451,7 @@ in
   inherit ihaskell-env;
   inherit ihaskell-envfun;
   inherit extensive-ihaskell-env;
+  inherit extensive-ihaskell-envfun;
 
 
   ## Executables only.

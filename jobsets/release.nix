@@ -78,6 +78,7 @@ let
     ihaskell-env = darwin;
     ihaskell-envfun = darwin;
     extensive-ihaskell-env = darwin;
+    extensive-ihaskell-envfun = darwin;
 
     python-env = all;
 
@@ -221,6 +222,7 @@ let
         ihaskell-env.x86_64-darwin
         ihaskell-envfun.x86_64-darwin
         extensive-ihaskell-env.x86_64-darwin
+        extensive-ihaskell-envfun.x86_64-darwin
 
         python-env.x86_64-darwin
 
