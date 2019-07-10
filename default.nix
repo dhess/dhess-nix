@@ -68,6 +68,7 @@ in
 
   inherit (self) ihaskell;
   inherit (self) ihaskell-env;
+  inherit (self) ihaskell-envfun;
   inherit (self) extensive-ihaskell-env;
 
   inherit (self) python-env;
