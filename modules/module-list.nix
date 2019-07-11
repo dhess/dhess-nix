@@ -1,6 +1,8 @@
 [
   ./config/providers/linode/default.nix
 
+  ./config/providers/vultr/cloud/default.nix
+
   ./config/defaults/default.nix
   ./config/defaults/environment.nix
   ./config/defaults/networking.nix
