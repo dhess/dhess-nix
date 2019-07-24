@@ -12,7 +12,7 @@ let
     name = "mactools-env";
     paths = with super; [
       ccextractor
-      ffmpeg
+      ffmpeg-full
       fm-assistant
       mediainfo
       myPass
