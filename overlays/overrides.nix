@@ -29,7 +29,9 @@ in
   #
   # Don't override super; it disables a bunch of things on macOS.
   ffmpeg-full = callPackage (super.path + "/pkgs/development/libraries/ffmpeg-full") {
+    nonfreeLicensing = true;
     cf-private = super.darwin.cf-private;
+    fdkaacExtlib = true;
     fdk_aac = super.fdk_aac;
     nvenc = false;
     inherit (super.darwin.apple_sdk.frameworks)
