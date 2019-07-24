@@ -40,10 +40,5 @@ in
     frei0r = if super.stdenv.isDarwin then null else super.frei0r;
   };
 
-  # Won't build on macOS with LLVM 7.
-  pyscard = super.pyscard.override {
-    stdenv = if super.stdenv.cc.isClang then super.llvmPackages_6.stdenv else super.stdenv;
-  };
-
   inherit lz4;
 }
