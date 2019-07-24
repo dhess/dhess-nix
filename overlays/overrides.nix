@@ -19,12 +19,16 @@ in
 
 
   # Enable TLS v1.2 in wpa_supplicant.
-
   wpa_supplicant = super.wpa_supplicant.overrideAttrs (drv: {
     extraConfig = drv.extraConfig + ''
      CONFIG_TLSV12=y
     '';
   });
+
+  # Use fdk_aac in ffmpeg-full.
+  ffmpeg-full = super.ffmpeg-full.override {
+    fdk_aac = super.fdk_aac;
+  };
 
   inherit lz4;
 }

@@ -31,6 +31,7 @@ in
   inherit (self) debian-ppp;
   inherit (self) dhall-nix;
   inherit (self) dhess-ssh-keygen;
+  inherit (self) ffmpeg-full;
   inherit (self) fm-assistant;
   inherit (self) hydra;
   inherit (self) ipxe;

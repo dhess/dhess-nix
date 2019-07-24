@@ -48,6 +48,7 @@ let
     debian-ppp = linux;
     dhall-nix = all;
     dhess-ssh-keygen = all;
+    ffmpeg-full = all;
     fm-assistant = darwin;
     hydra = x86_64_linux;
     ipxe = x86_64_linux;
@@ -138,6 +139,7 @@ let
         dhess-ssh-keygen.x86_64-linux
         hydra.x86_64-linux
         ipxe.x86_64-linux
+        ffmpeg-full.x86_64-linux
         libprelude.x86_64-linux
         lz4.x86_64-linux
         netsniff-ng.x86_64-linux
@@ -207,6 +209,7 @@ let
         crosstool-ng-xtensa.x86_64-darwin
         dhall-nix.x86_64-darwin
         dhess-ssh-keygen.x86_64-darwin
+        ffmpeg-full.x86_64-darwin
         fm-assistant.x86_64-darwin
         lz4.x86_64-darwin
         nixops.x86_64-darwin
@@ -255,31 +258,6 @@ let
       meta.description = "dhess-nix overlay packages (aarch64-linux)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
-        badhosts-unified.aarch64-linux
-        badhosts-fakenews.aarch64-linux
-        badhosts-gambling.aarch64-linux
-        badhosts-porn.aarch64-linux
-        badhosts-social.aarch64-linux
-        badhosts-fakenews-gambling.aarch64-linux
-        badhosts-fakenews-porn.aarch64-linux
-        badhosts-fakenews-social.aarch64-linux
-        badhosts-gambling-porn.aarch64-linux
-        badhosts-gambling-social.aarch64-linux
-        badhosts-porn-social.aarch64-linux
-        badhosts-fakenews-gambling-porn.aarch64-linux
-        badhosts-fakenews-gambling-social.aarch64-linux
-        badhosts-fakenews-porn-social.aarch64-linux
-        badhosts-gambling-porn-social.aarch64-linux
-        badhosts-fakenews-gambling-porn-social.aarch64-linux
-        badhosts-all.aarch64-linux
-
-        lz4.aarch64-linux
-        ntp.aarch64-linux
-        unbound.aarch64-linux
-
-        dhess-nix-source.aarch64-linux
-
-        emacs-nox-env.aarch64-linux
         haskell-env.aarch64-linux
         #extensive-haskell-env.aarch64-linux
 
