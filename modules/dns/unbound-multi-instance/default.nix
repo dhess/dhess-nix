@@ -202,7 +202,7 @@ in {
     # them here.
 
     dhess-nix.assertions.moduleHashes."services/networking/unbound.nix" =
-      "28324ab792c2eea96bce39599b49c3de29f678029342dc57ffcac186eee22f7b";
+      "11cd0da0228406dc82eb19f10ce5bdda0aba85a6b3ab2fffef04feca6781d15a";
 
     environment.systemPackages = [ pkgs.unbound ];
 
@@ -210,6 +210,8 @@ in {
       description = "unbound daemon user";
       isSystemUser = true;
     };
+
+    networking.resolvconf.useLocalResolver = lib.mkDefault true;
 
     systemd.services =
       mapAttrs' mkUnboundService instances;
