@@ -48,7 +48,7 @@ let
     debian-ppp = linux;
     dhall-nix = all;
     dhess-ssh-keygen = all;
-    ffmpeg-full = all;
+    ffmpeg-full = x86_64;
     fm-assistant = darwin;
     hydra = x86_64_linux;
     ipxe = x86_64_linux;
