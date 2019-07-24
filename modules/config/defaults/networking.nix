@@ -20,9 +20,7 @@ in
     networking.firewall.enable = mkOverride 99 true;
 
     # Don't use DNSSEC.
-    networking.dnsExtensionMechanism = false;
+    networking.resolvconf.dnsExtensionMechanism = false;
     networking.firewall.allowPing = true;
-
   };
-
 }
