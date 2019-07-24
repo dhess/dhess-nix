@@ -26,9 +26,17 @@ in
   });
 
   # Use fdk_aac in ffmpeg-full.
-  ffmpeg-full = super.ffmpeg-full.override {
+  #
+  # Don't override super; it disables a bunch of things on macOS.
+  ffmpeg-full = callPackage (super.path + "/pkgs/development/libraries/ffmpeg-full") {
+    cf-private = super.darwin.cf-private;
     fdk_aac = super.fdk_aac;
     nvenc = false;
+    inherit (super.darwin.apple_sdk.frameworks)
+      Cocoa CoreServices CoreAudio AVFoundation MediaToolbox
+      VideoDecodeAcceleration;
+
+    frei0r = if super.stdenv.isDarwin then null else super.frei0r;
   };
 
   inherit lz4;
