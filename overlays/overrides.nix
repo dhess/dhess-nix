@@ -28,6 +28,7 @@ in
   # Use fdk_aac in ffmpeg-full.
   ffmpeg-full = super.ffmpeg-full.override {
     fdk_aac = super.fdk_aac;
+    nvenc = false;
   };
 
   inherit lz4;
