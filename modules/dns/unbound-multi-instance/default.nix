@@ -1,4 +1,7 @@
 # An opinionated unbound that supports multiple instances.
+#
+# Note: do NOT set networking.resolvconf.useLocalResolver to true
+# here.
 
 { config, pkgs, lib, ... }:
 
@@ -211,7 +214,6 @@ in {
       isSystemUser = true;
     };
 
-    networking.resolvconf.useLocalResolver = lib.mkDefault true;
 
     systemd.services =
       mapAttrs' mkUnboundService instances;
