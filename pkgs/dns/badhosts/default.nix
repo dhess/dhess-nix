@@ -5,8 +5,8 @@
 
 let
 
-  version = "2.4.0";
-  sha256 = "072va6axy2zw9is2y1w162x9rh8272r0nm5f5d0z9w6p4pcfvam1";
+  version = "2.4.17";
+  sha256 = "0y784ynkp95j2bf5828ws6lhw9hwlq75mph182jxkh25rlkafdsh";
 
   generic = { subname, hostsFile, ... }: stdenv.mkDerivation {
     name = "badhosts-${subname}-${version}";
