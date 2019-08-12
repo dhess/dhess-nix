@@ -91,7 +91,7 @@ let
     tdigest = doJailbreak super.tdigest;
     these = doJailbreak super.these;
 
-    th-lith-lift-instances = super.th-lift-instances_0_1_13;
+    th-lift-instances = super.th-lift-instances_0_1_13;
 
     time-recurrence = doJailbreak super.time-recurrence;
 
