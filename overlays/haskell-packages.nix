@@ -24,10 +24,10 @@ let
     concurrent-machines = doJailbreak super.concurrent-machines;
 
     # dhall tests try to hit the network.
-    dhall = dontCheck super.dhall_1_24_0;
+    dhall = dontCheck super.dhall_1_25_0;
 
     # Tests are broken upstream, but package is fine.
-    dhall-json = dontCheck super.dhall-json_1_3_0;
+    dhall-json = dontCheck super.dhall-json_1_4_0;
 
     # The new dhall-nix hasn't been pushed to Hackage yet.
     dhall-nix = super.callPackage ../pkgs/haskell/dhall-nix {};
@@ -60,7 +60,7 @@ let
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
     ip = super.callPackage ../pkgs/haskell/ip {};
     ivory = doJailbreak super.ivory;
-    katip = super.katip_0_8_2_0.overrideAttrs (drv: {
+    katip = super.katip_0_8_3_0.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     });
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
