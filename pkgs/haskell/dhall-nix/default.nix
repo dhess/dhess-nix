@@ -6,8 +6,8 @@ mkDerivation {
   version = "1.1.7";
   src = fetchgit {
     url = "https://github.com/dhall-lang/dhall-haskell.git";
-    sha256 = "0x630v0x3jwj5kiwyk177slwgcj92fpviwx55wplg7dc559g3s58";
-    rev = "d77a9f4e43f475b2d22c0ff1fbb70bff130bb54c";
+    sha256 = "1drzjvayqj1kyycgqib6vls476r3d6ridv55ga429madhlj2dmnm";
+    rev = "d45f3ec46b4b791705de0352f7ce382260845171";
     fetchSubmodules = true;
   };
   postUnpack = "sourceRoot+=/dhall-nix; echo source root reset to $sourceRoot";

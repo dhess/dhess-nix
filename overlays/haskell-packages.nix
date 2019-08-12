@@ -32,8 +32,6 @@ let
     # The new dhall-nix hasn't been pushed to Hackage yet.
     dhall-nix = super.callPackage ../pkgs/haskell/dhall-nix {};
 
-    dhall-to-cabal = doJailbreak super.dhall-to-cabal;
-
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
 
     doctest-driver-gen = dontCheck (super.doctest-driver-gen.overrideAttrs (drv: {
@@ -369,7 +367,6 @@ let
         (hp.ghcWithHoogle packageList)
         (all-hies.unstableFallback.selection { selector = p: { inherit (p) ghc865; }; })
         (exeOnly hp.cabal-install)
-        (exeOnly hp.dhall-to-cabal)
         (exeOnly hp.hindent)
         (exeOnly hp.hpack)
         (exeOnly hp.structured-haskell-mode)
