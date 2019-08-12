@@ -90,6 +90,9 @@ let
     streaming-utils = doJailbreak super.streaming-utils;
     tdigest = doJailbreak super.tdigest;
     these = doJailbreak super.these;
+
+    th-lith-lift-instances = super.th-lift-instances_0_1_13;
+
     time-recurrence = doJailbreak super.time-recurrence;
 
     # Disable tests on aarch64-linux; the doctests cause an internal error.
