@@ -62,7 +62,7 @@ let
   opsec-env = super.buildEnv {
     name = "opsec-env";
     paths = with super; [
-      nmap
+      #nmap
     ];
     meta.platforms = super.lib.platforms.all;
   };

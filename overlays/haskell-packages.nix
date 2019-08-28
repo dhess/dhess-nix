@@ -19,6 +19,8 @@ let
   # The current GHC.
   haskellPackages = properExtend super.haskellPackages (self: super: {
     algebra = doJailbreak super.algebra;
+    amazonka = doJailbreak super.amazonka;
+    amazonka-core = doJailbreak super.amazonka-core;
     bloodhound = doJailbreak super.bloodhound;
     clay = doJailbreak super.clay;
     concurrent-machines = doJailbreak super.concurrent-machines;
@@ -45,7 +47,6 @@ let
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
-    hedgehog = super.hedgehog_1_0;
     hoopl = doJailbreak super.hoopl;
     hw-balancedparens = doJailbreak super.hw-balancedparens;
     hw-bits = doJailbreak super.hw-bits;
@@ -58,9 +59,6 @@ let
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
     ip = super.callPackage ../pkgs/haskell/ip {};
     ivory = doJailbreak super.ivory;
-    katip = super.katip_0_8_3_0.overrideAttrs (drv: {
-      meta.hydraPlatforms = stdenv.lib.platforms.all;
-    });
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
     hfsevents = super.hfsevents.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.darwin;
@@ -89,9 +87,6 @@ let
     tdigest = doJailbreak super.tdigest;
     these = doJailbreak super.these;
 
-    th-lift = super.th-lift_0_8_0_1;
-    th-lift-instances = super.th-lift-instances_0_1_13;
-
     time-recurrence = doJailbreak super.time-recurrence;
 
     # Disable tests on aarch64-linux; the doctests cause an internal error.
@@ -110,7 +105,9 @@ let
   # A list of currently-problematic packages, things that can't easily
   # be fixed by overrides.
   problems = hp: with hp; [
+    clay
     hakyll
+    time-recurrence
   ];
 
   mkInstalledPackages = desired: problems: hp:
