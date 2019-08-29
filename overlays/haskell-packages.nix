@@ -106,6 +106,7 @@ let
   problems = hp: with hp; [
     clay
     hakyll
+    ivory
     time-recurrence
   ];
 
