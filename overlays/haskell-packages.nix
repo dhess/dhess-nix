@@ -93,7 +93,6 @@ let
     trifecta = if stdenv.hostPlatform.isAarch64 then dontCheck super.trifecta else super.trifecta;
 
     wide-word = doJailbreak super.wide-word;
-    wires = doJailbreak super.wires;
 
     # Disable tests on aarch64-linux; the doctests cause an internal error.
     zippers = if stdenv.hostPlatform.isAarch64 then dontCheck super.zippers else super.zippers;
@@ -342,7 +341,6 @@ let
     turtle
     uniplate
     webdriver
-    wires
     zlib-lens
   ];
 
