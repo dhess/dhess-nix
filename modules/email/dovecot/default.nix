@@ -574,7 +574,7 @@ in
   config = mkIf cfg.enable {
 
     dhess-nix.assertions.moduleHashes."services/mail/dovecot.nix" =
-      "f4357811473e824909af6f4e8273300cca0aa82f0e0f3c397d411c871cbea3dc";
+      "48dbffb32188a0aa411efc2d5cb105a13593bb1d74648fde3178e2693a8b6a95";
 
     security.pam.services.dovecot2 = mkIf cfg.enablePAM {};
 
@@ -619,8 +619,7 @@ in
     systemd.services.dovecot2 = {
       description = "Dovecot IMAP server";
 
-      after = [ "keys.target" "network.target" ];
-      wants = [ "keys.target" ];
+      after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
       restartTriggers = [ cfg.configFile ];
 
