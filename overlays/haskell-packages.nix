@@ -16,8 +16,7 @@ let
   ## Haskell package fixes for various versions of GHC, based on the
   ## current nixpkgs snapshot that we're using.
 
-  # The current GHC.
-  haskellPackages = properExtend super.haskellPackages (self: super: {
+  mkHaskellPackages = hp: properExtend hp (self: super: {
     algebra = doJailbreak super.algebra;
     amazonka = doJailbreak super.amazonka;
     amazonka-core = doJailbreak super.amazonka-core;
@@ -96,6 +95,14 @@ let
 
     # Disable tests on aarch64-linux; the doctests cause an internal error.
     zippers = if stdenv.hostPlatform.isAarch64 then dontCheck super.zippers else super.zippers;
+  });
+
+  # The current GHC.
+  haskellPackages = mkHaskellPackages super.haskellPackages;
+
+  # ihaskell has special needs.
+  ihaskellPackages = properExtend (mkHaskellPackages super.haskell.packages.ghc864) (self: super: {
+    hlint = super.callPackage ../pkgs/haskell/hlint/2.1.17.nix {};
   });
 
 
@@ -384,13 +391,16 @@ let
   ## iHaskell support.
   mkIHaskell = import (localLib.fixedIHaskell + "/release-8.6.nix");
   ihaskell = mkIHaskell {
+    haskellPackages = ihaskellPackages;
     nixpkgs = self;
   };
   core-ihaskell = mkIHaskell {
+    haskellPackages = ihaskellPackages;
     nixpkgs = self;
     packages = self.coreHaskellPackages;
   };
   extensive-ihaskell = mkIHaskell {
+    haskellPackages = ihaskellPackages;
     nixpkgs = self;
     packages = self.extensiveHaskellPackages;
   };
