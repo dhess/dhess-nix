@@ -57,7 +57,6 @@
   ./networking/virtual-ips
   ./networking/wireguard-dhess
   ./services/apcupsd-net
-  ./services/full-tunnel-vpn
   ./services/hydra-manual-setup
   ./services/mellon/auto-unlock.nix
   ./services/netsniff-ng
