@@ -104,10 +104,10 @@ in {
       text = cfg.awsCredentialsLiteral;
     };
 
-    systemd.services.pinpon = {
+    systemd.services.pinpon = rec {
       description = cfg.description;
-      after = [ "multi-user.target" "keys.target" ];
-      wants = [ "keys.target" ];
+      wants = [ "aws-pinpon-key.service" ];
+      after = [ "multi-user.target" ] ++ wants;
       wantedBy = [ "multi-user.target" ];
       path = [ pkgs.pinpon ];
       script = pinponScript cfg;

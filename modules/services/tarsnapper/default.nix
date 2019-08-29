@@ -123,11 +123,11 @@ in
       text = gcfg.keyLiteral;
     };
 
-    systemd.services.tarsnapper = {
+    systemd.services.tarsnapper = rec {
       description = "Tarsnapper backup";
       requires    = [ "network-online.target" ];
-      wants       = [ "keys.target" ];
-      after       = [ "network-online.target" "keys.target" ];
+      wants       = [ "tarsnap-key-key.service" ];
+      after       = [ "network-online.target" ] ++ wants;
       onFailure   = [ "tarsnapper-failed.service" ];
 
       path = with pkgs; [ coreutils iputils nettools tarsnap tarsnapper utillinux ];

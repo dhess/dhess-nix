@@ -324,9 +324,9 @@ in
       '';
     };
 
-    systemd.services.postfix = {
-      wants = [ "keys.target" ];
-      after = [ "keys.target" ];
+    systemd.services.postfix = rec {
+      wants = [ "postfix-relay-host-cert-key.service" ];
+      after = wants;
     };
 
   };

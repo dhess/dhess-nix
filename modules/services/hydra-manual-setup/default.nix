@@ -155,7 +155,10 @@ in
 
       description = "Automate Hydra's initial manual setup";
       wantedBy = [ "multi-user.target" ];
-      wants = [ "keys.target" ];
+      wants = [
+        "hydra-manual-setup-initial-pw-key.service"
+        "hydra-manual-setup-bckey-key.service"
+      ];
       requires = [ "hydra-init.service" ];
       after = [ "hydra-init.service" ] ++ wants;
 

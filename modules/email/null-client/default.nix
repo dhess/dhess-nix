@@ -152,9 +152,9 @@ in
       '';
     };
 
-    systemd.services.postfix = {
-      wants = [ "keys.target" ];
-      after = [ "keys.target" ];
+    systemd.services.postfix = rec {
+      wants = [ "postfix-null-client-cert-key.service" ];
+      after = wants;
     };
 
   };

@@ -417,11 +417,11 @@ in
       allowedTCPPorts = [ cfg.confOptions.port ];
     };
 
-    systemd.services.znc = {
+    systemd.services.znc = rec {
       description = "ZNC Server";
       wantedBy = [ "multi-user.target" ];
-      wants = [ "keys.target" ];
-      after = [ "network.service" "keys.target" ];
+      wants = [ "znc-config-key.service" ];
+      after = [ "network.service" ] ++ wants;
 
       serviceConfig = {
         PermissionsStartOnly = true;

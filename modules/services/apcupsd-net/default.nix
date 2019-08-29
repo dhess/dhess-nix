@@ -244,11 +244,11 @@ in
     # not connected to a tty (it is connected to the journal):
     #   wall: cannot get tty name: Inappropriate ioctl for device
     # The message still gets through.
-    systemd.services.apcupsd = {
+    systemd.services.apcupsd = rec {
       description = "APC UPS network client daemon";
       wantedBy = [ "multi-user.target" ];
-      wants = [ "keys.target" ];
-      after = [ "keys.target" ];
+      wants = [ "${keyName}-key.service" ];
+      after = wants;
       preStart = "mkdir -p /run/apcupsd/";
       serviceConfig = {
         ExecStart = "${pkgs.apcupsd}/bin/apcupsd -b -f ${configFile.path} -d1";
