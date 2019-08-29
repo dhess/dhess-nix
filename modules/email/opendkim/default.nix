@@ -1,4 +1,4 @@
-## An opinionated OpenDKIM milter.
+
 ##
 ## XXX TODO dhess:
 ## - chroot
@@ -289,10 +289,10 @@ in
       permissions = "0400";
     }) cfg.keyTable;
 
-    systemd.services.opendkim = {
+    systemd.services.opendkim = rec {
       description = "OpenDKIM signing and verification daemon";
-      after = [ "keys.target" "network.target" ];
-      wants = [ "keys.target" ];
+      wants = mapAttrsToList (name: _: "${keyFileName name}-key.service") cfg.keyTable;
+      after = [ "network.target" ] ++ wants;
       wantedBy = [ "multi-user.target" ];
       script = "${pkgs.opendkim}/bin/opendkim -f -l -x ${configFile} -p ${cfg.socket}";
 
