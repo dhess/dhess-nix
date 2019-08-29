@@ -126,12 +126,15 @@ let
       };
 
   generateSetupServiceUnit = name: values:
+  let
+    peers = mapAttrsToList (_: peer: peer) values.peers;
+  in
     nameValuePair "wireguard-${name}"
-      {
+      rec {
         description = "WireGuard Tunnel - ${name}";
-        wants = [ "keys.target" ];
+        wants = map (peer: "${pskName name peer.name}-key.service") peers;
         requires = [ "network-online.target" ];
-        after = [ "network.target" "network-online.target" "keys.target" ];
+        after = [ "network.target" "network-online.target" ] ++ wants;
         wantedBy = [ "multi-user.target" ];
         environment.DEVICE = name;
         environment.WG_ENDPOINT_RESOLUTION_RETRIES = "infinity";
@@ -147,7 +150,6 @@ let
         script =
         let
           keyFile = keyPath name;
-          peers = mapAttrsToList (_: peer: peer) values.peers;
         in
         ''
 	        ${optionalString (!config.boot.isContainer) "modprobe wireguard || true"}
