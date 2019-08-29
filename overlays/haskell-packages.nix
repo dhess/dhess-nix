@@ -106,6 +106,8 @@ let
   problems = hp: with hp; [
     clay
     hakyll
+    hw-json
+    hw-json-lens
     ivory
     time-recurrence
   ];
