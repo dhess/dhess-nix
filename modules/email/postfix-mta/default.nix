@@ -41,9 +41,8 @@ let
     240.0.0.0/4            REJECT Domain MX in class E reserved network (RFC 1700)
   '';
 
-  acmeRoot = config.security.acme.directory;
-  acmeChallenge = "${acmeRoot}/acme-challenge";
-  acmeCertDir = "${acmeRoot}/${cfg.myHostname}";
+  acmeChallenge = "/var/lib/acme/acme-challenge";
+  acmeCertDir = config.security.acme.certs."${cfg.myHostname}".directory;
   acmeCertPublic = "${acmeCertDir}/fullchain.pem";
   acmeCertPrivate = "${acmeCertDir}/key.pem";
 
@@ -580,7 +579,7 @@ in
     dhess-nix.assertions.moduleHashes."services/mail/postfix.nix" =
       "a3ebbae4163781f53b4c0fb7501359466015c0237fd8fb8742341c348f619f9a";
     dhess-nix.assertions.moduleHashes."security/acme.nix" =
-      "d87bf3fddbdcd3c42f5ba8d543c6b1680d3797fad8403d4c073af6cdb5278997";
+      "ba3a1ef1fd431488fbb7a893bb6f6dfe0ba174caa5bc13a85f11353dae4b5143";
 
     dhess-nix.keychain.keys."sasl-tls-key" = {
       destDir = "/var/lib/postfix/keys";
