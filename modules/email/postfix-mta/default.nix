@@ -577,7 +577,7 @@ in
   config = mkIf enabled {
 
     dhess-nix.assertions.moduleHashes."services/mail/postfix.nix" =
-      "a3ebbae4163781f53b4c0fb7501359466015c0237fd8fb8742341c348f619f9a";
+      "025b09dcfbb27141c3d716f3f6972b67f8f8a860dca47f30a01a055627ef5d92";
     dhess-nix.assertions.moduleHashes."security/acme.nix" =
       "ba3a1ef1fd431488fbb7a893bb6f6dfe0ba174caa5bc13a85f11353dae4b5143";
 

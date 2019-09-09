@@ -200,7 +200,7 @@ in
   config = mkIf enabled {
 
     dhess-nix.assertions.moduleHashes."services/mail/postfix.nix" =
-      "a3ebbae4163781f53b4c0fb7501359466015c0237fd8fb8742341c348f619f9a";
+      "025b09dcfbb27141c3d716f3f6972b67f8f8a860dca47f30a01a055627ef5d92";
 
     dhess-nix.keychain.keys.postfix-relay-host-cert = {
       inherit user group;
