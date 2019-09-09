@@ -18,7 +18,11 @@ let
 
   debian-ppp = callPackage ../pkgs/networking/debian-ppp {};
 
-  libprelude = callPackage ../pkgs/development/libraries/libprelude {};
+  gawk_4_2_1 = callPackage ../pkgs/gawk/4.2.1.nix {};
+
+  libprelude = callPackage ../pkgs/development/libraries/libprelude {
+    gawk = gawk_4_2_1;
+  };
 
 
   # When called with an argument `extraCerts` whose value is a set
@@ -93,6 +97,7 @@ in
   inherit crosstool-ng-xtensa;
   inherit dhess-nix-source;
   inherit debian-ppp;
+  inherit gawk_4_2_1;
   inherit libprelude;
   inherit mkCacert;
   inherit nixops;

@@ -35,7 +35,8 @@ let
     dhall-mode
     direnv
     doom-themes
-    elpy
+    # Temporarily disabled until fixed upstream.
+    #elpy
     find-file-in-project
     flx-ido
     flycheck

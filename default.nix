@@ -33,6 +33,7 @@ in
   inherit (self) dhess-ssh-keygen;
   inherit (self) ffmpeg-full;
   inherit (self) fm-assistant;
+  inherit (self) gawk_4_2_1;
   inherit (self) hydra;
   inherit (self) ipxe;
   inherit (self) libprelude;

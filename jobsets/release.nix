@@ -50,6 +50,7 @@ let
     dhess-ssh-keygen = all;
     ffmpeg-full = x86_64;
     fm-assistant = darwin;
+    gawk_4_2_1 = all;
     hydra = x86_64_linux;
     ipxe = x86_64_linux;
     libprelude = x86_64_linux;
@@ -140,6 +141,7 @@ let
         hydra.x86_64-linux
         ipxe.x86_64-linux
         ffmpeg-full.x86_64-linux
+        gawk_4_2_1.x86_64-linux
         libprelude.x86_64-linux
         lz4.x86_64-linux
         netsniff-ng.x86_64-linux
@@ -211,6 +213,7 @@ let
         dhess-ssh-keygen.x86_64-darwin
         ffmpeg-full.x86_64-darwin
         fm-assistant.x86_64-darwin
+        gawk_4_2_1.x86_64-darwin
         lz4.x86_64-darwin
         nixops.x86_64-darwin
         terraform-provider-vultr.x86_64-darwin

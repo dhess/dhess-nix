@@ -4,6 +4,7 @@
 , pkgconfig
 , bison
 , flex
+, gawk
 , gnutls
 , lua
 , perl
@@ -24,6 +25,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [
     bison
     flex
+    gawk
     pkgconfig
     swig
   ];
