@@ -110,7 +110,7 @@ in
   config = mkIf config.services.ntp.enable {
 
     dhess-nix.assertions.moduleHashes."services/networking/ntp/ntpd.nix" =
-      "800a4a18c31007f9d99fd07176f4b2b46f790a1bec74471bb1500a685c2125c6";
+      "030f4eddd4f478b9982eac3871965e33d2af58880c8d19a9fd22aaf959a4f7d0";
 
     # Make tools such as ntpq available in the system path.
     environment.systemPackages = [ pkgs.ntp ];
