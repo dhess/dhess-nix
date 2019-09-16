@@ -6,15 +6,15 @@
 
 buildGoPackage rec {
   name = "terraform-provider-vultr-${version}";
-  version = "0.1.9";
+  version = "0.1.10";
 
   goPackagePath = "github.com/squat/terraform-provider-vultr";
 
   src = fetchFromGitHub {
     owner = "squat";
     repo = "terraform-provider-vultr";
-    rev = "48cd5bca883dd8aa0034f9cf054c642b8005ed72";
-    sha256 = "05qrvzqpnk9h4y69dykk1y9nbi7rhw9fy2dan2p5gpxmrzx55znj";
+    rev = "1616f3c28af1c3810c692e9e48cfee3a7c867060";
+    sha256 = "1rysny8ghnbg9q6ipgprqk7xxhr04667ia6p15cv25ivvxpk3as0";
   };
 
   # Terraform allow checking the provider versions, but this breaks
