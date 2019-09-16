@@ -23,10 +23,6 @@ in
   hydra = super.hydra.overrideAttrs (drv: {
     patches = [
       (super.fetchpatch {
-        url = "https://github.com/NixOS/hydra/commit/4171ab4c4fd576c516dc03ba64d1c7945f769af0.patch";
-        sha256 = "1fxa2459kdws6qc419dv4084c1ssmys7kqg4ic7n643kybamsgrx";
-      })
-      (super.fetchpatch {
         url = "https://github.com/input-output-hk/hydra/commit/ed87d2ba82807d30d91d70a88cda276083ef4e79.patch";
         sha256 = "0mzmm480cs085wbbn1ha6ml164v0dslfh0viak73mc84rvl00ckb";
       })
