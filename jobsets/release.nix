@@ -44,6 +44,7 @@ let
     badhosts-all = all;
 
     ccextractor = x86_64;
+    cfssl = all;
     crosstool-ng-xtensa = x86_64;
     debian-ppp = linux;
     dhall-nix = all;
@@ -133,6 +134,7 @@ let
         badhosts-all.x86_64-linux
 
         ccextractor.x86_64-linux
+        cfssl.x86_64-linux
         crosstool-ng-xtensa.x86_64-linux
         debian-ppp.x86_64-linux
         dhall-nix.x86_64-linux
@@ -206,6 +208,7 @@ let
         badhosts-all.x86_64-darwin
 
         ccextractor.x86_64-darwin
+        cfssl.x86_64-darwin
         crosstool-ng-xtensa.x86_64-darwin
         dhall-nix.x86_64-darwin
         dhess-ssh-keygen.x86_64-darwin
@@ -258,6 +261,7 @@ let
       meta.description = "dhess-nix overlay packages (aarch64-linux)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
+        cfssl.aarch64-linux
         haskell-env.aarch64-linux
         #extensive-haskell-env.aarch64-linux
 

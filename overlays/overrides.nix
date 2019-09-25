@@ -4,6 +4,9 @@ let
 
   inherit (super) callPackage;
 
+  # Upstream cfssl is out of date.
+  cfssl = callPackage ../pkgs/cfssl {};
+
 in
 {
   # A more recent ipxe than nixpkgs has.
@@ -36,4 +39,6 @@ in
 
     frei0r = if super.stdenv.isDarwin then null else super.frei0r;
   };
+
+  inherit cfssl;
 }

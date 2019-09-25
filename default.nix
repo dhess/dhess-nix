@@ -27,6 +27,7 @@ in
   inherit (self) badhosts-all;
 
   inherit (self) ccextractor;
+  inherit (self) cfssl;
   inherit (self) crosstool-ng-xtensa;
   inherit (self) debian-ppp;
   inherit (self) dhall-nix;
