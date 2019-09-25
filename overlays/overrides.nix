@@ -4,9 +4,6 @@ let
 
   inherit (super) callPackage;
 
-  # lz4 in upstream is broken on macOS until a patch from staging is merged.
-  lz4 = callPackage ../pkgs/misc/lz4 {};
-
 in
 {
   # A more recent ipxe than nixpkgs has.
@@ -39,6 +36,4 @@ in
 
     frei0r = if super.stdenv.isDarwin then null else super.frei0r;
   };
-
-  inherit lz4;
 }
