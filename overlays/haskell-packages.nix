@@ -25,10 +25,10 @@ let
     concurrent-machines = doJailbreak super.concurrent-machines;
 
     # dhall tests try to hit the network.
-    dhall = dontCheck super.dhall_1_25_0;
+    dhall = dontCheck super.dhall_1_26_0;
 
     # Tests are broken upstream, but package is fine.
-    dhall-json = dontCheck super.dhall-json_1_4_0;
+    dhall-json = dontCheck super.dhall-json_1_4_1;
 
     # The new dhall-nix hasn't been pushed to Hackage yet.
     dhall-nix = super.callPackage ../pkgs/haskell/dhall-nix {};
@@ -101,7 +101,7 @@ let
   haskellPackages = mkHaskellPackages super.haskellPackages;
 
   # ihaskell has special needs.
-  ihaskellPackages = properExtend (mkHaskellPackages super.haskell.packages.ghc864) (self: super: {
+  ihaskellPackages = properExtend (mkHaskellPackages super.haskell.packages.ghc865) (self: super: {
     hlint = super.callPackage ../pkgs/haskell/hlint/2.1.17.nix {};
   });
 
