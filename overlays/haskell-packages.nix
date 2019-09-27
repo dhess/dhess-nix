@@ -30,9 +30,6 @@ let
     # Tests are broken upstream, but package is fine.
     dhall-json = dontCheck super.dhall-json_1_4_1;
 
-    # The new dhall-nix hasn't been pushed to Hackage yet.
-    dhall-nix = super.callPackage ../pkgs/haskell/dhall-nix {};
-
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
 
     doctest-driver-gen = dontCheck (super.doctest-driver-gen.overrideAttrs (drv: {
@@ -464,8 +461,6 @@ in
 
 
   ## Executables only.
-
-  dhall-nix = exeOnly self.haskellPackages.dhall-nix;
 
   dhess-ssh-keygen = exeOnly self.haskellPackages.dhess-ssh-keygen;
 

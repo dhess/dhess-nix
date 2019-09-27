@@ -30,7 +30,6 @@ in
   inherit (self) cfssl;
   inherit (self) crosstool-ng-xtensa;
   inherit (self) debian-ppp;
-  inherit (self) dhall-nix;
   inherit (self) dhess-ssh-keygen;
   inherit (self) ffmpeg-full;
   inherit (self) fm-assistant;
@@ -52,7 +51,7 @@ in
   inherit (self) wpa_supplicant;
   inherit (self) xtensa-esp32-toolchain;
 
-  inherit (self) dhallToNix dhallToNixFromFile dhallToNixFromSrc;
+  inherit (self) dhallToNixFromFile dhallToNixFromSrc;
   inherit (self) hello-dhall-file hello-dhall-src;
 
   inherit (self) emacsMelpaPackagesNg;

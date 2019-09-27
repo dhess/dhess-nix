@@ -47,7 +47,6 @@ let
     cfssl = all;
     crosstool-ng-xtensa = x86_64;
     debian-ppp = linux;
-    dhall-nix = all;
     dhess-ssh-keygen = all;
     ffmpeg-full = x86_64;
     fm-assistant = darwin;
@@ -137,7 +136,6 @@ let
         cfssl.x86_64-linux
         crosstool-ng-xtensa.x86_64-linux
         debian-ppp.x86_64-linux
-        dhall-nix.x86_64-linux
         dhess-ssh-keygen.x86_64-linux
         hydra.x86_64-linux
         ipxe.x86_64-linux
@@ -210,7 +208,6 @@ let
         ccextractor.x86_64-darwin
         cfssl.x86_64-darwin
         crosstool-ng-xtensa.x86_64-darwin
-        dhall-nix.x86_64-darwin
         dhess-ssh-keygen.x86_64-darwin
         ffmpeg-full.x86_64-darwin
         fm-assistant.x86_64-darwin
