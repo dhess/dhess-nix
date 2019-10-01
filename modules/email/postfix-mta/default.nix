@@ -538,7 +538,7 @@ in
       };
 
       aliasDomains = mkOption {
-        type = types.nonEmptyListOf pkgs.lib.types.nonEmptyStr;
+        type = types.listOf pkgs.lib.types.nonEmptyStr;
         default = [];
         example = literalExample [
           "another.local.tld"
