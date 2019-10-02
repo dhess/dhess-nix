@@ -24,12 +24,24 @@ in
     services.openssh.authorizedKeysFiles = pkgs.lib.mkForce
       [ "/etc/ssh/authorized_keys.d/%u" ];
 
-    # More reliable GPG forwarding.
+    ## Additional sshd_config
     #
-    # Use mkOrder 999 to give the user a chance to override it in
-    # mkFooter.
-
+    # Note: we use mkOrder 999 to give the user a chance to override
+    # it in mkFooter.
+    #
+    # We do the following:
+    #
+    # - Disable SSH agent forwarding. Yes, the sshd_config(5) man page
+    #   points out that this doesn't prevent users from installing
+    #   their own forwaders. This isn't meant to prevent that. It's
+    #   meant to prevent accidents; e.g., where the user is in the
+    #   habit of adding a "-A" flag to ssh, or perhaps they enabled
+    #   agent forwarding in their .ssh/config and forgot about it.
+    #
+    # - Support more reliable GPG forwarding with
+    #   StreamLocalBindUnlink.
     services.openssh.extraConfig = lib.mkOrder 999 ''
+      AllowAgentForwarding no
       StreamLocalBindUnlink yes
     '';
   };
