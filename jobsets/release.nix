@@ -25,6 +25,8 @@ let
   linux = [ "x86_64-linux" "aarch64-linux" ];
 
   jobs = (mapTestOn (rec {
+    aws-vault = x86_64;
+
     badhosts-unified = all;
     badhosts-fakenews = all;
     badhosts-gambling = all;
@@ -114,6 +116,8 @@ let
       meta.description = "dhess-nix overlay packages (x86_64-linux)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
+        aws-vault.x86_64-linux
+
         badhosts-unified.x86_64-linux
         badhosts-fakenews.x86_64-linux
         badhosts-gambling.x86_64-linux
@@ -187,6 +191,8 @@ let
       meta.description = "dhess-nix overlay packages (x86_64-darwin)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
+        aws-vault.x86_64-darwin
+
         badhosts-unified.x86_64-darwin
         badhosts-fakenews.x86_64-darwin
         badhosts-gambling.x86_64-darwin

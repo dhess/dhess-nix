@@ -15,6 +15,8 @@ let
 
 in
 {
+  inherit (self) aws-vault;
+
   inherit (self) badhosts-unified;
   inherit (self) badhosts-fakenews badhosts-gambling badhosts-porn badhosts-social;
   inherit (self) badhosts-fakenews-gambling badhosts-fakenews-porn badhosts-fakenews-social;

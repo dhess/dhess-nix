@@ -7,8 +7,12 @@ let
   # Upstream cfssl is out of date.
   cfssl = callPackage ../pkgs/cfssl {};
 
+  # More recent version than upstream.
+  aws-vault = callPackage ../pkgs/aws-vault {};
+
 in
 {
+
   # A more recent ipxe than nixpkgs has.
   ipxe = callPackage ../pkgs/misc/ipxe {};
 
@@ -40,5 +44,6 @@ in
     frei0r = if super.stdenv.isDarwin then null else super.frei0r;
   };
 
+  inherit aws-vault;
   inherit cfssl;
 }
