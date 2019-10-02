@@ -44,12 +44,17 @@ let
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
     hoopl = doJailbreak super.hoopl;
-    hw-balancedparens = doJailbreak super.hw-balancedparens;
+
+    hw-balancedparens = super.callPackage ../pkgs/haskell/hw-balancedparens/0.3.0.1.nix {};
+
     hw-bits = doJailbreak super.hw-bits;
     hw-excess = doJailbreak super.hw-excess;
-    hw-json = doJailbreak super.hw-json;
-    hw-json-lens = doJailbreak super.hw-json-lens;
-    hw-prim = doJailbreak super.hw-prim;
+    hw-json = super.hw-json_1_3_1_0;
+
+    hw-json-simd = super.callPackage ../pkgs/haskell/hw-json-simd/0.1.0.3.nix {};
+
+    hw-prim = super.callPackage ../pkgs/haskell/hw-prim/0.6.2.35.nix {};
+
     hw-rankselect = doJailbreak super.hw-rankselect;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
@@ -108,12 +113,7 @@ let
   # A list of currently-problematic packages, things that can't easily
   # be fixed by overrides.
   problems = hp: with hp; [
-    clay
-    hakyll
-    hw-json
-    hw-json-lens
     ivory
-    time-recurrence
   ];
 
   mkInstalledPackages = desired: problems: hp:
@@ -301,7 +301,7 @@ let
     hw-hedgehog
     hw-hspec-hedgehog
     hw-json
-    hw-json-lens
+    hw-json-simd
     intervals
     ip
     ivory
