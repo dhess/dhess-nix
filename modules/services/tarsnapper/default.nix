@@ -165,7 +165,7 @@ in
       };
     };
 
-    systemd.services.tarsnapper-failed = {
+    systemd.services.tarsnapper-failed = mkIf cfg.email.enable {
       description = "Runs when a tarsnapper backup fails";
 
       path = [ pkgs.nettools ];
