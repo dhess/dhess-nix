@@ -17,6 +17,7 @@ in makeTest rec {
 
     machine = { config, ... }: {
       nixpkgs.localSystem.system = system;
+      nixpkgs.config.allowUnfree = true;
       imports = pkgs.lib.dhess-nix.modules;
       services.tarsnapper = {
         enable = true;

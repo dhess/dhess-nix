@@ -3,7 +3,7 @@
 with lib;
 
 let
-  gcfg = config.services.tarsnapper;
+  cfg = config.services.tarsnapper;
   keychain = config.dhess-nix.keychain.keys;
 
   key = config.dhess-nix.keychain.keys.tarsnap-key;
@@ -23,9 +23,9 @@ let
   emailScript = pkgs.writeScript "tarsnapper-mail" ''
     #!${pkgs.stdenv.shell}
 
-    ${gcfg.email.sendmailPath} -t <<MAILEND
+    ${cfg.email.sendmailPath} -t <<MAILEND
     To: $1
-    From: tarsnapper <${gcfg.email.from}>
+    From: tarsnapper <${cfg.email.from}>
     Subject: $2
     Content--Transfer-Encoding: 8bit
     Content-Type: text/plain; charset=UTF-8
@@ -69,6 +69,17 @@ in
       };
 
       email = {
+        enable = mkOption {
+          type = types.bool;
+          default = true;
+          description = ''
+            If true, send an email report containing the status of
+            each tarsnapper backup job.
+
+            This will only work if the host has a functioning
+            <literal>sendmail</literal> configuration, or equivalent.
+          '';
+        };
 
         sendmailPath = mkOption {
           type = types.path;
@@ -116,11 +127,11 @@ in
     };
   };
 
-  config = mkIf gcfg.enable {
+  config = mkIf cfg.enable {
 
     dhess-nix.keychain.keys.tarsnap-key = {
       destDir = cacheDir;
-      text = gcfg.keyLiteral;
+      text = cfg.keyLiteral;
     };
 
     systemd.services.tarsnapper = rec {
@@ -128,7 +139,7 @@ in
       requires    = [ "network-online.target" ];
       wants       = [ "tarsnap-key-key.service" ];
       after       = [ "network-online.target" ] ++ wants;
-      onFailure   = [ "tarsnapper-failed.service" ];
+      onFailure   = if cfg.email.enable then [ "tarsnapper-failed.service" ] else [];
 
       path = with pkgs; [ coreutils iputils nettools tarsnap tarsnapper utillinux ];
 
@@ -140,8 +151,9 @@ in
         TIMESTAMP=`date +\%Y\%m\%d-\%H\%M\%S`
         HOSTNAME=`hostname -f`
         tarsnapper -o configfile /etc/tarsnap/tarsnapper-tarsnap.conf --config /etc/tarsnap/tarsnapper.conf make
-        ${emailScript} "${gcfg.email.toSuccess}" "$HOSTNAME backup successful ($TIMESTAMP)"
-      '';
+      '' + (optionalString cfg.email.enable ''
+        ${emailScript} "${cfg.email.toSuccess}" "$HOSTNAME backup successful ($TIMESTAMP)"
+      '');
 
       serviceConfig = {
         Type = "oneshot";
@@ -160,7 +172,7 @@ in
 
       script = ''
         HOSTNAME=`hostname -f`
-        ${emailScript} "${gcfg.email.toFailure}" "$HOSTNAME backup FAILED"
+        ${emailScript} "${cfg.email.toFailure}" "$HOSTNAME backup FAILED"
       '';
 
       serviceConfig = {
@@ -173,7 +185,7 @@ in
     # Note: the timer must be Persistent=true, so that systemd will start it even
     # if e.g. your laptop was asleep while the latest interval occurred.
     systemd.timers.tarsnapper = {
-      timerConfig.OnCalendar = gcfg.period;
+      timerConfig.OnCalendar = cfg.period;
       timerConfig.Persistent = "true";
       wantedBy = [ "timers.target" ];
     };
@@ -187,7 +199,7 @@ in
       };
 
       "tarsnap/tarsnapper.conf" = {
-        text = gcfg.config;
+        text = cfg.config;
       };
     };
 
