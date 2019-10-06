@@ -37,6 +37,7 @@ let
     mellon.overlays.mellon
     hpio.overlays.hpio
   ] ++ (map import [
+    ../overlays/apple.nix
     ../overlays/custom-packages.nix
     ../overlays/emacs.nix
     ../overlays/haskell-packages.nix
