@@ -41,6 +41,6 @@ let requireXcode = version: sha256:
   in app.overrideAttrs ( oldAttrs: oldAttrs // { inherit meta; });
 
 in lib.makeExtensible (self: {
-  xcode_11_0 = requireXcode "11.0" "0vb6sp91j6972vlvv4dqpcgvnkza3k745wx2sn99kcm1falyscxf";
+  xcode_11_0 = requireXcode "11.0" "1r03j3kkp4blfp2kqpn538w3dx57ms930fj8apjkq6dk7fv3jcqh";
   xcode = self."xcode_${lib.replaceStrings ["."] ["_"] (if stdenv.targetPlatform.useiOSPrebuilt then stdenv.targetPlatform.xcodeVer else "11.0")}";
 })
