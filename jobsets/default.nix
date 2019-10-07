@@ -82,6 +82,12 @@ let
     description = "dhess-nix NixOS modules";
   };
 
+  # Build our cross-compiled packages.
+  cross = settings: settings // {
+    nixexprpath = "jobsets/release-cross.nix";
+    description = "dhess-nix cross-compiled packages.";
+  };
+
   mainJobsets = with pkgs.lib; mapAttrs (name: settings: defaultSettings // settings) (rec {
     master = {};
     nixpkgs-unstable = mkNixpkgsChannels "master" "nixpkgs-unstable";
@@ -90,6 +96,8 @@ let
     modules-master = nixosTests master;
     modules-nixpkgs-unstable = nixosTests nixpkgs-unstable;
     modules-nixpkgs = nixosTests nixpkgs;
+
+    cross-master = cross master;
   });
 
   jobsetsAttrs = mainJobsets;
