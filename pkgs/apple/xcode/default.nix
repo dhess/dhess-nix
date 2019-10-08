@@ -17,7 +17,7 @@ let requireXcode = version: sha256:
             '';
     app = requireFile rec {
       name     = "Xcode.app";
-      url      = "https://developer.apple.com/services-account/download?path=/Developer_Tools/Xcode_${version}/${xip}";
+      url      = "https://download.developer.apple.com/Developer_Tools/Xcode_${version}/${xip}";
       hashMode = "recursive";
       inherit sha256;
       message  = ''
@@ -42,5 +42,6 @@ let requireXcode = version: sha256:
 
 in lib.makeExtensible (self: {
   xcode_11_0 = requireXcode "11.0" "1r03j3kkp4blfp2kqpn538w3dx57ms930fj8apjkq6dk7fv3jcqh";
-  xcode = self."xcode_${lib.replaceStrings ["."] ["_"] (if stdenv.targetPlatform.useiOSPrebuilt then stdenv.targetPlatform.xcodeVer else "11.0")}";
+  xcode_11_1 = requireXcode "11.1" "1c2gzc4jhhx5a7ncg19sh1r99izhipybaqxl1ll52x5y8689awc1";
+  xcode = self."xcode_${lib.replaceStrings ["."] ["_"] (if stdenv.targetPlatform.useiOSPrebuilt then stdenv.targetPlatform.xcodeVer else "11.1")}";
 })
