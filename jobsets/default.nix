@@ -97,7 +97,8 @@ let
     modules-nixpkgs-unstable = nixosTests nixpkgs-unstable;
     modules-nixpkgs = nixosTests nixpkgs;
 
-    cross-master = cross master;
+    # Disabled until Xcode + Hydra issues are resolved.
+    #cross-master = cross master;
   });
 
   jobsetsAttrs = mainJobsets;
