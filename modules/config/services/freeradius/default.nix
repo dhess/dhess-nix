@@ -287,21 +287,14 @@ in {
         # XXX dhess TODO - replace with each individual RADIUS key.
         wants = [ "keys.target" ];
         after = [ "keys.target" ];
-        requires = [ "freeradius-setup.service" ];
       };
 
-      systemd.services.freeradius-setup = {
-        description = "Set up FreeRADIUS state directories and secrets";
-        wantedBy = [ "freeradius.service" ];
-        before = [ "freeradius.service" ];
-        script = ''
-          install -m 0750 -o radius -g wheel -d ${cfg.dataDir} > /dev/null 2>&1 || true
-          install -m 0750 -o radius -g wheel -d ${cfg.logDir} > /dev/null 2>&1 || true
-          install -m 0750 -o radius -g wheel -d ${cfg.tlsCacheDir} > /dev/null 2>&1 || true
-          install -m 0700 -o radius -g wheel -d ${cfg.secretsDir} > /dev/null 2>&1 || true
-        '';
-      };
-
+      systemd.tmpfiles.rules = [
+        "d '${cfg.dataDir}' 0750 radius wheel - -"
+        "d '${cfg.logDir}' 0750 radius wheel - -"
+        "d '${cfg.tlsCacheDir}' 0750 radius wheel - -"
+        "d '${cfg.secretsDir}' 0750 radius wheel - -"
+      ];
     })
     raddb
   ];
