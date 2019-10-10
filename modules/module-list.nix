@@ -14,7 +14,10 @@
   ./config/defaults/system.nix
   ./config/defaults/tmux.nix
   ./config/defaults/users.nix
-  ./config/services/fail2ban.nix
+
+  ./config/services/fail2ban
+  ./config/services/freeradius
+
   ./config/hardware/amd/common.nix
   ./config/hardware/amd/jaguar.nix
   ./config/hardware/apu2/apu3c4.nix

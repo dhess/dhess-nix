@@ -1,0 +1,36 @@
+eap {
+	default_eap_type = tls
+	timer_expire     = 60
+	ignore_unknown_eap_types = yes
+	cisco_accounting_username_bug = no
+	max_sessions = ${max_requests}
+
+	tls-config tls-common {
+		private_key_file = ${certdir}/server.key
+		certificate_file = ${certdir}/server.pem
+		ca_file = ${cadir}/cacrl.pem
+		dh_file = ${certdir}/dh
+	        check_crl = yes
+		check_all_crl = yes
+		ca_path = ${cadir}
+		allow_expired_crl = no
+		cipher_list = "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256"
+		cipher_server_preference = yes
+
+		tls_min_version = "1.2"
+		tls_max_version = "1.2"
+
+		ecdh_curve = "secp384r1"
+		cache {
+			enable = no
+			lifetime = 24 # hours
+			name = "EAP-TLS"
+			persist_dir = "${db_dir}/tlscache"
+		}
+	}
+
+	tls {
+		# Point to the common TLS configuration
+		tls = tls-common
+	}
+}
