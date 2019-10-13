@@ -12,7 +12,7 @@ let
   # Client configuration is complicated because we need to keep the
   # secrets out of the store.
 
-  localhostClients = if cfg.localhostSecretLiteral == null then {} else {
+  localhostClients = {
     localhost = {
       name = "localhost";
       ipv4 = "127.0.0.1/32";

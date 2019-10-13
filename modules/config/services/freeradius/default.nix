@@ -112,13 +112,9 @@ in {
     };
 
     localhostSecretLiteral = lib.mkOption {
-      type = lib.types.nullOr pkgs.lib.types.nonEmptyStr;
-      default = null;
+      type = pkgs.lib.types.nonEmptyStr;
       example = "s3kr3t";
-      description = ''
-        If non-null, both an IPv4 and and IPv6 localhost client will
-        be generated, configured with this secret.
-      '';
+      description = "A secret for localhost RADIUS clients.";
     };
 
     tls = {
