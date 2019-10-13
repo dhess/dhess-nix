@@ -12,22 +12,11 @@ let
   # Client configuration is complicated because we need to keep the
   # secrets out of the store.
 
-  localhostClients = {
-    localhost = {
-      name = "localhost";
-      ipv4 = "127.0.0.1/32";
-      ipv6 = "::1/128";
-      secretLiteral = cfg.localhostSecretLiteral;
-    };
-  };
-
-  allClients = cfg.clients // localhostClients;
-
   clientKeyName = name: "freeradius-client-${name}.secret";
 
   clientsConf =
   let
-    clientsList = lib.mapAttrsToList (_: client: client) allClients;
+    clientsList = lib.mapAttrsToList (_: client: client) cfg.clients;
     genClientConf = client:
     let
       keys = config.dhess-nix.keychain.keys;
@@ -139,7 +128,7 @@ lib.mkIf (cfg.enable) {
     user = "radius";
     group = "wheel";
     permissions = "0400";
-  }) allClients)
+  }) cfg.clients)
   // {
     "${serverKeyName}" = {
       destDir = cfg.secretsDir;

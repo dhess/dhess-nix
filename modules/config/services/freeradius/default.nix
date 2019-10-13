@@ -111,14 +111,7 @@ in {
       '';
     };
 
-    localhostSecretLiteral = lib.mkOption {
-      type = pkgs.lib.types.nonEmptyStr;
-      example = "s3kr3t";
-      description = "A secret for localhost RADIUS clients.";
-    };
-
     tls = {
-
       caCertificate = lib.mkOption {
         type = lib.types.path;
         description = ''
