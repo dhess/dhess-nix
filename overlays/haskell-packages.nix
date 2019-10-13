@@ -25,7 +25,7 @@ let
     concurrent-machines = doJailbreak super.concurrent-machines;
 
     # dhall tests try to hit the network.
-    dhall = dontCheck super.dhall_1_26_0;
+    dhall = dontCheck super.dhall_1_26_1;
 
     # Tests are broken upstream, but package is fine.
     dhall-json = dontCheck super.dhall-json_1_4_1;
