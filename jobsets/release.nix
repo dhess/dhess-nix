@@ -55,6 +55,7 @@ let
     gawk_4_2_1 = all;
     hydra = x86_64_linux;
     ipxe = x86_64_linux;
+    libbsd = all;
     libprelude = x86_64_linux;
     netsniff-ng = x86_64_linux;
     nixops = x86_64;
@@ -145,6 +146,7 @@ let
         ipxe.x86_64-linux
         ffmpeg-full.x86_64-linux
         gawk_4_2_1.x86_64-linux
+        libbsd.x86_64-linux
         libprelude.x86_64-linux
         netsniff-ng.x86_64-linux
         nixops.x86_64-linux
@@ -218,6 +220,7 @@ let
         ffmpeg-full.x86_64-darwin
         fm-assistant.x86_64-darwin
         gawk_4_2_1.x86_64-darwin
+        libbsd.x86_64-darwin
         nixops.x86_64-darwin
         terraform-provider-vultr.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
@@ -264,6 +267,7 @@ let
       meta.description = "dhess-nix overlay packages (aarch64-linux)";
       meta.maintainer = lib.maintainers.dhess-pers;
       constituents = with jobs; [
+        libbsd.aarch64-linux
         cfssl.aarch64-linux
         haskell-env.aarch64-linux
         #extensive-haskell-env.aarch64-linux

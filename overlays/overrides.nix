@@ -10,6 +10,9 @@ let
   # More recent version than upstream.
   aws-vault = callPackage ../pkgs/aws-vault {};
 
+  # Upstream libbsd is broken.
+  libbsd = callPackage ../pkgs/libbsd {};
+
 in
 {
 
@@ -46,4 +49,5 @@ in
 
   inherit aws-vault;
   inherit cfssl;
+  inherit libbsd;
 }
