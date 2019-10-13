@@ -574,7 +574,7 @@ in
   config = mkIf cfg.enable {
 
     dhess-nix.assertions.moduleHashes."services/mail/dovecot.nix" =
-      "48dbffb32188a0aa411efc2d5cb105a13593bb1d74648fde3178e2693a8b6a95";
+      "a1f3595bcc83c3d86a0a343f2f3a0e65eb1508417412ef0ba799267a79692ada";
 
     security.pam.services.dovecot2 = mkIf cfg.enablePAM {};
 
