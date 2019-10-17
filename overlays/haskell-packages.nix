@@ -45,15 +45,15 @@ let
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
     hoopl = doJailbreak super.hoopl;
 
-    hw-balancedparens = super.callPackage ../pkgs/haskell/hw-balancedparens/0.3.0.1.nix {};
+    hw-balancedparens = super.hw-balancedparens_0_3_0_2;
 
     hw-bits = doJailbreak super.hw-bits;
     hw-excess = doJailbreak super.hw-excess;
-    hw-json = super.hw-json_1_3_1_0;
+    hw-json = super.hw-json_1_3_1_1;
 
-    hw-json-simd = super.callPackage ../pkgs/haskell/hw-json-simd/0.1.0.3.nix {};
+    hw-json-simd = super.hw-json-simd_0_1_0_4;
 
-    hw-prim = super.callPackage ../pkgs/haskell/hw-prim/0.6.2.35.nix {};
+    hw-prim = super.hw-prim_0_6_2_36;
 
     hw-rankselect = doJailbreak super.hw-rankselect;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
