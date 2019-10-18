@@ -38,7 +38,6 @@ in
   inherit (self) gawk_4_2_1;
   inherit (self) hydra;
   inherit (self) ipxe;
-  inherit (self) libbsd;
   inherit (self) libprelude;
   inherit (self) mellon-gpio mellon-web;
   inherit (self) mkCacert;
