@@ -39,6 +39,8 @@ let
 
     fm-assistant = dontCheck (super.callPackage ../pkgs/haskell/fm-assistant {});
 
+    generic-lens = super.generic-lens_1_2_0_1;
+
     # Ironically, haddock-api doesn't haddock.
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
