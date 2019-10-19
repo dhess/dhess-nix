@@ -80,6 +80,12 @@ let
 
   dhess-nix-source = callPackage ../pkgs/dhess-nix-source { inherit (super) packageSource; };
 
+  hyperkit = callPackage ../pkgs/hyperkit {
+    inherit (super.darwin.apple_sdk.frameworks) Hypervisor vmnet SystemConfiguration;
+    inherit (super.darwin.apple_sdk.libs) xpc;
+    inherit (super.darwin) libobjc dtrace;
+  };
+
 in
 {
   inherit (badhosts) badhosts-unified;
@@ -98,6 +104,7 @@ in
   inherit dhess-nix-source;
   inherit debian-ppp;
   inherit gawk_4_2_1;
+  inherit hyperkit;
   inherit libprelude;
   inherit mkCacert;
   inherit nixops;

@@ -54,6 +54,7 @@ let
     fm-assistant = darwin;
     gawk_4_2_1 = all;
     hydra = x86_64_linux;
+    hyperkit = darwin;
     ipxe = x86_64_linux;
     libprelude = x86_64_linux;
     netsniff-ng = x86_64_linux;
@@ -218,6 +219,7 @@ let
         ffmpeg-full.x86_64-darwin
         fm-assistant.x86_64-darwin
         gawk_4_2_1.x86_64-darwin
+        hyperkit.x86_64-darwin
         nixops.x86_64-darwin
         terraform-provider-vultr.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
