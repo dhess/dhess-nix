@@ -46,7 +46,7 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     description = "A toolkit for embedding hypervisor capabilities in your application";
     homepage = https://github.com/moby/hyperkit;
-    maintainers = with pkgs.lib.maintainers; [ dhess-pers ];
+    maintainers = with maintainers; [ dhess-pers ];
     platforms = platforms.darwin;
     license = licenses.bsd3;
   };
