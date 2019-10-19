@@ -61,7 +61,6 @@
   ./networking/wireguard-dhess
   ./services/apcupsd-net
   ./services/hydra-manual-setup
-  ./services/jellyfin
   ./services/mellon/auto-unlock.nix
   ./services/netsniff-ng
   ./services/ntpd
