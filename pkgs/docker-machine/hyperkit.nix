@@ -21,7 +21,7 @@ buildGoModule rec {
     homepage = https://github.com/kubernetes/minikube/blob/master/docs/drivers.md;
     description = "HyperKit driver for docker-machine.";
     license = licenses.asl20;
-    maintainers = with maintainers; [ atkinschang ];
+    maintainers = with maintainers; [ dhess-pers ];
     platforms = platforms.darwin;
   };
 }
