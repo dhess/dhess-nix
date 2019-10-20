@@ -10,21 +10,17 @@
 , qemu
 , gpgme
 , vmnet
-, docker-machine-kvm2
-# Disabled as it requires setuid.
-#, docker-machine-hyperkit
 , hyperkit
 , extraDrivers ? []
 }:
 
 let
 
-  drivers = stdenv.lib.filter (d: d != null) (extraDrivers
-            ++ stdenv.lib.optionals stdenv.isLinux [ docker-machine-kvm2 ]
-            ++ stdenv.lib.optionals stdenv.isDarwin [ hyperkit ]);
+  drivers = stdenv.lib.filter (d: d != null) extraDrivers;
 
   binPath = drivers
-            ++ stdenv.lib.optionals stdenv.isLinux ([ libvirt qemu ]);
+            ++ stdenv.lib.optionals stdenv.isLinux ([ libvirt qemu ])
+            ++ stdenv.lib.optionals stdenv.isDarwin ([ hyperkit ]);
 
 in
 buildGoModule rec {
@@ -70,6 +66,10 @@ buildGoModule rec {
       -X ${goPackagePath}/pkg/drivers/kvm.gitCommitID=${rev} \
       -X ${goPackagePath}/pkg/drivers/hyperkit.version=v${version} \
       -X ${goPackagePath}/pkg/drivers/hyperkit.gitCommitID=${rev}"
+  ''+ stdenv.lib.optionalString stdenv.hostPlatform.isDarwin ''
+    mv $out/bin/hyperkit $out/bin/docker-machine-driver-hyperkit
+  ''+ stdenv.lib.optionalString stdenv.hostPlatform.isLinux ''
+    mv $out/bin/kvm $out/bin/docker-machine-driver-kvm2
   '';
 
   postInstall = ''

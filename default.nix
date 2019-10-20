@@ -69,7 +69,6 @@ in
   inherit (self) extensive-haskell-env;
   inherit (self) all-hies;
 
-  inherit (self) docker-machine-kvm2 docker-machine-hyperkit;
   inherit (self) hyperkit;
   inherit (self) minikube;
 

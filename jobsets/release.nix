@@ -74,8 +74,6 @@ let
     emacs-nox-env = linux;
     emacs-macport-env = darwin;
 
-    docker-machine-kvm2 = linux;
-    docker-machine-hyperkit = darwin;
     hyperkit = darwin;
     minikube = all;
 
@@ -168,7 +166,6 @@ let
         haskell-env.x86_64-linux
         extensive-haskell-env.x86_64-linux
 
-        docker-machine-kvm2.x86_64-linux
         minikube.x86_64-linux
 
         python-env.x86_64-linux
@@ -243,7 +240,6 @@ let
         extensive-ihaskell-env.x86_64-darwin
         extensive-ihaskell-envfun.x86_64-darwin
 
-        docker-machine-hyperkit.x86_64-darwin
         hyperkit.x86_64-darwin
         minikube.x86_64-darwin
 
