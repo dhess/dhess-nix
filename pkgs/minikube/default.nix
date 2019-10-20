@@ -1,4 +1,5 @@
 { stdenv
+, lib  
 , buildGoModule
 , fetchFromGitHub
 , pkgconfig
@@ -80,7 +81,7 @@ buildGoModule rec {
     MINIKUBE_WANTUPDATENOTIFICATION=false MINIKUBE_WANTKUBECTLDOWNLOADMSG=false HOME=$PWD $out/bin/minikube completion zsh > $out/share/zsh/site-functions/_minikube
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     homepage    = https://github.com/kubernetes/minikube;
     description = "A tool that makes it easy to run Kubernetes locally";
     license     = licenses.asl20;
