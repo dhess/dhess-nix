@@ -38,6 +38,15 @@ let
     meta.platforms = super.lib.platforms.all;
   };
 
+  minikube-env = super.buildEnv {
+    name = "minikube-env";
+    paths = with super; [
+      kubectl
+      linuxkit
+      minikube
+    ];
+  };
+
   nixops-env = super.buildEnv {
     name = "nixops-env";
     paths = with super; [
@@ -96,6 +105,7 @@ in
 {
   inherit mactools-env;
   inherit maths-env;
+  inherit minikube-env;
   inherit nixops-env;
   inherit nixtools-env;
   inherit opsec-env;

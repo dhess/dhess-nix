@@ -10,6 +10,23 @@ let
   # More recent version than upstream.
   aws-vault = callPackage ../pkgs/aws-vault {};
 
+  # More recent version than upstream.
+  docker-machine-kvm2 = callPackage ../pkgs/docker-machine/kvm2.nix {
+    inherit minikube;
+  };
+  docker-machine-hyperkit = callPackage ../pkgs/docker-machine/hyperkit.nix {
+    inherit (super) hyperkit;
+    inherit minikube;
+  };
+  minikube = callPackage ../pkgs/minikube {
+    inherit (super.darwin.apple_sdk.frameworks) vmnet;
+    inherit docker-machine-kvm2;
+    # Disabled as it requires setuid.
+    #inherit docker-machine-hyperkit
+    inherit (super) hyperkit;
+  };
+
+
 in
 {
 
@@ -46,4 +63,7 @@ in
 
   inherit aws-vault;
   inherit cfssl;
+  inherit minikube;
+  inherit docker-machine-kvm2;
+  inherit docker-machine-hyperkit;
 }

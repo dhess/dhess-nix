@@ -54,7 +54,6 @@ let
     fm-assistant = darwin;
     gawk_4_2_1 = all;
     hydra = x86_64_linux;
-    hyperkit = darwin;
     ipxe = x86_64_linux;
     libprelude = x86_64_linux;
     netsniff-ng = x86_64_linux;
@@ -75,6 +74,11 @@ let
     emacs-nox-env = linux;
     emacs-macport-env = darwin;
 
+    docker-machine-kvm2 = linux;
+    docker-machine-hyperkit = darwin;
+    hyperkit = darwin;
+    minikube = all;
+
     haskell-env = all;
     extensive-haskell-env = x86_64;
 
@@ -88,6 +92,7 @@ let
 
     mactools-env = darwin;
     maths-env = x86_64;
+    minikube-env = all;
     nixops-env = x86_64;
     nixtools-env = all;
     opsec-env = all;
@@ -163,9 +168,13 @@ let
         haskell-env.x86_64-linux
         extensive-haskell-env.x86_64-linux
 
+        docker-machine-kvm2.x86_64-linux
+        minikube.x86_64-linux
+
         python-env.x86_64-linux
 
         maths-env.x86_64-linux
+        minikube-env.x86_64-linux
         nixops-env.x86_64-linux
         nixtools-env.x86_64-linux
         opsec-env.x86_64-linux
@@ -219,7 +228,6 @@ let
         ffmpeg-full.x86_64-darwin
         fm-assistant.x86_64-darwin
         gawk_4_2_1.x86_64-darwin
-        hyperkit.x86_64-darwin
         nixops.x86_64-darwin
         terraform-provider-vultr.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
@@ -235,10 +243,15 @@ let
         extensive-ihaskell-env.x86_64-darwin
         extensive-ihaskell-envfun.x86_64-darwin
 
+        docker-machine-kvm2.x86_64-darwin
+        hyperkit.x86_64-darwin
+        minikube.x86_64-darwin
+
         python-env.x86_64-darwin
 
         mactools-env.x86_64-darwin
         maths-env.x86_64-darwin
+        minikube-env.x86_64-darwin
         nixops-env.x86_64-darwin
         nixtools-env.x86_64-darwin
         opsec-env.x86_64-darwin

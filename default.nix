@@ -69,6 +69,10 @@ in
   inherit (self) extensive-haskell-env;
   inherit (self) all-hies;
 
+  inherit (self) docker-machine-kvm2 docker-machine-hyperkit;
+  inherit (self) hyperkit;
+  inherit (self) minikube;
+
   inherit (self) ihaskell;
   inherit (self) ihaskell-env;
   inherit (self) ihaskell-envfun;
@@ -79,12 +83,12 @@ in
 
   inherit (self) darwin;
   inherit (self) xcode xcode_11_0;
-  inherit (self) hyperkit;
 
   # Various buildEnv's that I use, usually only on macOS (though many
   # of them should work on any pltform).
   inherit (self) mactools-env;
   inherit (self) maths-env;
+  inherit (self) minikube-env;
   inherit (self) nixops-env;
   inherit (self) nixtools-env;
   inherit (self) opsec-env;
