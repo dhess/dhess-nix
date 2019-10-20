@@ -29,7 +29,9 @@ buildGoModule rec {
   version = "1.4.0";
 
   goPackagePath = "k8s.io/minikube";
-  subPackages   = [ "cmd/minikube" ];
+  subPackages   = [ "cmd/minikube" ]
+                  ++ stdenv.lib.optional stdenv.hostPlatform.isLinux "cmd/drivers/kvm"
+                  ++ stdenv.lib.optional stdenv.hostPlatform.isDarwin "cmd/drivers/hyperkit";
   modSha256     = "0vkzlhjlc8qwzk813c8rj0yan1ripbbziq78kiigiaszjwhs1rza";
 
   src = fetchFromGitHub {
@@ -66,10 +68,6 @@ buildGoModule rec {
       -X ${goPackagePath}/pkg/drivers/kvm.gitCommitID=${rev} \
       -X ${goPackagePath}/pkg/drivers/hyperkit.version=v${version} \
       -X ${goPackagePath}/pkg/drivers/hyperkit.gitCommitID=${rev}"
-  ''+ stdenv.lib.optionalString stdenv.hostPlatform.isDarwin ''
-    mv $out/bin/hyperkit $out/bin/docker-machine-driver-hyperkit
-  ''+ stdenv.lib.optionalString stdenv.hostPlatform.isLinux ''
-    mv $out/bin/kvm $out/bin/docker-machine-driver-kvm2
   '';
 
   postInstall = ''
@@ -79,6 +77,10 @@ buildGoModule rec {
 
     mkdir -p $out/share/zsh/site-functions/
     MINIKUBE_WANTUPDATENOTIFICATION=false MINIKUBE_WANTKUBECTLDOWNLOADMSG=false HOME=$PWD $out/bin/minikube completion zsh > $out/share/zsh/site-functions/_minikube
+  ''+ stdenv.lib.optionalString stdenv.hostPlatform.isDarwin ''
+    mv $out/bin/hyperkit $out/bin/docker-machine-driver-hyperkit
+  ''+ stdenv.lib.optionalString stdenv.hostPlatform.isLinux ''
+    mv $out/bin/kvm $out/bin/docker-machine-driver-kvm2
   '';
 
   meta = with lib; {
