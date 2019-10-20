@@ -84,7 +84,7 @@ buildGoModule rec {
     homepage    = https://github.com/kubernetes/minikube;
     description = "A tool that makes it easy to run Kubernetes locally";
     license     = licenses.asl20;
-    maintainers = with pkgs.lib.maintainers; [ dhess-pers ];
+    maintainers = with maintainers; [ dhess-pers ];
     platforms   = with platforms; unix;
   };
 }
