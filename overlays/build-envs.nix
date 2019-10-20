@@ -45,6 +45,7 @@ let
       linuxkit
       minikube
     ];
+    meta.platforms = super.lib.platforms.all;
   };
 
   nixops-env = super.buildEnv {
