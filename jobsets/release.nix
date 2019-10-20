@@ -243,7 +243,7 @@ let
         extensive-ihaskell-env.x86_64-darwin
         extensive-ihaskell-envfun.x86_64-darwin
 
-        docker-machine-kvm2.x86_64-darwin
+        docker-machine-hyperkit.x86_64-darwin
         hyperkit.x86_64-darwin
         minikube.x86_64-darwin
 
