@@ -55,6 +55,7 @@ in
 
   inherit (self) dhallToNixFromFile dhallToNixFromSrc;
   inherit (self) hello-dhall-file hello-dhall-src;
+  inherit (self) hashedCertDir;
 
   inherit (self) emacsMelpaPackagesNg;
   inherit (self) emacs-nox emacsNoXMelpaPackagesNg;

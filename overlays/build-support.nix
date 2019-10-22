@@ -21,9 +21,15 @@ let
   hello-dhall-file = dhallToNixFromFile ../pkgs/build-support/tests/hello.dhall;
   hello-dhall-src = dhallToNixFromSrc ../pkgs/build-support/tests/hello "hello.dhall";
 
+
+  # Some applications need a hashed X.509 certificate directory, per
+  # OpenSSL's c_rehash(1).
+  hashedCertDir = super.callPackage ../pkgs/build-support/hashed-cert-dir {};
+
 in
 {
   inherit dhallToNixFromFile dhallToNixFromSrc;
-
   inherit hello-dhall-file hello-dhall-src;
+
+  inherit hashedCertDir;
 }

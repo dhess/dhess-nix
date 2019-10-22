@@ -112,19 +112,37 @@ in {
     };
 
     tls = {
-      caCertificate = lib.mkOption {
+      caPath = lib.mkOption {
         type = lib.types.path;
         description = ''
-          The path to the CA certificate to use with (outer) RADIUS
-          TLS authentication protocols, such as EAP-TLS.
-        '';
-      };
+          The path to the directory containing the CA files for this
+          RADIUS server. These CA files will be used to authenticate
+          TLS clients; i.e., any CAs used to issue client certificates
+          that are to be authenticated by this RADIUS server should be
+          included. They should include all root CA certificates,
+          intermediate CA certificates, and CRL files needed to
+          authenticate clients.
 
-      caCRL = lib.mkOption {
-        type = lib.types.path;
-        description = ''
-          The path to the CA CRL to use with (outer) RADIUS TLS
-          authentication protocols, such as EAP-TLS.
+          Each certificate or CRL should be stored in a separate file.
+          If you use intermediate CAs, do not concatenate them with
+          their parent certificates (i.e., do not chain the
+          certificates).
+
+          The certificates files should also be symlinked to their
+          hashed filenames per the OpenSSL <command>c_rehash</command>
+          command. The easiest way to do this is to use the
+          <literal>pkgs.hashedCertDir</literal> builder function.
+
+          Note that the certificates in this directory should not
+          include the RADIUS server's own server certificate; that
+          certificate, and its private key, are configured separately.
+
+          Typically, this path will only include CAs used to generate
+          certificates that are internal to your organization. Do
+          <em>not</em> include CA certificates in this path that are
+          not used to issue client certificates for this RADIUS
+          server; i.e., do not point this path to the system
+          certificate directory containing all public CAs.
         '';
       };
 

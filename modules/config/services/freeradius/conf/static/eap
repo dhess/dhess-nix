@@ -8,7 +8,6 @@ eap {
 	tls-config tls-common {
 		private_key_file = ${certdir}/server.key
 		certificate_file = ${certdir}/server.pem
-		ca_file = ${cadir}/cacrl.pem
 		dh_file = ${certdir}/dh
 	        check_crl = yes
 		check_all_crl = yes

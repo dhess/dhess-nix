@@ -18,7 +18,7 @@ let
   confdir    = "${raddbdir}";
   modconfdir = "${confdir}/mods-config";
   certdir    = "${confdir}/certs";
-  cadir      = "${confdir}/certs";
+  cadir      = cfg.tls.caPath;
   run_dir    = "${localstatedir}/run/${name}";
 
   db_dir  = cfg.dataDir;

@@ -75,8 +75,7 @@ let
       radiusdConfPath = "${radiusdConf}";
       clientsConfPath = "${clientsConf}";
       serverKeyPath = config.dhess-nix.keychain.keys."${serverKeyName}".path;
-      caCertPath = "${cfg.tls.caCertificate}";
-      crlPath = "${cfg.tls.caCRL}";
+      caPath = "${cfg.tls.caPath}";
       serverCertPath = "${cfg.tls.serverCertificate}";
       dhPath = "${pkgs.ffdhe3072Pem}";
       eapPath = "${eap}";
@@ -91,9 +90,6 @@ let
       ln -s ${clientsConfPath} $out/clients.conf
 
       rm -f $out/certs/*
-      ln -s ${caCertPath} $out/certs/ca.pem
-      ln -s ${crlPath} $out/certs/crl.pem
-      cat $out/certs/ca.pem $out/certs/crl.pem > $out/certs/cacrl.pem
       ln -s ${serverCertPath} $out/certs/server.pem
       ln -s ${dhPath} $out/certs/dh
       ln -s ${serverKeyPath} $out/certs/server.key
