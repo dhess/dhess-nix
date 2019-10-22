@@ -34,10 +34,13 @@ in makeTest rec {
           };
         };
         tls = {
-          caPath = pkgs.hashedCertDir [
-            ./testfiles/certs/root.crt
-            ./testfiles/crls/acme.com.crl
-          ];
+          caPath = pkgs.hashedCertDir {
+            name = "freeradius-test";
+            certFiles = [
+              ./testfiles/certs/root.crt
+              ./testfiles/crls/acme.com.crl
+            ];
+          };
           serverCertificate = ./testfiles/certs/vpn1.acme.com.crt;
           serverCertificateKeyLiteral = builtins.readFile ./testfiles/keys/vpn1.acme.com.key;
         };
