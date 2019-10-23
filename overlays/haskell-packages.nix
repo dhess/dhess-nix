@@ -53,7 +53,7 @@ let
     hw-excess = doJailbreak super.hw-excess;
     hw-json = super.hw-json_1_3_1_1;
 
-    hw-rankselect = super.hw-rankselect_0_13_3_1;
+    hw-rankselect = dontCheck super.hw-rankselect_0_13_3_1;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
     ip = super.callPackage ../pkgs/haskell/ip {};
