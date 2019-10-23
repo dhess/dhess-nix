@@ -53,10 +53,6 @@ let
     hw-excess = doJailbreak super.hw-excess;
     hw-json = super.hw-json_1_3_1_1;
 
-    hw-json-simd = super.hw-json-simd_0_1_0_4;
-
-    hw-prim = super.hw-prim_0_6_2_36;
-
     hw-rankselect = doJailbreak super.hw-rankselect;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
