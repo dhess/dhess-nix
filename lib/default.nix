@@ -31,6 +31,8 @@ let
 
   fixedIHaskell = lib.fetchers.fixedNixSrc "ihaskell_override" ./ihaskell-src.json;
 
+  fixedLorri = lib.fetchers.fixedNixSrc "lorri_override" ./lorri.json;
+
   overlays = [
     dhess-lib-nix.overlays.all
     pinpon.overlays.pinpon
@@ -59,4 +61,5 @@ in lib //
   inherit fixedAllHies all-hies;
   inherit fixedNixOps;
   inherit fixedIHaskell;
+  inherit fixedLorri;
 }

@@ -14,6 +14,8 @@ let
   nixopsBuild = (import (lib.fixedNixOps + "/release.nix") {  nixpkgs = nixpkgsPath; }).build;
   nixops      = nixopsBuild.${builtins.currentSystem};
 
+  lorri       = (import lib.fixedLorri) { pkgs = super; };
+
   ccextractor = callPackage ../pkgs/multimedia/ccextractor {};
 
   debian-ppp = callPackage ../pkgs/networking/debian-ppp {};
@@ -106,6 +108,7 @@ in
   inherit gawk_4_2_1;
   inherit hyperkit;
   inherit libprelude;
+  inherit lorri;
   inherit mkCacert;
   inherit nixops;
   inherit ppp-devel;

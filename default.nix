@@ -39,6 +39,7 @@ in
   inherit (self) hydra;
   inherit (self) ipxe;
   inherit (self) libprelude;
+  inherit (self) lorri;
   inherit (self) mellon-gpio mellon-web;
   inherit (self) mkCacert;
   inherit (self) nixops;
