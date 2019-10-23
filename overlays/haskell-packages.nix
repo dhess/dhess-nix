@@ -365,7 +365,7 @@ let
   let
     paths =  [
         (hp.ghcWithHoogle packageList)
-        (all-hies.unstableFallback.selection { selector = p: { inherit (p) ghc865; }; })
+        (all-hies.bios.selection { selector = p: { inherit (p) ghc865; }; })
         (exeOnly hp.cabal-install)
         (exeOnly hp.hindent)
         (exeOnly hp.hpack)
