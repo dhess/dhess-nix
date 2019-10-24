@@ -25,7 +25,7 @@ eap {
                 # to check *client* certificates against the CRL. Presumably,
                 # if we've revoked an intermediate CA certificate, we would
                 # not be using it in our FreeRADIUS config!
-                
+
 		#check_all_crl = no
 
 		ca_path = ${cadir}
