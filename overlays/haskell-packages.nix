@@ -56,7 +56,7 @@ let
     hw-rankselect = dontCheck super.hw-rankselect_0_13_3_1;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
-    ip = super.callPackage ../pkgs/haskell/ip {};
+    ip = dontCheck (doJailbreak (super.callPackage ../pkgs/haskell/ip {}));
     ivory = doJailbreak super.ivory;
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
     hfsevents = super.hfsevents.overrideAttrs (drv: {
@@ -77,8 +77,13 @@ let
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
+
+    # dontCheck, or else it causes infinite recursion.
+    primitive = dontCheck super.primitive_0_7_0_0;
+
     primitive-extras = super.callPackage ../pkgs/haskell/primitive-extras/0.7.1.1.nix {};
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
+    quickcheck-classes = super.quickcheck-classes_0_6_4_0;
     servant-docs = doJailbreak super.servant-docs;
     stm-hamt = doJailbreak super.stm-hamt;
     stream-monad = doJailbreak super.stream-monad;
