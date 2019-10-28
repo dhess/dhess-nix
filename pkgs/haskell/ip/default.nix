@@ -9,9 +9,9 @@ mkDerivation {
   pname = "ip";
   version = "1.6.0";
   src = fetchgit {
-    url = "https://github.com/hackworthltd/haskell-ip";
-    sha256 = "0q6w8kxss0ym8wnlrm28amr1xbl4w2hx9i3fpr280vqq2qcywm92";
-    rev = "cc49f2fc85a2e4a7181f0c709d398f00b9318d3a";
+    url = "https://github.com/andrewthad/haskell-ip";
+    sha256 = "04rw9xqr3syrp885lhvl0a8af9k0xx45j6rfif7l6q3ri8h8vvcm";
+    rev = "1f7de4b5c5a7d40182837315f0792815cd9f18ae";
     fetchSubmodules = true;
   };
   libraryHaskellDepends = [
