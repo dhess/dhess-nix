@@ -81,7 +81,7 @@ let
     # dontCheck, or else it causes infinite recursion.
     primitive = dontCheck super.primitive_0_7_0_0;
 
-    primitive-extras = super.callPackage ../pkgs/haskell/primitive-extras/0.7.1.1.nix {};
+    primitive-extras = super.primitive-extras_0_8;
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
     quickcheck-classes = super.quickcheck-classes_0_6_4_0;
     serialise = doJailbreak super.serialise;
