@@ -339,6 +339,7 @@ let
     sbv
     semirings
     shelly
+    slick
     smtLib
     stm-containers
     streams
