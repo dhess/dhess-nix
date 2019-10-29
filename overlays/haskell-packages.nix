@@ -84,6 +84,7 @@ let
     primitive-extras = super.callPackage ../pkgs/haskell/primitive-extras/0.7.1.1.nix {};
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
     quickcheck-classes = super.quickcheck-classes_0_6_4_0;
+    serialise = doJailbreak super.serialise;
     servant-docs = doJailbreak super.servant-docs;
     stm-hamt = doJailbreak super.stm-hamt;
     stream-monad = doJailbreak super.stream-monad;
