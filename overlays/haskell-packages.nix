@@ -325,6 +325,7 @@ let
     machines-io
     machines-process
     memory
+    mustache
     neat-interpolation
     numeric-extras
     pipes-attoparsec
@@ -338,6 +339,7 @@ let
     safecopy
     sbv
     semirings
+    shake
     shelly
     slick
     smtLib
