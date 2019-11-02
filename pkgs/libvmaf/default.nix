@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
     description = "Perceptual video quality assessment based on multi-method fusion (VMAF)";
     platforms = platforms.all;
     license = licenses.asl20;
-    maintainers = [ dhess-pers ];
+    maintainers = [ maintainers.dhess-pers ];
   };
 
 }
