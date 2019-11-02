@@ -45,6 +45,7 @@ in
     nonfreeLicensing = true;
     fdkaacExtlib = true;
     fdk_aac = super.fdk_aac;
+    inherit libvmaf;
     nvenc = false;
     inherit (super.darwin.apple_sdk.frameworks)
       Cocoa CoreServices CoreAudio AVFoundation MediaToolbox

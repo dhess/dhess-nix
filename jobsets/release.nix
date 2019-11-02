@@ -56,7 +56,7 @@ let
     hydra = x86_64_linux;
     ipxe = x86_64_linux;
     libprelude = x86_64_linux;
-    libvmaf = all;
+    libvmaf = x86_64;
     lorri = all;
     netsniff-ng = x86_64_linux;
     nixops = x86_64;

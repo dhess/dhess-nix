@@ -16,8 +16,10 @@ stdenv.mkDerivation rec {
   doCheck = true;
 
   postFixup = ''
-    substituteInPlace "$dev/lib/pkgconfig/libvmaf.pc" \
-      --replace "includedir=/usr/local/include" "includedir=$dev"
+    substituteInPlace "$dev/lib/pkgconfig/libvmaf.pc"     \
+      --replace "includedir=/usr/local" "includedir=$dev" \
+      --replace "prefix=/usr/local" "prefix=$out"         \
+      --replace "libdir=/usr/local" "libdir=$out"
   '';
 
   makeFlags = [ "INSTALL_PREFIX=${placeholder "out"}" ];
