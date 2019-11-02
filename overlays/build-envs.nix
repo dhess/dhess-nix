@@ -63,7 +63,8 @@ let
     paths = with super; [
       cabal2nix
       lorri
-      nix-index
+      # Disabled for now; on macOS, the build seems to not make progress.
+      #nix-index
       nix-info
       nox
     ];
