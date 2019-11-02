@@ -12,9 +12,9 @@ let
     yapf
   ];  
 
-  python-env = super.python.buildEnv.override {
+  python-env = super.python3.buildEnv.override {
     ignoreCollisions = true;
-    extraLibs = coreList super.pythonPackages;
+    extraLibs = coreList super.python3Packages;
   };
 
 in
