@@ -28,7 +28,7 @@ let
     dhall = dontCheck super.dhall_1_27_0;
 
     # Tests are broken upstream, but package is fine.
-    dhall-json = dontCheck super.dhall-json_1_4_1;
+    dhall-json = dontCheck super.dhall-json_1_5_0;
 
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
 
