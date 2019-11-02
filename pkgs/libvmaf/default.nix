@@ -7,13 +7,18 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "netflix";
     repo = "vmaf";
-    rev = "v${version}";
-    sha256="10kgcdf06hzhbl5r7zsllq88bxbyn282hfqx5i3hkp66fpq896d2";
+    rev = "d4d48ddd8bdf39ec8e464d36d42e300c7336c061";
+    sha256="0z4sn9ma0dmmikvarsi0zmy07pdv1qhp1c1kd68nlfbkk3v19pz1";
   };
 
   nativeBuildInputs = [ autoconf automake intltool libtool pkgconfig ];
   outputs = [ "out" "dev" ];
   doCheck = true;
+
+  patchPhase = stdenv.lib.optionalString stdenv.isDarwin ''
+    substituteInPlace src/ptools/Makefile.VMAF \
+      --replace "CC = g++" "CC = clang++"
+  '';
 
   postFixup = ''
     substituteInPlace "$dev/lib/pkgconfig/libvmaf.pc"     \
