@@ -56,6 +56,7 @@ let
     hydra = x86_64_linux;
     ipxe = x86_64_linux;
     libprelude = x86_64_linux;
+    libvmaf = all;
     lorri = all;
     netsniff-ng = x86_64_linux;
     nixops = x86_64;
@@ -151,6 +152,7 @@ let
         ffmpeg-full.x86_64-linux
         gawk_4_2_1.x86_64-linux
         libprelude.x86_64-linux
+        libvmaf.x86_64-linux
         lorri.x86_64-linux
         netsniff-ng.x86_64-linux
         nixops.x86_64-linux
@@ -227,6 +229,7 @@ let
         ffmpeg-full.x86_64-darwin
         fm-assistant.x86_64-darwin
         gawk_4_2_1.x86_64-darwin
+        libvmaf.x86_64-darwin
         lorri.x86_64-darwin
         nixops.x86_64-darwin
         terraform-provider-vultr.x86_64-darwin

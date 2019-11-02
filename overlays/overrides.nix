@@ -16,6 +16,8 @@ let
     inherit (super) hyperkit;
   };
 
+  # Upstream disables macOS.
+  libvmaf = callPackage ../pkgs/libvmaf {};
 
 in
 {
@@ -53,5 +55,6 @@ in
 
   inherit aws-vault;
   inherit cfssl;
+  inherit libvmaf;
   inherit minikube;
 }
