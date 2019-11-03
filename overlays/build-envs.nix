@@ -62,6 +62,7 @@ let
     name = "nixtools-env";
     paths = with super; [
       cabal2nix
+      hydra-cli
       lorri
       nix-index
       nix-info
