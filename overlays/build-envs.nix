@@ -64,6 +64,7 @@ let
       cabal2nix
       hydra-cli
       lorri
+      niv
       nix-index
       nix-info
       nox
