@@ -1,0 +1,110 @@
+{
+    "IHaskell": {
+        "branch": "master",
+        "description": "A Haskell kernel for IPython.",
+        "homepage": null,
+        "owner": "dhess",
+        "repo": "IHaskell",
+        "rev": "a3aa360d31cf09f3fd95f3ce75cdba20430d183a",
+        "sha256": "088zzkvl6n3pcyky3aklbkyz3l59p6d854zx9ch38chd3910afcl",
+        "type": "tarball",
+        "url": "https://github.com/dhess/IHaskell/archive/a3aa360d31cf09f3fd95f3ce75cdba20430d183a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "all-hies": {
+        "branch": "master",
+        "description": "Cached Haskell IDE Engine Nix builds for all GHC versions",
+        "homepage": "",
+        "owner": "Infinisil",
+        "repo": "all-hies",
+        "rev": "c4fad117eb79305f5b8bc77a6a28562a5f8d2ca3",
+        "sha256": "19spg5xnb1gdnxal4vp402dknfhbva5jj5yq34qyzvksyn16c3dp",
+        "type": "tarball",
+        "url": "https://github.com/Infinisil/all-hies/archive/c4fad117eb79305f5b8bc77a6a28562a5f8d2ca3.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "dhess-lib-nix": {
+        "branch": "master",
+        "description": "A library of useful Nix functions and types",
+        "homepage": null,
+        "owner": "dhess",
+        "repo": "dhess-lib-nix",
+        "rev": "6a6fd2fc926c662eeba6352d5fcf607601072a74",
+        "sha256": "0mh45lw4d7ynac6l5ab7ghqzg4nlkc2k7fklllsplsfwawxzw6ks",
+        "type": "tarball",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/6a6fd2fc926c662eeba6352d5fcf607601072a74.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "hpio": {
+        "branch": "master",
+        "description": "Perform GPIO from Haskell",
+        "homepage": null,
+        "owner": "dhess",
+        "repo": "hpio",
+        "rev": "27004ef379db5d35e240222d6ba4cf91da9ec14d",
+        "sha256": "1z9zzycaj56fmx3ali2hvh028sn1xmwydjzwfrxicx1z2mbp9q2h",
+        "type": "tarball",
+        "url": "https://github.com/dhess/hpio/archive/27004ef379db5d35e240222d6ba4cf91da9ec14d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "lorri": {
+        "branch": "rolling-release",
+        "description": "Your project's nix-env",
+        "homepage": "",
+        "owner": "target",
+        "repo": "lorri",
+        "rev": "03f10395943449b1fc5026d3386ab8c94c520ee3",
+        "sha256": "0fcl79ndaziwd8d74mk1lsijz34p2inn64b4b4am3wsyk184brzq",
+        "type": "tarball",
+        "url": "https://github.com/target/lorri/archive/03f10395943449b1fc5026d3386ab8c94c520ee3.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "mellon": {
+        "branch": "master",
+        "description": "Control physical access device (e.g., an electric strike) from Haskell",
+        "homepage": "",
+        "owner": "dhess",
+        "repo": "mellon",
+        "rev": "73784bbacab80313ccf39dd0785d9382865aad61",
+        "sha256": "1x6axksynsbad13xyxzx6ga8x1bm1i591ni67hx0r1ivm338fypf",
+        "type": "tarball",
+        "url": "https://github.com/dhess/mellon/archive/73784bbacab80313ccf39dd0785d9382865aad61.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "niv": {
+        "branch": "master",
+        "description": "Easy dependency management for Nix projects",
+        "homepage": "https://github.com/nmattia/niv",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "88d6f20882b0422470acbcbf2d1b5f07e1d436f0",
+        "sha256": "0wkvz4drnglmmdrz8q1i1yr2fqizpf96k1wq2rlhd8l8x1522izq",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/niv/archive/88d6f20882b0422470acbcbf2d1b5f07e1d436f0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixops": {
+        "branch": "master",
+        "description": "NixOps, the NixOS-based cloud deployment tool",
+        "homepage": "https://nixos.org/nixops",
+        "owner": "dhess",
+        "repo": "nixops",
+        "rev": "8eea38b518ff70a23475b67cc66b4cbd090de66f",
+        "sha256": "1nl5c37f0p2m08qvzq7p04iswawiqdxgvkh1lqv989k56qk8y1yq",
+        "type": "tarball",
+        "url": "https://github.com/dhess/nixops/archive/8eea38b518ff70a23475b67cc66b4cbd090de66f.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "pinpon": {
+        "branch": "master",
+        "description": "A doorbell service in Haskell. No, really.",
+        "homepage": "",
+        "owner": "dhess",
+        "repo": "pinpon",
+        "rev": "f4f984f3a45e4239914c912f489fd37110b65d45",
+        "sha256": "04y6nr9c8wfphvkq622c5ryxwnhiwvrxmfd3j9zrk1wyz7sglzlk",
+        "type": "tarball",
+        "url": "https://github.com/dhess/pinpon/archive/f4f984f3a45e4239914c912f489fd37110b65d45.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
