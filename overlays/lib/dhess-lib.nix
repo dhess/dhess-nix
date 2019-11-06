@@ -46,6 +46,7 @@ in
       inherit mkZncConfig;
       inherit modules modulesList;
       inherit path;
+      inherit (localLib) sources;
 
       testing = (super.lib.dhess-nix.testing or {}) // {      
         inherit testModules testModulesList;

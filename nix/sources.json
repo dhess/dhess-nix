@@ -118,5 +118,31 @@
         "type": "tarball",
         "url": "https://github.com/dhess/pinpon/archive/f4f984f3a45e4239914c912f489fd37110b65d45.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "terraform-provider-okta": {
+        "branch": "master",
+        "description": "terraform provider for okta authentication service",
+        "homepage": null,
+        "owner": "articulate",
+        "repo": "terraform-provider-okta",
+        "rev": "a062adae0957b8c78f60dcb2451d0f6328098442",
+        "sha256": "0skn5j6m7hjjd77iaiy12rglivx32hq7f1r24ibndf6vz90zwi2f",
+        "type": "tarball",
+        "url": "https://github.com/articulate/terraform-provider-okta/archive/a062adae0957b8c78f60dcb2451d0f6328098442.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "version": "3.0.31"
+    },
+    "terraform-provider-vultr": {
+        "branch": "master",
+        "description": "Terraform Vultr Provider",
+        "homepage": "",
+        "owner": "squat",
+        "repo": "terraform-provider-vultr",
+        "rev": "1616f3c28af1c3810c692e9e48cfee3a7c867060",
+        "sha256": "1rysny8ghnbg9q6ipgprqk7xxhr04667ia6p15cv25ivvxpk3as0",
+        "type": "tarball",
+        "url": "https://github.com/squat/terraform-provider-vultr/archive/1616f3c28af1c3810c692e9e48cfee3a7c867060.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "version": "0.1.10"
     }
 }

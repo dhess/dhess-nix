@@ -63,6 +63,7 @@ let
     ntp = linux;
     ppp-devel = linux;
     suricata = x86_64_linux;
+    terraform-provider-okta = all;
     terraform-provider-vultr = all;
     trimpcap = linux;
     tsoff = linux;
@@ -159,6 +160,7 @@ let
         ntp.x86_64-linux
         ppp-devel.x86_64-linux
         suricata.x86_64-linux
+        terraform-provider-okta.x86_64-linux
         terraform-provider-vultr.x86_64-linux
         trimpcap.x86_64-linux
         tsoff.x86_64-linux
@@ -232,6 +234,7 @@ let
         libvmaf.x86_64-darwin
         lorri.x86_64-darwin
         nixops.x86_64-darwin
+        terraform-provider-okta.x86_64-darwin
         terraform-provider-vultr.x86_64-darwin
         xtensa-esp32-toolchain.x86_64-darwin
 

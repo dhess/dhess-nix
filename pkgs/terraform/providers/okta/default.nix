@@ -6,7 +6,7 @@
 }:
 
 buildGoPackage rec {
-  name = "terraform-provider-vultr-${version}";
+  name = "terraform-provider-okta-${version}";
   version = source.version;
 
   goPackagePath = "github.com/${source.owner}/${source.repo}";
@@ -15,10 +15,10 @@ buildGoPackage rec {
 
   # Terraform allow checking the provider versions, but this breaks
   # if the versions are not provided via file paths.
-  postBuild = "mv go/bin/terraform-provider-vultr{,_v${version}}";
+  postBuild = "mv go/bin/terraform-provider-okta{,_v${version}}";
 
   meta = with lib; {
-    description = "Terraform provider for Vultr.";
+    description = "Terraform provider for Okta.";
     homepage = "https://github.com/${source.owner}/${source.repo}";
     license = licenses.mpl20;
     maintainers = with maintainers; [ dhess-pers ];

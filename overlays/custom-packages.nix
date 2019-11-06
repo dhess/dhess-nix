@@ -78,7 +78,12 @@ let
   crosstool-ng-xtensa = callPackage ../pkgs/esp32/crosstool-ng-xtensa {};
   xtensa-esp32-toolchain = callPackage ../pkgs/esp32/xtensa-esp32-toolchain {};
 
-  terraform-provider-vultr = callPackage ../pkgs/terraform/providers/vultr {};
+  terraform-provider-okta = callPackage ../pkgs/terraform/providers/okta {
+    source = lib.sources.terraform-provider-okta;
+  };
+  terraform-provider-vultr = callPackage ../pkgs/terraform/providers/vultr {
+    source = lib.sources.terraform-provider-vultr;
+  };
 
   dhess-nix-source = callPackage ../pkgs/dhess-nix-source { inherit (super) packageSource; };
 
@@ -113,6 +118,7 @@ in
   inherit nixops;
   inherit ppp-devel;
   inherit suricata;
+  inherit terraform-provider-okta;
   inherit terraform-provider-vultr;
   inherit trimpcap;
   inherit tsoff;

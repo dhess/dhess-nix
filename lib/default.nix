@@ -62,4 +62,6 @@ in lib //
   inherit fixedNixOps;
   inherit fixedIHaskell;
   inherit fixedLorri;
+
+  inherit sources;
 }
