@@ -19,6 +19,11 @@ let
   # Upstream disables macOS.
   libvmaf = callPackage ../pkgs/libvmaf {};
 
+  # Upstream is out of date.
+  aws-okta = callPackage ../pkgs/aws-okta {
+    source = super.lib.dhess-nix.sources.aws-okta;
+  };
+
 in
 {
 
@@ -54,6 +59,7 @@ in
     frei0r = if super.stdenv.isDarwin then null else super.frei0r;
   };
 
+  inherit aws-okta;
   inherit aws-vault;
   inherit cfssl;
   inherit libvmaf;

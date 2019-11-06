@@ -23,6 +23,19 @@
         "url": "https://github.com/Infinisil/all-hies/archive/c4fad117eb79305f5b8bc77a6a28562a5f8d2ca3.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "aws-okta": {
+        "branch": "master",
+        "description": "aws-vault like tool for Okta authentication",
+        "homepage": null,
+        "owner": "segmentio",
+        "repo": "aws-okta",
+        "rev": "fc734bb5a40d6f8c42743cf7654b5b88be533d70",
+        "sha256": "1h2n949ryi14bcnaz4n0kjf7hbhh8rpxnfg48bqwh8bxznc1msyj",
+        "type": "tarball",
+        "url": "https://github.com/segmentio/aws-okta/archive/fc734bb5a40d6f8c42743cf7654b5b88be533d70.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "version": "0.26.3"
+    },
     "dhess-lib-nix": {
         "branch": "master",
         "description": "A library of useful Nix functions and types",

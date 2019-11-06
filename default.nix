@@ -15,6 +15,7 @@ let
 
 in
 {
+  inherit (self) aws-okta;
   inherit (self) aws-vault;
 
   inherit (self) badhosts-unified;
