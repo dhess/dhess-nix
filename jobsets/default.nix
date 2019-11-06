@@ -42,7 +42,7 @@ let
     checkinterval = 60 * 60 * 3;
     inputs = {
       dhessNix = mkFetchGithub "${dhessNixUri} ${dhessNixBranch}";
-      nixpkgs = mkFetchGithub "https://github.com/NixOS/nixpkgs-channels.git ${nixpkgsRev}";
+      nixpkgs_override = mkFetchGithub "https://github.com/NixOS/nixpkgs-channels.git ${nixpkgsRev}";
     };
   };
 
@@ -52,7 +52,7 @@ let
     checkinterval = 60 * 60 * 12;
     inputs = {
       dhessNix = mkFetchGithub "${dhessNixUri} ${dhessNixBranch}";
-      nixpkgs = mkFetchGithub "https://github.com/NixOS/nixpkgs.git ${nixpkgsRev}";
+      nixpkgs_override = mkFetchGithub "https://github.com/NixOS/nixpkgs.git ${nixpkgsRev}";
     };
   };
 
@@ -63,7 +63,7 @@ let
     schedulingshares = 400;
     inputs = {
       dhessNix = mkFetchGithub "${dhessNixUri} ${dhessNixBranch}";
-      nixpkgs = mkFetchGithub "https://github.com/NixOS/nixpkgs.git ${nixpkgsRev}";
+      nixpkgs_override = mkFetchGithub "https://github.com/NixOS/nixpkgs.git ${nixpkgsRev}";
     };
   };
 
@@ -72,7 +72,7 @@ let
     schedulingshares = 400;
     inputs = {
       dhessNix = mkFetchGithub "${dhessNixUri} ${dhessNixBranch}";
-      nixpkgs = mkFetchGithub "${myNixpkgsUri} ${myNixpkgsRev}";
+      nixpkgs_override = mkFetchGithub "${myNixpkgsUri} ${myNixpkgsRev}";
     };
   };
 

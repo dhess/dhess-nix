@@ -10,13 +10,13 @@ linux:
 	nix build -f jobsets/release.nix --keep-going --arg supportedSystems '[ "x86_64-linux" ]' x86_64-linux
 
 linux-nixpkgs:
-	nix build -f jobsets/release.nix -I nixpkgs=../nixpkgs --keep-going --arg supportedSystems '[ "x86_64-linux" ]' x86_64-linux
+	nix build -f jobsets/release.nix -I nixpkgs_override=../nixpkgs --keep-going --arg supportedSystems '[ "x86_64-linux" ]' x86_64-linux
 
 darwin:
 	nix build -f jobsets/release.nix --keep-going --arg supportedSystems '[ "x86_64-darwin" ]' x86_64-darwin
 
 darwin-nixpkgs:
-	nix build -f jobsets/release.nix -I nixpkgs=../nixpkgs --keep-going --arg supportedSystems '[ "x86_64-darwin" ]' x86_64-darwin
+	nix build -f jobsets/release.nix -I nixpkgs_override=../nixpkgs --keep-going --arg supportedSystems '[ "x86_64-darwin" ]' x86_64-darwin
 
 help:
 	@echo "Targets:"

@@ -2,28 +2,36 @@ let
 
   sources = import ../nix/sources.nix;
 
-  dhess-lib-nix = (import sources.dhess-lib-nix) {};
+  fixedDhessLibNix =
+  let
+    try = builtins.tryEval <dhess_lib_nix>;
+  in
+    if try.success
+      then builtins.trace "Using <dhess_lib_nix>" try.value
+      else (import sources.dhess-lib-nix);
+
+  dhess-lib-nix = fixedDhessLibNix {};
   inherit (dhess-lib-nix) lib haskell;
   inherit (lib.fetchers) fixedNixpkgs;
   inherit (lib.dhess-lib-nix) nixpkgs;
 
-  fixedNixOps = sources.nixops;
+  fixedNixOps = lib.fetchers.fixedNixSrc "nixops" sources.nixops;
 
-  fixedHpio = sources.hpio;
+  fixedHpio = lib.fetchers.fixedNixSrc "hpio" sources.hpio;
   hpio = (import fixedHpio) {};
 
-  fixedPinPon = sources.pinpon;
+  fixedPinPon = lib.fetchers.fixedNixSrc "pinpon" sources.pinpon;
   pinpon = (import fixedPinPon) {};
 
-  fixedMellon = sources.mellon;
+  fixedMellon = lib.fetchers.fixedNixSrc "mellon" sources.mellon;
   mellon = (import fixedMellon) {};
 
-  fixedAllHies = sources.all-hies;
+  fixedAllHies = lib.fetchers.fixedNixSrc "all-hies" sources.all-hies;
   all-hies = (import fixedAllHies) {};
 
-  fixedIHaskell = sources.IHaskell;
+  fixedIHaskell = lib.fetchers.fixedNixSrc "IHaskell" sources.IHaskell;
 
-  fixedLorri = sources.lorri;
+  fixedLorri = lib.fetchers.fixedNixSrc "lorri" sources.lorri;
 
   overlays = [
     dhess-lib-nix.overlays.all

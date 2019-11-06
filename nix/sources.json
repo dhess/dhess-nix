@@ -29,10 +29,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "ad8f37f52dc2ea63bd6682bd0afd949d56d5295a",
-        "sha256": "16cvx5wg3ch0zw396ikr8filx235skhwrlk4kdrw32vgj2xslqzz",
+        "rev": "63066d1bbfc2f8f87de5be8f71de31242c87a4bd",
+        "sha256": "06411zzzbs4a2i852zyh344iamm08y423y7s1q3c46pljr8pv0s5",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/ad8f37f52dc2ea63bd6682bd0afd949d56d5295a.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/63066d1bbfc2f8f87de5be8f71de31242c87a4bd.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hpio": {
