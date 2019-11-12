@@ -21,6 +21,14 @@ in
 
   # Hydra fixes from iohk.
   hydra = super.hydra.overrideAttrs (drv: {
+    version = "2019-11-07";
+    src = super.fetchFromGitHub {
+      owner = "NixOS";
+      repo = "hydra";
+      rev = "e89ea733d0539f40949cfb0bcb9e51d58e9b1c14";
+      sha256 = "18dn0vkd3n8qh1lrw49k3imlznlv2slqqkq5xjnqgb5j579a2ikl";
+    };
+
     patches = [
       (super.fetchpatch {
         url = "https://github.com/input-output-hk/hydra/commit/ed87d2ba82807d30d91d70a88cda276083ef4e79.patch";
