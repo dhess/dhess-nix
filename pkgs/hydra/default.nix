@@ -1,7 +1,7 @@
 { stdenv, nix, perlPackages, buildEnv, fetchFromGitHub
 , makeWrapper, autoconf, automake, libtool, unzip, pkgconfig, sqlite, libpqxx
 , gitAndTools, mercurial, darcs, subversion, bazaar, openssl, bzip2, libxslt
-, guile, perl, postgresql, nukeReferences, git, boehmgc, nlohmann_json
+, guile, perl, postgresql, postgresql95, nukeReferences, git, boehmgc, nlohmann_json
 , docbook_xsl, openssh, gnused, coreutils, findutils, gzip, lzma, gnutar
 , rpm, dpkg, cdrkit, pixz, lib, boost, autoreconfHook
 }:
@@ -27,7 +27,7 @@ let
         CatalystPluginSessionStateCookie
         CatalystPluginSessionStoreFastMmap
         CatalystPluginStackTrace
-        CatalystRuntime
+        CatalystPluginUnicodeEncoding
         CatalystTraitForRequestProxyBase
         CatalystViewDownload
         CatalystViewJSON
@@ -51,6 +51,7 @@ let
         LWP
         LWPProtocolHttps
         NetAmazonS3
+        NetPrometheus
         NetStatsd
         PadWalker
         Readonly
@@ -58,6 +59,8 @@ let
         SetScalar
         Starman
         SysHostnameLong
+        TermSizeAny
+        TestMore
         TextDiff
         TextTable
         XMLSimple
@@ -81,13 +84,13 @@ in stdenv.mkDerivation rec {
   };
 
   buildInputs =
-    [ makeWrapper autoconf automake libtool unzip nukeReferences sqlite libpqxx
+    [ makeWrapper autoconf automake libtool unzip nukeReferences pkgconfig sqlite libpqxx
       gitAndTools.topGit mercurial darcs subversion bazaar openssl bzip2 libxslt
       guile # optional, for Guile + Guix support
       perlDeps perl nix
-      postgresql # for running the tests
-      nlohmann_json
+      postgresql95 # for running the tests
       boost
+      nlohmann_json
     ];
 
   hydraPath = lib.makeBinPath (
