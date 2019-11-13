@@ -142,7 +142,8 @@
         "sha256": "0af3pmxqzm0clnxsdyv8qpzrf8xhrdrf08fs183cn7jpgdf1kd3v",
         "type": "tarball",
         "url": "https://github.com/articulate/terraform-provider-okta/archive/5c7f0533f2a55386a7ef8c08ebf74446c90b3e1c.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "version": "3.0.33"
     },
     "terraform-provider-vultr": {
         "branch": "master",
