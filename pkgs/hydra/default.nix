@@ -15,7 +15,7 @@ else
 let
   perlDeps = buildEnv {
     name = "hydra-perl-deps";
-    paths = with perlPackages;
+    paths = lib.closePropagation (with perlPackages;
       [ ModulePluggable
         CatalystActionREST
         CatalystAuthenticationStoreDBIxClass
@@ -65,7 +65,7 @@ let
         nix.perl-bindings
         git
         boehmgc
-      ];
+      ]);
   };
 in stdenv.mkDerivation rec {
   pname = "hydra";
