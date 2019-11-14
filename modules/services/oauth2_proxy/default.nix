@@ -25,6 +25,10 @@ let
       service-account = serviceAccountJSON;
       group = groups;
     }; };
+
+    oidc = cfg: { oidc = {
+      issuer-url = cfg.oidc.issuerURL;
+    }; };
   };
 
   authenticatedEmailsFile = pkgs.writeText "authenticated-emails" cfg.email.addresses;
@@ -50,6 +54,7 @@ let
     redirect-url = redirectURL;
     request-logging = requestLogging;
     skip-auth-regex = skipAuthRegexes;
+    skip-provider-button = skipProviderButton;
     signature-key = signatureKey;
     validate-url = validateURL;
     htpasswd-file = htpasswd.file;
@@ -111,6 +116,7 @@ in
         "gitlab"
         "linkedin"
         "myusa"
+        "oidc"
       ];
       default = "google";
       description = ''
@@ -147,6 +153,14 @@ in
      description = ''
        Skip authentication for requests matching any of these regular
        expressions.
+     '';
+    };
+
+    skipProviderButton = mkOption {
+     type = types.bool;
+     default = false;
+     description = ''
+       Skip sign-in page to directly reach the next step: oauth/start.
      '';
     };
 
@@ -285,6 +299,16 @@ in
       };
     };
 
+    oidc = {
+      issuerURL = mkOption {
+        type = types.str;
+        description = ''
+          The IdP's issuer URL. (For Okta, this is your Okta
+          organization URL, unless you've created a custom
+          authorization server for this service.)
+        '';
+      };
+    };
 
     ####################################################
     # UPSTREAM Configuration
