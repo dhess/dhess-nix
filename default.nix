@@ -46,6 +46,7 @@ in
   inherit (self) mkCacert;
   inherit (self) nixops;
   inherit (self) ntp;
+  inherit (self) oauth2_proxy;
   inherit (self) pinpon;
   inherit (self) ppp-devel;
   inherit (self) unbound;

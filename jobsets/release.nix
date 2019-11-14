@@ -61,6 +61,7 @@ let
     netsniff-ng = x86_64_linux;
     nixops = x86_64;
     ntp = linux;
+    oauth2_proxy = all;
     ppp-devel = linux;
     suricata = x86_64_linux;
     terraform-provider-okta = all;
@@ -158,6 +159,7 @@ let
         netsniff-ng.x86_64-linux
         nixops.x86_64-linux
         ntp.x86_64-linux
+        oauth2_proxy.x86_64-linux
         ppp-devel.x86_64-linux
         suricata.x86_64-linux
         terraform-provider-okta.x86_64-linux

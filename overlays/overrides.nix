@@ -24,6 +24,9 @@ let
     source = super.lib.dhess-nix.sources.aws-okta;
   };
 
+  # Upstream is out of date.
+  oauth2_proxy = callPackage ../pkgs/oauth2_proxy {};
+
 in
 {
 
@@ -64,4 +67,5 @@ in
   inherit cfssl;
   inherit libvmaf;
   inherit minikube;
+  inherit oauth2_proxy;
 }
