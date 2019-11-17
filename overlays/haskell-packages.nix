@@ -356,6 +356,7 @@ let
     thyme
     time-recurrence
     turtle
+    type-of-html
     uniplate
     webdriver
     zlib-lens
