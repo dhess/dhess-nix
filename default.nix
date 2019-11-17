@@ -31,6 +31,7 @@ in
 
   inherit (self) ccextractor;
   inherit (self) cfssl;
+  inherit (self) chamber;
   inherit (self) crosstool-ng-xtensa;
   inherit (self) debian-ppp;
   inherit (self) dhess-ssh-keygen;

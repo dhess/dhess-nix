@@ -93,6 +93,8 @@ let
     inherit (super.darwin) libobjc dtrace;
   };
 
+  chamber = callPackage ../pkgs/chamber {};
+
 in
 {
   inherit (badhosts) badhosts-unified;
@@ -107,6 +109,7 @@ in
   inherit (badhosts) badhosts-all;
 
   inherit ccextractor;
+  inherit chamber;
   inherit crosstool-ng-xtensa;
   inherit dhess-nix-source;
   inherit debian-ppp;

@@ -36,6 +36,18 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "version": "0.26.3"
     },
+    "chamber": {
+        "branch": "v2.7.5",
+        "description": "CLI for managing secrets",
+        "homepage": null,
+        "owner": "segmentio",
+        "repo": "chamber",
+        "rev": "72a39a7787ae7f021cd52cdf9b087730435c78ee",
+        "sha256": "0cdbq7r6ndfba259mxlig5cp08bmc502gazkd7j28ad6hqzwghqh",
+        "type": "tarball",
+        "url": "https://github.com/segmentio/chamber/archive/72a39a7787ae7f021cd52cdf9b087730435c78ee.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "dhess-lib-nix": {
         "branch": "master",
         "description": "A library of useful Nix functions and types",
