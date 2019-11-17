@@ -45,6 +45,9 @@ let
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
+
+    hal = super.callPackage ../pkgs/haskell/hal {};
+
     haskell-lsp = super.haskell-lsp_0_17_0_0;
     haskell-lsp-types = super.haskell-lsp-types_0_17_0_0;
     hoopl = doJailbreak super.hoopl;
@@ -298,6 +301,7 @@ let
     GraphSCC
     graphs
     hakyll
+    hal
     haxl
     hedgehog-classes
     hedgehog-corpus
