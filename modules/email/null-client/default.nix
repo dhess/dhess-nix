@@ -109,7 +109,7 @@ in
   config = mkIf enabled {
 
     dhess-nix.assertions.moduleHashes."services/mail/postfix.nix" =
-      "025b09dcfbb27141c3d716f3f6972b67f8f8a860dca47f30a01a055627ef5d92";
+      "88b790060a6baf09a5312f7bc8fcdd54fc1d4846d69c34cd6092e910c40fd7fa";
 
     dhess-nix.keychain.keys.postfix-null-client-cert = {
       inherit user group;

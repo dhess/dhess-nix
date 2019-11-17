@@ -233,7 +233,7 @@ in
   config = mkIf (cfg.interfaces != {}) {
 
     dhess-nix.assertions.moduleHashes."services/networking/wireguard.nix" =
-      "a26e4028bfb569e5eced692cc9836cb7cf16d5a4a3005ac3688996f1047bece5";
+      "1598687eef8976e3a08db491ba49f809ac6502a5e86ed4f7595d6462bcc710c1";
 
     boot.extraModulePackages = [ kernel.wireguard ];
     environment.systemPackages = [ pkgs.wireguard-tools ];
