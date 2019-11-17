@@ -138,12 +138,12 @@
         "homepage": null,
         "owner": "articulate",
         "repo": "terraform-provider-okta",
-        "rev": "5c7f0533f2a55386a7ef8c08ebf74446c90b3e1c",
-        "sha256": "0af3pmxqzm0clnxsdyv8qpzrf8xhrdrf08fs183cn7jpgdf1kd3v",
+        "rev": "32a26c73c4c74fca75acea7eb62702cdf17030e4",
+        "sha256": "0zywc3hbzlkzdsmnc6754b6cym0mqsc0949y1fqcxclhkcbikysj",
         "type": "tarball",
-        "url": "https://github.com/articulate/terraform-provider-okta/archive/5c7f0533f2a55386a7ef8c08ebf74446c90b3e1c.tar.gz",
+        "url": "https://github.com/articulate/terraform-provider-okta/archive/32a26c73c4c74fca75acea7eb62702cdf17030e4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "version": "3.0.33"
+        "version": "3.0.34"
     },
     "terraform-provider-vultr": {
         "branch": "master",
