@@ -45,6 +45,8 @@ let
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
     haddocset = super.callPackage ../pkgs/haskell/haddocset {};
+    haskell-lsp = super.haskell-lsp_0_17_0_0;
+    haskell-lsp-types = super.haskell-lsp-types_0_17_0_0;
     hoopl = doJailbreak super.hoopl;
 
     hw-balancedparens = super.hw-balancedparens_0_3_0_2;
@@ -62,6 +64,7 @@ let
     hfsevents = super.hfsevents.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.darwin;
     });
+    lsp-test = dontCheck super.lsp-test_0_8_0_0;
     machines-process = doJailbreak super.machines-process;
 
     # Undo upstream breakage.
@@ -375,6 +378,7 @@ let
     paths =  [
         (hp.ghcWithHoogle packageList)
         (all-hies.bios.selection { selector = p: { inherit (p) ghc865; }; })
+        (exeOnly hp.ghcide)
         (exeOnly hp.cabal-install)
         (exeOnly hp.hindent)
         (exeOnly hp.hpack)
