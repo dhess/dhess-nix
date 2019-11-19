@@ -54,10 +54,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "0c33689b33e8f2f903bd609e5ce71b3b4d0ddf6a",
-        "sha256": "0l1i8c0f2b3y1h5qmj8csnc7qp9fbg93zziwb11zan84dfzly708",
+        "rev": "45fd650c12dbc4336e227887e944b906a1dc7b7a",
+        "sha256": "0xml4sj45a4llqksqb787vrjm7s67bnp3ydxigx807k0ifr8dqjp",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/0c33689b33e8f2f903bd609e5ce71b3b4d0ddf6a.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/45fd650c12dbc4336e227887e944b906a1dc7b7a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hpio": {
@@ -126,10 +126,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "a6934e36534f8a87a78f877eee65c08fa9867ba5",
-        "sha256": "16p6b4xjp35lp875qlv68yzncz0g4wwim53sbpc47q6skg26ggnp",
+        "rev": "84d582f4c6d491a5e1f0848b10cecf871778822f",
+        "sha256": "0ipgmwq7c0xydpbir5prd5dkgm5rphpvxlwmbkzv1dhzc3v9sd4r",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs-channels/archive/a6934e36534f8a87a78f877eee65c08fa9867ba5.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs-channels/archive/84d582f4c6d491a5e1f0848b10cecf871778822f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pinpon": {
@@ -150,12 +150,12 @@
         "homepage": null,
         "owner": "articulate",
         "repo": "terraform-provider-okta",
-        "rev": "32a26c73c4c74fca75acea7eb62702cdf17030e4",
-        "sha256": "0zywc3hbzlkzdsmnc6754b6cym0mqsc0949y1fqcxclhkcbikysj",
+        "rev": "5e9b6bfdad29fb94f88f5d5ee2e02486ad1fc6b9",
+        "sha256": "079473n1znpdhg16jyb7kvpk7qnkkq6fn87pss2kbg9wav0hb3q2",
         "type": "tarball",
-        "url": "https://github.com/articulate/terraform-provider-okta/archive/32a26c73c4c74fca75acea7eb62702cdf17030e4.tar.gz",
+        "url": "https://github.com/articulate/terraform-provider-okta/archive/5e9b6bfdad29fb94f88f5d5ee2e02486ad1fc6b9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "version": "3.0.34"
+        "version": "3.0.35"
     },
     "terraform-provider-vultr": {
         "branch": "master",
