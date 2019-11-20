@@ -42,10 +42,10 @@
         "homepage": "",
         "owner": "StevenBlack",
         "repo": "hosts",
-        "rev": "d7472887b2c7ec9d22f8a626efc18694bd72ac29",
-        "sha256": "0mb9yndi7x7qw2fp5f1akk6lrh750kgbbiapb00hlyiwmxwngbf0",
+        "rev": "d0654c9b0007a18bad0508b7a56b0e26466af75f",
+        "sha256": "018bqp0ra46mwq1v25m331rh13arhks8wmwr6cvi328dnb42llw3",
         "type": "tarball",
-        "url": "https://github.com/StevenBlack/hosts/archive/d7472887b2c7ec9d22f8a626efc18694bd72ac29.tar.gz",
+        "url": "https://github.com/StevenBlack/hosts/archive/d0654c9b0007a18bad0508b7a56b0e26466af75f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "chamber": {
@@ -66,10 +66,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "0036c6891ff7ccd3093e0c0ec0eb0c7b8e08d5ed",
-        "sha256": "0h4kc8plqh4jh7ja1pd1qbas4jhkk39za1wzpn4sc93w8c52dbhx",
+        "rev": "d9570b2dc83b2b6650b0dac13130be286e4a407b",
+        "sha256": "195xglaglaf8xdk8w6yg5209rwy9klgcszc0am506nhrds076nkw",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/0036c6891ff7ccd3093e0c0ec0eb0c7b8e08d5ed.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/d9570b2dc83b2b6650b0dac13130be286e4a407b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hpio": {
@@ -114,10 +114,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "064c17dc003c43d388ee36160182cc84e0f08ae1",
-        "sha256": "0k89liza0jwj6rrjkvxhl21xsswcc3m5flcx8q8h4i0vbyy0yba6",
+        "rev": "29b4dd4dc3a126076435b83526e13f212e304ddf",
+        "sha256": "0xfdx7x1s4yzmkfa1zvbmd3js3kkhjygr51wxa0xky74zgjy7cfq",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/064c17dc003c43d388ee36160182cc84e0f08ae1.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/29b4dd4dc3a126076435b83526e13f212e304ddf.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixops": {
@@ -138,10 +138,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "93e8c34e2e4bfb27c881270720cee933ae5ba336",
-        "sha256": "1x7nhdkyy4w7q10612srsbcd66dbayly956s2pfw4g49mn01pjvv",
+        "rev": "504094dfbbb15797fe89a9d00fb1fa0cdbeca2f9",
+        "sha256": "1sks80mx2zycw6h0ihbgwbpmjzwfrp0x9qn4n40w266dck20w7rl",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs-channels/archive/93e8c34e2e4bfb27c881270720cee933ae5ba336.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs-channels/archive/504094dfbbb15797fe89a9d00fb1fa0cdbeca2f9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pinpon": {
@@ -162,12 +162,12 @@
         "homepage": null,
         "owner": "articulate",
         "repo": "terraform-provider-okta",
-        "rev": "e41da8069b9288bc4c66960372508c9309391f3b",
-        "sha256": "03y6axcr20xyqxvgyb3nznxr4ly37z61516fflc6jaqhlcbip8jv",
+        "rev": "c7afeaa1ffe5d47f60a3ccad62bda221c10b4731",
+        "sha256": "0wb3qxfb307xfwqicsh5qzvg01whg40w8vwmwb3v55qdhywdylak",
         "type": "tarball",
-        "url": "https://github.com/articulate/terraform-provider-okta/archive/e41da8069b9288bc4c66960372508c9309391f3b.tar.gz",
+        "url": "https://github.com/articulate/terraform-provider-okta/archive/c7afeaa1ffe5d47f60a3ccad62bda221c10b4731.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "version": "3.0.36"
+        "version": "3.0.37"
     },
     "terraform-provider-vultr": {
         "branch": "master",
