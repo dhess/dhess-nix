@@ -66,10 +66,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "d9570b2dc83b2b6650b0dac13130be286e4a407b",
-        "sha256": "195xglaglaf8xdk8w6yg5209rwy9klgcszc0am506nhrds076nkw",
+        "rev": "3b5cf2c299a87de3147ac87ad1a93077ea0acddc",
+        "sha256": "1h8kv341p0yr1ssc92bgdrad00dvn37bp42vsahc1xv213r1dv4g",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/d9570b2dc83b2b6650b0dac13130be286e4a407b.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/3b5cf2c299a87de3147ac87ad1a93077ea0acddc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hpio": {
@@ -138,10 +138,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "504094dfbbb15797fe89a9d00fb1fa0cdbeca2f9",
-        "sha256": "1sks80mx2zycw6h0ihbgwbpmjzwfrp0x9qn4n40w266dck20w7rl",
+        "rev": "58fb23f72ad916c8bbfa3c3bc2d0c83c9cfcdd16",
+        "sha256": "0f7gnsis5hdrdcmiv7s06qz02pszmmfxrqvc77jf0lmc86i25x9i",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs-channels/archive/504094dfbbb15797fe89a9d00fb1fa0cdbeca2f9.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs-channels/archive/58fb23f72ad916c8bbfa3c3bc2d0c83c9cfcdd16.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pinpon": {
