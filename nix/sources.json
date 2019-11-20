@@ -36,6 +36,18 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
         "version": "0.26.3"
     },
+    "badhosts": {
+        "branch": "master",
+        "description": "Extending and consolidating hosts files from several well-curated sources like adaway.org, mvps.org, malwaredomainlist.com, someonewhocares.org, and potentially others.  You can optionally invoke extensions to block additional sites by category. ",
+        "homepage": "",
+        "owner": "StevenBlack",
+        "repo": "hosts",
+        "rev": "d7472887b2c7ec9d22f8a626efc18694bd72ac29",
+        "sha256": "0mb9yndi7x7qw2fp5f1akk6lrh750kgbbiapb00hlyiwmxwngbf0",
+        "type": "tarball",
+        "url": "https://github.com/StevenBlack/hosts/archive/d7472887b2c7ec9d22f8a626efc18694bd72ac29.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "chamber": {
         "branch": "v2.7.5",
         "description": "CLI for managing secrets",

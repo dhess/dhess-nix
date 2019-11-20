@@ -56,7 +56,10 @@ let
 
   ppp-devel = callPackage ../pkgs/networking/ppp-devel {};
 
-  badhosts = callPackage ../pkgs/dns/badhosts {};
+  badhosts = callPackage ../pkgs/dns/badhosts {
+    lib = super.lib;
+    source = lib.fixedBadhosts;
+  };
 
   suricata = callPackage ../pkgs/networking/suricata {
     # not strictly necessary for the overlay, but needed for building

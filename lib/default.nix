@@ -33,6 +33,8 @@ let
 
   fixedLorri = lib.fetchers.fixedNixSrc "lorri" sources.lorri;
 
+  fixedBadhosts = lib.fetchers.fixedNixSrc "badhosts" sources.badhosts;
+
   overlays = [
     dhess-lib-nix.overlays.all
     pinpon.overlays.pinpon
@@ -62,6 +64,7 @@ in lib //
   inherit fixedNixOps;
   inherit fixedIHaskell;
   inherit fixedLorri;
+  inherit fixedBadhosts;
 
   inherit sources;
 }

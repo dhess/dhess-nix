@@ -1,19 +1,18 @@
 { stdenv
 , lib
-, fetchurl
+, fetchFromGitHub
+, source
 }:
 
 let
 
-  version = "2.5.22";
-  sha256 = "0xf9ifsvqq9p87p2nxsna7zr1c648skp72zkrl36s97y0igs2nhq";
+  version = lib.misc.shortRev source.rev;
 
   generic = { subname, hostsFile, ... }: stdenv.mkDerivation {
     name = "badhosts-${subname}-${version}";
     inherit version;
-    src = fetchurl {
-      url = "https://github.com/StevenBlack/hosts/archive/${version}.tar.gz";
-      inherit sha256;
+    src = fetchFromGitHub {
+      inherit (source) repo owner sha256 rev;
     };
 
     # Note that when we generate the Unbound zones file, we skip
