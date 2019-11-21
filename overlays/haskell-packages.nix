@@ -320,6 +320,7 @@ let
     intervals
     ip
     ivory
+    justified-containers
     katip
     katip-elasticsearch
     lens-action
