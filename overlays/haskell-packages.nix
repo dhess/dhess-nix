@@ -45,6 +45,15 @@ let
 
     generic-lens = dontCheck super.generic-lens_1_2_0_1;
 
+    ghcide = dontCheck ((super.callPackage ../pkgs/haskell/ghcide {}).overrideAttrs (drv: {
+      patches = [
+        (fetchpatch {
+          url = "https://patch-diff.githubusercontent.com/raw/digital-asset/ghcide/pull/188.diff";
+          sha256 = "08dv6dfn8v858n4c1pnl9q3zsfgclf7phy4rkgc524vh699wrlv5";
+        })
+      ];
+    }));
+
     # Ironically, haddock-api doesn't haddock.
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
@@ -52,8 +61,11 @@ let
 
     hal = super.callPackage ../pkgs/haskell/hal {};
 
-    haskell-lsp = super.haskell-lsp_0_17_0_0;
-    haskell-lsp-types = super.haskell-lsp-types_0_17_0_0;
+    haskell-lsp = super.callPackage ../pkgs/haskell/haskell-lsp/0.18.0.0.nix {};
+    haskell-lsp-types = super.callPackage ../pkgs/haskell/haskell-lsp-types/0.18.0.0.nix {};
+
+    hie-bios = dontCheck (super.callPackage ../pkgs/haskell/hie-bios {});
+
     hoopl = doJailbreak super.hoopl;
 
     hw-balancedparens = super.hw-balancedparens_0_3_0_2;
@@ -71,7 +83,9 @@ let
     hfsevents = super.hfsevents.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.darwin;
     });
-    lsp-test = dontCheck super.lsp-test_0_8_0_0;
+
+    lsp-test = dontCheck (super.callPackage ../pkgs/haskell/lsp-test/0.8.2.0.nix {});
+
     machines-process = doJailbreak super.machines-process;
 
     # Undo upstream breakage.
