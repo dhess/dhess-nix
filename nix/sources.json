@@ -72,6 +72,18 @@
         "url": "https://github.com/dhess/dhess-lib-nix/archive/3b5cf2c299a87de3147ac87ad1a93077ea0acddc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "ghcide-nix": {
+        "branch": "master",
+        "description": "Nix installation for ghcide",
+        "homepage": "https://github.com/digital-asset/ghcide",
+        "owner": "hercules-ci",
+        "repo": "ghcide-nix",
+        "rev": "fe9c02f3e4b00623596a08d7805bee5d57498f21",
+        "sha256": "0sfbxn14sln1k7mwwz3a8lhmkca0spb0sc4vfkbv5r6xi1nfh331",
+        "type": "tarball",
+        "url": "https://github.com/hercules-ci/ghcide-nix/archive/fe9c02f3e4b00623596a08d7805bee5d57498f21.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "hpio": {
         "branch": "master",
         "description": "Perform GPIO from Haskell",
