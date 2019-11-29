@@ -309,6 +309,7 @@ let
     fgl
     fmt
     formatting
+    gdp
     GraphSCC
     graphs
     hakyll
