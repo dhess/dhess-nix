@@ -25,8 +25,6 @@ let
     # 0.1.4.0 is broken on macOS.
     byteslice = super.callPackage ../pkgs/haskell/byteslice/0.1.3.0.nix {};
 
-    capability = doJailbreak (super.callPackage ../pkgs/haskell/capability {});
-
     clay = doJailbreak super.clay;
     concurrent-machines = doJailbreak super.concurrent-machines;
 
