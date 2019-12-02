@@ -45,6 +45,15 @@ let
 
     generic-lens = dontCheck super.generic-lens_1_2_0_1;
 
+    ghcide = dontCheck ((super.callPackage ../pkgs/haskell/ghcide {}).overrideAttrs (drv: {
+      patches = [
+        (fetchpatch {
+          url = "https://patch-diff.githubusercontent.com/raw/digital-asset/ghcide/pull/188.diff";
+          sha256 = "08dv6dfn8v858n4c1pnl9q3zsfgclf7phy4rkgc524vh699wrlv5";
+        })
+      ];
+    }));
+
     # Ironically, haddock-api doesn't haddock.
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
@@ -385,9 +394,6 @@ let
   # haskell-ide-engine via all-hies.
   inherit (localLib) all-hies;
 
-  # ghcide-nix.
-  ghcide-ghc865 = (import localLib.fixedGhcIdeNix {}).ghcide-ghc865;
-
   ## Create a buildEnv with useful Haskell tools and the given set of
   ## haskellPackages and a list of packages to install in the
   ## buildEnv.
@@ -397,7 +403,7 @@ let
     paths =  [
         (hp.ghcWithHoogle packageList)
         (all-hies.bios.selection { selector = p: { inherit (p) ghc865; }; })
-        ghcide-ghc865
+        (exeOnly hp.ghcide)
         (exeOnly hp.cabal-install)
         (exeOnly hp.hindent)
         (exeOnly hp.hpack)
@@ -481,9 +487,6 @@ in
 
   inherit all-hies;
 
-  ## ghcide
-
-  inherit ghcide-ghc865;
 
   ## iHaskell.
   inherit ihaskell;
