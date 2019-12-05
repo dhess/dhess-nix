@@ -17,7 +17,10 @@ let
     extraLibs = coreList super.python3Packages;
   };
 
+  aws-sam-cli = super.callPackage ../pkgs/aws-sam-cli { python = super.python3; };
+
 in
 {
+  inherit aws-sam-cli;
   inherit python-env;
 }
