@@ -27,6 +27,9 @@ let
   # Upstream is out of date.
   oauth2_proxy = callPackage ../pkgs/oauth2_proxy {};
 
+  # Upstream is broken on macOS.
+  nano = callPackage ../pkgs/nano/4.5.nix {};
+
 in
 {
 
@@ -67,5 +70,6 @@ in
   inherit cfssl;
   inherit libvmaf;
   inherit minikube;
+  inherit nano;
   inherit oauth2_proxy;
 }
