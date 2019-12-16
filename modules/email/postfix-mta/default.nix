@@ -579,7 +579,7 @@ in
     dhess-nix.assertions.moduleHashes."services/mail/postfix.nix" =
       "88b790060a6baf09a5312f7bc8fcdd54fc1d4846d69c34cd6092e910c40fd7fa";
     dhess-nix.assertions.moduleHashes."security/acme.nix" =
-      "4ce4c32f124925cbee71397b0c2fb038a8a93d79c0c74f0be455df9c76f8e7f8";
+      "a0148db6b6346d1278e458cd30e04d4b7e6285b920d7b3abffa7d85135b47790";
 
     dhess-nix.keychain.keys."sasl-tls-key" = {
       destDir = "/var/lib/postfix/keys";
