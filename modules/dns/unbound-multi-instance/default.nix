@@ -205,7 +205,7 @@ in {
     # them here.
 
     dhess-nix.assertions.moduleHashes."services/networking/unbound.nix" =
-      "11cd0da0228406dc82eb19f10ce5bdda0aba85a6b3ab2fffef04feca6781d15a";
+      "8af6d702a2abe945c90054e7233ca908994eaab59781f364f1f34e7533d5462d";
 
     environment.systemPackages = [ pkgs.unbound ];
 

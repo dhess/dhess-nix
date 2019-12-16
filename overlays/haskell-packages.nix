@@ -29,10 +29,10 @@ let
     concurrent-machines = doJailbreak super.concurrent-machines;
 
     # dhall tests try to hit the network.
-    dhall = dontCheck super.dhall_1_27_0;
+    dhall = dontCheck super.dhall_1_28_0;
 
     # Tests are broken upstream, but package is fine.
-    dhall-json = dontCheck super.dhall-json_1_5_0;
+    dhall-json = dontCheck super.dhall-json_1_6_0;
 
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
 
@@ -101,6 +101,7 @@ let
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
+    prettyprinter = super.prettyprinter_1_5_1;
 
     # dontCheck, or else it causes infinite recursion.
     primitive = dontCheck super.primitive_0_7_0_0;

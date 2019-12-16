@@ -17,10 +17,10 @@
         "homepage": "",
         "owner": "Infinisil",
         "repo": "all-hies",
-        "rev": "8d9b0e770c8e2264ef4882623a205548d9fdaa03",
-        "sha256": "1lqvyn3as7wp4njdk4hl34qiwbnys192shv425jvw27014hgl3vy",
+        "rev": "c6e93d2d641ef48703eabed8ec5cde3d774cb0e5",
+        "sha256": "08nikzynnp9nkjixplnmqk7yp2nc4w5wp3id4av8hy835im7vjb6",
         "type": "tarball",
-        "url": "https://github.com/Infinisil/all-hies/archive/8d9b0e770c8e2264ef4882623a205548d9fdaa03.tar.gz",
+        "url": "https://github.com/Infinisil/all-hies/archive/c6e93d2d641ef48703eabed8ec5cde3d774cb0e5.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "aws-okta": {
@@ -29,12 +29,12 @@
         "homepage": null,
         "owner": "segmentio",
         "repo": "aws-okta",
-        "rev": "fc734bb5a40d6f8c42743cf7654b5b88be533d70",
-        "sha256": "1h2n949ryi14bcnaz4n0kjf7hbhh8rpxnfg48bqwh8bxznc1msyj",
+        "rev": "48ab1d119114e84d3aa076e89b996dd6ce913753",
+        "sha256": "0qzqi46ayjysp4zhi783ynqfh7gylbaf58l204b4ii8b5zdbfgm8",
         "type": "tarball",
-        "url": "https://github.com/segmentio/aws-okta/archive/fc734bb5a40d6f8c42743cf7654b5b88be533d70.tar.gz",
+        "url": "https://github.com/segmentio/aws-okta/archive/48ab1d119114e84d3aa076e89b996dd6ce913753.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "version": "0.26.3"
+        "version": "0.27.0"
     },
     "badhosts": {
         "branch": "master",
@@ -42,10 +42,10 @@
         "homepage": "",
         "owner": "StevenBlack",
         "repo": "hosts",
-        "rev": "1011b0166ff0aa5c4a2d9499bb390a5d1df00657",
-        "sha256": "1c34i0s61das1chgqf3hp2dzqijifp9g5zrqyk55ml20adf783n6",
+        "rev": "839b561b7051c44e795c1d89572fb41f0f6f09df",
+        "sha256": "0mvp9zqgq04fdvjcjgff2fbv2v71mb58iyl11pza9rl35m5yllki",
         "type": "tarball",
-        "url": "https://github.com/StevenBlack/hosts/archive/1011b0166ff0aa5c4a2d9499bb390a5d1df00657.tar.gz",
+        "url": "https://github.com/StevenBlack/hosts/archive/839b561b7051c44e795c1d89572fb41f0f6f09df.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "chamber": {
@@ -66,10 +66,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "a23e4d120959a4be4e9d6143e36b80c423456c49",
-        "sha256": "034611mpc2f6qjgj4122yvyv4hchrk2zkfkrsfjilc4bn13985r6",
+        "rev": "d8aa5814ff9161b0c71f0542faf06f886c46180d",
+        "sha256": "1njih881z7g4gma0wfsanj7q0nf3na35fyyli5fw1398hn6v74r0",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/a23e4d120959a4be4e9d6143e36b80c423456c49.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/d8aa5814ff9161b0c71f0542faf06f886c46180d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hpio": {
@@ -114,10 +114,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "d9f62fdcb7f009e916a4377388316e8d4718173f",
-        "sha256": "0z55171x705sxlndzkq5ysy7pr1m2s4m5k741kz5mbk1mnp8nrkd",
+        "rev": "6f03879b8a91fb0c33c7186da347b914deee3efc",
+        "sha256": "04pl8b4gnbfakapjskm4030qlklwzjk0x45jn9gcnjpdl7s8ri33",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/d9f62fdcb7f009e916a4377388316e8d4718173f.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/6f03879b8a91fb0c33c7186da347b914deee3efc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixops": {
