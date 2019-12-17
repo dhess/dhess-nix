@@ -30,6 +30,9 @@ let
   # Upstream is broken on macOS.
   nano = callPackage ../pkgs/nano/4.5.nix {};
 
+  # Upstream is currently broken.
+  dovecot_pigeonhole = callPackage ../pkgs/dovecot-pigeonhole {};
+
 in
 {
 
@@ -68,6 +71,7 @@ in
   inherit aws-okta;
   inherit aws-vault;
   inherit cfssl;
+  inherit dovecot_pigeonhole;
   inherit libvmaf;
   inherit minikube;
   inherit nano;

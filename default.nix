@@ -36,6 +36,7 @@ in
   inherit (self) crosstool-ng-xtensa;
   inherit (self) debian-ppp;
   inherit (self) dhess-ssh-keygen;
+  inherit (self) dovecot_pigeonhole;
   inherit (self) ffmpeg-full;
   inherit (self) fm-assistant;
   inherit (self) gawk_4_2_1;

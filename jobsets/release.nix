@@ -53,6 +53,7 @@ let
     crosstool-ng-xtensa = x86_64;
     debian-ppp = linux;
     dhess-ssh-keygen = all;
+    dovecot_pigeonhole = all;
     ffmpeg-full = x86_64;
     fm-assistant = darwin;
     gawk_4_2_1 = all;
@@ -155,6 +156,7 @@ let
         crosstool-ng-xtensa.x86_64-linux
         debian-ppp.x86_64-linux
         dhess-ssh-keygen.x86_64-linux
+        dovecot_pigeonhole.x86_64-linux
         hydra.x86_64-linux
         ipxe.x86_64-linux
         ffmpeg-full.x86_64-linux
