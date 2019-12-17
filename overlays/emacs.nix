@@ -2,15 +2,10 @@ self: pkgs:
 
 let
 
-  # Upstream emacsMacport doesn't define `version`.
-  emacsMacport = pkgs.emacsMacport.overrideAttrs (drv: {
-    version = "${drv.emacsVersion}-${drv.macportVersion}";
-  });
-
   emacs-nox = pkgs.emacs26-nox;
 
   emacsMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacs;
-  emacsMacportMelpaPackagesNg = pkgs.melpaPackagesNgFor emacsMacport;
+  emacsMacportMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacsMacport;
   emacsNoXMelpaPackagesNg = pkgs.melpaPackagesNgFor emacs-nox;
 
   myAspell = pkgs.aspellWithDicts (dicts: with dicts; [ en ]);
@@ -96,9 +91,9 @@ let
   emacs-env = pkgs.buildEnv {
     name = "emacs-env";
 
-    # Yes, emacsMacport here is intentional. Only build this for macOS
-    # platforms.
-    meta.platforms = emacsMacport.meta.platforms;
+    # Yes, pkgs.emacsMacport here is intentional. Only build this for
+    # macOS platforms.
+    meta.platforms = pkgs.emacsMacport.meta.platforms;
 
     paths = [
       (emacsMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
@@ -121,7 +116,7 @@ let
   # An emacsMacport variant.
   emacs-macport-env = pkgs.buildEnv {
     name = "emacs-macport-env";
-    meta.platforms = emacsMacport.meta.platforms;
+    meta.platforms = pkgs.emacsMacport.meta.platforms;
     paths = [
       (emacsMacportMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
       myAspell
@@ -131,7 +126,6 @@ let
 
 in
 {
-  inherit emacsMacport;
   inherit emacsMelpaPackagesNg;
   inherit emacs-nox emacsNoXMelpaPackagesNg;
   inherit emacsMacportMelpaPackagesNg;

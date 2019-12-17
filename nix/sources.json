@@ -66,10 +66,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "d8aa5814ff9161b0c71f0542faf06f886c46180d",
-        "sha256": "1njih881z7g4gma0wfsanj7q0nf3na35fyyli5fw1398hn6v74r0",
+        "rev": "8f9458c2729ee6a84588258c7b687238f4b89369",
+        "sha256": "1qr3g5k47hsycvj9gm08qvm7p821sqki79pll32s7206i8cs8pih",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/d8aa5814ff9161b0c71f0542faf06f886c46180d.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/8f9458c2729ee6a84588258c7b687238f4b89369.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hpio": {
@@ -114,10 +114,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "6f03879b8a91fb0c33c7186da347b914deee3efc",
-        "sha256": "04pl8b4gnbfakapjskm4030qlklwzjk0x45jn9gcnjpdl7s8ri33",
+        "rev": "983e7a049aea1d2033e619368b9a5d6d394d51db",
+        "sha256": "1d3p53q8anl6x9f8wg1wbznq4vwrp2ns044w0gc03drp8nh0dfdm",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/6f03879b8a91fb0c33c7186da347b914deee3efc.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/983e7a049aea1d2033e619368b9a5d6d394d51db.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixops": {
