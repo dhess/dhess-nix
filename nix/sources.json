@@ -72,18 +72,6 @@
         "url": "https://github.com/dhess/dhess-lib-nix/archive/8f9458c2729ee6a84588258c7b687238f4b89369.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "hpio": {
-        "branch": "master",
-        "description": "Perform GPIO from Haskell",
-        "homepage": null,
-        "owner": "dhess",
-        "repo": "hpio",
-        "rev": "27004ef379db5d35e240222d6ba4cf91da9ec14d",
-        "sha256": "1z9zzycaj56fmx3ali2hvh028sn1xmwydjzwfrxicx1z2mbp9q2h",
-        "type": "tarball",
-        "url": "https://github.com/dhess/hpio/archive/27004ef379db5d35e240222d6ba4cf91da9ec14d.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "lorri": {
         "branch": "rolling-release",
         "description": "Your project's nix-env",
@@ -94,18 +82,6 @@
         "sha256": "0fcl79ndaziwd8d74mk1lsijz34p2inn64b4b4am3wsyk184brzq",
         "type": "tarball",
         "url": "https://github.com/target/lorri/archive/03f10395943449b1fc5026d3386ab8c94c520ee3.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "mellon": {
-        "branch": "master",
-        "description": "Control physical access device (e.g., an electric strike) from Haskell",
-        "homepage": "",
-        "owner": "dhess",
-        "repo": "mellon",
-        "rev": "73784bbacab80313ccf39dd0785d9382865aad61",
-        "sha256": "1x6axksynsbad13xyxzx6ga8x1bm1i591ni67hx0r1ivm338fypf",
-        "type": "tarball",
-        "url": "https://github.com/dhess/mellon/archive/73784bbacab80313ccf39dd0785d9382865aad61.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -142,18 +118,6 @@
         "sha256": "1srjikizp8ip4h42x7kr4qf00lxcp1l8zp6h0r1ddfdyw8gv9001",
         "type": "tarball",
         "url": "https://github.com/nixos/nixpkgs-channels/archive/cc6cf0a96a627e678ffc996a8f9d1416200d6c81.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "pinpon": {
-        "branch": "master",
-        "description": "A doorbell service in Haskell. No, really.",
-        "homepage": "",
-        "owner": "dhess",
-        "repo": "pinpon",
-        "rev": "f4f984f3a45e4239914c912f489fd37110b65d45",
-        "sha256": "04y6nr9c8wfphvkq622c5ryxwnhiwvrxmfd3j9zrk1wyz7sglzlk",
-        "type": "tarball",
-        "url": "https://github.com/dhess/pinpon/archive/f4f984f3a45e4239914c912f489fd37110b65d45.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "terraform-provider-okta": {

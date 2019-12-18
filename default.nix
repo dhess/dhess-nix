@@ -45,13 +45,11 @@ in
   inherit (self) libprelude;
   inherit (self) libvmaf;
   inherit (self) lorri;
-  inherit (self) mellon-gpio mellon-web;
   inherit (self) mkCacert;
   inherit (self) nano;
   inherit (self) nixops;
   inherit (self) ntp;
   inherit (self) oauth2_proxy;
-  inherit (self) pinpon;
   inherit (self) ppp-devel;
   inherit (self) unbound;
   inherit (self) suricata;

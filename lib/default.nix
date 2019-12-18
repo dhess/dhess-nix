@@ -17,15 +17,6 @@ let
 
   fixedNixOps = lib.fetchers.fixedNixSrc "nixops" sources.nixops;
 
-  fixedHpio = lib.fetchers.fixedNixSrc "hpio" sources.hpio;
-  hpio = (import fixedHpio) {};
-
-  fixedPinPon = lib.fetchers.fixedNixSrc "pinpon" sources.pinpon;
-  pinpon = (import fixedPinPon) {};
-
-  fixedMellon = lib.fetchers.fixedNixSrc "mellon" sources.mellon;
-  mellon = (import fixedMellon) {};
-
   fixedAllHies = lib.fetchers.fixedNixSrc "all-hies" sources.all-hies;
   all-hies = (import fixedAllHies) {};
 
@@ -37,9 +28,6 @@ let
 
   overlays = [
     dhess-lib-nix.overlays.all
-    pinpon.overlays.pinpon
-    mellon.overlays.mellon
-    hpio.overlays.hpio
   ] ++ (map import [
     ../overlays/apple.nix
     ../overlays/custom-packages.nix

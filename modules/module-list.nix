@@ -62,10 +62,8 @@
 
   ./services/apcupsd-net
   ./services/hydra-manual-setup
-  ./services/mellon/auto-unlock.nix
   ./services/netsniff-ng
   ./services/ntpd
-  ./services/pinpon/server.nix
   ./services/oauth2_proxy/default.nix
   ./services/oauth2_proxy/nginx.nix
   ./services/systemd-digitalocean

@@ -59,12 +59,9 @@ let
     dovecot = callTest ../tests/dovecot.nix {};
     freeradius = callTest ../tests/freeradius.nix {};
     hydra-manual-setup = callTest ../tests/hydra-manual-setup.nix { system = "x86_64-linux"; };
-    mellon-auto-unlock = callTest ../tests/mellon-auto-unlock.nix {};
     netsniff-ng = callSubTests ../tests/netsniff-ng.nix {};
     oauth2_proxy = callTest ../tests/oauth2_proxy.nix {};
     opendkim = callTest ../tests/opendkim.nix {};
-    # Disabled until amazonka is fixed.
-    #pinpon = callTest ../tests/pinpon.nix {};
     postfix-null-client = callTest ../tests/postfix-null-client.nix {};
     postfix-relay-host = callTest ../tests/postfix-relay-host.nix {};
     remote-build-host = callSubTests ../tests/remote-build-host.nix {};

@@ -95,9 +95,6 @@ let
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
 
-    # Disable tests on aarch64-linux; the doctests cause an internal error.
-    pinpon = if stdenv.hostPlatform.isAarch64 then dontCheck super.pinpon else super.pinpon;
-
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
@@ -500,12 +497,5 @@ in
   ## Executables only.
 
   dhess-ssh-keygen = exeOnly self.haskellPackages.dhess-ssh-keygen;
-
   fm-assistant = exeOnly self.haskellPackages.fm-assistant;
-
-  mellon-gpio = exeOnly self.haskellPackages.mellon-gpio;
-
-  mellon-web = exeOnly self.haskellPackages.mellon-web;
-
-  pinpon = exeOnly self.haskellPackages.pinpon;
 }

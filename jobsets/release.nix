@@ -110,19 +110,6 @@ let
     #hello-dhall-src = all;
 
     dhess-nix-source = all;
-
-    pinpon = all;
-    mellon-gpio = all;
-    mellon-web = all;
-
-    ## These aren't really part of the overlay, but we test them
-    ## here anyway as we're the upstream.
-
-    haskellPackages.pinpon = all;
-    haskellPackages.hpio = all;
-    haskellPackages.mellon-core = all;
-    haskellPackages.mellon-gpio = all;
-    haskellPackages.mellon-web = all;
   })) // (rec {
     x86_64-linux = pkgs.releaseTools.aggregate {
       name = "dhess-nix-x86_64-linux";
@@ -197,16 +184,6 @@ let
         #hello-dhall-src.x86_64-linux
 
         dhess-nix-source.x86_64-linux
-
-        ## These aren't really part of the overlay (except possibly to
-        ## enable Hydra builds on them), but we test them here anyway
-        ## as we're the upstream.
-        
-        haskellPackages.pinpon.x86_64-linux
-        haskellPackages.hpio.x86_64-linux
-        haskellPackages.mellon-core.x86_64-linux
-        haskellPackages.mellon-gpio.x86_64-linux
-        haskellPackages.mellon-web.x86_64-linux
       ];
     };
 
@@ -280,16 +257,6 @@ let
         #hello-dhall-src.x86_64-darwin
 
         dhess-nix-source.x86_64-darwin
-
-        ## These aren't really part of the overlay (except possibly to
-        ## enable Hydra builds on them), but we test them here anyway
-        ## as we're the upstream.
-        
-        haskellPackages.pinpon.x86_64-darwin
-        haskellPackages.hpio.x86_64-darwin
-        haskellPackages.mellon-core.x86_64-darwin
-        haskellPackages.mellon-gpio.x86_64-darwin
-        haskellPackages.mellon-web.x86_64-darwin
       ];
     };
 
@@ -301,16 +268,6 @@ let
         cfssl.aarch64-linux
         haskell-env.aarch64-linux
         #extensive-haskell-env.aarch64-linux
-
-        ## These aren't really part of the overlay (except possibly to
-        ## enable Hydra builds on them), but we test them here anyway
-        ## as we're the upstream.
-
-        haskellPackages.pinpon.aarch64-linux
-        haskellPackages.hpio.aarch64-linux
-        haskellPackages.mellon-core.aarch64-linux
-        haskellPackages.mellon-gpio.aarch64-linux
-        haskellPackages.mellon-web.aarch64-linux
       ];
     };
   });
