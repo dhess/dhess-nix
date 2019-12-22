@@ -90,13 +90,9 @@ let
   # Vanilla emacs.
   emacs-env = pkgs.buildEnv {
     name = "emacs-env";
-
-    # Yes, pkgs.emacsMacport here is intentional. Only build this for
-    # macOS platforms.
-    meta.platforms = pkgs.emacsMacport.meta.platforms;
-
+    meta.platforms = pkgs.lib.platforms.all;
     paths = [
-      (emacsMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
+      (emacsMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
       myAspell
       pkgs.ripgrep
     ];
@@ -116,7 +112,12 @@ let
   # An emacsMacport variant.
   emacs-macport-env = pkgs.buildEnv {
     name = "emacs-macport-env";
-    meta.platforms = pkgs.emacsMacport.meta.platforms;
+    # This is set to `platforms.all` even though it only really works
+    # for macOS, because it appears that Hydra won't evaluate this
+    # package if it's included in environment.systemPackages if it's
+    # set to `all`. However, we only ever actually build it for macOS,
+    # so it shouldn't be a problem.
+    meta.platforms = pkgs.lib.platforms.all;
     paths = [
       (emacsMacportMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
       myAspell
