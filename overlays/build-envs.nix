@@ -25,7 +25,7 @@ let
       yubikey-manager
       yubikey-personalization
     ];
-    meta.platforms = super.lib.platforms.all;
+    meta.platforms = super.lib.platforms.darwin;
   };
 
   maths-env = super.buildEnv {

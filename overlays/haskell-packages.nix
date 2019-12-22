@@ -441,7 +441,7 @@ let
     paths = [
       core-ihaskell
     ];
-    meta.platforms = self.lib.platforms.all;
+    meta.platforms = self.lib.platforms.darwin;
   };
   ihaskell-envfun = super.myEnvFun {
     name = "ihaskell-envfun";
@@ -455,7 +455,7 @@ let
     paths = [
       extensive-ihaskell
     ];
-    meta.platforms = self.lib.platforms.all;
+    meta.platforms = self.lib.platforms.darwin;
   };
   extensive-ihaskell-envfun = super.myEnvFun {
     name = "extensive-ihaskell-envfun";
