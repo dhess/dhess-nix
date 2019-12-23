@@ -66,10 +66,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "f90517563edd86a3dc931c3427e854f8972790da",
-        "sha256": "06jziyvpd2chz9358k1wh15kvcg7kr0njs75wrfdin2xfn6zaaxm",
+        "rev": "c68781ab317a383420290a4c4fe18bff16f4b9cf",
+        "sha256": "1xpxi4l4kdarahbd8jaq4gsi47i5bwbkyjl4jlq0xybyz8iqa72n",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/f90517563edd86a3dc931c3427e854f8972790da.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/c68781ab317a383420290a4c4fe18bff16f4b9cf.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lorri": {
