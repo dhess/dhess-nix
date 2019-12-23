@@ -5,10 +5,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "IHaskell",
-        "rev": "a3aa360d31cf09f3fd95f3ce75cdba20430d183a",
-        "sha256": "088zzkvl6n3pcyky3aklbkyz3l59p6d854zx9ch38chd3910afcl",
+        "rev": "49fbb065d4e5bffe978dd3194cdd12ab994fd57d",
+        "sha256": "1bqnivdqwgsrm63cw1cnvkn6g724g1ym5r8q10ldi7n5a05qd953",
         "type": "tarball",
-        "url": "https://github.com/dhess/IHaskell/archive/a3aa360d31cf09f3fd95f3ce75cdba20430d183a.tar.gz",
+        "url": "https://github.com/dhess/IHaskell/archive/49fbb065d4e5bffe978dd3194cdd12ab994fd57d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "all-hies": {
@@ -42,10 +42,10 @@
         "homepage": "",
         "owner": "StevenBlack",
         "repo": "hosts",
-        "rev": "839b561b7051c44e795c1d89572fb41f0f6f09df",
-        "sha256": "0mvp9zqgq04fdvjcjgff2fbv2v71mb58iyl11pza9rl35m5yllki",
+        "rev": "baca30169e91e79afda4f5543cb3e247b01b2d61",
+        "sha256": "0x8i2qnn43g0zssr2in1agjh79djm2p24c1w51nmclgqyrmw25ix",
         "type": "tarball",
-        "url": "https://github.com/StevenBlack/hosts/archive/839b561b7051c44e795c1d89572fb41f0f6f09df.tar.gz",
+        "url": "https://github.com/StevenBlack/hosts/archive/baca30169e91e79afda4f5543cb3e247b01b2d61.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "chamber": {
