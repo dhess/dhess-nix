@@ -29,6 +29,14 @@ let
         };
       });
 
+      cookiecutter = super.cookiecutter.overridePythonAttrs (oldAttrs: rec {
+        version = "1.6.0";
+        src = oldAttrs.src.override {
+          inherit version;
+          sha256 = "0glsvaz8igi2wy1hsnhm9fkn6560vdvdixzvkq6dn20z3hpaa5hk";
+        };
+      });
+
       dateutil = super.dateutil.overridePythonAttrs (oldAttrs: rec {
         version = "2.8.0";
         src = oldAttrs.src.override {
@@ -65,11 +73,11 @@ with py.pkgs;
 
 buildPythonApplication rec {
   pname = "aws-sam-cli";
-  version = "0.37.0";
+  version = "0.38.0";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "1pkkl5wswsnbspy7i8qcp0wpabcs21hqf6rlf9cyfq16234kf3ax";
+    sha256 = "067xqk5a9f3qvsdb1ivdighb95f9shwmsjbwnlbmzyl6rzp2zn55";
   };
 
   # Tests are not included in the PyPI package
@@ -104,6 +112,6 @@ buildPythonApplication rec {
     homepage = https://github.com/awslabs/aws-sam-cli;
     description = "CLI tool for local development and testing of Serverless applications";
     license = licenses.asl20;
-    maintainers = with maintainers; [ andreabedini dhkl ];
+    maintainers = with maintainers; [ dhess-pers ];
   };
 }
