@@ -47,7 +47,6 @@ let
   tests = {
     ## Overlays.
     custom-cacert = callSubTests ../tests/custom-cacert.nix {};
-    suricata = callTest ../tests/suricata.nix { system = "x86_64-linux"; };
     # Disabled until LRU package issue is fixed.
     #trimpcap = callTest ../tests/trimpcap.nix {};
     tsoff = callSubTests ../tests/tsoff.nix {};

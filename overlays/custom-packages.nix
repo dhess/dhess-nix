@@ -61,15 +61,6 @@ let
     source = lib.fixedBadhosts;
   };
 
-  suricata = callPackage ../pkgs/networking/suricata {
-    # not strictly necessary for the overlay, but needed for building
-    # this for the NUR package set.
-    inherit libprelude;
-
-    redisSupport = true;
-    rustSupport = true;
-  };
-
   trimpcap = callPackage ../pkgs/misc/trimpcap {};
 
   tsoff = callPackage ../pkgs/networking/tsoff {};
@@ -123,7 +114,6 @@ in
   inherit mkCacert;
   inherit nixops;
   inherit ppp-devel;
-  inherit suricata;
   inherit terraform-provider-okta;
   inherit terraform-provider-vultr;
   inherit trimpcap;
