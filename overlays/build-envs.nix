@@ -18,6 +18,7 @@ let
       myPass
       pinentry_mac
       qrencode
+      radare2
       # Disabled until fixed upstream.
       # wireguard-tools
       youtube-dl

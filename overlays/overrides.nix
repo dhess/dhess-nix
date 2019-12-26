@@ -33,6 +33,20 @@ let
   # Upstream is currently broken.
   dovecot_pigeonhole = callPackage ../pkgs/dovecot-pigeonhole {};
 
+  # Upstream doesn't support macOS, probably due to
+  # https://github.com/radareorg/radare2/issues/15197
+  radare2 = super.radare2.overrideAttrs (drv: {
+    python3 = super.python3;
+    useX11 = false;
+    pythonBindings = true;
+    luaBindings = true;
+
+    HOST_CC = super.stdenv.lib.optionalString super.stdenv.cc.isClang "clang";
+    meta = drv.meta // {
+      platforms = super.lib.platforms.unix;
+    };
+  });
+
 in
 {
 
@@ -76,4 +90,5 @@ in
   inherit minikube;
   inherit nano;
   inherit oauth2_proxy;
+  inherit radare2;
 }
