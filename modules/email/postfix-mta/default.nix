@@ -18,9 +18,6 @@ let
   stateDir = "/var/lib/postfix/data";
   queueDir = "/var/lib/postfix/queue";
 
-  user = config.services.postfix.user;
-  group = config.services.postfix.group;
-
   recipient_access = pkgs.writeText "postfix-recipient-access" cfg.smtpd.recipientAccess;
 
   relay_clientcerts = pkgs.writeText "postfix-relay-clientcerts" cfg.relayClientCerts;
@@ -604,6 +601,19 @@ in
     };
 
 
+    # We need a group that both nginx and postfix belong to, so that
+    # the ACME service can set the correct permissions on the ACME
+    # certificate keys. nginx needs to be able to serve them as proof
+    # of ownership to ACME, and postfix needs to be able to read them
+    # to present them to clients.
+
+    users.groups.postfix-acme = {
+      members = [
+        config.services.postfix.user
+        config.services.nginx.user
+      ];
+    };
+
     # If this MX is configured correctly, we only need the ACME cert
     # for myhostname, as that's the name that it'll be reporting both
     # to SMTP clients (upon mail receipt) and to SMTP servers (upon
@@ -614,7 +624,7 @@ in
       webroot = acmeChallenge;
       email = "postmaster@${cfg.myDomain}";
       allowKeysForGroup = true;
-      inherit group;
+      group = config.users.groups.postfix-acme.name;
       postRun = ''
         systemctl reload postfix
         systemctl reload nginx
