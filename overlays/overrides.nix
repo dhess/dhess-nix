@@ -41,7 +41,9 @@ let
     pythonBindings = true;
     luaBindings = true;
 
-    HOST_CC = super.stdenv.lib.optionalString super.stdenv.cc.isClang "clang";
+    # XXX dhess - this is a bit of a hack.
+    HOST_CC = if super.stdenv.cc.isClang then "clang" else "gcc";
+
     meta = drv.meta // {
       platforms = super.lib.platforms.unix;
     };
