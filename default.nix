@@ -37,6 +37,7 @@ in
   inherit (self) debian-ppp;
   inherit (self) dhess-ssh-keygen;
   inherit (self) dovecot_pigeonhole;
+  inherit (self) elkhound;
   inherit (self) ffmpeg-full;
   inherit (self) fm-assistant;
   inherit (self) gawk_4_2_1;
@@ -59,6 +60,7 @@ in
   inherit (self) tsoff;
   inherit (self) wpa_supplicant;
   inherit (self) xtensa-esp32-toolchain;
+  inherit (self) weidu;
 
   inherit (self) dhallToNixFromFile dhallToNixFromSrc;
   inherit (self) hello-dhall-file hello-dhall-src;
