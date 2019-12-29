@@ -77,7 +77,7 @@ let
       meta.hydraPlatforms = stdenv.lib.platforms.darwin;
     });
 
-    lsp-test = super.lsp-test_0_9_0_0;
+    lsp-test = dontCheck super.lsp-test_0_9_0_0;
 
     machines-process = doJailbreak super.machines-process;
 
