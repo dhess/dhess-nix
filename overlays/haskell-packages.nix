@@ -57,6 +57,8 @@ let
     haskell-lsp = super.haskell-lsp_0_19_0_0;
     haskell-lsp-types = super.haskell-lsp-types_0_19_0_0;
 
+    hie-bios = dontCheck super.hie-bios;
+
     hoopl = doJailbreak super.hoopl;
 
     hw-balancedparens = super.hw-balancedparens_0_3_0_3;
