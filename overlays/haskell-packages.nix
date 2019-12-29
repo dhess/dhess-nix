@@ -54,10 +54,8 @@ let
 
     hal = super.callPackage ../pkgs/haskell/hal {};
 
-    haskell-lsp = super.callPackage ../pkgs/haskell/haskell-lsp/0.18.0.0.nix {};
-    haskell-lsp-types = super.callPackage ../pkgs/haskell/haskell-lsp-types/0.18.0.0.nix {};
-
-    hie-bios = dontCheck (super.callPackage ../pkgs/haskell/hie-bios {});
+    haskell-lsp = super.lsp_0_19_0_0;
+    haskell-lsp-types = super.lsp-types_0_19_0_0;
 
     hoopl = doJailbreak super.hoopl;
 
@@ -77,7 +75,7 @@ let
       meta.hydraPlatforms = stdenv.lib.platforms.darwin;
     });
 
-    lsp-test = dontCheck (super.callPackage ../pkgs/haskell/lsp-test/0.8.2.0.nix {});
+    lsp-test = super.lsp-test_0_9_0_0;
 
     machines-process = doJailbreak super.machines-process;
 
