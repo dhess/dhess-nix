@@ -89,14 +89,6 @@ let
 
   chamber = callPackage ../pkgs/chamber {};
 
-
-  ## WeiDU stuff for Inifinity Engine games.
-  elkhound = callPackage ../pkgs/weidu/elkhound.nix {};
-  weidu = callPackage ../pkgs/weidu/weidu.nix {
-    ocamlPackages = super.ocaml-ng.ocamlPackages_4_03;
-    inherit elkhound;
-  };
-
 in
 {
   inherit (badhosts) badhosts-unified;
@@ -115,7 +107,6 @@ in
   inherit crosstool-ng-xtensa;
   inherit dhess-nix-source;
   inherit debian-ppp;
-  inherit elkhound;
   inherit gawk_4_2_1;
   inherit hyperkit;
   inherit libprelude;
@@ -127,6 +118,5 @@ in
   inherit terraform-provider-vultr;
   inherit trimpcap;
   inherit tsoff;
-  inherit weidu;
   inherit xtensa-esp32-toolchain;
 }

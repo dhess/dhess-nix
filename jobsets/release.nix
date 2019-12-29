@@ -54,7 +54,6 @@ let
     debian-ppp = linux;
     dhess-ssh-keygen = all;
     dovecot_pigeonhole = all;
-    elkhound = x86_64;
     ffmpeg-full = x86_64;
     fm-assistant = darwin;
     gawk_4_2_1 = all;
@@ -75,7 +74,6 @@ let
     trimpcap = linux;
     tsoff = linux;
     unbound = linux;
-    weidu = x86_64;
     wpa_supplicant = linux;
     xtensa-esp32-toolchain = x86_64;
 
