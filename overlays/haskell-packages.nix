@@ -45,14 +45,7 @@ let
 
     generic-lens = dontCheck super.generic-lens_1_2_0_1;
 
-    ghcide = dontCheck ((super.callPackage ../pkgs/haskell/ghcide {}).overrideAttrs (drv: {
-      patches = [
-        (fetchpatch {
-          url = "https://patch-diff.githubusercontent.com/raw/digital-asset/ghcide/pull/188.diff";
-          sha256 = "08dv6dfn8v858n4c1pnl9q3zsfgclf7phy4rkgc524vh699wrlv5";
-        })
-      ];
-    }));
+    ghcide = super.callPackage ../pkgs/haskell/ghcide {};
 
     # Ironically, haddock-api doesn't haddock.
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
