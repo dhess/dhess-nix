@@ -54,8 +54,8 @@ let
 
     hal = super.callPackage ../pkgs/haskell/hal {};
 
-    haskell-lsp = super.lsp_0_19_0_0;
-    haskell-lsp-types = super.lsp-types_0_19_0_0;
+    haskell-lsp = super.haskell-lsp_0_19_0_0;
+    haskell-lsp-types = super.haskell-lsp-types_0_19_0_0;
 
     hoopl = doJailbreak super.hoopl;
 
