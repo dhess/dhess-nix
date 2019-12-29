@@ -68,7 +68,7 @@ let
 
     hoopl = doJailbreak super.hoopl;
 
-    hw-balancedparens = super.hw-balancedparens_0_3_0_2;
+    hw-balancedparens = super.hw-balancedparens_0_3_0_3;
 
     hw-bits = doJailbreak super.hw-bits;
     hw-excess = doJailbreak super.hw-excess;
