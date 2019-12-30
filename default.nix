@@ -93,6 +93,7 @@ in
 
   # Various buildEnv's that I use, usually only on macOS (though many
   # of them should work on any pltform).
+  inherit (self) anki-env;
   inherit (self) mactools-env;
   inherit (self) maths-env;
   inherit (self) minikube-env;

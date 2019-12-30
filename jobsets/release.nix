@@ -97,6 +97,7 @@ let
 
     python-env = all;
 
+    anki-env = darwin;
     mactools-env = darwin;
     maths-env = x86_64;
     minikube-env = all;
@@ -246,6 +247,7 @@ let
 
         python-env.x86_64-darwin
 
+        anki-env.x86_64-darwin
         mactools-env.x86_64-darwin
         maths-env.x86_64-darwin
         minikube-env.x86_64-darwin

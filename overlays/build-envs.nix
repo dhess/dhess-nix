@@ -8,6 +8,16 @@ let
     ext.pass-update
   ]);
 
+  anki-env = super.buildEnv {
+    name = "anki-env";
+    paths = with super; [
+      anki
+      (texlive.combine {
+        inherit (texlive) scheme-full xetex fontspec euenc;
+      })
+    ];
+  };
+
   mactools-env = super.buildEnv {
     name = "mactools-env";
     paths = with super; [
@@ -108,6 +118,7 @@ let
 
 in
 {
+  inherit anki-env;
   inherit mactools-env;
   inherit maths-env;
   inherit minikube-env;
