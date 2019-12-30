@@ -13,7 +13,7 @@ let
     paths = with super; [
       anki
       (texlive.combine {
-        inherit (texlive) scheme-full xetex fontspec euenc;
+        inherit (texlive) scheme-small;
       })
     ];
   };
