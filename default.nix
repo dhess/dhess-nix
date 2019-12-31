@@ -35,6 +35,7 @@ in
   inherit (self) chamber;
   inherit (self) crosstool-ng-xtensa;
   inherit (self) debian-ppp;
+  inherit (self) delete-tweets;
   inherit (self) dhess-ssh-keygen;
   inherit (self) dovecot_pigeonhole;
   inherit (self) ffmpeg-full;

@@ -22,6 +22,7 @@ let
     name = "mactools-env";
     paths = with super; [
       ccextractor
+      delete-tweets
       ffmpeg-full
       fm-assistant
       mediainfo

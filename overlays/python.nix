@@ -19,8 +19,11 @@ let
 
   aws-sam-cli = super.callPackage ../pkgs/aws-sam-cli { python = super.python3; };
 
+  delete-tweets = super.callPackage ../pkgs/python/delete-tweets {};
+
 in
 {
   inherit aws-sam-cli;
+  inherit delete-tweets;
   inherit python-env;
 }

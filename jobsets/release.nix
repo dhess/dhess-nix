@@ -52,6 +52,7 @@ let
     chamber = all;
     crosstool-ng-xtensa = x86_64;
     debian-ppp = linux;
+    delete-tweets = all;
     dhess-ssh-keygen = all;
     dovecot_pigeonhole = all;
     ffmpeg-full = x86_64;
