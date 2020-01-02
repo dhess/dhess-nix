@@ -11,7 +11,9 @@ let
   anki-env = super.buildEnv {
     name = "anki-env";
     paths = with super; [
-      anki
+      # Disabled for now, see:
+      # https://github.com/NixOS/nixpkgs/issues/76715
+      #anki
       (texlive.combine {
         inherit (texlive) scheme-small;
       })

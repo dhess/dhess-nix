@@ -98,6 +98,7 @@ let
 
     python-env = all;
 
+    anki = darwin;
     anki-env = darwin;
     mactools-env = darwin;
     maths-env = x86_64;
