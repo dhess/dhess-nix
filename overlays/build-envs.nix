@@ -15,7 +15,7 @@ let
       # https://github.com/NixOS/nixpkgs/issues/76715
       #anki
       (texlive.combine {
-        inherit (texlive) scheme-small;
+        inherit (texlive) scheme-medium;
       })
     ];
   };
