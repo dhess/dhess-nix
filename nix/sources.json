@@ -42,10 +42,10 @@
         "homepage": "",
         "owner": "StevenBlack",
         "repo": "hosts",
-        "rev": "9126d65d0546ea8718c34c1a6ef39116c7808c3f",
-        "sha256": "0gm0ni0j1hakf61k4r90ghmijjrarlsq1jcdhkv4sw1b3x3jwl2l",
+        "rev": "dc6b16cb37c71c60c5243b5d8798d0ccf4b298ff",
+        "sha256": "0hjw8m50y17h4qsa7czgh7qwgq6i3qg89mi257g0x9haj84czb63",
         "type": "tarball",
-        "url": "https://github.com/StevenBlack/hosts/archive/9126d65d0546ea8718c34c1a6ef39116c7808c3f.tar.gz",
+        "url": "https://github.com/StevenBlack/hosts/archive/dc6b16cb37c71c60c5243b5d8798d0ccf4b298ff.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "chamber": {
@@ -66,10 +66,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "704ae800738916dd8fbb990a32469a3496329030",
-        "sha256": "1pvmk5p3q9jxyrmf7ijxh1pzgn4x4qrr8xiqwmckvxa7qky872qs",
+        "rev": "90e786520b67524b0e3848bd07a6557aca461a8d",
+        "sha256": "1pm1baa1gp7c2phf49j3s8qy7ib7gx0r4myaif06xd91gw7xfgn5",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/704ae800738916dd8fbb990a32469a3496329030.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/90e786520b67524b0e3848bd07a6557aca461a8d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lorri": {
@@ -114,10 +114,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "5a3c1eda46ef4b0bbd782d5b6443a0dd9263d094",
-        "sha256": "0asizbn4z9hvii0gsh0mrnc5v5cvywkh92dv1xx4lsahc9yvm8sv",
+        "rev": "ec29bb50bf45531b932670c9da743f044a546ed5",
+        "sha256": "0anb25h7b9r8rzwkkhi51g59x27xacg9k3agf9lnzzx44lsw89jh",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs-channels/archive/5a3c1eda46ef4b0bbd782d5b6443a0dd9263d094.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs-channels/archive/ec29bb50bf45531b932670c9da743f044a546ed5.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "terraform-provider-okta": {
