@@ -17,6 +17,7 @@ let
   ## current nixpkgs snapshot that we're using.
 
   mkHaskellPackages = hp: properExtend hp (self: super: {
+    HsYAML = super.HsYAML_0_2_1_0;
     algebra = doJailbreak super.algebra;
     amazonka = doJailbreak super.amazonka;
     amazonka-core = doJailbreak super.amazonka-core;
@@ -36,6 +37,8 @@ let
 
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
 
+    doctemplates = super.doctemplates_0_8;
+
     doctest-driver-gen = dontCheck (super.doctest-driver-gen.overrideAttrs (drv: {
       broken = false;
       meta.hydraPlatforms = stdenv.lib.platforms.all;
@@ -54,6 +57,7 @@ let
 
     hal = super.callPackage ../pkgs/haskell/hal {};
 
+    haddock-library = super.haddock-library_1_8_0;
     haskell-lsp = super.haskell-lsp_0_19_0_0;
     haskell-lsp-types = super.haskell-lsp-types_0_19_0_0;
 
@@ -84,10 +88,15 @@ let
     # Undo upstream breakage.
     network-bsd = super.network-bsd.override { network = super.network; };
 
+    pandoc = super.pandoc_2_9_1;
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
+    pandoc-types = super.pandoc-types_1_20;
 
+    path = super.callPackage ../pkgs/haskell/path/0.7.0.nix {};
+
+    path-io = doJailbreak super.path-io_1_6_0;
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
@@ -99,12 +108,23 @@ let
     primitive-extras = super.primitive-extras_0_8;
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
     quickcheck-classes = super.quickcheck-classes_0_6_4_0;
+    regex-base = super.regex-base_0_94_0_0;
+    regex-pcre-builtin = super.regex-pcre-builtin_0_95_1_1_8_43;
+    regex-posix = super.regex-posix_0_96_0_0;
+    regex-tdfa = super.regex-tdfa_1_3_1_0;
+    relude = super.relude_0_6_0_0;
+
+    rib = doJailbreak (super.callPackage ../pkgs/haskell/rib {});
+
     serialise = doJailbreak super.serialise;
     servant-docs = doJailbreak super.servant-docs;
+    skylighting-core = super.skylighting-core_0_8_3;
+    skylighting = super.skylighting_0_8_3;
     stm-hamt = doJailbreak super.stm-hamt;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
     tdigest = doJailbreak super.tdigest;
+    texmath = super.texmath_0_12;
     these = doJailbreak super.these;
 
     time-recurrence = doJailbreak super.time-recurrence;
@@ -355,6 +375,7 @@ let
     reducers
     regex-applicative
     repline
+    rib
     safecopy
     sbv
     semirings
