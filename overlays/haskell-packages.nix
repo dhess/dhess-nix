@@ -89,7 +89,7 @@ let
     # Undo upstream breakage.
     network-bsd = super.network-bsd.override { network = super.network; };
 
-    pandoc = super.pandoc_2_9_1;
+    pandoc = doJailbreak super.pandoc_2_9_1;
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
@@ -110,19 +110,12 @@ let
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
     quickcheck-classes = super.quickcheck-classes_0_6_4_0;
 
-    regex-base = super.regex-base_0_94_0_0;
-    regex-compat = super.regex-compat_0_95_2_0;
-    regex-pcre-builtin = super.regex-pcre-builtin_0_95_1_1_8_43;
-    regex-posix = super.regex-posix_0_96_0_0;
-
     relude = super.relude_0_6_0_0;
 
     rib = doJailbreak (super.callPackage ../pkgs/haskell/rib {});
 
     serialise = doJailbreak super.serialise;
     servant-docs = doJailbreak super.servant-docs;
-    skylighting-core = super.skylighting-core_0_8_3;
-    skylighting = super.skylighting_0_8_3;
     stm-hamt = doJailbreak super.stm-hamt;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
