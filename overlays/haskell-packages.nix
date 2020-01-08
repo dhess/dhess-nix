@@ -110,6 +110,7 @@ let
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
     quickcheck-classes = super.quickcheck-classes_0_6_4_0;
     regex-base = super.regex-base_0_94_0_0;
+    regex-compat = super.regex-compat_0_95_2_0;
     regex-pcre-builtin = super.regex-pcre-builtin_0_95_1_1_8_43;
     regex-posix = super.regex-posix_0_96_0_0;
     regex-tdfa = super.regex-tdfa_1_3_1_0;
