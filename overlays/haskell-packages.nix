@@ -58,7 +58,6 @@ let
 
     hal = super.callPackage ../pkgs/haskell/hal {};
 
-    haddock-library = super.haddock-library_1_8_0;
     haskell-lsp = super.haskell-lsp_0_19_0_0;
     haskell-lsp-types = super.haskell-lsp-types_0_19_0_0;
 
