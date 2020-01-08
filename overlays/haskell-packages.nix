@@ -17,8 +17,6 @@ let
   ## current nixpkgs snapshot that we're using.
 
   mkHaskellPackages = hp: properExtend hp (self: super: {
-    Agda = doJailbreak super.Agda;
-    HsYAML = super.HsYAML_0_2_1_0;
     algebra = doJailbreak super.algebra;
     amazonka = doJailbreak super.amazonka;
     amazonka-core = doJailbreak super.amazonka-core;
@@ -37,8 +35,6 @@ let
     dhall-json = dontCheck super.dhall-json_1_6_0;
 
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
-
-    doctemplates = super.doctemplates_0_8;
 
     doctest-driver-gen = dontCheck (super.doctest-driver-gen.overrideAttrs (drv: {
       broken = false;
@@ -88,15 +84,10 @@ let
     # Undo upstream breakage.
     network-bsd = super.network-bsd.override { network = super.network; };
 
-    pandoc = doJailbreak super.pandoc_2_9_1;
     pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
       meta.hydraPlatforms = stdenv.lib.platforms.all;
     }));
-    pandoc-types = super.pandoc-types_1_20;
 
-    path = super.callPackage ../pkgs/haskell/path/0.7.0.nix {};
-
-    path-io = doJailbreak super.path-io_1_6_0;
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
@@ -108,18 +99,12 @@ let
     primitive-extras = super.primitive-extras_0_8;
     primitive-unlifted = dontCheck (doJailbreak super.primitive-unlifted);
     quickcheck-classes = super.quickcheck-classes_0_6_4_0;
-
-    relude = super.relude_0_6_0_0;
-
-    rib = doJailbreak (super.callPackage ../pkgs/haskell/rib {});
-
     serialise = doJailbreak super.serialise;
     servant-docs = doJailbreak super.servant-docs;
     stm-hamt = doJailbreak super.stm-hamt;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
     tdigest = doJailbreak super.tdigest;
-    texmath = super.texmath_0_12;
     these = doJailbreak super.these;
 
     time-recurrence = doJailbreak super.time-recurrence;
@@ -370,7 +355,6 @@ let
     reducers
     regex-applicative
     repline
-    rib
     safecopy
     sbv
     semirings
