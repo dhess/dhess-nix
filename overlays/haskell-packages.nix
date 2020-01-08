@@ -17,6 +17,7 @@ let
   ## current nixpkgs snapshot that we're using.
 
   mkHaskellPackages = hp: properExtend hp (self: super: {
+    Agda = doJailbreak super.Agda;
     HsYAML = super.HsYAML_0_2_1_0;
     algebra = doJailbreak super.algebra;
     amazonka = doJailbreak super.amazonka;
