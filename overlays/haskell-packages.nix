@@ -113,6 +113,7 @@ let
     regex-pcre-builtin = super.regex-pcre-builtin_0_95_1_1_8_43;
     regex-posix = super.regex-posix_0_96_0_0;
     regex-tdfa = super.regex-tdfa_1_3_1_0;
+    regex-tdfa-text = doJailbreak super.regex-tdfa-text;
     relude = super.relude_0_6_0_0;
 
     rib = doJailbreak (super.callPackage ../pkgs/haskell/rib {});
