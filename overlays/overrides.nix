@@ -49,6 +49,15 @@ let
     };
   });
 
+  # Upstream prevents fsatrace from building on macOS. It should work,
+  # more or less, as long as you're using it with binaries built from
+  # Nixpkgs and not pulling in Apple frameworks.
+  fsatrace = super.fsatrace.overrideAttrs (drv: {
+    meta = drv.meta // {
+      platforms = super.lib.platforms.unix;
+    };
+  });
+
 in
 {
 
@@ -88,6 +97,7 @@ in
   inherit aws-vault;
   inherit cfssl;
   inherit dovecot_pigeonhole;
+  inherit fsatrace;
   inherit libvmaf;
   inherit minikube;
   inherit nano;

@@ -40,6 +40,7 @@ in
   inherit (self) dovecot_pigeonhole;
   inherit (self) ffmpeg-full;
   inherit (self) fm-assistant;
+  inherit (self) fsatrace;
   inherit (self) gawk_4_2_1;
   inherit (self) hydra;
   inherit (self) ipxe;

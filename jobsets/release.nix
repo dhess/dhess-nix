@@ -57,6 +57,7 @@ let
     dovecot_pigeonhole = all;
     ffmpeg-full = x86_64;
     fm-assistant = darwin;
+    fsatrace = all;
     gawk_4_2_1 = all;
     hydra = x86_64_linux;
     ipxe = x86_64_linux;
@@ -150,6 +151,7 @@ let
         hydra.x86_64-linux
         ipxe.x86_64-linux
         ffmpeg-full.x86_64-linux
+        fsatrace.x86_64-linux
         gawk_4_2_1.x86_64-linux
         libprelude.x86_64-linux
         libvmaf.x86_64-linux
@@ -223,6 +225,7 @@ let
         dhess-ssh-keygen.x86_64-darwin
         ffmpeg-full.x86_64-darwin
         fm-assistant.x86_64-darwin
+        fsatrace.x86_64-darwin
         gawk_4_2_1.x86_64-darwin
         libvmaf.x86_64-darwin
         lorri.x86_64-darwin
