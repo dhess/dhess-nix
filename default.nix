@@ -50,6 +50,7 @@ in
   inherit (self) mkCacert;
   inherit (self) nano;
   inherit (self) nixops;
+  inherit (self) nmrpflash;
   inherit (self) ntp;
   inherit (self) oauth2_proxy;
   inherit (self) ppp-devel;

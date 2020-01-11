@@ -89,6 +89,8 @@ let
 
   chamber = callPackage ../pkgs/chamber {};
 
+  nmrpflash = callPackage ../pkgs/nmrpflash {};
+
 in
 {
   inherit (badhosts) badhosts-unified;
@@ -113,6 +115,7 @@ in
   inherit lorri;
   inherit mkCacert;
   inherit nixops;
+  inherit nmrpflash;
   inherit ppp-devel;
   inherit terraform-provider-okta;
   inherit terraform-provider-vultr;

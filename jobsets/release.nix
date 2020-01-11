@@ -67,6 +67,7 @@ let
     nano = all;
     netsniff-ng = x86_64_linux;
     nixops = x86_64;
+    nmrpflash = all;
     ntp = linux;
     oauth2_proxy = all;
     ppp-devel = linux;
