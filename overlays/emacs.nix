@@ -8,8 +8,6 @@ let
   emacsMacportMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacsMacport;
   emacsNoXMelpaPackagesNg = pkgs.melpaPackagesNgFor emacs-nox;
 
-  myAspell = pkgs.aspellWithDicts (dicts: with dicts; [ en ]);
-
   ## Collections of Emacs packages that I find useful.
 
   # A core set of packages that are useful everywhere.
@@ -40,6 +38,7 @@ let
     flx-ido
     flycheck
     flycheck-haskell
+    format-all
     go-mode
     haskell-mode
     hasklig-mode
@@ -78,11 +77,24 @@ let
     znc
   ];
 
-  # The core set, plus a few macOS-specific packages.
-  macOSEmacsPackages = epkgs: (with epkgs; [
-    dash-at-point
-  ]) ++ (coreEmacsPackages epkgs);
-
+  # Mostly formatters for use with the format-all package.
+  coreExternalPackages = with pkgs; [
+    asmfmt
+    (aspellWithDicts (dicts: with dicts; [ en ]))
+    clang-tools
+    haskellPackages.brittany
+    html-tidy
+    nixfmt
+    nodePackages.prettier
+    perlPackages.PerlTidy
+    python37Packages.black
+    python37Packages.sqlparse
+    ripgrep
+    rustfmt
+    shfmt
+    terraform
+    texlive.latexindent
+  ];
 
   ## Package up various Emacs with coreEmacsPackages and the binaries
   ## needed to support them.
@@ -96,9 +108,8 @@ let
     meta.platforms = pkgs.emacsMacport.meta.platforms;
 
     paths = [
-      (emacsMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
-      myAspell
-      pkgs.ripgrep
+      (emacsMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
+      coreExternalPackages
     ];
   };
 
@@ -108,8 +119,7 @@ let
     meta.platforms = emacs-nox.meta.platforms;
     paths = [
       (emacsNoXMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
-      myAspell
-      pkgs.ripgrep
+      coreExternalPackages
     ];
   };
 
@@ -118,9 +128,8 @@ let
     name = "emacs-macport-env";
     meta.platforms = pkgs.emacsMacport.meta.platforms;
     paths = [
-      (emacsMacportMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
-      myAspell
-      pkgs.ripgrep
+      (emacsMacportMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
+      coreExternalPackages
     ];
   };
 
