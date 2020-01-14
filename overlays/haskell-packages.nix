@@ -312,7 +312,6 @@ let
     gdp
     GraphSCC
     graphs
-    hakyll
     hal
     haxl
     hedgehog-classes
@@ -362,7 +361,6 @@ let
     semirings
     shake
     shelly
-    slick
     smtLib
     stm-containers
     streams
