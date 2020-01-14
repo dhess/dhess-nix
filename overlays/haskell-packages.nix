@@ -22,7 +22,8 @@ let
     amazonka-core = doJailbreak super.amazonka-core;
     bloodhound = doJailbreak super.bloodhound;
 
-    bytesmith = super.callPackage ../pkgs/haskell/bytesmith/0.3.3.0.nix {};
+    # Upstream is broken.
+    bytesmith = super.callPackage ../pkgs/haskell/bytesmith/0.3.1.0.nix {};
 
     # 0.1.4.0 is broken on macOS.
     byteslice = super.callPackage ../pkgs/haskell/byteslice/0.1.3.0.nix {};
