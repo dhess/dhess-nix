@@ -401,6 +401,7 @@ let
         (exeOnly hp.hpack)
         (exeOnly hp.structured-haskell-mode)
         (exeOnly hp.stylish-haskell)
+        (exeOnly hp.brittany)
     ];
   in
   super.buildEnv
