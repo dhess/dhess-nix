@@ -48,7 +48,7 @@ let
 
     generic-lens = dontCheck super.generic-lens_1_2_0_1;
 
-    ghcide = dontCheck (super.callPackage ../pkgs/haskell/ghcide {});
+    ghcide = dontCheck (doJailbreak (super.callPackage ../pkgs/haskell/ghcide {}));
 
     # Ironically, haddock-api doesn't haddock.
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
