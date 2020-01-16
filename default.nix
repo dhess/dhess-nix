@@ -42,6 +42,7 @@ in
   inherit (self) fm-assistant;
   inherit (self) fsatrace;
   inherit (self) gawk_4_2_1;
+  inherit (self) ghcide;
   inherit (self) hydra;
   inherit (self) ipxe;
   inherit (self) libprelude;

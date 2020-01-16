@@ -59,6 +59,7 @@ let
     fm-assistant = darwin;
     fsatrace = all;
     gawk_4_2_1 = all;
+    ghcide = all;
     hydra = x86_64_linux;
     ipxe = x86_64_linux;
     libprelude = x86_64_linux;
@@ -154,6 +155,7 @@ let
         ffmpeg-full.x86_64-linux
         fsatrace.x86_64-linux
         gawk_4_2_1.x86_64-linux
+        ghcide.x86_64-linux
         libprelude.x86_64-linux
         libvmaf.x86_64-linux
         lorri.x86_64-linux
@@ -228,6 +230,7 @@ let
         fm-assistant.x86_64-darwin
         fsatrace.x86_64-darwin
         gawk_4_2_1.x86_64-darwin
+        ghcide.x86_64-darwin
         libvmaf.x86_64-darwin
         lorri.x86_64-darwin
         nano.x86_64-darwin

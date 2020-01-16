@@ -48,8 +48,6 @@ let
 
     generic-lens = dontCheck super.generic-lens_1_2_0_1;
 
-    ghcide = dontCheck (doJailbreak (super.callPackage ../pkgs/haskell/ghcide {}));
-
     # Ironically, haddock-api doesn't haddock.
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
@@ -124,11 +122,21 @@ let
   # The current GHC.
   haskellPackages = mkHaskellPackages super.haskellPackages;
 
-  # ihaskell has special needs.
+  # ihaskell has special requirements.
   ihaskellPackages = properExtend (mkHaskellPackages super.haskell.packages.ghc865) (self: super: {
     hlint = super.callPackage ../pkgs/haskell/hlint/2.1.17.nix {};
   });
 
+  # ghcide currently has special requirements.
+  mkGhcidePackages = hp: properExtend hp (self: super: {
+    regex-base = super.regex-base_0_94_0_0;
+    regex-posix = super.regex-posix_0_96_0_0;
+    regex-tdfa = super.regex-tdfa_1_3_1_0;
+
+    ghcide = dontCheck (super.callPackage ../pkgs/haskell/ghcide {});
+  });
+
+  ghcide = exeOnly (mkGhcidePackages haskellPackages).ghcide;
 
   ## Package sets that I want to be built.
 
@@ -395,7 +403,7 @@ let
     paths =  [
         (hp.ghcWithHoogle packageList)
         (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
-        (exeOnly hp.ghcide)
+        ghcide
         (exeOnly hp.cabal-install)
         (exeOnly hp.hindent)
         (exeOnly hp.hpack)
@@ -491,6 +499,7 @@ in
 
   ## Executables only.
 
+  inherit ghcide;
   dhess-ssh-keygen = exeOnly self.haskellPackages.dhess-ssh-keygen;
   fm-assistant = exeOnly self.haskellPackages.fm-assistant;
 }
