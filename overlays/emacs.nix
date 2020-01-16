@@ -2,11 +2,35 @@ self: pkgs:
 
 let
 
+  ## Emacs package overrides.
+
+  mkEmacsPackages = epkgs: epkgs.override (self: super: {
+
+    # Add various formatting utilities to format-all.
+    format-all = super.format-all.overrideAttrs (drv: {
+      packageRequires = drv.packageRequires ++ (with pkgs; [
+        asmfmt
+        clang-tools
+        haskellPackages.brittany
+        html-tidy
+        nixfmt
+        nodePackages.prettier
+        perlPackages.PerlTidy
+        python37Packages.black
+        python37Packages.sqlparse
+        rustfmt
+        shfmt
+        terraform
+        texlive.latexindent
+      ]);
+    });
+  });
+
   emacs-nox = pkgs.emacs26-nox;
 
-  emacsMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacs;
-  emacsMacportMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacsMacport;
-  emacsNoXMelpaPackagesNg = pkgs.melpaPackagesNgFor emacs-nox;
+  emacsMelpaPackagesNg = pkgs.melpaPackagesNgFor (mkEmacsPackages pkgs.emacs);
+  emacsMacportMelpaPackagesNg = pkgs.melpaPackagesNgFor (pkgs.emacsMacport);
+  emacsNoXMelpaPackagesNg = pkgs.melpaPackagesNgFor (mkEmacsPackages emacs-nox);
 
   ## Collections of Emacs packages that I find useful.
 
@@ -79,21 +103,8 @@ let
 
   # Mostly formatters for use with the format-all package.
   coreExternalPackages = with pkgs; [
-    asmfmt
     (aspellWithDicts (dicts: with dicts; [ en ]))
-    clang-tools
-    haskellPackages.brittany
-    html-tidy
-    nixfmt
-    nodePackages.prettier
-    perlPackages.PerlTidy
-    python37Packages.black
-    python37Packages.sqlparse
     ripgrep
-    rustfmt
-    shfmt
-    terraform
-    texlive.latexindent
   ];
 
   ## Package up various Emacs with coreEmacsPackages and the binaries
