@@ -2,35 +2,13 @@ self: pkgs:
 
 let
 
-  ## Emacs package overrides.
-
-  mkEmacsPackages = epkgs: epkgs.override (self: super: {
-
-    # Add various formatting utilities to format-all.
-    format-all = super.format-all.overrideAttrs (drv: {
-      packageRequires = drv.packageRequires ++ (with pkgs; [
-        asmfmt
-        clang-tools
-        haskellPackages.brittany
-        html-tidy
-        nixfmt
-        nodePackages.prettier
-        perlPackages.PerlTidy
-        python37Packages.black
-        python37Packages.sqlparse
-        rustfmt
-        shfmt
-        terraform
-        texlive.latexindent
-      ]);
-    });
-  });
-
   emacs-nox = pkgs.emacs26-nox;
 
-  emacsMelpaPackagesNg = pkgs.melpaPackagesNgFor (mkEmacsPackages pkgs.emacs);
-  emacsMacportMelpaPackagesNg = pkgs.melpaPackagesNgFor (pkgs.emacsMacport);
-  emacsNoXMelpaPackagesNg = pkgs.melpaPackagesNgFor (mkEmacsPackages emacs-nox);
+  emacsMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacs;
+  emacsMacportMelpaPackagesNg = pkgs.melpaPackagesNgFor pkgs.emacsMacport;
+  emacsNoXMelpaPackagesNg = pkgs.melpaPackagesNgFor emacs-nox;
+
+  myAspell = pkgs.aspellWithDicts (dicts: with dicts; [ en ]);
 
   ## Collections of Emacs packages that I find useful.
 
@@ -62,7 +40,6 @@ let
     flx-ido
     flycheck
     flycheck-haskell
-    format-all
     go-mode
     haskell-mode
     hasklig-mode
@@ -101,11 +78,11 @@ let
     znc
   ];
 
-  # Mostly formatters for use with the format-all package.
-  coreExternalPackages = with pkgs; [
-    (aspellWithDicts (dicts: with dicts; [ en ]))
-    ripgrep
-  ];
+  # The core set, plus a few macOS-specific packages.
+  macOSEmacsPackages = epkgs: (with epkgs; [
+    dash-at-point
+  ]) ++ (coreEmacsPackages epkgs);
+
 
   ## Package up various Emacs with coreEmacsPackages and the binaries
   ## needed to support them.
@@ -119,8 +96,9 @@ let
     meta.platforms = pkgs.emacsMacport.meta.platforms;
 
     paths = [
-      (emacsMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
-      coreExternalPackages
+      (emacsMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
+      myAspell
+      pkgs.ripgrep
     ];
   };
 
@@ -130,7 +108,8 @@ let
     meta.platforms = emacs-nox.meta.platforms;
     paths = [
       (emacsNoXMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
-      coreExternalPackages
+      myAspell
+      pkgs.ripgrep
     ];
   };
 
@@ -139,8 +118,9 @@ let
     name = "emacs-macport-env";
     meta.platforms = pkgs.emacsMacport.meta.platforms;
     paths = [
-      (emacsMacportMelpaPackagesNg.emacsWithPackages coreEmacsPackages)
-      coreExternalPackages
+      (emacsMacportMelpaPackagesNg.emacsWithPackages macOSEmacsPackages)
+      myAspell
+      pkgs.ripgrep
     ];
   };
 
