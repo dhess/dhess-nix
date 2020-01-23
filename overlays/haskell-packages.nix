@@ -32,10 +32,10 @@ let
     concurrent-machines = doJailbreak super.concurrent-machines;
 
     # dhall tests try to hit the network.
-    dhall = dontCheck super.dhall_1_28_0;
+    dhall = dontCheck super.dhall_1_29_0;
 
     # Tests are broken upstream, but package is fine.
-    dhall-json = dontCheck super.dhall-json_1_6_0;
+    dhall-json = dontCheck super.dhall-json_1_6_1;
 
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
 
