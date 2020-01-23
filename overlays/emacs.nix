@@ -80,7 +80,6 @@ let
 
   # The core set, plus a few macOS-specific packages.
   macOSEmacsPackages = epkgs: (with epkgs; [
-    dash-at-point
   ]) ++ (coreEmacsPackages epkgs);
 
 
