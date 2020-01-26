@@ -130,6 +130,7 @@ let
       haddock-api = dontHaddock (super.callPackage ../pkgs/haskell/haddock-api {});
       haddock-library = doJailbreak (super.callPackage ../pkgs/haskell/haddock-library {});
       haddock-test = super.callPackage ../pkgs/haskell/haddock-test {};
+      haskell-src = super.haskell-src_1_0_3_1;
       inline-c = super.inline-c_0_9_0_0;
       regex-tdfa-text = doJailbreak super.regex-tdfa-text;
     });
