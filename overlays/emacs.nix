@@ -43,7 +43,6 @@ let
     go-mode
     haskell-mode
     hasklig-mode
-    hindent
     hlint-refactor
     ido-describe-bindings
     ido-vertical-mode

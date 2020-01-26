@@ -122,6 +122,18 @@ let
   # The current GHC.
   haskellPackages = mkHaskellPackages super.haskellPackages;
 
+  # 8.8.2.
+  haskellPackages882 = properExtend (mkHaskellPackages  super.haskell.packages.ghc882)
+    (self: super: {
+      ghc-exactprint = super.ghc-exactprint_0_6_2;
+      haddock = super.callPackage ../pkgs/haskell/haddock {};
+      haddock-api = dontHaddock (super.callPackage ../pkgs/haskell/haddock-api {});
+      haddock-library = doJailbreak (super.callPackage ../pkgs/haskell/haddock-library {});
+      haddock-test = super.callPackage ../pkgs/haskell/haddock-test {};
+      inline-c = super.inline-c_0_9_0_0;
+      regex-tdfa-text = doJailbreak super.regex-tdfa-text;
+    });
+
   # ihaskell has special requirements.
   ihaskellPackages = properExtend (mkHaskellPackages super.haskell.packages.ghc865) (self: super: {
     hlint = super.callPackage ../pkgs/haskell/hlint/2.1.17.nix {};
@@ -144,6 +156,7 @@ let
   # be fixed by overrides.
   problems = hp: with hp; [
     ivory
+    show-prettyprint
   ];
 
   mkInstalledPackages = desired: problems: hp:
@@ -154,7 +167,6 @@ let
   coreList = hp: with hp; [
     acid-state
     aeson
-    aeson-iproute
     aeson-pretty
     alex
     algebra
@@ -218,12 +230,10 @@ let
     managed
     megaparsec
     monad-control
-    monad-log
     monad-logger
     monad-logger-syslog
     mtl
     network
-    network-attoparsec
     network-bsd
     optparse-applicative
     optparse-text
@@ -405,7 +415,6 @@ let
         (all-hies.selection { selector = p: { inherit (p) ghc865; }; })
         ghcide
         (exeOnly hp.cabal-install)
-        (exeOnly hp.hindent)
         (exeOnly hp.hpack)
         (exeOnly hp.structured-haskell-mode)
         (exeOnly hp.stylish-haskell)
@@ -421,6 +430,7 @@ let
   haskell-env = mkHaskellBuildEnv "haskell-env" haskellPackages coreHaskellPackages;  
   extensive-haskell-env = mkHaskellBuildEnv "extensive-haskell-env" haskellPackages extensiveHaskellPackages;  
 
+  haskell882-env = mkHaskellBuildEnv "haskell-882-env" haskellPackages882 coreHaskellPackages;
 
   ## iHaskell support.
   mkIHaskell = import (localLib.fixedIHaskell + "/release-8.6.nix");
@@ -470,6 +480,7 @@ let
 in
 {
   inherit haskellPackages;
+  inherit haskellPackages882;
 
 
   ## Haskell package combinators.
@@ -483,6 +494,8 @@ in
   inherit mkHaskellBuildEnv;
   inherit haskell-env;
   inherit extensive-haskell-env;
+
+  inherit haskell882-env;
 
   ## haskell-ide-engine.
 
