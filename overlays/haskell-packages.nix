@@ -90,7 +90,7 @@ let
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
-    prettyprinter = super.prettyprinter_1_5_1;
+    prettyprinter = super.prettyprinter_1_6_0;
 
     # dontCheck, or else it causes infinite recursion.
     primitive = dontCheck super.primitive_0_7_0_0;
