@@ -66,10 +66,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "e66beec078161e8932341651fd65e74bfc5ff848",
-        "sha256": "1wrygbjr75qw7c6lpbbmywbvw3nvc7lp7dwgwkx154qhj20631yv",
+        "rev": "ce526ff7a764ed80064a23e08eca553cb6076e6c",
+        "sha256": "0ph2wb2p6fq0jax987x8gifc5d4mfcdkafvsrs539ccamhz81dib",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/e66beec078161e8932341651fd65e74bfc5ff848.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/ce526ff7a764ed80064a23e08eca553cb6076e6c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lorri": {
@@ -114,10 +114,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "99243ec9703c4d530593b1a422db2542454b1502",
-        "sha256": "1fx7qcc0xca4b2dc9vcb8cj9g7w065llhz3ljnq11x98l7f67wds",
+        "rev": "ec1c46e2e587e5b4b793aa93359318b22985d5ab",
+        "sha256": "1qzgzvc9g3a7sxqfa0xgs8slvvsyn17a27slp12d96l5z2nnc05y",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs-channels/archive/99243ec9703c4d530593b1a422db2542454b1502.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs-channels/archive/ec1c46e2e587e5b4b793aa93359318b22985d5ab.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "terraform-provider-okta": {
