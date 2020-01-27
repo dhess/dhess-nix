@@ -51,8 +51,6 @@ let
     # Ironically, haddock-api doesn't haddock.
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
 
-    haddocset = super.callPackage ../pkgs/haskell/haddocset {};
-
     hal = super.callPackage ../pkgs/haskell/hal {};
 
     haskell-lsp = super.haskell-lsp_0_19_0_0;
@@ -125,14 +123,28 @@ let
   # 8.8.2.
   haskellPackages882 = properExtend (mkHaskellPackages  super.haskell.packages.ghc882)
     (self: super: {
+      HTF = super.HTF_0_14_0_3;
+      bytes = super.bytes_0_16;
       ghc-exactprint = super.ghc-exactprint_0_6_2;
+      haskell-src = super.haskell-src_1_0_3_1;
+      inline-c = super.inline-c_0_9_0_0;
+
+      # To avoid the HTF dependency.
+      neat-interpolation = dontCheck super.neat-interpolation;
+
+      network = dontCheck super.network_3_0_1_1;
+      network-bsd = super.network-bsd_2_8_1_0;
+      protolude = doJailbreak super.protolude;
+      semialign = super.semialign_1_1;
+
       haddock = super.callPackage ../pkgs/haskell/haddock {};
       haddock-api = dontHaddock (super.callPackage ../pkgs/haskell/haddock-api {});
       haddock-library = doJailbreak (super.callPackage ../pkgs/haskell/haddock-library {});
       haddock-test = super.callPackage ../pkgs/haskell/haddock-test {};
-      haskell-src = super.haskell-src_1_0_3_1;
-      inline-c = super.inline-c_0_9_0_0;
-      regex-tdfa-text = doJailbreak super.regex-tdfa-text;
+      hnix = doJailbreak (dontCheck (super.callPackage ../pkgs/haskell/hnix {}));
+      hnix-store-core = super.callPackage ../pkgs/haskell/hnix-store-core {};
+      hnix-store-remote = super.callPackage ../pkgs/haskell/hnix-store-remote {};
+      saltine = super.callPackage ../pkgs/haskell/saltine {};
     });
 
   # ihaskell has special requirements.
@@ -194,7 +206,6 @@ let
     deepseq
     dhall
     dhall-json
-    dhall-nix
     directory
     distributive
     doctest
@@ -208,7 +219,6 @@ let
     free
     generic-lens
     groupoids
-    haddocset
     happy
     haskeline
     hedgehog
@@ -325,6 +335,7 @@ let
     configurator
     configuration-tools
     constraints
+    dhall-nix
     doctest-driver-gen
     fgl
     fmt
