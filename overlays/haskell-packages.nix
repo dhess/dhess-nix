@@ -111,6 +111,9 @@ let
     stm-hamt = doJailbreak super.stm-hamt;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
+
+    tasty-hedgehog = super.callPackage ../pkgs/haskell/tasty-hedgehog/1.0.0.1.nix {};
+
     tdigest = doJailbreak super.tdigest;
     these = doJailbreak super.these;
 
