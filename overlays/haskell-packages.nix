@@ -34,8 +34,14 @@ let
     # dhall tests try to hit the network.
     dhall = dontCheck super.dhall_1_29_0;
 
-    # Tests are broken upstream, but package is fine.
-    dhall-json = dontCheck super.dhall-json_1_6_1;
+    # Fix upstream breakage.
+    dhall-json = super.dhall-json_1_6_1.override {
+      prettyprinter = self.prettyprinter_1_6_0;
+      prettyprinter-ansi-terminal =
+        self.prettyprinter-ansi-terminal.override {
+          prettyprinter = self.prettyprinter_1_6_0;
+        };
+    };
 
     dhess-ssh-keygen = doJailbreak (super.callPackage ../pkgs/haskell/dhess-ssh-keygen {});
 
