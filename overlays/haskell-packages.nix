@@ -62,6 +62,8 @@ let
     haskell-lsp = super.haskell-lsp_0_19_0_0;
     haskell-lsp-types = super.haskell-lsp-types_0_19_0_0;
 
+    hedgehog = super.callPackage ../pkgs/haskell/hedgehog/1.0.1.nix {};
+
     hie-bios = dontCheck super.hie-bios;
 
     hoopl = doJailbreak super.hoopl;
