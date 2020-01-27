@@ -75,7 +75,7 @@ let
     hw-rankselect = dontCheck super.hw-rankselect_0_13_3_1;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
-    ip = super.ip_1_7_0;
+    ip = super.ip_1_7_1;
     ivory = doJailbreak super.ivory;
     katip-elasticsearch = dontCheck super.katip-elasticsearch;
     hfsevents = super.hfsevents.overrideAttrs (drv: {
