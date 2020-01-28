@@ -139,8 +139,11 @@ let
       neat-interpolation = dontCheck super.neat-interpolation;
 
       network = dontCheck super.network_3_0_1_1;
-      network-bsd = super.network-bsd_2_8_1_0;
+      network-bsd = (super.network-bsd_2_8_1_0.override {
+        network = dontCheck super.network_3_0_1_1;
+      });
       protolude = doJailbreak super.protolude;
+      safecopy = super.safecopy_0_10_2;
       semialign = super.semialign_1_1;
 
       haddock = super.callPackage ../pkgs/haskell/haddock {};
@@ -150,6 +153,7 @@ let
       hnix = doJailbreak (dontCheck (super.callPackage ../pkgs/haskell/hnix {}));
       hnix-store-core = super.callPackage ../pkgs/haskell/hnix-store-core {};
       hnix-store-remote = super.callPackage ../pkgs/haskell/hnix-store-remote {};
+      http-media = super.callPackage ../pkgs/haskell/http-media {};
       saltine = super.callPackage ../pkgs/haskell/saltine {};
     });
 
