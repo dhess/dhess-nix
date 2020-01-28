@@ -144,6 +144,7 @@ let
       });
       protolude = doJailbreak super.protolude;
       safecopy = super.safecopy_0_10_2;
+      sbv = super.sbv_8_5;
       semialign = super.semialign_1_1;
 
       haddock = super.callPackage ../pkgs/haskell/haddock {};
@@ -409,7 +410,6 @@ let
     tar
     tasty-hunit
     temporary
-    thyme
     time-recurrence
     turtle
     type-of-html
@@ -453,6 +453,7 @@ let
   extensive-haskell-env = mkHaskellBuildEnv "extensive-haskell-env" haskellPackages extensiveHaskellPackages;  
 
   haskell882-env = mkHaskellBuildEnv "haskell-882-env" haskellPackages882 coreHaskellPackages;
+  extensive-haskell882-env = mkHaskellBuildEnv "extensive-haskell882-env" haskellPackages882 extensiveHaskellPackages;  
 
   ## iHaskell support.
   mkIHaskell = import (localLib.fixedIHaskell + "/release-8.6.nix");
@@ -518,6 +519,7 @@ in
   inherit extensive-haskell-env;
 
   inherit haskell882-env;
+  inherit extensive-haskell882-env;
 
   ## haskell-ide-engine.
 

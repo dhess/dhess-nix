@@ -82,6 +82,7 @@ in
   inherit (self) all-hies;
   inherit (self) haskellPackages882;
   inherit (self) haskell882-env;
+  inherit (self) extensive-haskell882-env;
 
   inherit (self) hyperkit;
   inherit (self) minikube;
