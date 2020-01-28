@@ -56,7 +56,7 @@ let
     haskell-lsp = super.haskell-lsp_0_19_0_0;
     haskell-lsp-types = super.haskell-lsp-types_0_19_0_0;
 
-    hedgehog = super.callPackage ../pkgs/haskell/hedgehog/1.0.1.nix {};
+    hedgehog-classes = super.callPackage ../pkgs/haskell/hedgehog-classes {};
 
     hie-bios = dontCheck super.hie-bios;
 
@@ -108,8 +108,6 @@ let
     stm-hamt = doJailbreak super.stm-hamt;
     stream-monad = doJailbreak super.stream-monad;
     streaming-utils = doJailbreak super.streaming-utils;
-
-    tasty-hedgehog = super.callPackage ../pkgs/haskell/tasty-hedgehog/1.0.0.1.nix {};
 
     tdigest = doJailbreak super.tdigest;
     these = doJailbreak super.these;
