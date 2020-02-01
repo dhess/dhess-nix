@@ -165,6 +165,7 @@ in makeTest rec {
           "http://127.0.0.1:80"
         ];
         keyFile = "/run/keys/oauth2_proxy";
+        cookie.sameSite = "lax";
       };
 
       services.oauth2_proxy.nginx.virtualHosts = lib.singleton "server";

@@ -26,6 +26,10 @@ let
       group = groups;
     }; };
 
+    keycloak = cfg: { keycloak = {
+      inherit (cfg.keycloak) group;
+    }; };
+
     oidc = cfg: { oidc = {
       issuer-url = cfg.oidc.issuerURL;
     }; };
@@ -53,6 +57,7 @@ let
     redeem-url = redeemURL;
     redirect-url = redirectURL;
     request-logging = requestLogging;
+    reverse-proxy = reverseProxy;
     skip-auth-regex = skipAuthRegexes;
     skip-provider-button = skipProviderButton;
     signature-key = signatureKey;
@@ -61,6 +66,7 @@ let
     cookie = {
       inherit (cookie) domain secure expire name secret refresh;
       httponly = cookie.httpOnly;
+      samesite = cookie.sameSite;
     };
     set-xauthrequest = setXauthrequest;
   } // lib.optionalAttrs (cfg.email.addresses != null) {
@@ -117,6 +123,9 @@ in
         "linkedin"
         "myusa"
         "oidc"
+        "keycloak"
+        "nextcloud"
+        "digitalocean"
       ];
       default = "google";
       description = ''
@@ -299,6 +308,16 @@ in
       };
     };
 
+    keycloak = {
+      group = mkOption {
+        type = types.nullOr types.str;
+        default = null;
+        description = ''
+          Restrict logins to members of this group.
+        '';
+      };
+    };
+
     oidc = {
       issuerURL = mkOption {
         type = types.str;
@@ -406,6 +425,18 @@ in
         example = "168h0m0s";
       };
 
+      sameSite = mkOption {
+        type = types.nullOr (types.enum [
+          "none"
+          "lax"
+          "strict"
+        ]);
+        default = null;
+        description = ''
+          Set sameSite cookie attribute. See https://www.owasp.org/index.php/SameSite.
+        '';
+      };
+
       secret = mkOption {
         type = types.nullOr types.str;
         description = ''
@@ -511,6 +542,17 @@ in
       default = true;
       description = ''
         Log requests to stdout.
+      '';
+    };
+
+    reverseProxy = mkOption {
+      type = types.bool;
+      default = false;
+      description = ''
+        Set this to <literal>true</literal> if oauth2_proxy is running
+        behind a reverse proxy such as a load balancer. This permits
+        the application to see the actual client's information (e.g.,
+        IP address), rather than the proxy's.
       '';
     };
 
