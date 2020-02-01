@@ -157,6 +157,7 @@ in makeTest rec {
 
       services.oauth2_proxy = {
         enable = true;
+        reverseProxy = true;
         email.domains = lib.singleton "*";
         provider = "github";
         redirectURL = "https://server/oauth2/callback";
