@@ -17,6 +17,8 @@ let
   ## current nixpkgs snapshot that we're using.
 
   mkHaskellPackages = hp: properExtend hp (self: super: {
+    HsYAML = super.HsYAML_0_2_1_0;
+
     algebra = doJailbreak super.algebra;
     amazonka = doJailbreak super.amazonka;
     amazonka-core = doJailbreak super.amazonka-core;
@@ -88,10 +90,6 @@ let
     # Undo upstream breakage.
     network-bsd = super.network-bsd.override { network = super.network; };
 
-    pandoc-citeproc = doJailbreak (super.pandoc-citeproc.overrideAttrs (drv: {
-      meta.hydraPlatforms = stdenv.lib.platforms.all;
-    }));
-
     pipes-errors = doJailbreak super.pipes-errors;
     pipes-text = doJailbreak super.pipes-text;
     pipes-transduce = dontCheck super.pipes-transduce;
@@ -130,6 +128,7 @@ let
   haskellPackages882 = properExtend (mkHaskellPackages  super.haskell.packages.ghc882)
     (self: super: {
       HTF = super.HTF_0_14_0_3;
+      HsYAML = super.HsYAML_0_2_1_0;
       bytes = super.bytes_0_16;
       ghc-exactprint = super.ghc-exactprint_0_6_2;
       haskell-src = super.haskell-src_1_0_3_1;
@@ -259,7 +258,6 @@ let
     network-bsd
     optparse-applicative
     optparse-text
-    pandoc
     parsec
     parsers
     path
