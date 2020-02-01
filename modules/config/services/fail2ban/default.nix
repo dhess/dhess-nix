@@ -72,7 +72,7 @@ in
   config = mkIf fail2ban-enabled {
 
     dhess-nix.assertions.moduleHashes."services/security/fail2ban.nix" =
-      "7f20f660b11caa365813f287a0dc1ddfc6410a2d9c5184d6787c1764d0ed20aa";
+      "cf68bd293a4a7036d6ab2b8ec0443479ea83214204c44749897ed2c9763adc33";
 
     services.fail2ban.jails.DEFAULT = mkForce ''
       ignoreip = ${ignoreip}
