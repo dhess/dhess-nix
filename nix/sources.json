@@ -17,10 +17,10 @@
         "homepage": "",
         "owner": "Infinisil",
         "repo": "all-hies",
-        "rev": "67227c42ab0b652775dbaf6401f8eff71f5d0c4f",
-        "sha256": "19az6higr2wb1chnlv82vm61xjf7jybm2i8kha6hyh68l4hw6vbs",
+        "rev": "92148680060ed68f24738128d8489f4f9387d2ff",
+        "sha256": "1yb75f8p09dp4yx5d3w3wvdiflaav9a5202xz9whigk2p9ndwbp5",
         "type": "tarball",
-        "url": "https://github.com/Infinisil/all-hies/archive/67227c42ab0b652775dbaf6401f8eff71f5d0c4f.tar.gz",
+        "url": "https://github.com/Infinisil/all-hies/archive/92148680060ed68f24738128d8489f4f9387d2ff.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "aws-okta": {
@@ -66,10 +66,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "ed1683465873212a32903dce4d2045428e25dd2a",
-        "sha256": "141k7mmh1isgx00x9nwvhylyk2i3129hr6b3z4lnzs96dgj2rvm8",
+        "rev": "2376eae654e421c95764b0d55d60cc7ccf52831c",
+        "sha256": "1r6nzlmm2dckx202r4hjbzfij9n01w1f8h3n973rkllv4a71s4iq",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/ed1683465873212a32903dce4d2045428e25dd2a.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/2376eae654e421c95764b0d55d60cc7ccf52831c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lorri": {
@@ -90,10 +90,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "7a21f49027c0901456acd6e61d91bd9e3b15b1f6",
-        "sha256": "1hrcjgz4ib5n6wm96gcjk2qjl03pvspksk48b2lkn29vpdry98jm",
+        "rev": "2ecfd86b631714b457e56d70dd83fa60435baeb6",
+        "sha256": "01j6727cws8blg1npp54b4w6xa0gpgyzhyws2vqgp8clnlnmqqhi",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/7a21f49027c0901456acd6e61d91bd9e3b15b1f6.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/2ecfd86b631714b457e56d70dd83fa60435baeb6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixops": {
@@ -114,10 +114,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "06fb4faffde6542ac9f73aff9b04b1fd2a11cc09",
-        "sha256": "1kikvvi1li9xvhvld2qz6c3kpj1mlp28gdjin641pq1x4bk3g850",
+        "rev": "d5bf8b2359242f5d7dc1d4c346cc0393ca2a4a25",
+        "sha256": "1f4092nh36s578a686yp39533ana0qg6bqjxzf8byf53jzi7babd",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs-channels/archive/06fb4faffde6542ac9f73aff9b04b1fd2a11cc09.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs-channels/archive/d5bf8b2359242f5d7dc1d4c346cc0393ca2a4a25.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "terraform-provider-okta": {
