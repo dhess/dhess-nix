@@ -58,6 +58,9 @@ let
     };
   });
 
+  # Upstream is out of date.
+  saml2aws = callPackage ../pkgs/saml2aws {};
+
 in
 {
 
@@ -103,4 +106,5 @@ in
   inherit nano;
   inherit oauth2_proxy;
   inherit radare2;
+  inherit saml2aws;
 }

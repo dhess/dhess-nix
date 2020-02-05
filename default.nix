@@ -56,6 +56,7 @@ in
   inherit (self) oauth2_proxy;
   inherit (self) ppp-devel;
   inherit (self) radare2;
+  inherit (self) saml2aws;
   inherit (self) unbound;
   inherit (self) terraform-provider-okta;
   inherit (self) terraform-provider-vultr;
