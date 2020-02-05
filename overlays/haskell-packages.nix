@@ -182,6 +182,12 @@ let
     show-prettyprint
   ];
 
+  problems882 = hp: with hp; [
+    Agda
+    ivory
+    show-prettyprint
+  ];
+
   mkInstalledPackages = desired: problems: hp:
     super.lib.subtractLists (problems hp) (desired hp);
 
@@ -316,6 +322,7 @@ let
   # core packages that we want built from that haskellPackages set,
   # minus any problematic packages.
   coreHaskellPackages = mkInstalledPackages coreList problems;
+  coreHaskellPackages882 = mkInstalledPackages coreList problems882;
 
 
   # A list of extra packages that would be nice to build for any given
@@ -420,6 +427,7 @@ let
   # extensive packages that we want built from that haskellPackages
   # set, minus any problematic packages.
   extensiveHaskellPackages = mkInstalledPackages extraList problems;
+  extensiveHaskellPackages882 = mkInstalledPackages extraList problems882;
 
   # haskell-ide-engine via all-hies.
   inherit (localLib) all-hies;
@@ -450,8 +458,8 @@ let
   haskell-env = mkHaskellBuildEnv "haskell-env" haskellPackages coreHaskellPackages;  
   extensive-haskell-env = mkHaskellBuildEnv "extensive-haskell-env" haskellPackages extensiveHaskellPackages;  
 
-  haskell882-env = mkHaskellBuildEnv "haskell-882-env" haskellPackages882 coreHaskellPackages;
-  extensive-haskell882-env = mkHaskellBuildEnv "extensive-haskell882-env" haskellPackages882 extensiveHaskellPackages;  
+  haskell882-env = mkHaskellBuildEnv "haskell-882-env" haskellPackages882 coreHaskellPackages882;
+  extensive-haskell882-env = mkHaskellBuildEnv "extensive-haskell882-env" haskellPackages882 extensiveHaskellPackages882;  
 
   ## iHaskell support.
   mkIHaskell = import (localLib.fixedIHaskell + "/release-8.6.nix");
