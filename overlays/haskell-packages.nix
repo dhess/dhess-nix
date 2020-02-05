@@ -58,7 +58,11 @@ let
     haskell-lsp = super.haskell-lsp_0_19_0_0;
     haskell-lsp-types = super.haskell-lsp-types_0_19_0_0;
 
+    haxl = doJailbreak (super.callPackage ../pkgs/haskell/haxl {});
+
     hedgehog-classes = super.callPackage ../pkgs/haskell/hedgehog-classes {};
+
+    hex = doJailbreak super.hex;
 
     hie-bios = dontCheck super.hie-bios;
 
@@ -85,6 +89,10 @@ let
 
     lsp-test = dontCheck super.lsp-test_0_9_0_0;
 
+    machines = super.machines_0_7;
+    machines-binary = doJailbreak super.machines-binary;
+    machines-directory = doJailbreak super.machines-directory;
+    machines-io = doJailbreak super.machines-io;
     machines-process = doJailbreak super.machines-process;
 
     # Undo upstream breakage.
@@ -184,6 +192,7 @@ let
 
   problems882 = hp: with hp; [
     Agda
+    hex
     ivory
     show-prettyprint
   ];
