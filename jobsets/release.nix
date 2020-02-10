@@ -65,6 +65,7 @@ let
     libprelude = x86_64_linux;
     libvmaf = x86_64;
     lorri = all;
+    micromdm = all;
     nano = all;
     netsniff-ng = x86_64_linux;
     nixops = x86_64;
@@ -163,6 +164,7 @@ let
         libprelude.x86_64-linux
         libvmaf.x86_64-linux
         lorri.x86_64-linux
+        micromdm.x86_64-linux
         nano.x86_64-linux
         netsniff-ng.x86_64-linux
         nixops.x86_64-linux
@@ -238,6 +240,7 @@ let
         ghcide.x86_64-darwin
         libvmaf.x86_64-darwin
         lorri.x86_64-darwin
+        micromdm.x86_64-darwin
         nano.x86_64-darwin
         nixops.x86_64-darwin
         radare2.x86_64-darwin

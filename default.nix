@@ -49,6 +49,7 @@ in
   inherit (self) libvmaf;
   inherit (self) lorri;
   inherit (self) mkCacert;
+  inherit (self) micromdm;
   inherit (self) nano;
   inherit (self) nixops;
   inherit (self) nmrpflash;

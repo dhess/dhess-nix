@@ -91,6 +91,8 @@ let
 
   nmrpflash = callPackage ../pkgs/nmrpflash {};
 
+  micromdm = callPackage ../pkgs/micromdm {};
+
 in
 {
   inherit (badhosts) badhosts-unified;
@@ -114,6 +116,7 @@ in
   inherit libprelude;
   inherit lorri;
   inherit mkCacert;
+  inherit micromdm;
   inherit nixops;
   inherit nmrpflash;
   inherit ppp-devel;
