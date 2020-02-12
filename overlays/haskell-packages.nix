@@ -55,8 +55,8 @@ let
 
     hal = super.callPackage ../pkgs/haskell/hal {};
 
-    haskell-lsp = super.haskell-lsp_0_19_0_0;
-    haskell-lsp-types = super.haskell-lsp-types_0_19_0_0;
+    haskell-lsp = super.haskell-lsp_0_20_0_1;
+    haskell-lsp-types = super.haskell-lsp-types_0_20_0_0;
 
     haxl = doJailbreak (super.callPackage ../pkgs/haskell/haxl {});
 
@@ -68,13 +68,13 @@ let
 
     hoopl = doJailbreak super.hoopl;
 
-    hw-balancedparens = super.hw-balancedparens_0_3_0_3;
+    hw-balancedparens = super.hw-balancedparens_0_3_0_4;
 
     hw-bits = doJailbreak super.hw-bits;
     hw-excess = doJailbreak super.hw-excess;
     hw-json = super.hw-json_1_3_1_1;
 
-    hw-rankselect = dontCheck super.hw-rankselect_0_13_3_1;
+    hw-rankselect = dontCheck super.hw-rankselect_0_13_3_2;
     hw-rankselect-base = doJailbreak super.hw-rankselect-base;
     insert-ordered-containers = doJailbreak super.insert-ordered-containers;
 
@@ -137,7 +137,7 @@ let
     (self: super: {
       HTF = super.HTF_0_14_0_3;
       HsYAML = super.HsYAML_0_2_1_0;
-      bytes = super.bytes_0_16;
+      bytes = super.bytes_0_17;
       ghc-exactprint = super.ghc-exactprint_0_6_2;
       haskell-src = super.haskell-src_1_0_3_1;
       inline-c = super.inline-c_0_9_0_0;

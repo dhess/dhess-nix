@@ -4,15 +4,16 @@
 , haddock-library, hashable, haskell-lsp, haskell-lsp-types
 , hie-bios, hslogger, lens, lsp-test, mtl, network-uri
 , optparse-applicative, parser-combinators, prettyprinter
-, prettyprinter-ansi-terminal, regex-tdfa, rope-utf16-splay
-, safe-exceptions, shake, sorted-list, stdenv, stm, syb, tasty
-, tasty-expected-failure, tasty-hunit, text, time, transformers
-, unix, unordered-containers, utf8-string
+, prettyprinter-ansi-terminal, QuickCheck, quickcheck-instances
+, regex-tdfa, rope-utf16-splay, safe-exceptions, shake, sorted-list
+, stdenv, stm, syb, tasty, tasty-expected-failure, tasty-hunit
+, tasty-quickcheck, text, time, transformers, unix
+, unordered-containers, utf8-string
 }:
 mkDerivation {
   pname = "ghcide";
-  version = "0.0.6";
-  sha256 = "4b6ae8f0fc4bb3e1743fa83e7571ab5e76b028ca61aea83efa9f10023ee9e0ee";
+  version = "0.1.0";
+  sha256 = "d500125f84ca9a5e5ad25fa54a8832adc6893ca7ad159146ea2d55cb89996879";
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [
@@ -30,8 +31,10 @@ mkDerivation {
   ];
   testHaskellDepends = [
     aeson base bytestring containers directory extra filepath ghc
-    ghc-typelits-knownnat haskell-lsp-types lens lsp-test
-    parser-combinators tasty tasty-expected-failure tasty-hunit text
+    ghc-typelits-knownnat haddock-library haskell-lsp haskell-lsp-types
+    lens lsp-test parser-combinators QuickCheck quickcheck-instances
+    rope-utf16-splay tasty tasty-expected-failure tasty-hunit
+    tasty-quickcheck text
   ];
   homepage = "https://github.com/digital-asset/ghcide#readme";
   description = "The core of an IDE";
