@@ -52,6 +52,7 @@ let
 
     # Ironically, haddock-api doesn't haddock.
     haddock-api =  dontHaddock (doJailbreak super.haddock-api);
+    haddock-library = super.haddock-library_1_8_0;
 
     hal = super.callPackage ../pkgs/haskell/hal {};
 
