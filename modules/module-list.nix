@@ -4,6 +4,7 @@
   ./config/providers/vultr/cloud/default.nix
 
   ./config/defaults/default.nix
+  ./config/defaults/acme.nix
   ./config/defaults/environment.nix
   ./config/defaults/networking.nix
   ./config/defaults/nginx.nix

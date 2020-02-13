@@ -25,6 +25,7 @@ in
 
     dhess-nix.defaults = {
 
+      acme.enable = true;
       environment.enable = true;
       networking.enable = true;
       nginx.enable = true;
