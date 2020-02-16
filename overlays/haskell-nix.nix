@@ -254,7 +254,8 @@ let
   super.buildEnv
     {
       inherit name paths;
-      meta.platforms = hp.ghc.meta.platforms;
+      # XXX dhess - Hack. haskell-nix.haskellPackages.ghc.meta is missing.
+      meta.platforms = ["x86_64-linux" "x86_64-darwin" "aarch64-linux"];
     };
 
   haskell-nix-env = mkHaskellNixBuildEnv "haskell-nix-env" haskell-nix.haskellPackages coreList;
