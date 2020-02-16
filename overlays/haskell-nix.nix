@@ -13,7 +13,9 @@ let
   # given release of this overlay.
   coreList = hp: with hp; [
     aeson
-    alex
+    # alex causes this error:
+    # attribute 'configFiles' missing, at /nix/store/bpdvbj4x742a31jipprhnkzfhajff3dp-source/builder/make-config-files.nix:69:32
+    #alex
     async
     base-compat
     bytestring
