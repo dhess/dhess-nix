@@ -6,8 +6,7 @@ let
 
   inherit (super) callPackage;
 
-  haskell-nix-attrs = (import lib.fixedHaskellNix);
-  haskell-nix-pkgs = (import lib.fixedNixpkgs) { inherit (haskell-nix-attrs) config overlays; };
+  haskell-nix-pkgs = (import lib.fixedNixpkgs) (import lib.fixedHaskellNix);
 
 in
 {
