@@ -89,6 +89,7 @@ in
   # haskell.nix
   inherit (self) haskell-nix;
   inherit (self) nix-tools;
+  inherit (self) haskell-nix-env;
 
   inherit (self) hyperkit;
   inherit (self) minikube;
