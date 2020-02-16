@@ -72,6 +72,18 @@
         "url": "https://github.com/dhess/dhess-lib-nix/archive/51227f1d12d57edad7a8dc09de63cbfd0f9f5f24.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "haskell-nix": {
+        "branch": "master",
+        "description": "Alternative Haskell Infrastructure for Nixpkgs",
+        "homepage": "https://input-output-hk.github.io/haskell.nix",
+        "owner": "input-output-hk",
+        "repo": "haskell.nix",
+        "rev": "82115762ef787609f2340df61d30b87e594c8074",
+        "sha256": "0236s7l3hlbqnjidyl8qhssg4sv2h2ksbj0zxv9pq9whsz25l6cr",
+        "type": "tarball",
+        "url": "https://github.com/input-output-hk/haskell.nix/archive/82115762ef787609f2340df61d30b87e594c8074.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "lorri": {
         "branch": "master",
         "description": "Your project's nix-env",

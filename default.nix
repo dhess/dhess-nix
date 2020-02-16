@@ -86,6 +86,10 @@ in
   inherit (self) haskell882-env;
   inherit (self) extensive-haskell882-env;
 
+  # haskell.nix
+  inherit (self) haskell-nix;
+  inherit (self) nix-tools;
+
   inherit (self) hyperkit;
   inherit (self) minikube;
 
