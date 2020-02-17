@@ -74,7 +74,6 @@ let
     semigroups
     semirings
     show-prettyprint
-    singletons
     stm
     tasty
     tasty-hedgehog
@@ -215,6 +214,7 @@ let
     servant-swagger-ui
     shake
     shelly
+    singletons
     smtLib
     stm-containers
     streams
