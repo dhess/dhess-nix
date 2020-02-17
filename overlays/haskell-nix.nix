@@ -24,7 +24,8 @@ let
     cryptonite
     data-fix
     data-has
-    deepseq
+    # value is null while a set was expected
+    #deepseq
     directory
     doctest
     either
@@ -35,14 +36,17 @@ let
     foldl
     folds
     generic-lens
-    happy
+    # configFiles missing.
+    #happy
     haskeline
     hedgehog
-    hedgehog-quickcheck
+    # Not available in the set.
+    #hedgehog-quickcheck
     hlint
     hscolour
     hspec
-    hspec-expectations-lens
+    # Not available in the set.
+    #hspec-expectations-lens
     hspec-megaparsec
     hspec-wai
     http-api-data
