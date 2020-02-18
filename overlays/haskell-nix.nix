@@ -249,12 +249,12 @@ let
     paths =  [
         (hp.ghcWithHoogle packageList)
         #(all-hies.selection { selector = p: { inherit (p) ghc865; }; })
-        #ghcide
-        # (exeOnly hp.cabal-install)
-        # (exeOnly hp.hpack)
-        # (exeOnly hp.structured-haskell-mode)
-        # (exeOnly hp.stylish-haskell)
-        # (exeOnly hp.brittany)
+        haskell-nix.hackage.ghcide
+        haskell-nix.hackage.cabal-install
+        haskell-nix.hackage.hpack
+        haskell-nix.hackage.structured-haskell-mode
+        haskell-nix.hackage.stylish-haskell
+        haskell-nix.hackage.brittany
     ];
   in
   super.buildEnv
