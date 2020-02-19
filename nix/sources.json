@@ -17,10 +17,10 @@
         "homepage": "",
         "owner": "Infinisil",
         "repo": "all-hies",
-        "rev": "92148680060ed68f24738128d8489f4f9387d2ff",
-        "sha256": "1yb75f8p09dp4yx5d3w3wvdiflaav9a5202xz9whigk2p9ndwbp5",
+        "rev": "d98bdbff3ebdab408a12a9b7890d4cf400180839",
+        "sha256": "1lr4dw10f37fp68b6ig065dgrl8h1v4xmigy5ncljdz74k0jvhg4",
         "type": "tarball",
-        "url": "https://github.com/Infinisil/all-hies/archive/92148680060ed68f24738128d8489f4f9387d2ff.tar.gz",
+        "url": "https://github.com/Infinisil/all-hies/archive/d98bdbff3ebdab408a12a9b7890d4cf400180839.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "aws-okta": {
@@ -42,10 +42,10 @@
         "homepage": "",
         "owner": "StevenBlack",
         "repo": "hosts",
-        "rev": "97b203c24624b95cbebc608f16d77f36b49221bb",
-        "sha256": "01rijzfmvwfcirz94h74bx15maqdn9m01g7q197nvzxmr1fk60yd",
+        "rev": "fc3ebbdabcccaa8693a4d7982a866fb481ea8415",
+        "sha256": "0p1md2kavl65502si9ig3k1dg5x74c016bwzlh1bcs8k7vkkqmh5",
         "type": "tarball",
-        "url": "https://github.com/StevenBlack/hosts/archive/97b203c24624b95cbebc608f16d77f36b49221bb.tar.gz",
+        "url": "https://github.com/StevenBlack/hosts/archive/fc3ebbdabcccaa8693a4d7982a866fb481ea8415.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "chamber": {
@@ -78,10 +78,10 @@
         "homepage": "https://input-output-hk.github.io/haskell.nix",
         "owner": "input-output-hk",
         "repo": "haskell.nix",
-        "rev": "82115762ef787609f2340df61d30b87e594c8074",
-        "sha256": "0236s7l3hlbqnjidyl8qhssg4sv2h2ksbj0zxv9pq9whsz25l6cr",
+        "rev": "937b0509a7ebd7e90011f1e9f76e1e28bdb68ea8",
+        "sha256": "0pqa67k910lsv8b65mz5p7l14x6jhhyvqczz6hil561lpqz5mh7y",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/haskell.nix/archive/82115762ef787609f2340df61d30b87e594c8074.tar.gz",
+        "url": "https://github.com/input-output-hk/haskell.nix/archive/937b0509a7ebd7e90011f1e9f76e1e28bdb68ea8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "lorri": {
@@ -126,10 +126,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "nixos",
         "repo": "nixpkgs-channels",
-        "rev": "cc1ae9f21b9e0ce998e706a3de1bad0b5259f22d",
-        "sha256": "0zjafww05h50ncapw51b5qxgbv9prjyag0j22jnfc3kcs5xr4ap0",
+        "rev": "f77e057cda60a3f96a4010a698ff3be311bf18c6",
+        "sha256": "0j4m572dz6ak49mf3c0q4aq1z0qzm7qn08amygym27j55gh197zf",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs-channels/archive/cc1ae9f21b9e0ce998e706a3de1bad0b5259f22d.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs-channels/archive/f77e057cda60a3f96a4010a698ff3be311bf18c6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "terraform-provider-okta": {
