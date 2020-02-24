@@ -582,36 +582,44 @@ in
       optional cfg.imap.enable "imap"
       ++ optional cfg.lmtp.inet.enable "lmtp";
 
-    users.users = [
-      { name = "dovenull";
+    users.users = {
+      dovenull = {
+        name = "dovenull";
         uid = config.ids.uids.dovenull2;
         description = "Dovecot user for untrusted logins";
         group = "dovenull";
-      }
-    ] ++ optional (cfg.user == "dovecot2")
-         { name = "dovecot2";
-           uid = config.ids.uids.dovecot2;
-           description = "Dovecot user";
-           group = cfg.group;
-         }
-      ++ optional (cfg.createMailUser && cfg.mailUser != null)
-         ({ name = cfg.mailUser;
-            description = "Virtual Mail User";
-         } // optionalAttrs (cfg.mailGroup != null) {
-           group = cfg.mailGroup;
-         });
+      };
+    } // optionalAttrs (cfg.user == "dovecot2") {
+      dovecot2 = {
+        name = "dovecot2";
+        uid = config.ids.uids.dovecot2;
+        description = "Dovecot user";
+        group = cfg.group;
+      };
+    } // optionalAttrs (cfg.createMailUser && cfg.mailUser != null) {
+      "${cfg.mailUser}" = {
+        name = cfg.mailUser;
+        description = "Virtual Mail User";
+      } // optionalAttrs (cfg.mailGroup != null) {
+        group = cfg.mailGroup;
+      };
+    };
 
-    users.groups = optional (cfg.group == "dovecot2")
-      { name = "dovecot2";
+    users.groups = optionalAttrs (cfg.group == "dovecot2") {
+      dovecot2 = {
+        name = "dovecot2";
         gid = config.ids.gids.dovecot2;
-      }
-    ++ optional (cfg.createMailUser && cfg.mailGroup != null)
-      { name = cfg.mailGroup;
-      }
-    ++ singleton
-      { name = "dovenull";
+      };
+    } // optionalAttrs (cfg.createMailUser && cfg.mailGroup != null) {
+      "${cfg.mailGroup}" = {
+        name = cfg.mailGroup;
+      };
+    } // {
+      dovenull = {
+        name = "dovenull";
         gid = config.ids.gids.dovenull2;
       };
+    };
 
     environment.etc."dovecot/modules".source = modulesDir;
     environment.etc."dovecot/dovecot.conf".source = cfg.configFile;

@@ -466,20 +466,23 @@ in
       script = "${pkgs.znc}/bin/znc --foreground --datadir ${cfg.dataDir} ${toString cfg.extraFlags}";
     };
 
-    users.extraUsers = optional (cfg.user == defaultUser)
-      { name = defaultUser;
+    users.users = optionalAttrs (cfg.user == defaultUser) {
+      "${cfg.user}" = {
+        name = defaultUser;
         description = "ZNC server daemon owner";
         group = defaultUser;
         uid = config.ids.uids.znc;
         home = cfg.dataDir;
         createHome = true;
       };
+    };
 
-    users.extraGroups = optional (cfg.user == defaultUser)
-      { name = defaultUser;
+    users.extraGroups = optionalAttrs (cfg.user == defaultUser) {
+      "${cfg.user}" = {
+        name = defaultUser;
         gid = config.ids.gids.znc;
         members = [ defaultUser ];
       };
-
+    };
   };
 }

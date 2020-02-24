@@ -199,14 +199,18 @@ in
           message = "serivces.netsniff-ng.user cannot be the empty string."; }
       ];
 
-    users.users = optional (cfg.user == defaultUser) {
-      name = defaultUser;
-      description = "Packet capture user";
-      group = cfg.group;
+    users.users = optionalAttrs (cfg.user == defaultUser) {
+      "${cfg.user}" = {
+        name = defaultUser;
+        description = "Packet capture user";
+        group = cfg.group;
+      };
     };
 
-    users.groups = optional (cfg.group == defaultGroup) {
-      name = defaultGroup;
+    users.groups = optionalAttrs (cfg.group == defaultGroup) {
+      "${cfg.group}" = {
+        name = defaultGroup;
+      };
     };
 
     systemd.services = listToAttrs (filter (x: x.value != null) (
