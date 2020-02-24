@@ -1,16 +1,4 @@
 {
-    "IHaskell": {
-        "branch": "master",
-        "description": "A Haskell kernel for IPython.",
-        "homepage": null,
-        "owner": "dhess",
-        "repo": "IHaskell",
-        "rev": "49fbb065d4e5bffe978dd3194cdd12ab994fd57d",
-        "sha256": "1bqnivdqwgsrm63cw1cnvkn6g724g1ym5r8q10ldi7n5a05qd953",
-        "type": "tarball",
-        "url": "https://github.com/dhess/IHaskell/archive/49fbb065d4e5bffe978dd3194cdd12ab994fd57d.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "all-hies": {
         "branch": "master",
         "description": "Cached Haskell IDE Engine Nix builds for all GHC versions",

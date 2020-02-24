@@ -95,12 +95,6 @@ let
     haskell-env = all;
     extensive-haskell-env = x86_64;
 
-    ihaskell = darwin;
-    ihaskell-env = darwin;
-    ihaskell-envfun = darwin;
-    extensive-ihaskell-env = darwin;
-    extensive-ihaskell-envfun = darwin;
-
     nix-tools = all;
     haskell-nix-env = all;
 
@@ -256,12 +250,6 @@ let
         emacs-macport-env.x86_64-darwin
         haskell-env.x86_64-darwin
         extensive-haskell-env.x86_64-darwin
-
-        ihaskell.x86_64-darwin
-        ihaskell-env.x86_64-darwin
-        ihaskell-envfun.x86_64-darwin
-        extensive-ihaskell-env.x86_64-darwin
-        extensive-ihaskell-envfun.x86_64-darwin
 
         nix-tools.x86_64-darwin
         haskell-nix-env.x86_64-darwin

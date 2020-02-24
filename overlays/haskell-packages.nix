@@ -166,11 +166,6 @@ let
       saltine = super.callPackage ../pkgs/haskell/saltine {};
     });
 
-  # ihaskell has special requirements.
-  ihaskellPackages = properExtend (mkHaskellPackages super.haskell.packages.ghc865) (self: super: {
-    hlint = super.callPackage ../pkgs/haskell/hlint/2.1.17.nix {};
-  });
-
   # ghcide currently has special requirements.
   mkGhcidePackages = hp: properExtend hp (self: super: {
     regex-base = super.regex-base_0_94_0_0;
@@ -468,51 +463,6 @@ let
   haskell-env = mkHaskellBuildEnv "haskell-env" haskellPackages coreHaskellPackages;  
   extensive-haskell-env = mkHaskellBuildEnv "extensive-haskell-env" haskellPackages extensiveHaskellPackages;  
 
-  ## iHaskell support.
-  mkIHaskell = import (localLib.fixedIHaskell + "/release-8.6.nix");
-  ihaskell = mkIHaskell {
-    haskellPackages = ihaskellPackages;
-    nixpkgs = self;
-  };
-  core-ihaskell = mkIHaskell {
-    haskellPackages = ihaskellPackages;
-    nixpkgs = self;
-    packages = self.coreHaskellPackages;
-  };
-  extensive-ihaskell = mkIHaskell {
-    haskellPackages = ihaskellPackages;
-    nixpkgs = self;
-    packages = self.extensiveHaskellPackages;
-  };
-
-  ihaskell-env = super.buildEnv {
-    name = "ihaskell-env";
-    paths = [
-      core-ihaskell
-    ];
-    meta.platforms = self.lib.platforms.darwin;
-  };
-  ihaskell-envfun = super.myEnvFun {
-    name = "ihaskell-envfun";
-    buildInputs = [
-      core-ihaskell
-    ];
-  };
-
-  extensive-ihaskell-env = super.buildEnv {
-    name = "extensive-ihaskell-env";
-    paths = [
-      extensive-ihaskell
-    ];
-    meta.platforms = self.lib.platforms.darwin;
-  };
-  extensive-ihaskell-envfun = super.myEnvFun {
-    name = "extensive-ihaskell-envfun";
-    buildInputs = [
-      extensive-ihaskell
-    ];
-  };
-
 in
 {
   inherit haskellPackages;
@@ -534,14 +484,6 @@ in
   ## haskell-ide-engine.
 
   inherit all-hies;
-
-
-  ## iHaskell.
-  inherit ihaskell;
-  inherit ihaskell-env;
-  inherit ihaskell-envfun;
-  inherit extensive-ihaskell-env;
-  inherit extensive-ihaskell-envfun;
 
 
   ## Executables only.
