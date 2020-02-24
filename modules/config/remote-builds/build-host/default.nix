@@ -36,8 +36,8 @@ let
     ''
   ) (mkHostPortPairs remoteBuildHosts);
 
-  knownHosts = remoteBuildHosts: lib.mapAttrsToList (host: descriptor:
-    {
+  knownHosts = remoteBuildHosts: lib.mapAttrs' (host: descriptor:
+    lib.nameValuePair descriptor.hostName {
       hostNames = lib.singleton descriptor.hostName ++ descriptor.alternateHostNames;
       publicKey = descriptor.hostPublicKeyLiteral;
     }
@@ -166,7 +166,7 @@ in
     nix.distributedBuilds = true;
     nix.buildMachines = buildMachines;
 
-    programs.ssh.knownHosts = (knownHosts cfg.buildMachines) ++ (knownHosts cfg.extraBuildMachines);
+    programs.ssh.knownHosts = (knownHosts cfg.buildMachines) // (knownHosts cfg.extraBuildMachines);
     programs.ssh.extraConfig = (sshExtraConfig cfg.buildMachines) + (sshExtraConfig cfg.extraBuildMachines);
 
     dhess-nix.keychain.keys =
