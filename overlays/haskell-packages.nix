@@ -133,39 +133,6 @@ let
   # The current GHC.
   haskellPackages = mkHaskellPackages super.haskellPackages;
 
-  # 8.8.2.
-  haskellPackages882 = properExtend (mkHaskellPackages  super.haskell.packages.ghc882)
-    (self: super: {
-      HTF = super.HTF_0_14_0_3;
-      HsYAML = super.HsYAML_0_2_1_0;
-      bytes = super.bytes_0_17;
-      ghc-exactprint = super.ghc-exactprint_0_6_2;
-      haskell-src = super.haskell-src_1_0_3_1;
-      inline-c = super.inline-c_0_9_0_0;
-
-      # To avoid the HTF dependency.
-      neat-interpolation = dontCheck super.neat-interpolation;
-
-      network = dontCheck super.network_3_0_1_1;
-      network-bsd = (super.network-bsd_2_8_1_0.override {
-        network = dontCheck super.network_3_0_1_1;
-      });
-      protolude = doJailbreak super.protolude;
-      safecopy = super.safecopy_0_10_2;
-      sbv = super.sbv_8_5;
-      semialign = super.semialign_1_1;
-
-      haddock = super.callPackage ../pkgs/haskell/haddock {};
-      haddock-api = dontHaddock (super.callPackage ../pkgs/haskell/haddock-api {});
-      haddock-library = doJailbreak (super.callPackage ../pkgs/haskell/haddock-library {});
-      haddock-test = super.callPackage ../pkgs/haskell/haddock-test {};
-      hnix = doJailbreak (dontCheck (super.callPackage ../pkgs/haskell/hnix {}));
-      hnix-store-core = super.callPackage ../pkgs/haskell/hnix-store-core {};
-      hnix-store-remote = super.callPackage ../pkgs/haskell/hnix-store-remote {};
-      http-media = super.callPackage ../pkgs/haskell/http-media {};
-      saltine = super.callPackage ../pkgs/haskell/saltine {};
-    });
-
   # ghcide currently has special requirements.
   mkGhcidePackages = hp: properExtend hp (self: super: {
     regex-base = super.regex-base_0_94_0_0;
@@ -182,13 +149,6 @@ let
   # A list of currently-problematic packages, things that can't easily
   # be fixed by overrides.
   problems = hp: with hp; [
-    ivory
-    show-prettyprint
-  ];
-
-  problems882 = hp: with hp; [
-    Agda
-    hex
     ivory
     show-prettyprint
   ];
@@ -327,7 +287,6 @@ let
   # core packages that we want built from that haskellPackages set,
   # minus any problematic packages.
   coreHaskellPackages = mkInstalledPackages coreList problems;
-  coreHaskellPackages882 = mkInstalledPackages coreList problems882;
 
 
   # A list of extra packages that would be nice to build for any given
@@ -432,7 +391,6 @@ let
   # extensive packages that we want built from that haskellPackages
   # set, minus any problematic packages.
   extensiveHaskellPackages = mkInstalledPackages extraList problems;
-  extensiveHaskellPackages882 = mkInstalledPackages extraList problems882;
 
   # haskell-ide-engine via all-hies.
   inherit (localLib) all-hies;
@@ -466,7 +424,6 @@ let
 in
 {
   inherit haskellPackages;
-  inherit haskellPackages882;
 
 
   ## Haskell package combinators.
