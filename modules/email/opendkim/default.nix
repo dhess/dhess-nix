@@ -267,17 +267,21 @@ in
       }
     ];
 
-    users.users = optionalAttrs (cfg.user == "opendkim") (singleton
-      { name = "opendkim";
+    users.users = optionalAttrs (cfg.user == "opendkim") {
+      opendkim = {
+        name = "opendkim";
         group = cfg.group;
         uid = config.ids.uids.opendkim;
         extraGroups = [ "keys" ];
-      });
+      };
+    };
 
-    users.groups = optionalAttrs (cfg.group == "opendkim") (singleton
-      { name = "opendkim";
+    users.groups = optionalAttrs (cfg.group == "opendkim") {
+      opendkim = {
+        name = "opendkim";
         gid = config.ids.gids.opendkim;
-      });
+      };
+    };
 
     environment.systemPackages = [ pkgs.opendkim ];
 
