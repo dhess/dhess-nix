@@ -65,6 +65,7 @@ let
     };
     bar = {
       hostName = "bar.example.com";
+      port = 2002;
       alternateHostNames = [ "10.0.0.2" "2001:db8::2" ];
       hostPublicKeyLiteral = barPublicKey;
       systems = [ "x86_64-linux" "i686-linux" ];
@@ -203,6 +204,14 @@ let
         $ssh_known_hosts =~ /$foostring/ or die "/etc/ssh/ssh_known_hosts is missing expected `foo` host key";
         $ssh_known_hosts =~ /$barstring/ or die "/etc/ssh/ssh_known_hosts is missing expected `bar` host key";
         $ssh_known_hosts =~ /$bazstring/ or die "/etc/ssh/ssh_known_hosts is missing expected `baz` host key";
+      };
+
+      subtest "check-ssh_config", sub {
+        my $hoststring = quotemeta ("Host bar.example.com");
+        my $portstring = quotemeta ("Port 2002");
+        my $ssh_config = $machine->succeed("cat /etc/ssh/ssh_config");
+        $ssh_config =~ /$hoststring/ or die "/etc/ssh/ssh_config is missing expected `Host bar.example.com` line";
+        $ssh_config =~ /$portstring/ or die "/etc/ssh/ssh_config is missing expected `Port 2002` line";
       };
     '';
   };

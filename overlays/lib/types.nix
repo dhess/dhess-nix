@@ -564,6 +564,31 @@ let
         '';
       };
 
+      port = mkOption {
+        type = types.nullOr super.lib.types.port;
+        default = null;
+        example = 22;
+        description = ''
+          An optional TCP port number on which to connect to the
+          remote build host. The default value is
+          <literal>null</literal>, in which case the default SSH TCP
+          port is used (22).
+
+          This option is implemented by adding a
+          <literal>Host</literal> stanza to the build host's
+          <literal>/etc/ssh/ssh_config</literal> file, because the
+          <literal>/etc/nix/machines</literal> file doesn't support
+          custom SSH port numbers. This is a bit of a hack, and if you
+          need to specify other <literal>/etc/ssh/ssh_config</literal>
+          options for this remote build host, you should probably not
+          use this option, and instead specify the remote build host's
+          custom port number amongst the other SSH configuration
+          options for the remote build host, to prevent the
+          possibility of conflicts in the
+          <literal>/etc/ssh/ssh_config</literal> file.
+        '';
+      };
+
       alternateHostNames = mkOption {
         type = types.listOf super.lib.types.nonEmptyStr;
         default = [];
@@ -654,7 +679,6 @@ let
           literal string.
         '';
       };
-
     };
   };
 

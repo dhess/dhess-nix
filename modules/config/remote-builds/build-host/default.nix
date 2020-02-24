@@ -21,6 +21,21 @@ let
     }
   ) remoteBuildHosts;
 
+  buildMachines = mkBuildMachines cfg.buildMachines;
+  extraBuildMachines = mkBuildMachines cfg.extraBuildMachines;
+
+  mkHostPortPairs = remoteBuildHosts: lib.mapAttrsToList (_: descriptor: with descriptor;
+    { inherit hostName port; }
+  ) remoteBuildHosts;
+
+  sshExtraConfig = remoteBuildHosts: lib.concatMapStrings (pair:
+    lib.optionalString (pair.port != null) ''
+
+      Host ${pair.hostName}
+      Port ${toString pair.port}
+    ''
+  ) (mkHostPortPairs remoteBuildHosts);
+
   knownHosts = remoteBuildHosts: lib.mapAttrsToList (host: descriptor:
     {
       hostNames = lib.singleton descriptor.hostName ++ descriptor.alternateHostNames;
@@ -149,9 +164,10 @@ in
     ];
 
     nix.distributedBuilds = true;
-    nix.buildMachines = mkBuildMachines cfg.buildMachines;
+    nix.buildMachines = buildMachines;
 
     programs.ssh.knownHosts = (knownHosts cfg.buildMachines) ++ (knownHosts cfg.extraBuildMachines);
+    programs.ssh.extraConfig = (sshExtraConfig cfg.buildMachines) + (sshExtraConfig cfg.extraBuildMachines);
 
     dhess-nix.keychain.keys =
       (genKeys cfg.buildMachines) // (genKeys cfg.extraBuildMachines);
@@ -176,7 +192,7 @@ in
             + " "
             + lib.concatStringsSep "," machine.mandatoryFeatures or []
             + "\n"
-          ) (mkBuildMachines cfg.extraBuildMachines);
+          ) extraBuildMachines;
       };
 
   };
