@@ -82,9 +82,6 @@ in
   inherit (self) haskell-env;
   inherit (self) extensive-haskell-env;
   inherit (self) all-hies;
-  inherit (self) haskellPackages882;
-  inherit (self) haskell882-env;
-  inherit (self) extensive-haskell882-env;
 
   # haskell.nix
   inherit (self) haskell-nix;

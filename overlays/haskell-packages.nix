@@ -468,9 +468,6 @@ let
   haskell-env = mkHaskellBuildEnv "haskell-env" haskellPackages coreHaskellPackages;  
   extensive-haskell-env = mkHaskellBuildEnv "extensive-haskell-env" haskellPackages extensiveHaskellPackages;  
 
-  haskell882-env = mkHaskellBuildEnv "haskell-882-env" haskellPackages882 coreHaskellPackages882;
-  extensive-haskell882-env = mkHaskellBuildEnv "extensive-haskell882-env" haskellPackages882 extensiveHaskellPackages882;  
-
   ## iHaskell support.
   mkIHaskell = import (localLib.fixedIHaskell + "/release-8.6.nix");
   ihaskell = mkIHaskell {
@@ -533,9 +530,6 @@ in
   inherit mkHaskellBuildEnv;
   inherit haskell-env;
   inherit extensive-haskell-env;
-
-  inherit haskell882-env;
-  inherit extensive-haskell882-env;
 
   ## haskell-ide-engine.
 

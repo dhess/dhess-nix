@@ -95,9 +95,6 @@ let
     haskell-env = all;
     extensive-haskell-env = x86_64;
 
-    haskell882-env = all;
-    extensive-haskell882-env = all;
-
     ihaskell = darwin;
     ihaskell-env = darwin;
     ihaskell-envfun = darwin;
