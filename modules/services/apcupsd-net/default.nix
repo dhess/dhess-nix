@@ -186,7 +186,7 @@ in
         example = {
           doshutdown = ''# shell commands to notify that the computer is shutting down'';
         };
-        type = types.attrsOf types.string;
+        type = types.attrsOf types.str;
         description = ''
           Each attribute in this option names an apcupsd event and the string
           value it contains will be executed in a shell, in response to that
