@@ -66,10 +66,10 @@
         "homepage": null,
         "owner": "dhess",
         "repo": "dhess-lib-nix",
-        "rev": "51227f1d12d57edad7a8dc09de63cbfd0f9f5f24",
-        "sha256": "01ns9vb6k2pw23kvfyn67jy446kx4yaxnxqxfkwvw56vapasa3z6",
+        "rev": "ebb01160f9ff41d58080485053529fab21277f3f",
+        "sha256": "02s5dg2269gr4srma12rzp8fwma2n17fk7mi9jjmx7a00b26prhc",
         "type": "tarball",
-        "url": "https://github.com/dhess/dhess-lib-nix/archive/51227f1d12d57edad7a8dc09de63cbfd0f9f5f24.tar.gz",
+        "url": "https://github.com/dhess/dhess-lib-nix/archive/ebb01160f9ff41d58080485053529fab21277f3f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "haskell-nix": {
