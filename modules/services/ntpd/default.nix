@@ -118,7 +118,7 @@ in
 
     systemd.services.systemd-timedated.environment = { SYSTEMD_TIMEDATED_NTP_SERVICES = "ntpd.service"; };
 
-    users.users."${ntpuser}" = {
+    users.users."${ntpUser}" = {
       name = ntpUser;
       uid = config.ids.uids.ntp;
       description = "NTP daemon user";
