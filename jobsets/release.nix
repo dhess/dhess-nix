@@ -95,9 +95,6 @@ let
     haskell-env = all;
     extensive-haskell-env = x86_64;
 
-    nix-tools = all;
-    haskell-nix-env = all;
-
     python-env = all;
 
     anki = darwin;
@@ -179,9 +176,6 @@ let
         haskell-env.x86_64-linux
         extensive-haskell-env.x86_64-linux
 
-        nix-tools.x86_64-linux
-        haskell-nix-env.x86_64-linux
-
         minikube.x86_64-linux
 
         python-env.x86_64-linux
@@ -251,9 +245,6 @@ let
         haskell-env.x86_64-darwin
         extensive-haskell-env.x86_64-darwin
 
-        nix-tools.x86_64-darwin
-        haskell-nix-env.x86_64-darwin
-
         hyperkit.x86_64-darwin
         minikube.x86_64-darwin
 
@@ -282,8 +273,6 @@ let
       constituents = with jobs; [
         cfssl.aarch64-linux
         haskell-env.aarch64-linux
-        nix-tools.aarch64-linux
-        haskell-nix-env.aarch64-linux
         #extensive-haskell-env.aarch64-linux
       ];
     };

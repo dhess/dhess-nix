@@ -24,15 +24,12 @@ let
 
   fixedBadhosts = lib.fetchers.fixedNixSrc "badhosts" sources.badhosts;
 
-  fixedHaskellNix = lib.fetchers.fixedNixSrc "haskell-nix" sources.haskell-nix;
-
   overlays = [
     dhess-lib-nix.overlays.all
   ] ++ (map import [
     ../overlays/apple.nix
     ../overlays/custom-packages.nix
     ../overlays/emacs.nix
-    ../overlays/haskell-nix.nix
     ../overlays/haskell-packages.nix
     ../overlays/lib/dhess-lib.nix
     ../overlays/lib/types.nix
@@ -53,7 +50,6 @@ in lib //
   inherit fixedNixOps;
   inherit fixedLorri;
   inherit fixedBadhosts;
-  inherit fixedHaskellNix;
 
   inherit sources;
 }

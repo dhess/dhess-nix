@@ -83,11 +83,6 @@ in
   inherit (self) extensive-haskell-env;
   inherit (self) all-hies;
 
-  # haskell.nix
-  inherit (self) haskell-nix;
-  inherit (self) nix-tools;
-  inherit (self) haskell-nix-env;
-
   inherit (self) hyperkit;
   inherit (self) minikube;
 

@@ -81,7 +81,6 @@ let
       niv
       nix-index
       nix-info
-      nix-tools
       nox
     ];
     meta.platforms = super.lib.platforms.all;
