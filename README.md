@@ -1,3 +1,4 @@
-# dhess-nix
+# Deprecated
 
-My personal Nixpkgs packages and overrides.
+`dhess-nix` development has been suspended. Please see its
+successor, [hacknix](https://github.com/hackworthltd/hacknix)
